@@ -6,8 +6,18 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-notify");
   grunt.loadNpmTasks("grunt-grunticon");
   grunt.loadNpmTasks("grunt-svgmin");
+  grunt.loadNpmTasks("grunt-svgstore");
 
   grunt.initConfig({
+
+    svgstore: {
+
+      default: {
+        files: {
+          'public/defs.svg': ['images/svg/minified/*.svg'],
+        },
+      },
+    },
 
     svgmin: {
       dist: {
@@ -103,6 +113,11 @@ module.exports = function(grunt) {
         tasks: ['sass:dist', 'notify:sass', 'autoprefixer:css'],
       },
 
+      svg: {
+        files: ['images/svg/*.svg'],
+        tasks: ['svgmin:dist', 'svgstore'],
+      },
+
       php: {
         files: ['**/*.php'],
         options: {
@@ -115,6 +130,7 @@ module.exports = function(grunt) {
   }); // initConfig
   
   grunt.registerTask('default', ['watch']);
+  grunt.registerTask('svg', ['svgmin:dist', 'svgstore']);
 
 }; // exports
 
