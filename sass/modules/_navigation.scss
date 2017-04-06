@@ -1,0 +1,34 @@
+.navigation {
+
+  /*display: table-cell;*/
+  position: relative;
+  width: auto;
+  top: 0;
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+  color: $font-color;
+
+
+  & > li {
+    display: inline-block;
+
+    & > a {
+      color: inherit;
+      text-decoration: none;
+
+      &:visited {
+        color: inherit;
+      }
+
+      &:hover {
+        color: $primarycolor;
+      }
+
+      &:active {
+        color: $primarycolor;
+      }
+      
+    }
+  }
+}
