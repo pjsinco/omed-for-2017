@@ -1,61 +1,50 @@
-(function($) {
+/* @source https://codyhouse.co/gem/auto-hiding-navigation */
+
+jQuery(document).ready(($) => {
 
 
+  let scrolling = false,
+      currentTop = 0,
+      previousTop = 0,
+      scrollDelta = 10,
+      scrollOffset = 150;
 
+  const $belowSplash = $('.splash'),
+        $mainHeader  = $('.header'),
+        headerHeight = $mainHeader.height();
 
-  // We don't care about resize events on screens below 768px wide
-  var actionableScreenWidth = 768; // $large-start breakpoint
-  var actionableScrollTop = 105;
+  const checkNavigation = (currentTop) => {
 
-
-  // The difference in pixel height between a highlightable image and 
-  // its containing block
-  var difference = 96;
-
-  //var $html = $('html');
-
-  var windowWidth = $(window).width();
-  var $highlightableImage = $('#highlightableImage');
-  var $highlightable = $('#highlightable');
-  //adjustHighlightableHeight();
-
-  $(document).on('scroll', function(evt) {
-    var y = $(this).scrollTop();
-    if (y > actionableScrollTop) {
-
-
-      // TODO Sticky nav is temporarily disabled
-
-      //$('html').addClass('omedscrolled');
-      
-
-    } else {
-
-
-      // TODO Sticky nav is temporarily disabled
-
-      //$('html').removeClass('omedscrolled');
-
+    if (previousTop - currentTop > scrollDelta) {
+      $mainHeader.removeClass('is-hidden');
+    } else if (currentTop - previousTop > scrollDelta && 
+               currentTop > scrollOffset) {
+      $mainHeader.addClass('is-hidden');
     }
-  });
+  };
 
-  var $menu = $('#menu'),
-  	  $menulink = $('.menu-link'),
-  	  $menuTrigger = $('.menu-item-has-children > a');
+  const autoHideHeader = () => {
+    currentTop = $(window).scrollTop();
+
+    checkNavigation(currentTop);
+
+    previousTop = currentTop;
+    scrolling = false;
+  };
+
   
-  $menulink.click(function(e) {
-  	e.preventDefault();
-  	$menulink.toggleClass('active');
-  	$menu.toggleClass('active');
+
+  $(window).on('scroll', () => {
+
+    if (!scrolling) {
+      scrolling = true;
+
+      !window.requestAnimationFrame ? 
+        setTimeout(autoHideHeader, 250) :
+        requestAnimationFrame(autoHideHeader);
+                                  
+    }
+
   });
-  
-  $menuTrigger.click(function(e) {
-  	var $this = $(this);
-  	$this.toggleClass('active');
-  });
 
-
-  new WOW().init();
-
-})(jQuery);
-
+});

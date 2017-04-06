@@ -1,2 +1,12 @@
 @import 'wrap';
 @import 'container';
+
+.site-content {
+
+  padding-top: $header-height-small;
+
+  @include breakpoint($screen $navflip) {
+    padding-top: $header-height;
+  }
+
+}
