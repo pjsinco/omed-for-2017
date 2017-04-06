@@ -6,8 +6,21 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-notify");
   grunt.loadNpmTasks("grunt-grunticon");
   grunt.loadNpmTasks("grunt-svgmin");
+  grunt.loadNpmTasks("grunt-babel");
 
   grunt.initConfig({
+
+    babel: {
+      dist: {
+        options: {
+          sourceMap: true,
+          presets: ['babel-preset-es2015'],
+        },
+        files: {
+          'scripts/bundle.js': 'scripts/main.js',
+        },
+      },
+    },
 
     svgmin: {
       dist: {
@@ -70,6 +83,13 @@ module.exports = function(grunt) {
     },
 
     notify: {
+      scripts: {
+        options: {
+          title: 'Scripts',
+          message: 'Babelified!',
+        },
+      },
+
       sass: {
         options: {
           title: 'Sass',
@@ -97,6 +117,11 @@ module.exports = function(grunt) {
       options: {
         livereload: true,
       },
+
+      scripts: {
+        files: ['scripts/**/*.js'],
+        tasks: ['babel:dist', 'notify:scripts'],
+      },
       
       sass: {
         files: ['**/*.scss'],
@@ -105,9 +130,6 @@ module.exports = function(grunt) {
 
       php: {
         files: ['**/*.php'],
-        options: {
-          livereload: 35729,
-        },
       },
     
     }, // watch
