@@ -683,3 +683,11 @@ function omed_adjust_caption_shortcode_width( $width, $atts, $content ) {
   return $width;
 }
 add_filter ( 'img_caption_shortcode_width', 'omed_adjust_caption_shortcode_width', 10, 3 );
+
+function omed_livereload() {
+
+  if ( WP_ENV === 'development' ) {
+    echo '<script src="//localhost:357529/livereload.js"></script>';
+  }
+
+}

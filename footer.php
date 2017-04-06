@@ -24,5 +24,7 @@
 
 <?php wp_footer(); ?>
 
+<?php omed_livereload(); ?>
+
 </body>
 </html>
