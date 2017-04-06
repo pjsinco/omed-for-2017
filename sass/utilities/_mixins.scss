@@ -33,3 +33,7 @@
   left: 0;
   right: 0;
 }
+
+@mixin clearfix() {
+  @extend .clearfix;
+}

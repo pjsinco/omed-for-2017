@@ -4,10 +4,20 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-autoprefixer");
   grunt.loadNpmTasks("grunt-contrib-sass");
   grunt.loadNpmTasks("grunt-notify");
-  grunt.loadNpmTasks("grunt-grunticon");
   grunt.loadNpmTasks("grunt-svgmin");
+  grunt.loadNpmTasks("grunt-svgstore");
+  grunt.loadNpmTasks("grunt-babel");
 
   grunt.initConfig({
+
+    svgstore: {
+
+      default: {
+        files: {
+          'public/defs.svg': ['images/svg/minified/*.svg'],
+        },
+      },
+    },
 
     svgmin: {
       dist: {
@@ -27,33 +37,6 @@ module.exports = function(grunt) {
       }
     },
 
-    grunticon: {
-      icons: {
-        files: [
-          {
-            expand: true,
-            //cwd: 'images/svg/minified',
-            cwd: 'images/svg',
-            src: ["*.svg", '*.png'],
-            dest: 'dist/grunticon',
-          },
-        ],
-        options: {
-          enhanceSVG: true,
-          pngpath: 'images/png',
-          colors: {
-            //red: '#df2826',
-            red: '#fa4132',
-            //lightblue: '#67dfff',
-            lightblue: '#7fc3ff',
-            white: '#ffffff',
-            warmgray: '#babbb1',
-          },
-          //dynamicColorOnly: true,
-        },
-      },
-    },
-
     sass: {
       dist: {
         options: {
@@ -69,6 +52,18 @@ module.exports = function(grunt) {
       },
     },
 
+    babel: {
+      dist: {
+        options: {
+          sourceMap: true,
+          presets: ['babel-preset-es2015'],
+        },
+        files: {
+          'public/scripts/bundle.js': 'scripts/main.js',
+        },
+      },
+    },
+
     notify: {
       sass: {
         options: {
@@ -76,6 +71,14 @@ module.exports = function(grunt) {
           message: 'Sassed!'
         },
       },
+
+      scripts: {
+        options: {
+          title: 'Scripts',
+          message: 'Babelified!',
+        },
+      },
+    
     },
 
     autoprefixer: {
@@ -103,11 +106,18 @@ module.exports = function(grunt) {
         tasks: ['sass:dist', 'notify:sass', 'autoprefixer:css'],
       },
 
+      scripts: {
+        files: ['scripts/**/*.js'],
+        tasks: ['babel:dist', 'notify:scripts'],
+      },
+
+      svg: {
+        files: ['images/svg/*.svg'],
+        tasks: ['svgmin:dist', 'svgstore'],
+      },
+
       php: {
         files: ['**/*.php'],
-        options: {
-          livereload: 35729,
-        },
       },
     
     }, // watch
@@ -115,6 +125,7 @@ module.exports = function(grunt) {
   }); // initConfig
   
   grunt.registerTask('default', ['watch']);
+  grunt.registerTask('svg', ['svgmin:dist', 'svgstore']);
 
 }; // exports
 

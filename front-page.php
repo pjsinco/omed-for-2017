@@ -11,7 +11,7 @@
 
 <?php get_header(); ?>
 
-<?php get_template_part( 'template-parts/content', 'splash' ); ?>
+<?php  get_template_part( 'template-parts/content', 'splash' ); ?>
 
 <?php 
   while ( have_posts() ): 

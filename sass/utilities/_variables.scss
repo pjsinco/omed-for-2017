@@ -89,17 +89,13 @@ $large-minor-minor-start  : 61.25rem;     // 980px
 $xlarge-start             : 67.75rem;  // 1084px
 $xlarge-minor-start       : 73rem;     // 1168px
 $xxlarge-start            : 90rem;     // 1440px
+$wp-admin-bar-start       : 783px;
 
 
 $screen: 'screen';
 
 /* Fonts */
 $font-path: "fonts" !default;
-
-/* Icomoon */
-$icomoon-font-path: $font-path;
-$icon-ctrl: "\ea50";
-
 
 /* Tables */
 $table-border-color: $lightgray;
@@ -113,8 +109,9 @@ $body-bg: $white;
 $navflip: $large-minor-minor-start;
 $spacebetween: 1.25rem;
 $gutter: 1.25rem;
-$navbarheight: 3.75rem;
 $transitionduration: .3s;
 
 
-
+/* Header */
+$header-height: 80px;
+$header-height-small: 60px;

@@ -131,19 +131,11 @@ function omed_scripts() {
     'all'
   );
 
-//  wp_register_script( 
-//    'grunticon-loader', 
-//    get_template_directory_uri() . '/dist/grunticon/grunticon.loader.js',
-//    array(),
-//    false,
-//    false
-//  );
-
   wp_register_script( 
-    'main', 
-    get_template_directory_uri() . '/scripts/main.js', 
+    'omed-bundle', 
+    get_template_directory_uri() . '/public/scripts/bundle.js', 
     array( 'jquery' ),
-    filemtime( get_template_directory() . '/scripts/main.js' ), 
+    filemtime( get_template_directory() . '/public/scripts/bundle.js' ), 
     true
   );
 
@@ -230,7 +222,7 @@ function omed_scripts() {
   wp_enqueue_script( 'jquery' );
   wp_enqueue_script( 'jquery-migrate' );
   wp_enqueue_script( 'wowjs' );
-  wp_enqueue_script( 'main' );
+  wp_enqueue_script( 'omed-bundle' );
 }
 add_action( 'wp_enqueue_scripts', 'omed_scripts' );
 
