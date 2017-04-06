@@ -140,10 +140,10 @@ function omed_scripts() {
 //  );
 
   wp_register_script( 
-    'omed-scripts', 
-    get_template_directory_uri() . '/scripts/bundle.js', 
+    'main', 
+    get_template_directory_uri() . '/scripts/main.js', 
     array( 'jquery' ),
-    filemtime( get_template_directory() . '/scripts/bundle.js' ), 
+    filemtime( get_template_directory() . '/scripts/main.js' ), 
     true
   );
 
@@ -230,7 +230,7 @@ function omed_scripts() {
   wp_enqueue_script( 'jquery' );
   wp_enqueue_script( 'jquery-migrate' );
   wp_enqueue_script( 'wowjs' );
-  wp_enqueue_script( 'omed-scripts' );
+  wp_enqueue_script( 'main' );
 }
 add_action( 'wp_enqueue_scripts', 'omed_scripts' );
 
@@ -314,7 +314,7 @@ class Omed_Side_Nav_Walker_Class extends Walker_Nav_Menu {
    * class's start_el() method.
    *
    */
-  function start_el( &$output, $item, $depth = 0, $args = array() ) {
+  function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
     global $post;
 
@@ -420,7 +420,7 @@ class Omed_Side_Nav_Walker_Class extends Walker_Nav_Menu {
 class Omed_Minor_Nav_Walker_Class extends Walker_Nav_Menu {
 
   // TODO For now, nothing is happening here
-  function start_el( &$output, $item, $depth = 0, $args = array() ) {
+  function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
     // Get an array of URL components
     $filtered = array_filter( explode('/', $item->url) );
@@ -593,7 +593,7 @@ function add_owl_carousel_script() {
 add_action( 'wp_footer' , 'add_owl_carousel_script', 50 );
 
 function omed_add_google_analytics_code() {
-  if (OMED_DEV_ENVIRONMENT) {
+  if ( WP_ENV === 'development' ) {
     return;
   }
 ?>
