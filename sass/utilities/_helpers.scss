@@ -1,0 +1,183 @@
+/* Helpers: Floats and Clearing */
+%container-base {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+%container-fluid-base {
+  @extend %container-base;
+  padding-right: 1em;
+  padding-left: 1em;
+
+  @include breakpoint($screen $medium-start) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  @include breakpoint($screen $contentwidth + 2rem) {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+%wrap-base {
+  box-sizing: border-box;
+  margin: 0 auto;
+  max-width: $contentwidth;
+}
+
+%container--bleed {
+
+}
+
+%container--nobleed {
+
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; 
+}
+
+.clear {
+  clear: both;
+} 
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+
+/* Helpers: Typography */
+
+/*.ul-base {*/
+  /*padding: 0;*/
+  /*list-style-type: none;*/
+/*}*/
+
+.font-small {
+  font-size: 90%; 
+}
+
+.font-smaller {
+  font-size: 80%; 
+}
+
+.font-smallest {
+  font-size: 70%; 
+}
+
+.font-large {
+  font-size: 110%; 
+}
+
+.font-larger {
+  font-size: 120%; 
+}
+
+.font-largest {
+  font-size: 130%; 
+}
+
+
+/* Helpers: Centering */
+
+.center {
+  text-align: center;
+}
+
+.center-element {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.dead-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+
+/* Helpers: Full-width */
+
+.full-width {
+  display: block;
+  width: 100%;
+}
+
+
+.background-block {
+
+  background: url('../img/at-work.jpg');
+  background-repeat: no-repeat;
+
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.6);
+
+}
+
+.no-margin {
+  
+  &--h {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  &--v {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+  }
+}
+
+
+.relative {
+  position: relative;
+}
+
+.boldfont {
+  font-family: $font-bold !important;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.break-words {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+
+  hyphens: auto;
+}
+
+.bordered {
+  border: 1px solid $lightgray;
+}

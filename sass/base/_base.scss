@@ -1,0 +1,172 @@
+%p-base {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: .875rem;
+  line-height: $bodylineheight-bigger;
+  color: $verydark;
+
+  @include breakpoint($screen $large-start) {
+    font-size: $font-size-base;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+%body-with-top-padding {
+  @include breakpoint($screen $navflip) {
+    padding-top: 8rem;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  line-height: 1;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-family: $primaryfont;
+  background-color: $white;
+  height: 100%;
+
+  &.page-child, 
+  &.page-template-page-standalone,
+  &.error404 {
+    @extend %body-with-top-padding;
+  }
+}
+
+p {
+  @extend %p-base;
+}
+
+.entry-content li {
+  @extend %p-base;
+}
+
+li strong, p strong {
+  font-family: $font-medium;
+  font-weight: normal;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: normal !important;
+  color: $primarycolor;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-family: $font-book;
+  font-size: 2rem;
+  font-weight: bolder;
+  line-height: 1.2;
+  letter-spacing: -.5px;
+  border-bottom: 3px solid $secondarycolor;
+  padding-bottom: 2rem;
+
+  @include breakpoint($screen $navflip) {
+    padding-bottom: initial;
+    font-size: 2.625rem;
+    border-bottom: none;
+  }
+}
+
+h3 {
+  font-family: $font-bold;
+  line-height: $bodylineheight;
+  font-weight: normal;
+
+  article & {
+    margin-bottom: .25rem;
+    padding-bottom: .25rem;
+    border-bottom: 1px solid $secondarycolor;
+
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+
+  }
+}
+
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  @extend p;
+
+  .entry-content & {
+    list-style: disc;
+    list-style-position: inside;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $linkcolor;
+
+  &:visited {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  // https://teamtreehouse.com/community/how-do-you-make-a-svg-clickable
+//  &.svg:after {
+//    content: '';
+//    position: absolute;
+//    top: 0;
+//    bottom: 0;
+//    right: 0;
+//    left: 0;
+//  }
+}
+
+object {
+  width: 100%;
+}
+
+input, textarea {
+  padding: .5rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border-left-style: solid;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-radius: $border-radius-base;
+  border-color: $primarycolor;
+  border-width: 1px;
+  color: $font-color;
+  transition: box-shadow .15s linear;
+
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 2px 2px rgba($primarycolor, .2);
+  }
+}

@@ -1,0 +1,35 @@
+/**
+ * Inspired by Bootstrap
+ * https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_buttons.scss 
+ *
+ */
+
+@mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
+  padding: $padding-vertical $padding-horizontal;
+  font-size: $font-size;
+  line-height: $line-height;
+  border-radius: $border-radius;
+}
+
+@mixin button-variant($color, $background-color, $border) {
+
+  color: $color;
+  background-color: $background-color;
+  box-shadow: inset 0 0 0 1px $border;
+
+  &:hover {
+    color: $white;
+    background-color: $teal;
+    /*box-shadow: inset 0 0 0 1px $border;*/
+  }
+
+}
+
+@mixin expand-target() {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

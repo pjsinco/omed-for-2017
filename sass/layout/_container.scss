@@ -1,0 +1,36 @@
+.container-fluid,
+.container {
+  @extend %container-base;
+}
+
+.container-fluid--alt {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  @include breakpoint($screen $medium-start) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  @include breakpoint($screen $large-minor-start) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.container-fluid {
+  @extend %container-fluid-base;
+}
+
+.menu-container {
+
+  @extend .container-fluid--alt;
+
+  @include breakpoint($screen $large-minor-start) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+}

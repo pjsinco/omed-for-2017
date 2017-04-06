@@ -1,0 +1,120 @@
+/*
+ * Colors
+ */
+$red: #d53847;
+$purple: #5c419a;
+$blue: #3d5ba9;
+$gray: #717271;
+
+$mediumgray: #b3b3b3;
+$lightgray: #ddd;
+$extralightgray: #f5f5f5;
+$white: #fff;
+$verydark: #444;
+
+$primarycolor: $red;
+$secondarycolor: $blue;
+$accentcolor: $purple;
+$linkcolor: $red;
+
+/* Typography */
+$font-light: 'gotham-light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-bold: 'gotham-bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-book: 'gotham-book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-medium: 'gotham-medium', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$primaryfont: $font-book;
+$font-color: $verydark;
+$font-color-lighter: $gray;
+$font-color-lightest: $mediumgray;
+$line-height-base: 1.4 !default;
+$line-height-small: 1.5 !default;
+$line-height-large: 1.33 !default;
+$bodylineheight: $line-height-base;
+$bodylineheight-bigger: 1.65;
+
+$font-size-base: 1rem;
+$font-size-small: .875rem;
+$font-size-large: 1.25rem;
+
+
+// Width of the content area
+$contentwidth: 63rem;
+
+/* Spacing */
+$padding-base-vertical: .5rem;
+$padding-base-horizontal: 1rem;
+
+$padding-xs-vertical: .0625rem;
+$padding-xs-horizontal: .3125rem;
+
+$padding-small-vertical: .3125rem;
+$padding-small-horizontal: .625rem;
+
+$padding-large-vertal: 1.125rem;
+$padding-large-horizontal: 1.25rem;
+
+/* Components */
+$border-radius-base: 4px !default;
+$border-radius-small: 3px !default;
+$border-radius-large: 6px !default;
+
+
+/* Buttons */
+$btn-border-radius-base: 4px;
+$btn-border-radius-small: 3px;
+$btn-border-radius-large: 6px;
+
+$btn-default-color: $font-color;
+$btn-default-bg: transparent;
+$btn-default-border: $gray;
+
+$btn-primary-color: $red;
+$btn-reverse-color: $white;
+
+$btn-primary-bg: transparent;
+/*$btn-reverse-bg: transparent;*/
+
+$btn-primary-border: $red;
+$btn-reverse-border: $white;
+
+/* Breakpoints */
+$small-start              : 20rem;     // 320px
+$small-minor-start        : 25.625rem; // 410px
+$medium-start             : 30rem;     // 480px
+$medium-minor-start       : 36rem;     // 576px
+$medium-minor-minor-start : 41.5rem;   // 664px
+$large-start              : 48rem;     // 768px
+$large-minor-start        : 56rem;     // 896px
+$large-minor-minor-start  : 61.25rem;     // 980px
+$xlarge-start             : 67.75rem;  // 1084px
+$xlarge-minor-start       : 73rem;     // 1168px
+$xxlarge-start            : 90rem;     // 1440px
+
+
+$screen: 'screen';
+
+/* Fonts */
+$font-path: "fonts" !default;
+
+/* Icomoon */
+$icomoon-font-path: $font-path;
+$icon-ctrl: "\ea50";
+
+
+/* Tables */
+$table-border-color: $lightgray;
+$table-condensed-cell-padding: .25rem;
+$table-bg-accent: $lightgray;
+$table-bg-hover: $lightgray;
+$table-bg-active: $lightgray;
+$body-bg: $white;
+
+/* Numbers we use */
+$navflip: $large-minor-minor-start;
+$spacebetween: 1.25rem;
+$gutter: 1.25rem;
+$navbarheight: 3.75rem;
+$transitionduration: .3s;
+
+
+

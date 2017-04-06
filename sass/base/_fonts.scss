@@ -1,0 +1,144 @@
+@font-face {
+  font-family: 'omed-glyphs64';
+  src: 
+    url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAATQAAsAAAAABIQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABPUy8yAAABCAAAAGAAAABgDxIGemNtYXAAAAFoAAAAVAAAAFQWBtUnZ2FzcAAAAbwAAAAIAAAACAAAABBnbHlmAAABxAAAAJgAAACYW3cfIWhlYWQAAAJcAAAANgAAADYJHFhHaGhlYQAAApQAAAAkAAAAJAa6A8ZobXR4AAACuAAAABQAAAAUCgABCGxvY2EAAALMAAAADAAAAAwAKABgbWF4cAAAAtgAAAAgAAAAIAAHABxuYW1lAAAC+AAAAbYAAAG2h5b3FXBvc3QAAASwAAAAIAAAACAAAwAAAAMDAAGQAAUAAAKZAswAAACPApkCzAAAAesAMwEJAAAAAAAAAAAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAQAAA6lADwP/AAEADwABAAAAAAQAAAAAAAAAAAAAAIAAAAAAAAwAAAAMAAAAcAAEAAwAAABwAAwABAAAAHAAEADgAAAAKAAgAAgACAAEAIOpQ//3//wAAAAAAIOpQ//3//wAB/+MVtAADAAEAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAAAAAAAAAIAADc5AQAAAAABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQEIAEAC+AGAABkAAAEyFh8BNz4BFx4BBwMOASMiJicDJjY3PgEzASAHDAXIyAkaCgoCCeAEDQcHDQTgCQIKBAsGAYAGBeTkCgIJCRoK/wAFBgYFAQAKGgkEBAABAAAAAQAA+dd/V18PPPUACwQAAAAAANODCuUAAAAA04MK5QAAAAAC+AGAAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAL4AAEAAAAAAAAAAAAAAAAAAAAFBAAAAAAAAAAAAAAAAgAAAAQAAQgAAAAAAAoAFAAeAEwAAQAAAAUAGgABAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAsAAAABAAAAAAACAAcAhAABAAAAAAADAAsAQgABAAAAAAAEAAsAmQABAAAAAAAFAAsAIQABAAAAAAAGAAsAYwABAAAAAAAKABoAugADAAEECQABABYACwADAAEECQACAA4AiwADAAEECQADABYATQADAAEECQAEABYApAADAAEECQAFABYALAADAAEECQAGABYAbgADAAEECQAKADQA1G9tZWQtZ2x5cGhzAG8AbQBlAGQALQBnAGwAeQBwAGgAc1ZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMG9tZWQtZ2x5cGhzAG8AbQBlAGQALQBnAGwAeQBwAGgAc29tZWQtZ2x5cGhzAG8AbQBlAGQALQBnAGwAeQBwAGgAc1JlZ3VsYXIAUgBlAGcAdQBsAGEAcm9tZWQtZ2x5cGhzAG8AbQBlAGQALQBnAGwAeQBwAGgAc0ZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=) format('woff'),
+    url(data:application/font-sfnt;charset=utf-8;base64,AAEAAAALAIAAAwAwT1MvMg8SBnoAAAC8AAAAYGNtYXAWBtUnAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5Zlt3HyEAAAF4AAAAmGhlYWQJHFhHAAACEAAAADZoaGVhBroDxgAAAkgAAAAkaG10eAoAAQgAAAJsAAAAFGxvY2EAKABgAAACgAAAAAxtYXhwAAcAHAAAAowAAAAgbmFtZYeW9xUAAAKsAAABtnBvc3QAAwAAAAAEZAAAACAAAwMAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAAAAAAAABAAADqUAPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAg6lD//f//AAAAAAAg6lD//f//AAH/4xW0AAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAABAQgAQAL4AYAAGQAAATIWHwE3PgEXHgEHAw4BIyImJwMmNjc+ATMBIAcMBcjICRoKCgIJ4AQNBwcNBOAJAgoECwYBgAYF5OQKAgkJGgr/AAUGBgUBAAoaCQQEAAEAAAABAAD5139XXw889QALBAAAAAAA04MK5QAAAADTgwrlAAAAAAL4AYAAAAAIAAIAAAAAAAAAAQAAA8D/wAAABAAAAAAAAvgAAQAAAAAAAAAAAAAAAAAAAAUEAAAAAAAAAAAAAAACAAAABAABCAAAAAAACgAUAB4ATAABAAAABQAaAAEAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAADgCuAAEAAAAAAAEACwAAAAEAAAAAAAIABwCEAAEAAAAAAAMACwBCAAEAAAAAAAQACwCZAAEAAAAAAAUACwAhAAEAAAAAAAYACwBjAAEAAAAAAAoAGgC6AAMAAQQJAAEAFgALAAMAAQQJAAIADgCLAAMAAQQJAAMAFgBNAAMAAQQJAAQAFgCkAAMAAQQJAAUAFgAsAAMAAQQJAAYAFgBuAAMAAQQJAAoANADUb21lZC1nbHlwaHMAbwBtAGUAZAAtAGcAbAB5AHAAaABzVmVyc2lvbiAxLjAAVgBlAHIAcwBpAG8AbgAgADEALgAwb21lZC1nbHlwaHMAbwBtAGUAZAAtAGcAbAB5AHAAaABzb21lZC1nbHlwaHMAbwBtAGUAZAAtAGcAbAB5AHAAaABzUmVndWxhcgBSAGUAZwB1AGwAYQByb21lZC1nbHlwaHMAbwBtAGUAZAAtAGcAbAB5AHAAaABzRm9udCBnZW5lcmF0ZWQgYnkgSWNvTW9vbi4ARgBvAG4AdAAgAGcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAASQBjAG8ATQBvAG8AbgAuAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format('truetype'),
+    url(data:image/svg+xml;charset=utf-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiID4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8bWV0YWRhdGE+R2VuZXJhdGVkIGJ5IEljb01vb248L21ldGFkYXRhPgo8ZGVmcz4KPGZvbnQgaWQ9Im9tZWQtZ2x5cGhzIiBob3Jpei1hZHYteD0iMTAyNCI+Cjxmb250LWZhY2UgdW5pdHMtcGVyLWVtPSIxMDI0IiBhc2NlbnQ9Ijk2MCIgZGVzY2VudD0iLTY0IiAvPgo8bWlzc2luZy1nbHlwaCBob3Jpei1hZHYteD0iMTAyNCIgLz4KPGdseXBoIHVuaWNvZGU9IiYjeDIwOyIgaG9yaXotYWR2LXg9IjUxMiIgZD0iIiAvPgo8Z2x5cGggdW5pY29kZT0iJiN4ZWE1MDsiIGdseXBoLW5hbWU9ImN0cmwiIGQ9Ik0yODcuOTg2IDM4NGM4LjkwOCAwIDE3Ljc3LTMuNjk4IDI0LjA5Ni0xMC45MjhsMTk5LjkxOC0yMjguNDc4IDE5OS45MTggMjI4LjQ3OGMxMS42MzYgMTMuMyAzMS44NTYgMTQuNjUgNDUuMTU0IDMuMDEwIDEzLjMtMTEuNjM4IDE0LjY0OC0zMS44NTQgMy4wMTAtNDUuMTU0bC0yMjQtMjU2Yy02LjA3Ni02Ljk0NC0xNC44NTQtMTAuOTI4LTI0LjA4Mi0xMC45MjhzLTE4LjAwNiAzLjk4NC0yNC4wODIgMTAuOTI4bC0yMjQgMjU2Yy0xMS42MzggMTMuMy0xMC4yOTIgMzMuNTE2IDMuMDEwIDQ1LjE1NCA2LjA3MCA1LjMxMiAxMy41ODIgNy45MTggMjEuMDU4IDcuOTE4eiIgLz4KPC9mb250PjwvZGVmcz48L3N2Zz4=) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'omed-glyphs';
+    src:
+        url('#{$icomoon-font-path}/omed-glyphs.ttf?w8b288') format('truetype'),
+        url('#{$icomoon-font-path}/omed-glyphs.woff?w8b288') format('woff'),
+        url('#{$icomoon-font-path}/omed-glyphs.svg?w8b288#omed-glyphs') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'omed-glyphs64' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 0;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ctrl {
+    &:before {
+        content: $icon-ctrl;
+    }
+}
+
+.icon-ctrl-down {
+    &:before {
+        content: $icon-ctrl;
+        display: inline;
+    }
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: 'gotham-light';
+  src: url('#{$font-path}/Gotham-Light.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}/Gotham-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$font-path}/Gotham-Light.woff2') format('woff2'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-Light.woff') format('woff'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$font-path}/Gotham-Light.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: 'gotham-lightitalic';
+  src: url('#{$font-path}/Gotham-LightItalic.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}/Gotham-LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$font-path}/Gotham-LightItalic.woff2') format('woff2'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-LightItalic.woff') format('woff'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-LightItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$font-path}/Gotham-LightItalic.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: 'gotham-book';
+  src: url('#{$font-path}/Gotham-Book.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}/Gotham-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$font-path}/Gotham-Book.woff2') format('woff2'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-Book.woff') format('woff'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-Book.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$font-path}/Gotham-Book.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: 'gotham-bookitalic';
+  src: url('#{$font-path}/Gotham-BookItalic.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}/Gotham-BookItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$font-path}/Gotham-BookItalic.woff2') format('woff2'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-BookItalic.woff') format('woff'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-BookItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$font-path}/Gotham-BookItalic.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: 'gotham-medium';
+  src: url('#{$font-path}/Gotham-Medium.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}/Gotham-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$font-path}/Gotham-Medium.woff2') format('woff2'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-Medium.woff') format('woff'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-Medium.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$font-path}/Gotham-Medium.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: 'gotham-mediumitalic';
+  src: url('#{$font-path}/Gotham-MediumItalic.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}/Gotham-MediumItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$font-path}/Gotham-MediumItalic.woff2') format('woff2'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-MediumItalic.woff') format('woff'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-MediumItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$font-path}/Gotham-MediumItalic.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: 'gotham-bold';
+  src: url('#{$font-path}/Gotham-Bold.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}/Gotham-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$font-path}/Gotham-Bold.woff2') format('woff2'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-Bold.woff') format('woff'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$font-path}/Gotham-Bold.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
+
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: 'gotham-bolditalic';
+  src: url('#{$font-path}/Gotham-BoldItalic.eot'); /* IE9 Compat Modes */
+  src: url('#{$font-path}/Gotham-BoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('#{$font-path}/Gotham-BoldItalic.woff2') format('woff2'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-BoldItalic.woff') format('woff'), /* Modern Browsers */
+    url('#{$font-path}/Gotham-BoldItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+    url('#{$font-path}/Gotham-BoldItalic.svg') format('svg'); /* Legacy iOS */  font-weight: normal;
+  font-style: normal;
+}
