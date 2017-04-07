@@ -16,7 +16,7 @@
       </span>
     </a> <!-- .nav-trigger -->
 
-    <ul class="navigation container-fluid--alt">
+    <ul class="navigation">
       <li><a href="#">Physicians</a></li>
       <li><a href="#">Residents</a></li>
       <li><a href="#">Students</a></li>
