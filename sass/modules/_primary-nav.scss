@@ -1,3 +1,7 @@
-.omed-nav {
+.primary-nav {
+
+  @include breakpoint($screen $navflip) {
+    
+  }
 
 }
