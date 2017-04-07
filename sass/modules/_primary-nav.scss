@@ -1,7 +1,14 @@
 .primary-nav {
 
+  display: inline-block;
+  float: right;
+  height: 100%;
+  padding-right: 5%;
+
   @include breakpoint($screen $navflip) {
-    
+    display: flex;
+    align-items: center;
+    padding-right: 0;
   }
 
 }

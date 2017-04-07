@@ -1,21 +1,40 @@
 .navigation {
 
-  /*display: table-cell;*/
-  position: relative;
-  width: auto;
-  top: 0;
-  padding: 0;
-  background-color: transparent;
-  box-shadow: none;
-  color: $font-color;
+  position: absolute;
+  z-index: 2;
+  top: $header-height-small;
+  left: 0;
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0 14px 20px rgba(0,0,0,.2);
+  @include clearfix;
+  
+  @include breakpoint($screen $navflip) {
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    box-shadow: none;
+  }
 
+  & > li:not(:last-child) {
+    @include breakpoint($screen $navflip) {
+      margin-right: 4rem;
+    }
+  }
 
   & > li {
-    display: inline-block;
+    margin-bottom: 0;
+
+    @include breakpoint($screen $navflip) {
+      display: inline-block;
+    }
 
     & > a {
       color: inherit;
       text-decoration: none;
+      vertical-align: middle;
 
       &:visited {
         color: inherit;
