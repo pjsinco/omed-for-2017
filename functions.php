@@ -154,6 +154,18 @@ function omed_scripts() {
   );
 
   /**
+   * SVG4Everybody
+   *
+   */
+  wp_register_script(
+    'svg4everybody',
+    get_template_directory_uri() . '/scripts/svg4everybody.min.js',
+    array(),
+    false,
+    true
+  );
+
+  /**
    * Owl Carousel for Featured Sessions slider
    *
    */
@@ -199,7 +211,7 @@ function omed_scripts() {
    *
    */  
   wp_deregister_script( 'jquery' );
-  //wp_deregister_script( 'jquery' );
+
   wp_register_script(
     'jquery',
     includes_url( 'js/jquery/jquery.js' ),
@@ -207,6 +219,7 @@ function omed_scripts() {
     null,
     true
   );
+
   wp_register_script(
     'jquery-migrate',
     includes_url( 'js/jquery/jquery-migrate.min.js' ),
@@ -223,6 +236,7 @@ function omed_scripts() {
   wp_enqueue_script( 'jquery-migrate' );
   wp_enqueue_script( 'wowjs' );
   wp_enqueue_script( 'omed-bundle' );
+  wp_enqueue_script( 'svg4everybody' );
 }
 add_action( 'wp_enqueue_scripts', 'omed_scripts' );
 
@@ -541,6 +555,16 @@ function omed_add_fitvids_script() {
   </script>
   <?php
 }
+
+function omed_call_svg4everybody() {
+  ?>
+  <script>
+    svg4everybody();
+  </script>
+  <?php
+}
+add_action( 'wp_footer' , 'omed_call_svg4everybody', 9999);
+
 
 function add_owl_carousel_script() {
   if ( !is_front_page() ) {
