@@ -871,6 +871,14 @@ table th[class*="col-"] {
     .site-content {
       padding-top: 80px; } }
 
+.nav-trigger span em, .nav-trigger span em:before, .nav-trigger span em:after {
+  display: block;
+  height: 2px;
+  width: 22px;
+  background-color: #444;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
+
 .header {
   position: fixed;
   top: 0;
@@ -886,7 +894,8 @@ table th[class*="col-"] {
   -webkit-transition: -webkit-transform .5s;
           transition: transform .5s;
   background-color: #fff;
-  box-shadow: 0px -2px 12px 0px rgba(208, 208, 208, 0.68); }
+  box-shadow: 0px -2px 8px 0px rgba(208, 208, 208, 0.68);
+  opacity: .97; }
   .header.is-hidden {
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%); }
@@ -898,53 +907,59 @@ table th[class*="col-"] {
     @media screen and (min-width: 783px) {
       .admin-bar .header {
         top: 32px; } }
-  .header .nav-trigger {
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
-    display: table;
-    height: 100%;
-    padding: 0 1rem;
-    font-size: .75rem;
-    text-transform: uppercase;
-    color: #444;
-    border-left: 1px solid #ddd; }
-    @media screen and (min-width: 61.25rem) {
-      .header .nav-trigger {
-        display: none; } }
-    .header .nav-trigger span {
-      display: table-cell;
-      vertical-align: middle; }
-      .header .nav-trigger span em {
-        display: block;
-        position: relative;
-        height: 2px;
-        width: 22px;
-        margin: 6px auto 14px;
-        background-color: #444;
-        -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-        -webkit-transition: background-color .2s;
-                transition: background-color .2s; }
-        .header .nav-trigger span em:before, .header .nav-trigger span em:after {
-          position: absolute;
-          content: "";
-          left: 0;
-          -webkit-transition: -webkit-transform .2s, -webkit-transform .2s;
-                  transition: transform .2s, -webkit-transform .2s; }
-        .header .nav-trigger span em:before {
-          -webkit-transform: translateY(-6px);
-                  transform: translateY(-6px); }
-        .header .nav-trigger span em:after {
-          -webkit-transform: translateY(6px);
-                  transform: translateY(6px); }
 
 .logo {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
+
+.nav-trigger {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: table;
+  height: 100%;
+  padding: 0 1rem;
+  font-size: .75rem;
+  text-transform: uppercase;
+  color: #444;
+  border-left: 1px solid #ddd; }
+  .nav-trigger:link, .nav-trigger:visited
+  .nav-trigger:hover, .nav-trigger:active {
+    text-decoration: none; }
+  @media screen and (min-width: 61.25rem) {
+    .nav-trigger {
+      display: none; } }
+  .nav-trigger span {
+    display: table-cell;
+    vertical-align: middle; }
+    .nav-trigger span em {
+      position: relative;
+      margin: 6px auto 14px;
+      -webkit-transition: background-color .2s;
+              transition: background-color .2s; }
+      .nav-open .nav-trigger span em {
+        background-color: #fff; }
+      .nav-trigger span em:before, .nav-trigger span em:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        -webkit-transition: -webkit-transform .2s, -webkit-transform .2s;
+                transition: transform .2s, -webkit-transform .2s; }
+      .nav-trigger span em:before {
+        -webkit-transform: translateY(-6px);
+                transform: translateY(-6px); }
+        .nav-open .nav-trigger span em:before {
+          -webkit-transform: rotate(-45deg);
+                  transform: rotate(-45deg); }
+      .nav-trigger span em:after {
+        -webkit-transform: translateY(6px);
+                transform: translateY(6px); }
+        .nav-open .nav-trigger span em:after {
+          -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg); }
 
 .navigation {
   position: absolute;
