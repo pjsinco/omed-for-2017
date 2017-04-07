@@ -1,4 +1,3 @@
-
 <header class="header container-fluid--alt">
 
   <div class="logo">
@@ -17,7 +16,7 @@
       </span>
     </a> <!-- .nav-trigger -->
 
-    <ul class="navigation">
+    <ul class="navigation container-fluid--alt">
       <li><a href="#">Physicians</a></li>
       <li><a href="#">Residents</a></li>
       <li><a href="#">Students</a></li>

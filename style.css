@@ -156,6 +156,25 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .bordered {
   border: 1px solid #ddd; }
 
+@-webkit-keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
+
+@keyframes fadeInFromRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0); } }
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -965,17 +984,25 @@ table th[class*="col-"] {
   position: absolute;
   z-index: 2;
   top: 60px;
-  left: 0;
+  right: 0;
   width: 100%;
-  display: none;
+  max-height: 0;
   background-color: #fff;
-  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.2); }
+  /*box-shadow: 0 14px 20px rgba(0,0,0,.2);*/
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-transition: max-height .3s, background-color .3s;
+          transition: max-height .3s, background-color .3s; }
   .nav-open .navigation {
-    display: block; }
+    max-height: 100vh;
+    background-color: #d53847; }
+  @media screen and (min-width: 30rem) {
+    .navigation {
+      width: 300px; } }
   @media screen and (min-width: 61.25rem) {
     .navigation {
       position: relative;
       top: 0;
+      width: 100%;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -985,12 +1012,34 @@ table th[class*="col-"] {
           -ms-flex-align: center;
               align-items: center;
       vertical-align: middle;
-      box-shadow: none; } }
+      /*box-shadow: none;*/
+      border-bottom: none;
+      max-height: none; } }
   @media screen and (min-width: 61.25rem) {
     .navigation > li:not(:last-child) {
       margin-right: 4rem; } }
   .navigation > li {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    opacity: 0; }
+    @media screen and (min-width: 61.25rem) {
+      .navigation > li {
+        opacity: 1; } }
+    .nav-open .navigation > li {
+      -webkit-animation-name: fadeInFromRight;
+              animation-name: fadeInFromRight;
+      -webkit-animation-duration: .5s;
+              animation-duration: .5s;
+      -webkit-animation-fill-mode: forwards;
+              animation-fill-mode: forwards; }
+    .navigation > li:nth-child(2) {
+      -webkit-animation-delay: .1s;
+              animation-delay: .1s; }
+    .navigation > li:nth-child(3) {
+      -webkit-animation-delay: .2s;
+              animation-delay: .2s; }
+    .navigation > li:nth-child(4) {
+      -webkit-animation-delay: .3s;
+              animation-delay: .3s; }
     @media screen and (min-width: 61.25rem) {
       .navigation > li {
         display: inline-block; } }

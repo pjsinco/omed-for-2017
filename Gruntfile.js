@@ -78,6 +78,13 @@ module.exports = function(grunt) {
           message: 'Babelified!',
         },
       },
+
+      php: {
+        options: {
+          title: 'PHP',
+          message: 'PHP File Updated!',
+        },
+      },
     
     },
 
@@ -102,7 +109,7 @@ module.exports = function(grunt) {
       },
       
       sass: {
-        files: ['**/*.scss'],
+        files: ['./**/*.scss'],
         tasks: ['sass:dist', 'notify:sass', 'autoprefixer:css'],
       },
 
@@ -117,7 +124,8 @@ module.exports = function(grunt) {
       },
 
       php: {
-        files: ['**/*.php'],
+        files: ['./**/*.php'],
+        tasks: ['notify:php'],
       },
     
     }, // watch

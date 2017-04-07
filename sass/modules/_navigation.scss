@@ -3,24 +3,34 @@
   position: absolute;
   z-index: 2;
   top: $header-height-small;
-  left: 0;
+  right: 0;
   width: 100%;
-  display: none;
+  max-height: 0;
   background-color: $white;
-  box-shadow: 0 14px 20px rgba(0,0,0,.2);
+  /*box-shadow: 0 14px 20px rgba(0,0,0,.2);*/
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  transition: max-height .3s, background-color .3s;
   @include clearfix;
 
   .nav-open & {
-    display: block;
+    max-height: 100vh;
+    background-color: $primarycolor;
+  }
+
+  @include breakpoint($screen $medium-start) {
+    width: 300px;
   }
   
   @include breakpoint($screen $navflip) {
     position: relative;
     top: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     vertical-align: middle;
-    box-shadow: none;
+    /*box-shadow: none;*/
+    border-bottom: none;
+    max-height: none;
   }
 
   & > li:not(:last-child) {
@@ -31,6 +41,29 @@
 
   & > li {
     margin-bottom: 0;
+    opacity: 0;
+
+    @include breakpoint($screen $navflip) {
+      opacity: 1; 
+    }
+
+    .nav-open & {
+      animation-name: fadeInFromRight;
+      animation-duration: .5s;
+      animation-fill-mode: forwards;
+    }
+
+    &:nth-child(2) {
+      animation-delay: .1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: .2s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: .3s;
+    }
 
     @include breakpoint($screen $navflip) {
       display: inline-block;
