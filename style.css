@@ -951,6 +951,12 @@ table th[class*="col-"] {
   @media screen and (min-width: 61.25rem) {
     .nav-trigger {
       display: none; } }
+  .nav-trigger:hover span em:before {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px); }
+  .nav-trigger:hover span em:after {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px); }
   .nav-trigger span {
     display: table-cell;
     vertical-align: middle; }
