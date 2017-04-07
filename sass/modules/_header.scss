@@ -12,7 +12,7 @@
   will-change: transform;
   transition: transform .5s;
   background-color: $white;
-  box-shadow: 0px -2px 12px 0px #d0d0d0;
+  box-shadow: 0px -2px 12px 0px rgba(208,208,208,.68);
   @include clearfix;
 
   &.is-hidden {
@@ -47,6 +47,38 @@
 
     @include breakpoint($screen $navflip) {
       display: none;
+    }
+
+    & span {
+      display: table-cell;
+      vertical-align: middle;
+
+      & em {
+        display: block;
+        position: relative;
+        height: 2px;
+        width: 22px;
+        margin: 6px auto 14px;
+        background-color: $font-color;
+        backface-visibility: hidden;
+        transition: background-color .2s;
+
+        &:before,
+        &:after {
+          position: absolute;
+          content: "";
+          left: 0;
+          transition: transform .2s, -webkit-transform .2s;
+        }
+
+        &:before {
+          transform: translateY(-6px);
+        }
+
+        &:after {
+          transform: translateY(6px);
+        }
+      }
     }
   }
 }

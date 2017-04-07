@@ -2,7 +2,6 @@
 
 jQuery(document).ready(($) => {
 
-
   let scrolling = false,
       currentTop = 0,
       previousTop = 0,
@@ -32,7 +31,6 @@ jQuery(document).ready(($) => {
     scrolling = false;
   };
 
-  
 
   $(window).on('scroll', () => {
 
@@ -47,4 +45,8 @@ jQuery(document).ready(($) => {
 
   });
 
+  $mainHeader.on('click', '.nav-trigger', (evt) => {
+    evt.preventDefault();
+    $mainHeader.toggleClass('nav-open');
+  });
 });

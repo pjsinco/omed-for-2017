@@ -3,7 +3,15 @@
   display: inline-block;
   float: right;
   height: 100%;
-  padding-right: 5%;
+  padding-right: 3.4375rem;
+
+  @include breakpoint($screen $medium-start) {
+    padding-right: 2.4375rem;
+  }
+
+  @include breakpoint($screen $large-minor-start) {
+    padding-right: 3.4375rem;
+  }
 
   @include breakpoint($screen $navflip) {
     display: flex;

@@ -5,9 +5,14 @@
   top: $header-height-small;
   left: 0;
   width: 100%;
+  display: none;
   background-color: $white;
   box-shadow: 0 14px 20px rgba(0,0,0,.2);
   @include clearfix;
+
+  .nav-open & {
+    display: block;
+  }
   
   @include breakpoint($screen $navflip) {
     position: relative;

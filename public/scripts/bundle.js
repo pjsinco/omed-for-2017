@@ -40,5 +40,10 @@ jQuery(document).ready(function ($) {
       !window.requestAnimationFrame ? setTimeout(autoHideHeader, 250) : requestAnimationFrame(autoHideHeader);
     }
   });
+
+  $mainHeader.on('click', '.nav-trigger', function (evt) {
+    evt.preventDefault();
+    $mainHeader.toggleClass('nav-open');
+  });
 });
 //# sourceMappingURL=bundle.js.map
