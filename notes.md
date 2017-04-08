@@ -8,3 +8,5 @@
 * [Sloped edges with consistent angle in CSS • CSS & HTML • Kilian Valkhof](https://kilianvalkhof.com/2017/design/sloped-edges-with-consistent-angle-in-css/)
 
 * [Animating your hero header - CSS Animation](https://cssanimation.rocks/animating-hero-header/)
+
+* [css transform, jagged edges in chrome - Stack Overflow](http://stackoverflow.com/questions/6492027/css-transform-jagged-edges-in-chrome)
