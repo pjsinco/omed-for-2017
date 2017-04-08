@@ -1,5 +1,4 @@
-
-<header class="header">
+<header class="header container-fluid--alt">
 
   <div class="logo">
     <a href="<?php echo esc_html( home_url('/') ); ?>">
@@ -21,6 +20,13 @@
       <li><a href="#">Physicians</a></li>
       <li><a href="#">Residents</a></li>
       <li><a href="#">Students</a></li>
+      <li>
+        <a href="http://osteopathic.org">
+          <svg class="icon icon-omed-logo-plain" preserveAspectRatio="xMidYMid meet" width="70" height="33">
+            <use xlink:href="<?php echo get_template_directory_uri(); ?>/public/defs.svg?version=<?php echo filemtime(get_template_directory() . '/public/defs.svg'); ?>#aoaLogo" />
+          </svg>
+        </a>
+      </li>
     </ul>
     
   </nav> <!-- .primary-nav -->
