@@ -11,6 +11,7 @@ $splash_body = get_field( 'omed_splash_body', $post->ID );
 
 ?>
 <section class="splash splash--<?php if ( is_page()): global $post; if ( isset( $post ) ): echo $post->post_name; endif; endif; ?> <?php if ( is_front_page() ): echo 'splash--nomargin'; endif; ?>">
+  <div class="splash__border--top"></div>
   <div class="wrap">
     <div class="splash__block container-fluid" style="visibility: hidden;">
       <div class="splash__header">
@@ -21,5 +22,6 @@ $splash_body = get_field( 'omed_splash_body', $post->ID );
       </div>
     </div> <!-- .splash__block -->
   </div> <!-- .container-fluid -->
+  <div class="splash__border--bottom"></div>
 </section> <!-- .splash -->
 
