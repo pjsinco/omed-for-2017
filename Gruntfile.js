@@ -8,6 +8,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-svgstore");
   grunt.loadNpmTasks("grunt-babel");
   grunt.loadNpmTasks("grunt-contrib-imagemin");
+  grunt.loadNpmTasks("grunt-newer");
 
   grunt.initConfig({
 
@@ -128,11 +129,11 @@ module.exports = function(grunt) {
 
       images: {
         files: ['images/**/*.{jpg,gif,png}'],
-        tasks: ['imagemin', 'notify:images'],
+        tasks: ['newer:imagemin', 'notify:images'],
       },
       
       sass: {
-        files: ['./**/*.scss'],
+        files: ['sass/**/*.scss'],
         tasks: ['sass:dist', 'notify:sass', 'autoprefixer:css'],
       },
 
@@ -157,5 +158,6 @@ module.exports = function(grunt) {
   
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('svg', ['svgmin:dist', 'svgstore']);
+  grunt.registerTask('images', ['newer:imagemin']);
 }; // exports
 
