@@ -27,6 +27,13 @@
     &:after {
       transform: translateY(4px);
     }
+
+    .nav-open & {
+      &:before,
+      &:after {
+        transform: rotate(0deg);
+      }
+    }
   }
 
   & span {

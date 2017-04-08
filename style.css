@@ -957,6 +957,9 @@ table th[class*="col-"] {
   .nav-trigger:hover span em:after {
     -webkit-transform: translateY(4px);
             transform: translateY(4px); }
+  .nav-open .nav-trigger:hover span em:before, .nav-open .nav-trigger:hover span em:after {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
   .nav-trigger span {
     display: table-cell;
     vertical-align: middle; }
