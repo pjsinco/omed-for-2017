@@ -175,6 +175,32 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
+@-webkit-keyframes fade-in-slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem); }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+@keyframes fade-in-slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem); }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+@-webkit-keyframes rotate-up {
+  100% {
+    -webkit-transform: rotateZ(-4deg);
+            transform: rotateZ(-4deg); } }
+@keyframes rotate-up {
+  100% {
+    -webkit-transform: rotateZ(-4deg);
+            transform: rotateZ(-4deg); } }
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -1144,7 +1170,9 @@ table th[class*="col-"] {
 .splash--nomargin {
   margin-bottom: 0 !important; }
 .splash--home-page:before {
-  background-image: url(public/images/omed-splash-drumcorps-1440.jpg); }
+  background-image: url(public/images/omed-splash-drumcorps-1440.jpg);
+  -webkit-animation: fade-in-slide-down 2s cubic-bezier(0, 0.5, 0, 1) forwards;
+          animation: fade-in-slide-down 2s cubic-bezier(0, 0.5, 0, 1) forwards; }
 .splash:after {
   content: "";
   position: absolute;
@@ -1155,8 +1183,8 @@ table th[class*="col-"] {
   background-color: #fff;
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
-  -webkit-transform: rotate(-4deg);
-          transform: rotate(-4deg); }
+  -webkit-animation: rotate-up 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+          animation: rotate-up 0.5s cubic-bezier(0, 0.5, 0, 1) forwards; }
 
 .splash__block {
   position: absolute;
@@ -1172,19 +1200,19 @@ table th[class*="col-"] {
   top: 0;
   left: 0;
   right: 0;
-  background-image: -webkit-linear-gradient(left, #d53847, #5c419a 90%);
-  background-image: linear-gradient(to right, #d53847, #5c419a 90%); }
+  background-image: -webkit-linear-gradient(left, #d53847, #d53847 33%, #5c419a);
+  background-image: linear-gradient(to right, #d53847, #d53847 33%, #5c419a); }
 
 .splash__border--bottom {
   left: -5%;
   right: -5%;
   bottom: -10px;
   z-index: 2;
-  background-image: -webkit-linear-gradient(right, #d53847, #5c419a 90%);
-  background-image: linear-gradient(to left, #d53847, #5c419a 90%);
+  background-image: -webkit-linear-gradient(right, #d53847, #d53847 33%, #5c419a);
+  background-image: linear-gradient(to left, #d53847, #d53847 33%, #5c419a);
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
-  -webkit-transform: rotate(-4deg);
-          transform: rotate(-4deg);
+  -webkit-animation: rotate-up 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+          animation: rotate-up 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }

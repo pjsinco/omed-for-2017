@@ -50,6 +50,7 @@
     &:before {
       @extend %splash-before-base;
       background-image: url(public/images/omed-splash-drumcorps-1440.jpg);
+      animation: fade-in-slide-down 2s cubic-bezier(0, 0.5, 0, 1) forwards;
     }
   }
 
@@ -62,7 +63,7 @@
     height: 10rem;
     background-color: $white;
     transform-origin: 0 0;
-    transform: rotate(-4deg);
+    animation: rotate-up .5s cubic-bezier(0,.5,0,1) forwards;
   }
 }
 
@@ -83,7 +84,7 @@
   top: 0;
   left: 0;
   right: 0;
-  background-image: linear-gradient(to right, $primarycolor, $accentcolor 90%);
+  background-image: linear-gradient(to right, $primarycolor, $primarycolor 33%, $accentcolor);
 }
 
 .splash__border--bottom {
@@ -92,8 +93,8 @@
   right: -5%;
   bottom: -10px;
   z-index: 2;
-  background-image: linear-gradient(to left, $primarycolor, $accentcolor 90%);
+  background-image: linear-gradient(to left, $primarycolor, $primarycolor 33%, $accentcolor);
   transform-origin: 0 0;
-  transform: rotate(-4deg);
+  animation: rotate-up .5s cubic-bezier(0,.5,0,1) forwards;
   backface-visibility: hidden;
 }

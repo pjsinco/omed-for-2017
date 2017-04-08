@@ -9,5 +9,23 @@
     opacity: 1;
     transform: translateX(0);
   }
+}
 
+@keyframes fade-in-slide-down {
+
+  0% {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rotate-up {
+  100% {
+    transform: rotateZ(-4deg);
+  }
 }
