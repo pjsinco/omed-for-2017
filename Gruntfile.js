@@ -7,11 +7,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-svgmin");
   grunt.loadNpmTasks("grunt-svgstore");
   grunt.loadNpmTasks("grunt-babel");
+  grunt.loadNpmTasks("grunt-contrib-imagemin");
+  grunt.loadNpmTasks("grunt-newer");
 
   grunt.initConfig({
 
     svgstore: {
-
       default: {
         files: {
           'public/defs.svg': ['images/svg/minified/*.svg'],
@@ -35,6 +36,17 @@ module.exports = function(grunt) {
           dest: 'images/svg/minified',
         }]
       }
+    },
+
+    imagemin: {
+      default: {
+        files: [{
+          expand: true,
+          cwd: 'images',
+          src: ['**/*.{png,jpg,gif}'],
+          dest: 'public/images',
+        }],
+      },
     },
 
     sass: {
@@ -72,6 +84,13 @@ module.exports = function(grunt) {
         },
       },
 
+      images: {
+        options: {
+          title: 'Images',
+          message: 'Optimized!',
+        },
+      },
+
       scripts: {
         options: {
           title: 'Scripts',
@@ -81,8 +100,8 @@ module.exports = function(grunt) {
 
       php: {
         options: {
-          title: 'PHP',
-          message: 'PHP File Updated!',
+          title: 'PHP File',
+          message: 'Updated!',
         },
       },
     
@@ -107,9 +126,14 @@ module.exports = function(grunt) {
       options: {
         livereload: true,
       },
+
+      images: {
+        files: ['images/**/*.{jpg,gif,png}'],
+        tasks: ['newer:imagemin', 'notify:images'],
+      },
       
       sass: {
-        files: ['./**/*.scss'],
+        files: ['sass/**/*.scss'],
         tasks: ['sass:dist', 'notify:sass', 'autoprefixer:css'],
       },
 
@@ -134,6 +158,6 @@ module.exports = function(grunt) {
   
   grunt.registerTask('default', ['watch']);
   grunt.registerTask('svg', ['svgmin:dist', 'svgstore']);
-
+  grunt.registerTask('images', ['newer:imagemin']);
 }; // exports
 

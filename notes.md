@@ -3,3 +3,8 @@
 
 # SVG
 * [Best Practice: SVG Wordpress like a Boss - example - Roots Discourse](https://discourse.roots.io/t/best-practice-svg-wordpress-like-a-boss/6280)
+
+# Angles
+* [Sloped edges with consistent angle in CSS • CSS & HTML • Kilian Valkhof](https://kilianvalkhof.com/2017/design/sloped-edges-with-consistent-angle-in-css/)
+
+* [Animating your hero header - CSS Animation](https://cssanimation.rocks/animating-hero-header/)
