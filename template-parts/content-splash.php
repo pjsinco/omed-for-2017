@@ -15,12 +15,12 @@ $splash_body = get_field( 'omed_splash_body', $post->ID );
     <div class="splash__border--top"></div>
     <div class="wrap">
       <div class="splash__block container-fluid">
-        <div class="splash__header">
+        <h1 class="splash__header">
           <?php if ($splash_header): echo $splash_header; endif; ?>
-        </div>
-        <div class="splash__body">
+        </h1>
+        <p class="splash__body">
           <?php if ($splash_body): echo $splash_body; endif; ?>
-        </div>
+        </p>
       </div> <!-- .splash__block -->
     </div> <!-- .container-fluid -->
     <div class="splash__border--bottom"></div>

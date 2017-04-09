@@ -1199,15 +1199,41 @@ table th[class*="col-"] {
   bottom: 0;
   width: 100%;
   height: 33%;
+  padding-top: 1rem;
+  padding-bottom: 6.5rem;
   background-color: #d53847;
-  opacity: .75;
+  opacity: .85;
   color: #fff; }
+  @media screen and (min-width: 41.5rem) {
+    .splash__block {
+      width: auto;
+      left: 2rem;
+      right: 2rem;
+      padding-bottom: 7.5rem; } }
+
+.splash__header {
+  margin-bottom: 0;
+  padding: 0;
+  font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
+  color: inherit;
+  border: 0; }
 
 .splash__body {
-  width: 100%; }
-  @media screen and (min-width: 48rem) {
+  width: 100%;
+  line-height: 1.5;
+  color: inherit;
+  /*@include breakpoint($screen $large-start) {*/
+  /*width: 50%;*/
+  /*}*/ }
+  @media screen and (min-width: 36rem) {
     .splash__body {
-      width: 50%; } }
+      width: 80%; } }
+  @media screen and (min-width: 41.5rem) {
+    .splash__body {
+      width: 80%; } }
 
 .splash__border--top {
   top: 0;
