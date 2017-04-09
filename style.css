@@ -1109,6 +1109,12 @@ table th[class*="col-"] {
           .navigation > li > a:active {
             color: #d53847; } }
 
+.pageblock {
+  margin-bottom: 3em; }
+  @media screen and (min-width: 48rem) {
+    .pageblock {
+      margin-bottom: 8em; } }
+
 .primary-nav {
   display: inline-block;
   float: right;
@@ -1134,20 +1140,27 @@ table th[class*="col-"] {
 
 .splash--home-page {
   position: relative;
-  /*top: $header-height-small;*/
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 80vh;
+  height: 50vh;
   font-size: 1em;
   font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat; }
+  overflow: hidden; }
   @media screen and (min-width: 61.25rem) {
     .splash--home-page {
-      /*height: 650px;*/
+      height: 80vh;
       /*top: $header-height;*/ } }
+
+.splash--home-page:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -5%;
+  right: -5%;
+  height: 10rem;
+  background-color: #fff;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards;
+          animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards; }
 
 .splash--home-page:before {
   content: "";
@@ -1161,7 +1174,10 @@ table th[class*="col-"] {
 
 .splash__border--top, .splash__border--bottom {
   position: absolute;
-  height: 12px; }
+  height: 8px; }
+  @media screen and (min-width: 30rem) {
+    .splash__border--top, .splash__border--bottom {
+      height: 12px; } }
 
 @media screen and (min-width: 61.25rem) {
   .splash {
@@ -1171,30 +1187,27 @@ table th[class*="col-"] {
   margin-bottom: 0 !important; }
 .splash--home-page:before {
   background-image: url(public/images/omed-splash-drumcorps-1440.jpg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   -webkit-animation: fade-in-slide-down 2s cubic-bezier(0, 0.5, 0, 1) forwards;
           animation: fade-in-slide-down 2s cubic-bezier(0, 0.5, 0, 1) forwards; }
-.splash:after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: -5%;
-  right: -5%;
-  height: 10rem;
-  background-color: #fff;
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
-  -webkit-animation: rotate-up 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
-          animation: rotate-up 0.5s cubic-bezier(0, 0.5, 0, 1) forwards; }
 
 .splash__block {
   position: absolute;
-  bottom: -1vw;
-  padding-bottom: 1rem;
-  position: absolute; }
-  @media screen and (min-width: 30rem) {
-    .splash__block {
-      bottom: 5%;
-      border: none; } }
+  left: auto;
+  bottom: 0;
+  width: 100%;
+  height: 33%;
+  background-color: #d53847;
+  opacity: .75;
+  color: #fff; }
+
+.splash__body {
+  width: 100%; }
+  @media screen and (min-width: 48rem) {
+    .splash__body {
+      width: 50%; } }
 
 .splash__border--top {
   top: 0;
@@ -1206,13 +1219,13 @@ table th[class*="col-"] {
 .splash__border--bottom {
   left: -5%;
   right: -5%;
-  bottom: -10px;
+  bottom: 0;
   z-index: 2;
   background-image: -webkit-linear-gradient(right, #d53847, #d53847 33%, #5c419a);
   background-image: linear-gradient(to left, #d53847, #d53847 33%, #5c419a);
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
-  -webkit-animation: rotate-up 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
-          animation: rotate-up 0.5s cubic-bezier(0, 0.5, 0, 1) forwards;
+  -webkit-animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards;
+          animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }

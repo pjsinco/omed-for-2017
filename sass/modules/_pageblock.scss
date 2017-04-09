@@ -1,0 +1,9 @@
+.pageblock {
+
+  margin-bottom: 3em;
+
+  @include breakpoint($screen $large-start) {
+    margin-bottom: 8em;
+  }
+
+}
