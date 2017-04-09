@@ -42,8 +42,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
       padding-left: 2rem; } }
   @media screen and (min-width: 65rem) {
     .container-fluid {
-      padding-right: 0 !important;
-      padding-left: 0 !important; } }
+      /*padding-right: 0 !important;*/
+      /*padding-left: 0 !important;*/ } }
 
 .wrap {
   box-sizing: border-box;
@@ -1140,14 +1140,20 @@ table th[class*="col-"] {
 
 .splash--home-page {
   position: relative;
-  height: 50vh;
+  /*height: 50vh;*/
+  height: 325px;
   font-size: 1em;
   font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden; }
+  @media screen and (min-width: 41.5rem) {
+    .splash--home-page {
+      height: 400px; } }
+  @media screen and (min-width: 48rem) {
+    .splash--home-page {
+      height: 500px; } }
   @media screen and (min-width: 61.25rem) {
     .splash--home-page {
-      height: 80vh;
-      /*top: $header-height;*/ } }
+      height: 650px; } }
 
 .splash--home-page:after {
   content: "";
@@ -1186,12 +1192,26 @@ table th[class*="col-"] {
 .splash--nomargin {
   margin-bottom: 0 !important; }
 .splash--home-page:before {
-  background-image: url(public/images/omed-splash-drumcorps-1440.jpg);
+  /*background-image: url(public/images/omed-splash-drumcorps-1440.jpg);*/
+  background-image: url(public/images/omed-2016-67.jpg);
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   -webkit-animation: fade-in-slide-down 2s cubic-bezier(0, 0.5, 0, 1) forwards;
           animation: fade-in-slide-down 2s cubic-bezier(0, 0.5, 0, 1) forwards; }
+  @media screen and (min-width: 36rem) {
+    .splash--home-page:before {
+      background-position: center 50%; } }
+  @media screen and (min-width: 41.5rem) {
+    .splash--home-page:before {
+      /*background-position: center 40%;*/ } }
+  @media screen and (min-width: 48rem) {
+    .splash--home-page:before {
+      background-position: center 40%; } }
+
+.splash__content {
+  position: relative;
+  height: 100%; }
 
 .splash__block {
   position: absolute;
@@ -1200,16 +1220,29 @@ table th[class*="col-"] {
   width: 100%;
   height: 33%;
   padding-top: 1rem;
+  padding-right: 1rem;
   padding-bottom: 6.5rem;
+  padding-left: 1rem;
   background-color: #d53847;
   opacity: .85;
   color: #fff; }
-  @media screen and (min-width: 41.5rem) {
+  @media screen and (min-width: 30rem) {
+    .splash__block {
+      padding-right: 2rem;
+      padding-left: 2rem; } }
+  @media screen and (min-width: 36rem) {
     .splash__block {
       width: auto;
       left: 2rem;
       right: 2rem;
       padding-bottom: 7.5rem; } }
+  @media screen and (min-width: 48rem) {
+    .splash__block {
+      right: 50%;
+      height: 40%; } }
+  @media screen and (min-width: 1040px) {
+    .splash__block {
+      /*left: 0;*/ } }
 
 .splash__header {
   margin-bottom: 0;
@@ -1220,6 +1253,11 @@ table th[class*="col-"] {
   line-height: 1.5;
   color: inherit;
   border: 0; }
+  @media screen and (min-width: 48rem) {
+    .splash__header {
+      margin-bottom: .25rem;
+      font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 2rem; } }
 
 .splash__body {
   width: 100%;
@@ -1231,9 +1269,10 @@ table th[class*="col-"] {
   @media screen and (min-width: 36rem) {
     .splash__body {
       width: 80%; } }
-  @media screen and (min-width: 41.5rem) {
+  @media screen and (min-width: 48rem) {
     .splash__body {
-      width: 80%; } }
+      font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      width: 100%; } }
 
 .splash__border--top {
   top: 0;

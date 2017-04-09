@@ -2,14 +2,22 @@ $splash-line-height-small: 1.5;
 
 %splash-base {
   position: relative;
-  height: 50vh;
+  /*height: 50vh;*/
+  height: 325px;
   font-size: 1em;
   font-family: $font-book;
   overflow: hidden;
 
+  @include breakpoint($screen $medium-minor-minor-start) {
+    height: 400px;
+  }
+
+  @include breakpoint($screen $large-start) {
+    height: 500px;
+  }
+
   @include breakpoint($screen $navflip) {
-    height: 80vh;
-    /*top: $header-height;*/
+    height: 650px;
   }
 }
 
@@ -61,11 +69,28 @@ $splash-line-height-small: 1.5;
 
     &:before {
       @extend %splash-before-base;
-      background-image: url(public/images/omed-splash-drumcorps-1440.jpg);
+      /*background-image: url(public/images/omed-splash-drumcorps-1440.jpg);*/
+      background-image: url(public/images/omed-2016-67.jpg);
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
       animation: fade-in-slide-down 2s cubic-bezier(0, 0.5, 0, 1) forwards;
+
+      @include breakpoint($screen $medium-minor-start) {
+        background-position: center 50%;
+      }
+
+      @include breakpoint($screen $medium-minor-minor-start) {
+        /*background-position: center 40%;*/
+      }
+
+      @include breakpoint($screen $large-start) {
+        background-position: center 40%;
+      }
+
+      @include breakpoint($screen $xlarge-minor-start) {
+        
+      }
     }
 
     &:after {
@@ -75,24 +100,44 @@ $splash-line-height-small: 1.5;
 
 }
 
-.splash__block {
+.splash__content {
+  position: relative;
+  height: 100%;
+}
 
+.splash__block {
   position: absolute;
   left: auto;
   bottom: 0;
   width: 100%;
   height: 33%;
   padding-top: 1rem;
+  padding-right: 1rem;
   padding-bottom: 6.5rem;
+  padding-left: 1rem;
   background-color: $primarycolor;
   opacity: .85;
   color: $white;
 
-  @include breakpoint($screen $medium-minor-minor-start) {
+  @include breakpoint($screen $medium-start) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  @include breakpoint($screen $medium-minor-start) {
     width: auto;
     left: 2rem;
     right: 2rem;
     padding-bottom: 7.5rem;
+  }
+
+  @include breakpoint($screen $large-start) {
+    right: 50%;
+    height: 40%;
+  }
+
+  @include breakpoint($screen 1040px) {
+    /*left: 0;*/
   }
   
 }
@@ -106,6 +151,12 @@ $splash-line-height-small: 1.5;
   line-height: $splash-line-height-small;
   color: inherit;
   border: 0;
+
+  @include breakpoint($screen $large-start) {
+    margin-bottom: .25rem;
+    font-family: $font-light;
+    font-size: 2rem;
+  }
 }
 
 .splash__body {
@@ -117,10 +168,10 @@ $splash-line-height-small: 1.5;
     width: 80%;
   }
 
-  @include breakpoint($screen $medium-minor-minor-start) {
-    width: 80%;
+  @include breakpoint($screen $large-start) {
+    font-family: $font-light;
+    width: 100%;
   }
-
 
   /*@include breakpoint($screen $large-start) {*/
     /*width: 50%;*/
