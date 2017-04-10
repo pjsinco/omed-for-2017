@@ -19,6 +19,8 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<?php echo file_get_contents( get_template_directory_uri() . '/public/defs.svg'); ?>
+
 <?php wp_footer(); ?>
 
 <?php omed_livereload(); ?>

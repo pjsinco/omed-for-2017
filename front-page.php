@@ -18,14 +18,33 @@
   // TODO just sketching for now
 ?>
 
-  <section class="wrap intro">
-    <div class="intro__context">
-      <svg class="icon icon-omed-logo-full" preserveAspectRatio="xMidYMid meet" width="186" height="76">
-        <use xlink:href="<?php echo get_template_directory_uri(); ?>/public/defs.svg?version=<?php echo filemtime(get_template_directory() . '/public/defs.svg'); ?>#omedLogoFull" />
+  <section class="intro wrap pageblock">
+    <div class="intro__focus">
+      <svg class="icon icon-omed-logo-full" preserveAspectRatio="xMidYMid meet" width="372" height="152">
+        <use xlink:href="#omedLogoFull" />
       </svg>
+      <i class="icon icon-arrow1"></i>
     </div>
-    <div class="intro__detail">
+    <div class="intro__context">
+      <ul>
+        <li>
+          <h5>Lorem ipsum dolor</h5>
+          <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </li>
+        <li>
+          <h5>Dolor lorem</h5>
+          <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </li>
+        <li>
+          <h5>Lorem ipsum dolor</h5>
+          <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </li>
+        
+      </ul>
     </div>
+    <svg class="icon icon-arrow1" preserveAspectRatio="xMidYMid meet" width="19" height="19">
+      <use xlink:href="#arrow1" />
+    </svg>
     
     
   </section>
