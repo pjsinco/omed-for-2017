@@ -50,19 +50,19 @@ $padding-xs-horizontal: .3125rem;
 $padding-small-vertical: .3125rem;
 $padding-small-horizontal: .625rem;
 
-$padding-large-vertal: 1.125rem;
+$padding-large-vertical: 1.125rem;
 $padding-large-horizontal: 1.25rem;
 
 /* Components */
-$border-radius-base: 4px !default;
-$border-radius-small: 3px !default;
-$border-radius-large: 6px !default;
+$border-radius-base: 2px !default;
+$border-radius-small: 1px !default;
+$border-radius-large: 3px !default;
 
 
 /* Buttons */
-$btn-border-radius-base: 4px;
-$btn-border-radius-small: 3px;
-$btn-border-radius-large: 6px;
+$btn-border-radius-base: 2px;
+$btn-border-radius-small: 1px;
+$btn-border-radius-large: 3px;
 
 $btn-default-color: $font-color;
 $btn-default-bg: transparent;

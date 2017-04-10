@@ -745,7 +745,7 @@ input, textarea {
   border-top-style: solid;
   border-right-style: solid;
   border-bottom-style: solid;
-  border-radius: 4px;
+  border-radius: 2px;
   border-color: #d53847;
   border-width: 1px;
   color: #444;
@@ -916,6 +916,125 @@ table th[class*="col-"] {
     .site-content {
       padding-top: 80px; } }
 
+.btn {
+  display: inline-block;
+  margin-bottom: 0;
+  font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  vertical-align: middle;
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px #d53847;
+  border: 0;
+  background-image: none;
+  background-color: transparent;
+  white-space: nowrap;
+  -webkit-transition: box-shadow .15s linear, color .15s linear, background-color .15s linear;
+          transition: box-shadow .15s linear, color .15s linear, background-color .15s linear;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  border-radius: 2px;
+  /*
+   * Button variations
+   */
+  /*
+   * Button colors
+   */
+  /*
+   * Button sizes
+   */
+  /*
+   * Button utilities
+   */ }
+  .btn:hover, .btn:focus {
+    text-decoration: none; }
+  .btn--default {
+    color: #444;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #717271; }
+    .btn--default:hover {
+      color: #fff;
+      background-color: #d53847;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .btn--primary, .btn--red {
+    color: #d53847;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #d53847; }
+    .btn--primary:hover, .btn--red:hover {
+      color: #fff;
+      background-color: #d53847;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .btn--reverse {
+    color: #fff;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #fff; }
+    .btn--reverse:hover {
+      color: #fff;
+      background-color: #d53847;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+    .btn--reverse:hover {
+      box-shadow: inset 0 0 0 1px #3d5ba9;
+      color: #d53847;
+      background-color: #3d5ba9; }
+  .btn--solid {
+    color: #fff;
+    background-color: #d53847;
+    box-shadow: inset 0 0 0 1px #d53847; }
+    .btn--solid:hover {
+      color: #fff;
+      background-color: #d53847;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+    .btn--solid:hover {
+      box-shadow: inset 0 0 0 1px #d53847;
+      color: #d53847;
+      background-color: #fff; }
+  .btn--red {
+    color: #d53847;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #d53847; }
+    .btn--red:hover {
+      color: #fff;
+      background-color: #d53847;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .btn--blue {
+    color: #3d5ba9;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #3d5ba9; }
+    .btn--blue:hover {
+      color: #fff;
+      background-color: #d53847;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .btn--purple {
+    color: #5c419a;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #5c419a; }
+    .btn--purple:hover {
+      color: #fff;
+      background-color: #d53847;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .btn--xs {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.4;
+    border-radius: 2px; }
+  .btn--sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    line-height: 1.4;
+    border-radius: 2px; }
+  .btn--lg {
+    padding: 1.125rem 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 3px; }
+  .btn--wide {
+    padding-left: 2rem;
+    padding-right: 2rem; }
+
+.omed-button {
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem; }
+
 .nav-trigger span em, .nav-trigger span em:before, .nav-trigger span em:after {
   display: block;
   height: 2px;
@@ -970,14 +1089,16 @@ table th[class*="col-"] {
 
 .intro {
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding-bottom: 2rem; }
+  /*padding-bottom: 2rem;*/ }
   .intro h5 {
     font-size: 1.3125rem;
     font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+.intro__block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
 
 .intro__focus {
   display: -webkit-box;
@@ -1007,6 +1128,11 @@ table th[class*="col-"] {
 
 .intro__context {
   padding-left: 3.375rem; }
+
+.intro__button {
+  position: relative;
+  top: 108px;
+  text-align: center; }
 
 .logo {
   position: absolute;
