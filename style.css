@@ -42,8 +42,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
       padding-left: 2rem; } }
   @media screen and (min-width: 65rem) {
     .container-fluid {
-      /*padding-right: 0 !important;*/
-      /*padding-left: 0 !important;*/ } }
+      padding-right: 0 !important;
+      padding-left: 0 !important; } }
 
 .wrap {
   box-sizing: border-box;
@@ -1242,7 +1242,7 @@ table th[class*="col-"] {
       height: 40%; } }
   @media screen and (min-width: 1040px) {
     .splash__block {
-      /*left: 0;*/ } }
+      left: 0; } }
 
 .splash__header {
   margin-bottom: 0;

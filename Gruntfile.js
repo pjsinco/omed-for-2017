@@ -104,6 +104,13 @@ module.exports = function(grunt) {
           message: 'Updated!',
         },
       },
+
+      svg: {
+        options: {
+          title: 'SVG',
+          message: 'Optimized!',
+        },
+      },
     
     },
 
@@ -144,7 +151,7 @@ module.exports = function(grunt) {
 
       svg: {
         files: ['images/svg/*.svg'],
-        tasks: ['svgmin:dist', 'svgstore'],
+        tasks: ['svgmin:dist', 'svgstore', 'notify:svg'],
       },
 
       php: {
