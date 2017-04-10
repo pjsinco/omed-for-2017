@@ -19,34 +19,37 @@
 ?>
 
   <section class="intro wrap pageblock">
-    <div class="intro__focus">
-      <svg class="icon icon-omed-logo-full" preserveAspectRatio="xMidYMid meet" width="372" height="152">
-        <use xlink:href="#omedLogoFull" />
-      </svg>
-      <i class="icon icon-arrow1"></i>
-    </div>
-    <div class="intro__context">
-      <ul>
-        <li>
-          <h5>Lorem ipsum dolor</h5>
-          <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </li>
-        <li>
-          <h5>Dolor lorem</h5>
-          <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </li>
-        <li>
-          <h5>Lorem ipsum dolor</h5>
-          <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </li>
-        
-      </ul>
-    </div>
+    <div class="intro__block">
+      <div class="intro__focus">
+        <svg class="icon icon-omed-logo-full" preserveAspectRatio="xMidYMid meet" width="372" height="152">
+          <use xlink:href="#omedLogoFull" />
+        </svg>
+        <i class="icon icon-arrow1"></i>
+      </div>
+      <div class="intro__context">
+        <ul>
+          <li>
+            <h5>Lorem ipsum dolor</h5>
+            <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li>
+            <h5>Dolor lorem</h5>
+            <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          <li>
+            <h5>Lorem ipsum dolor</h5>
+            <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </li>
+          
+        </ul>
+      </div>
+    </div> <!-- .intro__block -->
     <svg class="icon icon-arrow1" preserveAspectRatio="xMidYMid meet" width="19" height="19">
       <use xlink:href="#arrow1" />
     </svg>
-    
-    
+    <div class="intro__button">
+      <a class="btn btn--primary btn--lg btn--wide" href="#">Register Now</a>
+    </div>
   </section>
 
 

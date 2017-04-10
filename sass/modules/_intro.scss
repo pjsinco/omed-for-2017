@@ -4,13 +4,16 @@
 
 .intro {
   position: relative;
-  display: flex;
-  padding-bottom: 2rem;
+  /*padding-bottom: 2rem;*/
 
   & h5 {
     font-size: 1.3125rem;
     font-family: $font-medium;
   }
+}
+
+.intro__block {
+  display: flex;
 }
 
 .intro__focus {
@@ -46,4 +49,10 @@
 .intro__context {
   @extend %intro-block-base;
   padding-left: 3.375rem;
+}
+
+.intro__button {
+  position: relative;
+  top: 108px;
+  text-align: center;
 }
