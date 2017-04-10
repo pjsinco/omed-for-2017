@@ -4,4 +4,16 @@
 
   }
 
+  &-arrow1 {
+
+    .intro & {
+      position: absolute;
+      left: 50%;
+      bottom: -12px;
+      fill: $primarycolor;
+      opacity: .6;
+      transform: translateX(-50%);
+    }
+  }
+
 }
