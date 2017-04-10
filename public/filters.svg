@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="omedLogoFull-a" cx="508.2" cy=".73" r="95.89" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f1f2f2"/>
+      <stop offset="1" stop-color="#a7a9ac"/>
+    </radialGradient>
+    <radialGradient id="omedLogoFull-b" cx="409.74" cy="112.43" r="64.46" gradientUnits="userSpaceOnUse"> 
+      <stop offset="0" stop-color="#e6e7e8"/>
+      <stop offset="1" stop-color="#8a8c8e"/>
+    </radialGradient>
+    <linearGradient id="omedLogoFull-c" x1="383.21" y1="191.17" x2="408.86" y2="153.36" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d53847"/>
+      <stop offset="1" stop-color="#831924"/>
+    </linearGradient>
+  </defs>
+</svg>

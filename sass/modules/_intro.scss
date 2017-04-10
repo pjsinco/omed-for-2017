@@ -1,0 +1,49 @@
+%intro-block-base {
+  flex-basis: 50%;
+}
+
+.intro {
+  position: relative;
+  display: flex;
+  padding-bottom: 2rem;
+
+  & h5 {
+    font-size: 1.3125rem;
+    font-family: $font-medium;
+  }
+}
+
+.intro__focus {
+  @extend %intro-block-base;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -250px;
+    bottom: 4px;
+    right: 50%;
+    border-right: 1px dotted $primarycolor;
+  }
+
+//  &:after {
+//    content: "";
+//    position: absolute;
+//    width: 19px;
+//    height: 19px;
+//    right: 50%;
+//    bottom: 0;
+//    background-image: url('./images/svg/minified/arrow1.svg');
+//    background-repeat: no-repeat;
+//    background-size: 19px;
+//    transform: translateX(9px);
+//  }
+}
+
+.intro__context {
+  @extend %intro-block-base;
+  padding-left: 3.375rem;
+}
