@@ -42,8 +42,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
       padding-left: 2rem; } }
   @media screen and (min-width: 65rem) {
     .container-fluid {
-      padding-right: 0 !important;
-      padding-left: 0 !important; } }
+      /*padding-right: 0 !important;*/
+      /*padding-left: 0 !important;*/ } }
 
 .wrap {
   box-sizing: border-box;
@@ -175,6 +175,32 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
+@-webkit-keyframes fade-in-slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem); }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+@keyframes fade-in-slide-down {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem); }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+            transform: none; } }
+@-webkit-keyframes rotate-up {
+  100% {
+    -webkit-transform: rotateZ(-4deg);
+            transform: rotateZ(-4deg); } }
+@keyframes rotate-up {
+  100% {
+    -webkit-transform: rotateZ(-4deg);
+            transform: rotateZ(-4deg); } }
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -1083,6 +1109,12 @@ table th[class*="col-"] {
           .navigation > li > a:active {
             color: #d53847; } }
 
+.pageblock {
+  margin-bottom: 3em; }
+  @media screen and (min-width: 48rem) {
+    .pageblock {
+      margin-bottom: 8em; } }
+
 .primary-nav {
   display: inline-block;
   float: right;
@@ -1108,20 +1140,33 @@ table th[class*="col-"] {
 
 .splash--home-page {
   position: relative;
-  /*top: $header-height-small;*/
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 80vh;
+  /*height: 50vh;*/
+  height: 325px;
   font-size: 1em;
   font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat; }
+  overflow: hidden; }
+  @media screen and (min-width: 41.5rem) {
+    .splash--home-page {
+      height: 400px; } }
+  @media screen and (min-width: 48rem) {
+    .splash--home-page {
+      height: 500px; } }
   @media screen and (min-width: 61.25rem) {
     .splash--home-page {
-      /*height: 650px;*/
-      /*top: $header-height;*/ } }
+      height: 650px; } }
+
+.splash--home-page:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -5%;
+  right: -5%;
+  height: 10rem;
+  background-color: #fff;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards;
+          animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards; }
 
 .splash--home-page:before {
   content: "";
@@ -1135,7 +1180,10 @@ table th[class*="col-"] {
 
 .splash__border--top, .splash__border--bottom {
   position: absolute;
-  height: 12px; }
+  height: 8px; }
+  @media screen and (min-width: 30rem) {
+    .splash__border--top, .splash__border--bottom {
+      height: 12px; } }
 
 @media screen and (min-width: 61.25rem) {
   .splash {
@@ -1144,47 +1192,111 @@ table th[class*="col-"] {
 .splash--nomargin {
   margin-bottom: 0 !important; }
 .splash--home-page:before {
-  background-image: url(public/images/omed-splash-drumcorps-1440.jpg); }
-.splash:after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: -5%;
-  right: -5%;
-  height: 10rem;
-  background-color: #fff;
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
-  -webkit-transform: rotate(-4deg);
-          transform: rotate(-4deg); }
+  /*background-image: url(public/images/omed-splash-drumcorps-1440.jpg);*/
+  background-image: url(public/images/omed-2016-67.jpg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  -webkit-animation: fade-in-slide-down 2s cubic-bezier(0, 0.5, 0, 1) forwards;
+          animation: fade-in-slide-down 2s cubic-bezier(0, 0.5, 0, 1) forwards; }
+  @media screen and (min-width: 36rem) {
+    .splash--home-page:before {
+      background-position: center 50%; } }
+  @media screen and (min-width: 41.5rem) {
+    .splash--home-page:before {
+      /*background-position: center 40%;*/ } }
+  @media screen and (min-width: 48rem) {
+    .splash--home-page:before {
+      background-position: center 40%; } }
+
+.splash__content {
+  position: relative;
+  height: 100%; }
 
 .splash__block {
   position: absolute;
-  bottom: -1vw;
-  padding-bottom: 1rem;
-  position: absolute; }
+  left: auto;
+  bottom: 0;
+  width: 100%;
+  height: 33%;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 6.5rem;
+  padding-left: 1rem;
+  background-color: #d53847;
+  opacity: .85;
+  color: #fff; }
   @media screen and (min-width: 30rem) {
     .splash__block {
-      bottom: 5%;
-      border: none; } }
+      padding-right: 2rem;
+      padding-left: 2rem; } }
+  @media screen and (min-width: 36rem) {
+    .splash__block {
+      width: auto;
+      left: 2rem;
+      right: 2rem;
+      padding-bottom: 7.5rem; } }
+  @media screen and (min-width: 48rem) {
+    .splash__block {
+      right: 50%;
+      height: 40%; } }
+  @media screen and (min-width: 1040px) {
+    .splash__block {
+      /*left: 0;*/ } }
+
+.splash__header {
+  margin-bottom: 0;
+  padding: 0;
+  font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.5;
+  color: inherit;
+  border: 0; }
+  @media screen and (min-width: 48rem) {
+    .splash__header {
+      margin-bottom: .25rem;
+      font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 2rem; } }
+  @media screen and (min-width: 61.25rem) {
+    .splash__header {
+      font-size: 2.5rem; } }
+
+.splash__body {
+  width: 100%;
+  line-height: 1.5;
+  color: inherit;
+  /*@include breakpoint($screen $large-start) {*/
+  /*width: 50%;*/
+  /*}*/ }
+  @media screen and (min-width: 36rem) {
+    .splash__body {
+      width: 80%; } }
+  @media screen and (min-width: 48rem) {
+    .splash__body {
+      font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      width: 100%; } }
+  @media screen and (min-width: 61.25rem) {
+    .splash__body {
+      font-size: 1.3125rem; } }
 
 .splash__border--top {
   top: 0;
   left: 0;
   right: 0;
-  background-image: -webkit-linear-gradient(left, #d53847, #5c419a 90%);
-  background-image: linear-gradient(to right, #d53847, #5c419a 90%); }
+  background-image: -webkit-linear-gradient(left, #d53847, #d53847 33%, #5c419a);
+  background-image: linear-gradient(to right, #d53847, #d53847 33%, #5c419a); }
 
 .splash__border--bottom {
   left: -5%;
   right: -5%;
-  bottom: -10px;
+  bottom: 0;
   z-index: 2;
-  background-image: -webkit-linear-gradient(right, #d53847, #5c419a 90%);
-  background-image: linear-gradient(to left, #d53847, #5c419a 90%);
+  background-image: -webkit-linear-gradient(right, #d53847, #d53847 33%, #5c419a);
+  background-image: linear-gradient(to left, #d53847, #d53847 33%, #5c419a);
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
-  -webkit-transform: rotate(-4deg);
-          transform: rotate(-4deg);
+  -webkit-animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards;
+          animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }

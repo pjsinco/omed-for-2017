@@ -1,20 +1,36 @@
+$splash-line-height-small: 1.5;
+
 %splash-base {
   position: relative;
-  /*top: $header-height-small;*/
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 80vh;
+  /*height: 50vh;*/
+  height: 325px;
   font-size: 1em;
-  font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+  font-family: $font-book;
+  overflow: hidden;
 
-  @include breakpoint($screen $navflip) {
-    /*height: 650px;*/
-    /*top: $header-height;*/
+  @include breakpoint($screen $medium-minor-minor-start) {
+    height: 400px;
   }
+
+  @include breakpoint($screen $large-start) {
+    height: 500px;
+  }
+
+  @include breakpoint($screen $large-minor-minor-start) {
+    height: 650px;
+  }
+}
+
+%splash-after-base {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: -5%;
+  right: -5%;
+  height: 10rem;
+  background-color: $white;
+  transform-origin: 0 0;
+  animation: rotate-up .8s cubic-bezier(0,.5,0,1) forwards;
 }
 
 %splash-before-base {
@@ -30,12 +46,16 @@
 
 %splash-border-base {
   position: absolute;
-  height: 12px;
+  height: 8px;
+  
+  @include breakpoint($screen $medium-start) {
+    height: 12px;
+  }
 }
 
 .splash {
 
-  @include breakpoint($screen $navflip) {
+  @include breakpoint($screen $large-minor-minor-start) {
     /*top: $navbarheight;*/
     margin-bottom: 4.5rem;
   }
@@ -49,51 +69,140 @@
 
     &:before {
       @extend %splash-before-base;
-      background-image: url(public/images/omed-splash-drumcorps-1440.jpg);
+      /*background-image: url(public/images/omed-splash-drumcorps-1440.jpg);*/
+      background-image: url(public/images/omed-2016-67.jpg);
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      animation: fade-in-slide-down 2s cubic-bezier(0, 0.5, 0, 1) forwards;
+
+      @include breakpoint($screen $medium-minor-start) {
+        background-position: center 50%;
+      }
+
+      @include breakpoint($screen $medium-minor-minor-start) {
+        /*background-position: center 40%;*/
+      }
+
+      @include breakpoint($screen $large-start) {
+        background-position: center 40%;
+      }
+
+      @include breakpoint($screen $xlarge-minor-start) {
+        
+      }
+    }
+
+    &:after {
+      @extend %splash-after-base;
     }
   }
 
-  &:after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: -5%;
-    right: -5%;
-    height: 10rem;
-    background-color: $white;
-    transform-origin: 0 0;
-    transform: rotate(-4deg);
-  }
+}
+
+.splash__content {
+  position: relative;
+  height: 100%;
 }
 
 .splash__block {
   position: absolute;
-  bottom: -1vw;
-  padding-bottom: 1rem;
-  position: absolute;
+  left: auto;
+  bottom: 0;
+  width: 100%;
+  height: 33%;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 6.5rem;
+  padding-left: 1rem;
+  background-color: $primarycolor;
+  opacity: .85;
+  color: $white;
 
   @include breakpoint($screen $medium-start) {
-    bottom: 5%;
-    border: none;
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  @include breakpoint($screen $medium-minor-start) {
+    width: auto;
+    left: 2rem;
+    right: 2rem;
+    padding-bottom: 7.5rem;
+  }
+
+  @include breakpoint($screen $large-start) {
+    right: 50%;
+    height: 40%;
+  }
+
+  @include breakpoint($screen 1040px) {
+    /*left: 0;*/
+  }
+  
+}
+
+.splash__header {
+  margin-bottom: 0;
+  padding: 0;
+  font-family: $font-medium;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: $splash-line-height-small;
+  color: inherit;
+  border: 0;
+
+  @include breakpoint($screen $large-start) {
+    margin-bottom: .25rem;
+    font-family: $font-light;
+    font-size: 2rem;
+  }
+
+  @include breakpoint($screen $large-minor-minor-start) {
+    font-size: 2.5rem;
   }
 }
+
+.splash__body {
+  width: 100%;
+  line-height: $splash-line-height-small;
+  color: inherit;
+
+  @include breakpoint($screen $medium-minor-start) {
+    width: 80%;
+  }
+
+  @include breakpoint($screen $large-start) {
+    font-family: $font-light;
+    width: 100%;
+  }
+
+  @include breakpoint($screen $large-minor-minor-start) {
+    font-size: 1.3125rem;
+  }
+
+  /*@include breakpoint($screen $large-start) {*/
+    /*width: 50%;*/
+  /*}*/
+}
+
 
 .splash__border--top {
   @extend %splash-border-base;
   top: 0;
   left: 0;
   right: 0;
-  background-image: linear-gradient(to right, $primarycolor, $accentcolor 90%);
+  background-image: linear-gradient(to right, $primarycolor, $primarycolor 33%, $accentcolor);
 }
 
 .splash__border--bottom {
   @extend %splash-border-base;
   left: -5%;
   right: -5%;
-  bottom: -10px;
+  bottom: 0;
   z-index: 2;
-  background-image: linear-gradient(to left, $primarycolor, $accentcolor 90%);
+  background-image: linear-gradient(to left, $primarycolor, $primarycolor 33%, $accentcolor);
   transform-origin: 0 0;
-  transform: rotate(-4deg);
+  animation: rotate-up .8s cubic-bezier(0,.5,0,1) forwards;
   backface-visibility: hidden;
 }
