@@ -1258,6 +1258,9 @@ table th[class*="col-"] {
       margin-bottom: .25rem;
       font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 2rem; } }
+  @media screen and (min-width: 61.25rem) {
+    .splash__header {
+      font-size: 2.5rem; } }
 
 .splash__body {
   width: 100%;
@@ -1273,6 +1276,9 @@ table th[class*="col-"] {
     .splash__body {
       font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
       width: 100%; } }
+  @media screen and (min-width: 61.25rem) {
+    .splash__body {
+      font-size: 1.3125rem; } }
 
 .splash__border--top {
   top: 0;

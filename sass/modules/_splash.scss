@@ -16,7 +16,7 @@ $splash-line-height-small: 1.5;
     height: 500px;
   }
 
-  @include breakpoint($screen $navflip) {
+  @include breakpoint($screen $large-minor-minor-start) {
     height: 650px;
   }
 }
@@ -55,7 +55,7 @@ $splash-line-height-small: 1.5;
 
 .splash {
 
-  @include breakpoint($screen $navflip) {
+  @include breakpoint($screen $large-minor-minor-start) {
     /*top: $navbarheight;*/
     margin-bottom: 4.5rem;
   }
@@ -157,6 +157,10 @@ $splash-line-height-small: 1.5;
     font-family: $font-light;
     font-size: 2rem;
   }
+
+  @include breakpoint($screen $large-minor-minor-start) {
+    font-size: 2.5rem;
+  }
 }
 
 .splash__body {
@@ -171,6 +175,10 @@ $splash-line-height-small: 1.5;
   @include breakpoint($screen $large-start) {
     font-family: $font-light;
     width: 100%;
+  }
+
+  @include breakpoint($screen $large-minor-minor-start) {
+    font-size: 1.3125rem;
   }
 
   /*@include breakpoint($screen $large-start) {*/
