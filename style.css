@@ -1085,13 +1085,14 @@ table th[class*="col-"] {
   .highlightable:before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 19%;
     left: -5%;
     right: -5%;
     height: 305px;
     /*transform-origin: 0 0;*/
-    -webkit-transform: skewY(-4deg) translateY(-50%);
-            transform: skewY(-4deg) translateY(-50%);
+    /*transform: skewY(-4deg) translateY(-50%);*/
+    -webkit-transform: skewY(-4deg);
+            transform: skewY(-4deg);
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
     background-image: -webkit-linear-gradient(left, #d53847, #d53847 33%, #5c419a);
@@ -1140,8 +1141,8 @@ table th[class*="col-"] {
   -webkit-flex-basis: 32%;
       -ms-flex-preferred-size: 32%;
           flex-basis: 32%;
-  -webkit-transform: translateY(-5%);
-          transform: translateY(-5%); }
+  -webkit-transform: translateY(-9%);
+          transform: translateY(-9%); }
 
 .highlightable__header {
   font-size: 1.75rem; }

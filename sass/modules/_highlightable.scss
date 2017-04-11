@@ -12,12 +12,13 @@
   &:before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 19%;
     left: -5%;
     right: -5%;
     height: 305px;
     /*transform-origin: 0 0;*/
-    transform: skewY(-4deg) translateY(-50%);
+    /*transform: skewY(-4deg) translateY(-50%);*/
+    transform: skewY(-4deg);
     backface-visibility: hidden;
     background-image: linear-gradient(to right, $primarycolor, $primarycolor 33%, $accentcolor);
 
@@ -47,7 +48,7 @@
   flex-direction: column;
   justify-content: center;
   flex-basis: 32%;
-  transform: translateY(-5%);
+  transform: translateY(-9%);
 }
 
 .highlightable__header {
