@@ -1046,7 +1046,7 @@ table th[class*="col-"] {
 .header {
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 1000;
   /*display: flex;*/
   /*flex-direction: row;*/
   /*justify-content: space-between;*/
@@ -1073,25 +1073,94 @@ table th[class*="col-"] {
       .admin-bar .header {
         top: 32px; } }
 
+.highlightable__header, .highlightable__blurb {
+  margin-bottom: 1.3125rem;
+  font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff; }
+
 .highlightable {
   position: relative;
-  height: 485px;
+  height: 533px;
   overflow: hidden; }
+  .highlightable:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    right: -5%;
+    height: 305px;
+    /*transform-origin: 0 0;*/
+    -webkit-transform: skewY(-4deg) translateY(-50%);
+            transform: skewY(-4deg) translateY(-50%);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    background-image: -webkit-linear-gradient(left, #d53847, #d53847 33%, #5c419a);
+    background-image: linear-gradient(to right, #d53847, #d53847 33%, #5c419a); }
 
 .highlightable__block {
-  position: absolute;
-  top: 140px;
-  left: -5%;
-  right: -5%;
-  height: 305px;
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
-  -webkit-transform: skewY(-4deg);
-          transform: skewY(-4deg);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  background-image: -webkit-linear-gradient(left, #d53847, #d53847 33%, #5c419a);
-  background-image: linear-gradient(to right, #d53847, #d53847 33%, #5c419a); }
+  position: relative;
+  z-index: 10;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+
+.highlightable__body {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media screen and (min-width: 30rem) {
+    .highlightable__body {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+
+.highlightable__text {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-flex-basis: 32%;
+      -ms-flex-preferred-size: 32%;
+          flex-basis: 32%;
+  -webkit-transform: translateY(-5%);
+          transform: translateY(-5%); }
+
+.highlightable__header {
+  font-size: 1.75rem; }
+
+.highlightable__blurb {
+  font-size: 1.125rem;
+  line-height: 1.6; }
+
+.highlightable__imagecontainer {
+  position: relative;
+  margin-right: 2rem;
+  padding: 1rem;
+  /*max-width: 650px;*/
+  -webkit-flex-basis: 65%;
+      -ms-flex-preferred-size: 65%;
+          flex-basis: 65%;
+  border-radius: 3px;
+  box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17);
+  background-color: #fff; }
 
 .icon-omed-logo-full {
   width: 240px; }
