@@ -1,7 +1,10 @@
 $goToTwoCol: $large-start;
 
 %intro-block-base {
-  flex-basis: 50%;
+
+  @include breakpoint($screen $goToTwoCol) {
+    flex-basis: 50%;
+  }
 }
 
 .intro {
