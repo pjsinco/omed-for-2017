@@ -983,9 +983,9 @@ table th[class*="col-"] {
       background-color: #d53847;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
     .btn--reverse:hover {
-      box-shadow: inset 0 0 0 1px #3d5ba9;
-      color: #d53847;
-      background-color: #3d5ba9; }
+      box-shadow: inset 0 0 0 1px #d53847;
+      color: #fff;
+      background-color: #d53847; }
   .btn--solid {
     color: #fff;
     background-color: #d53847;
