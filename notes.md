@@ -10,3 +10,11 @@
 * [Animating your hero header - CSS Animation](https://cssanimation.rocks/animating-hero-header/)
 
 * [css transform, jagged edges in chrome - Stack Overflow](http://stackoverflow.com/questions/6492027/css-transform-jagged-edges-in-chrome)
+
+* [Angled Edges with CSS Masks and Transforms | Viget](https://www.viget.com/articles/angled-edges-with-css-masks-and-transforms)
+
+# Inspr
+* [Uses for Infinite Rainbow Gradients](http://codepen.io/mcdeeda/pen/VpRpww)
+
+# FX
+* [Simple Image Lazy Load and Fade](https://davidwalsh.name/lazyload-image-fade)
