@@ -1,18 +1,73 @@
+%highlightable-text-base {
+  margin-bottom: 1.3125rem;
+  font-family: $font-light;
+  color: $white;
+}
+
 .highlightable {
   position: relative;
-  height: 485px;
+  height: 533px;
   overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -5%;
+    right: -5%;
+    height: 305px;
+    /*transform-origin: 0 0;*/
+    transform: skewY(-4deg) translateY(-50%);
+    backface-visibility: hidden;
+    background-image: linear-gradient(to right, $primarycolor, $primarycolor 33%, $accentcolor);
+
+  }
 }
 
 .highlightable__block {
-  position: absolute;
-  top: 140px;
-  left: -5%;
-  right: -5%;
-  height: 305px;
-  transform-origin: 0 0;
-  transform: skewY(-4deg);
-  backface-visibility: hidden;
-  background-image: linear-gradient(to right, $primarycolor, $primarycolor 33%, $accentcolor);
+  position: relative;
+  z-index: 10;
+  top: 50%;
+  transform: translateY(-50%);
 
+}
+
+.highlightable__body {
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+
+  @include breakpoint($screen $medium-start) {
+    flex-direction: row; 
+  }  
+}
+
+.highlightable__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 32%;
+  transform: translateY(-5%);
+}
+
+.highlightable__header {
+  @extend %highlightable-text-base;
+  font-size: 1.75rem;
+}
+
+.highlightable__blurb {
+  @extend %highlightable-text-base;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.highlightable__imagecontainer {
+  position: relative;
+  margin-right: 2rem;
+  padding: 1rem;
+  /*max-width: 650px;*/
+  flex-basis: 65%;
+  border-radius: 3px;
+  box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17);
+  background-color: $white;
 }
