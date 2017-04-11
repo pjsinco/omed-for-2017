@@ -4,16 +4,35 @@
 
   }
 
+  &-omed-logo-full {
+    width: 240px;
+
+    @include breakpoint($screen $medium-minor-start) {
+      width: 300px;
+    }
+
+    @include breakpoint($screen $large-minor-minor-start) {
+      width: 100%;
+    }
+  }
+
   &-arrow1 {
 
     .intro & {
-      position: absolute;
-      left: 50%;
-      bottom: -12px;
-      fill: $primarycolor;
-      opacity: .6;
-      transform: translateX(-50%);
+
+      display: none;
+
+      @include breakpoint($screen $large-start) {
+        position: absolute;
+        left: 50%;
+        bottom: -12px;
+        display: block;
+        fill: $primarycolor;
+        opacity: .6;
+        transform: translateX(-50%);
+      }
     }
   }
+
 
 }

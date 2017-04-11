@@ -4,17 +4,19 @@ $splash-line-height-small: 1.5;
   position: relative;
   /*height: 50vh;*/
   height: 325px;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
   font-size: 1em;
   font-family: $font-book;
   overflow: hidden;
 
   @include breakpoint($screen $medium-minor-minor-start) {
     height: 400px;
+    margin-bottom: 3rem;
   }
 
   @include breakpoint($screen $large-start) {
     height: 500px;
+    margin-bottom: 5rem;
   }
 
   @include breakpoint($screen $large-minor-minor-start) {
