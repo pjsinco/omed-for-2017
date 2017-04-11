@@ -1073,6 +1073,26 @@ table th[class*="col-"] {
       .admin-bar .header {
         top: 32px; } }
 
+.highlightable {
+  position: relative;
+  height: 485px;
+  overflow: hidden; }
+
+.highlightable__block {
+  position: absolute;
+  top: 140px;
+  left: -5%;
+  right: -5%;
+  height: 305px;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transform: skewY(-4deg);
+          transform: skewY(-4deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-image: -webkit-linear-gradient(left, #d53847, #d53847 33%, #5c419a);
+  background-image: linear-gradient(to right, #d53847, #d53847 33%, #5c419a); }
+
 .icon-omed-logo-full {
   width: 240px; }
   @media screen and (min-width: 36rem) {
@@ -1094,10 +1114,11 @@ table th[class*="col-"] {
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%); } }
 
-.intro__focus, .intro__context {
-  -webkit-flex-basis: 50%;
-      -ms-flex-preferred-size: 50%;
-          flex-basis: 50%; }
+@media screen and (min-width: 48rem) {
+  .intro__focus, .intro__context {
+    -webkit-flex-basis: 50%;
+        -ms-flex-preferred-size: 50%;
+            flex-basis: 50%; } }
 
 .intro {
   position: relative;

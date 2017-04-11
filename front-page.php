@@ -54,6 +54,20 @@
 
 
 
+    <section class="highlightable container-fluid pageblock"  >
+      <div class="highlightable__block ">
+        <div class="highlightable__body">
+          <div class="highlightable__imagecontainer wow" data-wow-offset="200">
+            <img class="highlightable__image" src="" alt="">
+          </div> <!-- .highlightable__imagecontainer -->
+          <div class="highlightable__text">
+            <h5 class="highlightable__kicker">Lorem kicker</h5>
+            <h4 class="highlightable__header">Lorem ipsum dolor hiya</h4>
+            <a href="#" class="btn btn--sm btn--reverse">Learn more</a>
+          </div> <!-- .highlightable__text -->
+        </div> <!-- .highlightable__body -->
+      </div> <!-- .highlightable__block -->
+    </section>
 
 <?php 
   while ( have_posts() ): 
