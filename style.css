@@ -1073,14 +1073,26 @@ table th[class*="col-"] {
       .admin-bar .header {
         top: 32px; } }
 
+.icon-omed-logo-full {
+  width: 240px; }
+  @media screen and (min-width: 36rem) {
+    .icon-omed-logo-full {
+      width: 300px; } }
+  @media screen and (min-width: 61.25rem) {
+    .icon-omed-logo-full {
+      width: 100%; } }
 .intro .icon-arrow1 {
-  position: absolute;
-  left: 50%;
-  bottom: -12px;
-  fill: #d53847;
-  opacity: .6;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%); }
+  display: none; }
+  @media screen and (min-width: 48rem) {
+    .intro .icon-arrow1 {
+      position: absolute;
+      left: 50%;
+      bottom: -12px;
+      display: block;
+      fill: #d53847;
+      opacity: .6;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); } }
 
 .intro__focus, .intro__context {
   -webkit-flex-basis: 50%;
@@ -1098,7 +1110,21 @@ table th[class*="col-"] {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 2rem; }
+  @media screen and (min-width: 48rem) {
+    .intro__block {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      margin-bottom: 0; } }
 
 .intro__focus {
   display: -webkit-box;
@@ -1118,21 +1144,35 @@ table th[class*="col-"] {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
-  .intro__focus:before {
-    content: "";
-    position: absolute;
-    top: -250px;
-    bottom: 4px;
-    right: 50%;
-    border-right: 1px dotted #d53847; }
+  @media screen and (min-width: 48rem) {
+    .intro__focus:before {
+      content: "";
+      position: absolute;
+      top: -250px;
+      bottom: 4px;
+      right: 50%;
+      border-right: 1px dotted #d53847; } }
 
 .intro__context {
-  padding-left: 3.375rem; }
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1em;
+  padding-left: 1em; }
+  @media screen and (min-width: 30rem) {
+    .intro__context {
+      padding-right: 2rem;
+      padding-left: 2rem; } }
+  @media screen and (min-width: 48rem) {
+    .intro__context {
+      padding-left: 3.375rem; } }
 
 .intro__button {
   position: relative;
-  top: 108px;
+  top: 0;
   text-align: center; }
+  @media screen and (min-width: 48rem) {
+    .intro__button {
+      top: 108px; } }
 
 .logo {
   position: absolute;
@@ -1322,16 +1362,18 @@ table th[class*="col-"] {
   position: relative;
   /*height: 50vh;*/
   height: 325px;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
   font-size: 1em;
   font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   overflow: hidden; }
   @media screen and (min-width: 41.5rem) {
     .splash--home-page {
-      height: 400px; } }
+      height: 400px;
+      margin-bottom: 3rem; } }
   @media screen and (min-width: 48rem) {
     .splash--home-page {
-      height: 500px; } }
+      height: 500px;
+      margin-bottom: 5rem; } }
   @media screen and (min-width: 61.25rem) {
     .splash--home-page {
       height: 650px; } }

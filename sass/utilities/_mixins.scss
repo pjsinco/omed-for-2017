@@ -37,3 +37,22 @@
 @mixin clearfix() {
   @extend .clearfix;
 }
+
+@mixin edge-spacing( $goToZero: false ) {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 1em;
+  padding-left: 1em;
+
+  @include breakpoint($screen $medium-start) {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+
+  @if $goToZero {
+    @include breakpoint($screen $contentwidth + 2rem) {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+  }
+}
