@@ -175,6 +175,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
+@-webkit-keyframes slide {
+  from {
+    background-position-x: 0%; }
+  to {
+    background-position-x: 600vw; } }
+@keyframes slide {
+  from {
+    background-position-x: 0%; }
+  to {
+    background-position-x: 600vw; } }
 @-webkit-keyframes fade-in-slide-down {
   0% {
     opacity: 0;
@@ -920,6 +930,7 @@ table th[class*="col-"] {
   display: inline-block;
   margin-bottom: 0;
   font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
   vertical-align: middle;
   cursor: pointer;
   box-shadow: inset 0 0 0 1px #d53847;
@@ -1085,13 +1096,14 @@ table th[class*="col-"] {
   .highlightable:before {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 19%;
     left: -5%;
     right: -5%;
     height: 305px;
     /*transform-origin: 0 0;*/
-    -webkit-transform: skewY(-4deg) translateY(-50%);
-            transform: skewY(-4deg) translateY(-50%);
+    /*transform: skewY(-4deg) translateY(-50%);*/
+    -webkit-transform: skewY(-4deg);
+            transform: skewY(-4deg);
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
     background-image: -webkit-linear-gradient(left, #d53847, #d53847 33%, #5c419a);
@@ -1140,8 +1152,8 @@ table th[class*="col-"] {
   -webkit-flex-basis: 32%;
       -ms-flex-preferred-size: 32%;
           flex-basis: 32%;
-  -webkit-transform: translateY(-5%);
-          transform: translateY(-5%); }
+  -webkit-transform: translateY(-9%);
+          transform: translateY(-9%); }
 
 .highlightable__header {
   font-size: 1.75rem; }
@@ -1493,7 +1505,8 @@ table th[class*="col-"] {
 
 .splash__border--top, .splash__border--bottom {
   position: absolute;
-  height: 8px; }
+  height: 8px;
+  background-size: 600vw 600vw; }
   @media screen and (min-width: 30rem) {
     .splash__border--top, .splash__border--bottom {
       height: 12px; } }
@@ -1597,19 +1610,21 @@ table th[class*="col-"] {
   top: 0;
   left: 0;
   right: 0;
-  background-image: -webkit-linear-gradient(left, #d53847, #d53847 33%, #5c419a);
-  background-image: linear-gradient(to right, #d53847, #d53847 33%, #5c419a); }
+  background-image: -webkit-linear-gradient(left, #d53847 0%, #5c419a 12%, #d53847 24%, #5c419a 36%, #d53847 48%, #5c419a 60%, #d53847 72%, #5c419a 84%, #d53847 100%);
+  background-image: linear-gradient(to right, #d53847 0%, #5c419a 12%, #d53847 24%, #5c419a 36%, #d53847 48%, #5c419a 60%, #d53847 72%, #5c419a 84%, #d53847 100%);
+  -webkit-animation: slide 10s infinite linear forwards;
+          animation: slide 10s infinite linear forwards; }
 
 .splash__border--bottom {
   left: -5%;
   right: -5%;
   bottom: 0;
   z-index: 2;
-  background-image: -webkit-linear-gradient(right, #d53847, #d53847 33%, #5c419a);
-  background-image: linear-gradient(to left, #d53847, #d53847 33%, #5c419a);
+  background-image: -webkit-linear-gradient(left, #5c419a 0%, #d53847 12%, #5c419a 24%, #d53847 36%, #5c419a 48%, #d53847 60%, #5c419a 72%, #d53847 84%, #5c419a 100%);
+  background-image: linear-gradient(to right, #5c419a 0%, #d53847 12%, #5c419a 24%, #d53847 36%, #5c419a 48%, #d53847 60%, #5c419a 72%, #d53847 84%, #5c419a 100%);
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
-  -webkit-animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards;
-          animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards;
+  -webkit-animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, slide 10s infinite linear forwards;
+          animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, slide 10s infinite linear forwards;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
