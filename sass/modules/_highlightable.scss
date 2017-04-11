@@ -1,0 +1,18 @@
+.highlightable {
+  position: relative;
+  height: 485px;
+  overflow: hidden;
+}
+
+.highlightable__block {
+  position: absolute;
+  top: 140px;
+  left: -5%;
+  right: -5%;
+  height: 305px;
+  transform-origin: 0 0;
+  transform: skewY(-4deg);
+  backface-visibility: hidden;
+  background-image: linear-gradient(to right, $primarycolor, $primarycolor 33%, $accentcolor);
+
+}
