@@ -50,6 +50,7 @@ $splash-line-height-small: 1.5;
 %splash-border-base {
   position: absolute;
   height: 8px;
+  background-size: 600vw 600vw;
   
   @include breakpoint($screen $medium-start) {
     height: 12px;
@@ -195,7 +196,17 @@ $splash-line-height-small: 1.5;
   top: 0;
   left: 0;
   right: 0;
-  background-image: linear-gradient(to right, $primarycolor, $primarycolor 33%, $accentcolor);
+  background-image: linear-gradient(to right, 
+                                    $primarycolor 0%, 
+                                    $accentcolor 12%, 
+                                    $primarycolor 24%, 
+                                    $accentcolor 36%, 
+                                    $primarycolor 48%, 
+                                    $accentcolor 60%, 
+                                    $primarycolor 72%, 
+                                    $accentcolor 84%, 
+                                    $primarycolor 100%);
+  animation: slide 10s infinite linear forwards;
 }
 
 .splash__border--bottom {
@@ -204,8 +215,17 @@ $splash-line-height-small: 1.5;
   right: -5%;
   bottom: 0;
   z-index: 2;
-  background-image: linear-gradient(to left, $primarycolor, $primarycolor 33%, $accentcolor);
+  background-image: linear-gradient(to right, 
+                                    $accentcolor 0%, 
+                                    $primarycolor 12%, 
+                                    $accentcolor 24%, 
+                                    $primarycolor 36%, 
+                                    $accentcolor 48%, 
+                                    $primarycolor 60%, 
+                                    $accentcolor 72%, 
+                                    $primarycolor 84%, 
+                                    $accentcolor 100%);
   transform-origin: 0 0;
-  animation: rotate-up .8s cubic-bezier(0,.5,0,1) forwards;
+  animation: rotate-up .8s cubic-bezier(0,.5,0,1) forwards, slide 10s infinite linear forwards;
   backface-visibility: hidden;
 }
