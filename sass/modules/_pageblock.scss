@@ -1,9 +1,17 @@
 .pageblock {
 
-  margin-bottom: 3em;
+  margin-bottom: 3rem;
 
   @include breakpoint($screen $large-start) {
-    margin-bottom: 8em;
+    margin-bottom: 8rem;
+
+    &--lg {
+      margin-bottom: 10rem;
+    }
+
+    &--xl {
+      margin-bottom: 12rem;
+    }
   }
 
 }

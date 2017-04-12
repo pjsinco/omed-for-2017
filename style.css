@@ -1338,22 +1338,6 @@ table th[class*="col-"] {
           -webkit-transform: rotate(45deg);
                   transform: rotate(45deg); }
 
-@media screen and (min-width: 61.25rem) {
-  .navigation > li:nth-child(1) > a:after, .navigation > li:nth-child(2) > a:after, .navigation > li:nth-child(3) > a:after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 7px;
-    width: 40px;
-    height: 2px;
-    -webkit-transition: all .3s;
-            transition: all .3s;
-    -webkit-transform: translateX(-50%) scale(0);
-            transform: translateX(-50%) scale(0); }
-  .navigation > li:nth-child(1) > a:hover:after, .navigation > li:nth-child(2) > a:hover:after, .navigation > li:nth-child(3) > a:hover:after {
-    -webkit-transform: translateX(-50%) scale(1);
-            transform: translateX(-50%) scale(1); } }
-
 .navigation {
   position: absolute;
   z-index: 2;
@@ -1454,24 +1438,70 @@ table th[class*="col-"] {
                     transform: none; }
           .navigation > li > a:active {
             color: #d53847; } }
-    .navigation > li:nth-child(1) > a:hover {
-      color: #d53847; }
-    .navigation > li:nth-child(1) > a:after {
-      background-color: #d53847; }
-    .navigation > li:nth-child(2) > a:hover {
-      color: #5c419a; }
-    .navigation > li:nth-child(2) > a:after {
-      background-color: #5c419a; }
-    .navigation > li:nth-child(3) > a:hover {
-      color: #3d5ba9; }
-    .navigation > li:nth-child(3) > a:after {
-      background-color: #3d5ba9; }
+    @media screen and (min-width: 61.25rem) {
+      .navigation > li:nth-child(1) > a:hover {
+        color: #d53847; }
+      .navigation > li:nth-child(1) > a:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 7px;
+        width: 40px;
+        height: 2px;
+        background-color: #d53847;
+        -webkit-transition: all .3s;
+                transition: all .3s;
+        -webkit-transform: translateX(-50%) scale(0);
+                transform: translateX(-50%) scale(0); }
+      .navigation > li:nth-child(1) > a:hover:after {
+        -webkit-transform: translateX(-50%) scale(1);
+                transform: translateX(-50%) scale(1); } }
+    @media screen and (min-width: 61.25rem) {
+      .navigation > li:nth-child(2) > a:hover {
+        color: #5c419a; }
+      .navigation > li:nth-child(2) > a:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 7px;
+        width: 40px;
+        height: 2px;
+        background-color: #5c419a;
+        -webkit-transition: all .3s;
+                transition: all .3s;
+        -webkit-transform: translateX(-50%) scale(0);
+                transform: translateX(-50%) scale(0); }
+      .navigation > li:nth-child(2) > a:hover:after {
+        -webkit-transform: translateX(-50%) scale(1);
+                transform: translateX(-50%) scale(1); } }
+    @media screen and (min-width: 61.25rem) {
+      .navigation > li:nth-child(3) > a:hover {
+        color: #3d5ba9; }
+      .navigation > li:nth-child(3) > a:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 7px;
+        width: 40px;
+        height: 2px;
+        background-color: #3d5ba9;
+        -webkit-transition: all .3s;
+                transition: all .3s;
+        -webkit-transform: translateX(-50%) scale(0);
+                transform: translateX(-50%) scale(0); }
+      .navigation > li:nth-child(3) > a:hover:after {
+        -webkit-transform: translateX(-50%) scale(1);
+                transform: translateX(-50%) scale(1); } }
 
 .pageblock {
-  margin-bottom: 3em; }
+  margin-bottom: 3rem; }
   @media screen and (min-width: 48rem) {
     .pageblock {
-      margin-bottom: 8em; } }
+      margin-bottom: 8rem; }
+      .pageblock--lg {
+        margin-bottom: 10rem; }
+      .pageblock--xl {
+        margin-bottom: 12rem; } }
 
 .primary-nav {
   display: inline-block;

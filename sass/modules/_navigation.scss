@@ -1,5 +1,9 @@
-%anchor-after-base {
+@mixin nav-hover($color) {
   @include breakpoint($screen $navflip) {
+    &:hover {
+      color: $color;
+    }
+
     &:after {
       content: "";
       position: absolute;
@@ -7,6 +11,7 @@
       bottom: 7px;
       width: 40px;
       height: 2px;
+      background-color: $color;
       transition: all .3s;
       transform: translateX(-50%) scale(0);
     }
@@ -15,18 +20,6 @@
       transform: translateX(-50%) scale(1);
     }
   }
-}
-
-@mixin nav-hover($color) {
-  &:hover {
-    color: $color;
-  }
-
-  &:after {
-    @extend %anchor-after-base;
-    background-color: $color;
-  }
-
 }
 
 .navigation {
