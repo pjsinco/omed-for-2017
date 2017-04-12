@@ -34,9 +34,9 @@
   &--reverse {
     @include button-variant($btn-reverse-color, $btn-primary-bg, $btn-reverse-border);
     &:hover {
-      box-shadow: inset 0 0 0 1px $secondarycolor;
-      color: $primarycolor;
-      background-color: $secondarycolor; 
+      box-shadow: inset 0 0 0 1px $primarycolor;
+      color: $white;
+      background-color: $primarycolor; 
     }
   }
 
