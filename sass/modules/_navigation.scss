@@ -1,7 +1,14 @@
+@mixin small-nav-hover {
+  &:hover {
+    transform: translateX(3px);
+  }
+}
+
 @mixin nav-hover($color) {
   @include breakpoint($screen $navflip) {
     &:hover {
       color: $color;
+      transform: none;
     }
 
     &:after {
@@ -42,6 +49,11 @@
     max-height: 100vh;
     opacity: 1;
     box-shadow: inset 0px 9px 19px -7px rgba(0, 0, 0, 0.36);
+
+    @include breakpoint($screen $navflip) {
+      box-shadow: none;
+      opacity: 1;
+    }
   }
 
   @include breakpoint($screen $medium-start) {
@@ -87,16 +99,35 @@
       animation-fill-mode: forwards;
     }
 
+    &:nth-child(1) {
+      & > a {
+        @include small-nav-hover;
+        @include nav-hover($physicianscolor);
+      }
+    }
+
+
     &:nth-child(2) {
       animation-delay: .1s;
+
+      & > a {
+        @include small-nav-hover;
+        @include nav-hover($residentscolor);
+      }
     }
 
     &:nth-child(3) {
       animation-delay: .2s;
+
+      & > a {
+        @include small-nav-hover;
+        @include nav-hover($studentscolor);
+      }
     }
 
     &:nth-child(4) {
       animation-delay: .3s;
+      text-align: center;
     }
 
     @include breakpoint($screen $navflip) {
@@ -111,10 +142,6 @@
       vertical-align: middle;
       color: $white;
       transition: all .3s;
-
-      &:hover {
-        transform: translateX(3px);
-      }
 
       @include breakpoint($screen $navflip) {
         display: block;
@@ -142,16 +169,5 @@
       }
     }
 
-    &:nth-child(1) > a {
-      @include nav-hover($physicianscolor);
-    }
-
-    &:nth-child(2) > a {
-      @include nav-hover($residentscolor);
-    }
-
-    &:nth-child(3) > a {
-      @include nav-hover($studentscolor);
-    }
   }
 }

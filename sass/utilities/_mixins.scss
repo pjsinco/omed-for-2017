@@ -62,3 +62,7 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+@mixin hover-scale($scale: 1.1) {
+  transform: scale($scale);
+}

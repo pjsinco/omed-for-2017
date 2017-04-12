@@ -1,38 +1,63 @@
-.icon {
+%icon-hover-scale-setup {
+  transition: transform .3s;
+}
 
-  &-omed-logo-plain {
 
+.icon-aoa-logo {
+
+  fill: $white;
+
+  .navigation a & {
+    @extend %icon-hover-scale-setup;
   }
 
-  &-omed-logo-full {
-    width: 240px;
-
-    @include breakpoint($screen $medium-minor-start) {
-      width: 300px;
-    }
-
-    @include breakpoint($screen $large-minor-minor-start) {
-      width: 100%;
-    }
+  .navigation a:hover & {
+    @include hover-scale();
   }
 
-  &-arrow1 {
+  @include breakpoint($screen $navflip) {
+    fill: $aoablue;
+  }
+}
 
-    .intro & {
+.icon-omed-logo-plain {
 
-      display: none;
-
-      @include breakpoint($screen $large-start) {
-        position: absolute;
-        left: 50%;
-        bottom: -12px;
-        display: block;
-        fill: $primarycolor;
-        opacity: .6;
-        transform: translateX(-50%);
-      }
-    }
+  .logo a & {
+    @extend %icon-hover-scale-setup;
   }
 
+  .logo a:hover & {
+    @include hover-scale(1.04);
+  }
+}
 
+.icon-omed-logo-full {
+
+  width: 240px;
+
+  @include breakpoint($screen $medium-minor-start) {
+    width: 300px;
+  }
+
+  @include breakpoint($screen $large-minor-minor-start) {
+    width: 100%;
+  }
+}
+
+.icon-arrow1 {
+
+  .intro & {
+
+    display: none;
+
+    @include breakpoint($screen $large-start) {
+      position: absolute;
+      left: 50%;
+      bottom: -12px;
+      display: block;
+      fill: $primarycolor;
+      opacity: .6;
+      transform: translateX(-50%);
+    }
+  }
 }
