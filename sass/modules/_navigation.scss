@@ -80,20 +80,27 @@
     }
 
     & > a {
+      position: relative;
       display: block;
       padding: 12px 0 10px 5px;
       text-decoration: none;
       vertical-align: middle;
       color: $white;
-      transition: transform .3s;
+      transition: all .3s;
 
       &:hover {
         transform: translateX(3px);
       }
 
       @include breakpoint($screen $navflip) {
-        display: inline;
+        display: block;
+        padding: 1rem;
+        text-transform: uppercase;
+        font-family: $font-medium;
+        font-size: .875rem;
+        letter-spacing: 1px;
         color: inherit;
+
 
         &:visited {
           color: inherit;
@@ -101,10 +108,33 @@
 
         &:hover {
           color: $primarycolor;
+          transform: none;
+          
         }
 
         &:active {
           color: $primarycolor;
+        }
+      }
+    }
+
+    &:not(:last-child) > a {
+
+      @include breakpoint($screen $navflip) {
+        &:after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          background-color: $primarycolor;
+          bottom: 0;
+          width: 40px;
+          height: 2px;
+          transition: all .3s;
+          transform: translateX(-50%) scale(0);
+        }
+
+        &:hover:after {
+          transform: translateX(-50%) scale(1);
         }
       }
     }

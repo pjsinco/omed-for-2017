@@ -1410,26 +1410,50 @@ table th[class*="col-"] {
       .navigation > li {
         display: inline-block; } }
     .navigation > li > a {
+      position: relative;
       display: block;
       padding: 12px 0 10px 5px;
       text-decoration: none;
       vertical-align: middle;
       color: #fff;
-      -webkit-transition: -webkit-transform .3s;
-              transition: transform .3s; }
+      -webkit-transition: all .3s;
+              transition: all .3s; }
       .navigation > li > a:hover {
         -webkit-transform: translateX(3px);
                 transform: translateX(3px); }
       @media screen and (min-width: 61.25rem) {
         .navigation > li > a {
-          display: inline;
+          display: block;
+          padding: 1rem;
+          text-transform: uppercase;
+          font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          font-size: .875rem;
+          letter-spacing: 1px;
           color: inherit; }
           .navigation > li > a:visited {
             color: inherit; }
           .navigation > li > a:hover {
-            color: #d53847; }
+            color: #d53847;
+            -webkit-transform: none;
+                    transform: none; }
           .navigation > li > a:active {
             color: #d53847; } }
+    @media screen and (min-width: 61.25rem) {
+      .navigation > li:not(:last-child) > a:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        background-color: #d53847;
+        bottom: 0;
+        width: 40px;
+        height: 2px;
+        -webkit-transition: all .3s;
+                transition: all .3s;
+        -webkit-transform: translateX(-50%) scale(0);
+                transform: translateX(-50%) scale(0); }
+      .navigation > li:not(:last-child) > a:hover:after {
+        -webkit-transform: translateX(-50%) scale(1);
+                transform: translateX(-50%) scale(1); } }
 
 .pageblock {
   margin-bottom: 3em; }
