@@ -16,5 +16,8 @@
 # Inspr
 * [Uses for Infinite Rainbow Gradients](http://codepen.io/mcdeeda/pen/VpRpww)
 
+* [imakewebthings/waypoints: Waypoints is a library that makes it easy to execute a function whenever you scroll to an element.](https://github.com/imakewebthings/waypoints)
+
 # FX
 * [Simple Image Lazy Load and Fade](https://davidwalsh.name/lazyload-image-fade)
+
