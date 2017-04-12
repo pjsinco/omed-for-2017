@@ -17,9 +17,9 @@
     </a> <!-- .nav-trigger -->
 
     <ul class="navigation">
-      <li><a href="#">Physicians</a></li>
-      <li><a href="#">Residents</a></li>
-      <li><a href="#">Students</a></li>
+      <li><a href="#" >Physicians</a></li>
+      <li><a href="#" >Residents</a></li>
+      <li><a href="#" >Students</a></li>
       <li>
         <a href="http://osteopathic.org">
           <svg class="icon icon-omed-logo-plain" preserveAspectRatio="xMidYMid meet" width="70" height="33">
