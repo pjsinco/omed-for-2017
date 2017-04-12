@@ -18,7 +18,7 @@
   // TODO just sketching for now
 ?>
 
-  <section class="intro wrap pageblock">
+  <section class="intro wrap pageblock--xl">
     <div class="intro__block">
       <div class="intro__focus">
         <svg class="icon icon-omed-logo-full" preserveAspectRatio="xMidYMid meet" width="372" height="152">

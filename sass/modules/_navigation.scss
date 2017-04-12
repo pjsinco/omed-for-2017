@@ -1,5 +1,30 @@
-%anchor-after-base {
+%nav-item-background {
+  background-image: url('images/svg/minified/arrow.svg');
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 12px;
+
   @include breakpoint($screen $navflip) {
+    background: none;
+  }
+}
+
+@mixin small-nav-hover {
+  @include breakpoint($screen max-width $large-minor-end) {
+    &:hover {
+      padding-left: 10px;
+    }
+    
+  }
+}
+
+@mixin nav-hover($color) {
+  @include breakpoint($screen $navflip) {
+    &:hover {
+      color: $color;
+      transform: none;
+    }
+
     &:after {
       content: "";
       position: absolute;
@@ -7,6 +32,7 @@
       bottom: 7px;
       width: 40px;
       height: 2px;
+      background-color: $color;
       transition: all .3s;
       transform: translateX(-50%) scale(0);
     }
@@ -15,18 +41,6 @@
       transform: translateX(-50%) scale(1);
     }
   }
-}
-
-@mixin nav-hover($color) {
-  &:hover {
-    color: $color;
-  }
-
-  &:after {
-    @extend %anchor-after-base;
-    background-color: $color;
-  }
-
 }
 
 .navigation {
@@ -49,6 +63,11 @@
     max-height: 100vh;
     opacity: 1;
     box-shadow: inset 0px 9px 19px -7px rgba(0, 0, 0, 0.36);
+
+    @include breakpoint($screen $navflip) {
+      box-shadow: none;
+      opacity: 1;
+    }
   }
 
   @include breakpoint($screen $medium-start) {
@@ -69,96 +88,104 @@
     border-bottom: none;
     max-height: none;
   }
+}
 
-  & > li:not(:last-child) {
-    @include breakpoint($screen $navflip) {
-      margin-right: 4rem;
+.navigation > li:not(:last-child) {
+
+  @include breakpoint($screen $navflip) {
+    margin-right: 4rem;
+  }
+}
+
+.navigation > li {
+
+  margin-bottom: 0;
+  opacity: 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgba($white, .63);
+  }
+
+  @include breakpoint($screen $navflip) {
+    opacity: 1; 
+  }
+
+  .nav-open & {
+    animation-name: fadeInFromRight;
+    animation-duration: .4s;
+    animation-fill-mode: forwards;
+  }
+
+  &:nth-child(1) {
+    & > a {
+      @include small-nav-hover;
+      @include nav-hover($physicianscolor);
+      @extend %nav-item-background;
     }
   }
 
-  & > li {
-    margin-bottom: 0;
-    opacity: 0;
 
-    &:not(:last-child) {
-      border-bottom: 1px solid $white;
-    }
-
-    @include breakpoint($screen $navflip) {
-      opacity: 1; 
-    }
-
-    .nav-open & {
-      animation-name: fadeInFromRight;
-      animation-duration: .4s;
-      animation-fill-mode: forwards;
-    }
-
-    &:nth-child(2) {
-      animation-delay: .1s;
-    }
-
-    &:nth-child(3) {
-      animation-delay: .2s;
-    }
-
-    &:nth-child(4) {
-      animation-delay: .3s;
-    }
-
-    @include breakpoint($screen $navflip) {
-      display: inline-block;
-    }
+  &:nth-child(2) {
+    animation-delay: .1s;
 
     & > a {
-      position: relative;
+      @include small-nav-hover;
+      @include nav-hover($residentscolor);
+      @extend %nav-item-background;
+    }
+  }
+
+  &:nth-child(3) {
+    animation-delay: .2s;
+
+    & > a {
+      @include small-nav-hover;
+      @include nav-hover($studentscolor);
+      @extend %nav-item-background;
+    }
+  }
+
+  &:nth-child(4) {
+    animation-delay: .3s;
+    text-align: center;
+  }
+
+  @include breakpoint($screen $navflip) {
+    display: inline-block;
+  }
+
+  & > a {
+    position: relative;
+    display: block;
+    padding: 12px 0 10px 5px;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: .875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $white;
+    transition: all .3s;
+
+    @include breakpoint($screen $navflip) {
       display: block;
-      padding: 12px 0 10px 5px;
-      text-decoration: none;
-      vertical-align: middle;
-      color: $white;
-      transition: all .3s;
+      padding: 1rem;
+      font-family: $font-medium;
+      color: inherit;
+
+
+      &:visited {
+        color: inherit;
+      }
 
       &:hover {
-        transform: translateX(3px);
+        color: $primarycolor;
+        transform: none;
+        
       }
 
-      @include breakpoint($screen $navflip) {
-        display: block;
-        padding: 1rem;
-        text-transform: uppercase;
-        font-family: $font-medium;
-        font-size: .875rem;
-        letter-spacing: 1px;
-        color: inherit;
-
-
-        &:visited {
-          color: inherit;
-        }
-
-        &:hover {
-          color: $primarycolor;
-          transform: none;
-          
-        }
-
-        &:active {
-          color: $primarycolor;
-        }
+      &:active {
+        color: $primarycolor;
       }
-    }
-
-    &:nth-child(1) > a {
-      @include nav-hover($physicianscolor);
-    }
-
-    &:nth-child(2) > a {
-      @include nav-hover($residentscolor);
-    }
-
-    &:nth-child(3) > a {
-      @include nav-hover($studentscolor);
     }
   }
 }

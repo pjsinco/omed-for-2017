@@ -1070,7 +1070,8 @@ table th[class*="col-"] {
   -webkit-transition: -webkit-transform .5s;
           transition: transform .5s;
   background-color: #fff;
-  box-shadow: 0px -2px 8px 0px rgba(208, 208, 208, 0.68);
+  /*box-shadow: 0px -2px 8px 0px rgba(208,208,208,.68);*/
+  box-shadow: 0px -2px 16px 2px rgba(208, 208, 208, 0.68);
   opacity: .97; }
   .header.is-hidden {
     -webkit-transform: translateY(-100%);
@@ -1174,6 +1175,23 @@ table th[class*="col-"] {
   box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17);
   background-color: #fff; }
 
+.navigation a .icon-aoa-logo, .logo a .icon-omed-logo-plain {
+  -webkit-transition: -webkit-transform .3s;
+          transition: transform .3s; }
+
+.icon-aoa-logo {
+  fill: #fff; }
+  .navigation a:hover .icon-aoa-logo {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1); }
+  @media screen and (min-width: 61.25rem) {
+    .icon-aoa-logo {
+      fill: #1c446c; } }
+
+.logo a:hover .icon-omed-logo-plain {
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04); }
+
 .icon-omed-logo-full {
   width: 240px; }
   @media screen and (min-width: 36rem) {
@@ -1182,6 +1200,7 @@ table th[class*="col-"] {
   @media screen and (min-width: 61.25rem) {
     .icon-omed-logo-full {
       width: 100%; } }
+
 .intro .icon-arrow1 {
   display: none; }
   @media screen and (min-width: 48rem) {
@@ -1281,6 +1300,8 @@ table th[class*="col-"] {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
+  .logo > a {
+    display: block; }
 
 .nav-trigger {
   position: absolute;
@@ -1338,21 +1359,14 @@ table th[class*="col-"] {
           -webkit-transform: rotate(45deg);
                   transform: rotate(45deg); }
 
-@media screen and (min-width: 61.25rem) {
-  .navigation > li:nth-child(1) > a:after, .navigation > li:nth-child(2) > a:after, .navigation > li:nth-child(3) > a:after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 7px;
-    width: 40px;
-    height: 2px;
-    -webkit-transition: all .3s;
-            transition: all .3s;
-    -webkit-transform: translateX(-50%) scale(0);
-            transform: translateX(-50%) scale(0); }
-  .navigation > li:nth-child(1) > a:hover:after, .navigation > li:nth-child(2) > a:hover:after, .navigation > li:nth-child(3) > a:hover:after {
-    -webkit-transform: translateX(-50%) scale(1);
-            transform: translateX(-50%) scale(1); } }
+.navigation > li:nth-child(1) > a, .navigation > li:nth-child(2) > a, .navigation > li:nth-child(3) > a {
+  background-image: url("images/svg/minified/arrow.svg");
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  background-size: 12px; }
+  @media screen and (min-width: 61.25rem) {
+    .navigation > li:nth-child(1) > a, .navigation > li:nth-child(2) > a, .navigation > li:nth-child(3) > a {
+      background: none; } }
 
 .navigation {
   position: absolute;
@@ -1372,6 +1386,10 @@ table th[class*="col-"] {
     max-height: 100vh;
     opacity: 1;
     box-shadow: inset 0px 9px 19px -7px rgba(0, 0, 0, 0.36); }
+    @media screen and (min-width: 61.25rem) {
+      .nav-open .navigation {
+        box-shadow: none;
+        opacity: 1; } }
   @media screen and (min-width: 30rem) {
     .navigation {
       width: 300px; } }
@@ -1395,83 +1413,144 @@ table th[class*="col-"] {
       background-color: #fff;
       border-bottom: none;
       max-height: none; } }
+
+@media screen and (min-width: 61.25rem) {
+  .navigation > li:not(:last-child) {
+    margin-right: 4rem; } }
+
+.navigation > li {
+  margin-bottom: 0;
+  opacity: 0; }
+  .navigation > li:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.63); }
   @media screen and (min-width: 61.25rem) {
-    .navigation > li:not(:last-child) {
-      margin-right: 4rem; } }
-  .navigation > li {
-    margin-bottom: 0;
-    opacity: 0; }
-    .navigation > li:not(:last-child) {
-      border-bottom: 1px solid #fff; }
-    @media screen and (min-width: 61.25rem) {
-      .navigation > li {
-        opacity: 1; } }
-    .nav-open .navigation > li {
-      -webkit-animation-name: fadeInFromRight;
-              animation-name: fadeInFromRight;
-      -webkit-animation-duration: .4s;
-              animation-duration: .4s;
-      -webkit-animation-fill-mode: forwards;
-              animation-fill-mode: forwards; }
-    .navigation > li:nth-child(2) {
-      -webkit-animation-delay: .1s;
-              animation-delay: .1s; }
-    .navigation > li:nth-child(3) {
-      -webkit-animation-delay: .2s;
-              animation-delay: .2s; }
-    .navigation > li:nth-child(4) {
-      -webkit-animation-delay: .3s;
-              animation-delay: .3s; }
-    @media screen and (min-width: 61.25rem) {
-      .navigation > li {
-        display: inline-block; } }
-    .navigation > li > a {
-      position: relative;
-      display: block;
-      padding: 12px 0 10px 5px;
-      text-decoration: none;
-      vertical-align: middle;
-      color: #fff;
-      -webkit-transition: all .3s;
-              transition: all .3s; }
-      .navigation > li > a:hover {
-        -webkit-transform: translateX(3px);
-                transform: translateX(3px); }
-      @media screen and (min-width: 61.25rem) {
-        .navigation > li > a {
-          display: block;
-          padding: 1rem;
-          text-transform: uppercase;
-          font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
-          font-size: .875rem;
-          letter-spacing: 1px;
-          color: inherit; }
-          .navigation > li > a:visited {
-            color: inherit; }
-          .navigation > li > a:hover {
-            color: #d53847;
-            -webkit-transform: none;
-                    transform: none; }
-          .navigation > li > a:active {
-            color: #d53847; } }
+    .navigation > li {
+      opacity: 1; } }
+  .nav-open .navigation > li {
+    -webkit-animation-name: fadeInFromRight;
+            animation-name: fadeInFromRight;
+    -webkit-animation-duration: .4s;
+            animation-duration: .4s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+  @media screen and (max-width: 979px) {
     .navigation > li:nth-child(1) > a:hover {
-      color: #d53847; }
+      padding-left: 10px; } }
+  @media screen and (min-width: 61.25rem) {
+    .navigation > li:nth-child(1) > a:hover {
+      color: #d53847;
+      -webkit-transform: none;
+              transform: none; }
     .navigation > li:nth-child(1) > a:after {
-      background-color: #d53847; }
-    .navigation > li:nth-child(2) > a:hover {
-      color: #5c419a; }
-    .navigation > li:nth-child(2) > a:after {
-      background-color: #5c419a; }
-    .navigation > li:nth-child(3) > a:hover {
-      color: #3d5ba9; }
-    .navigation > li:nth-child(3) > a:after {
-      background-color: #3d5ba9; }
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 7px;
+      width: 40px;
+      height: 2px;
+      background-color: #d53847;
+      -webkit-transition: all .3s;
+              transition: all .3s;
+      -webkit-transform: translateX(-50%) scale(0);
+              transform: translateX(-50%) scale(0); }
+    .navigation > li:nth-child(1) > a:hover:after {
+      -webkit-transform: translateX(-50%) scale(1);
+              transform: translateX(-50%) scale(1); } }
+  .navigation > li:nth-child(2) {
+    -webkit-animation-delay: .1s;
+            animation-delay: .1s; }
+    @media screen and (max-width: 979px) {
+      .navigation > li:nth-child(2) > a:hover {
+        padding-left: 10px; } }
+    @media screen and (min-width: 61.25rem) {
+      .navigation > li:nth-child(2) > a:hover {
+        color: #5c419a;
+        -webkit-transform: none;
+                transform: none; }
+      .navigation > li:nth-child(2) > a:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 7px;
+        width: 40px;
+        height: 2px;
+        background-color: #5c419a;
+        -webkit-transition: all .3s;
+                transition: all .3s;
+        -webkit-transform: translateX(-50%) scale(0);
+                transform: translateX(-50%) scale(0); }
+      .navigation > li:nth-child(2) > a:hover:after {
+        -webkit-transform: translateX(-50%) scale(1);
+                transform: translateX(-50%) scale(1); } }
+  .navigation > li:nth-child(3) {
+    -webkit-animation-delay: .2s;
+            animation-delay: .2s; }
+    @media screen and (max-width: 979px) {
+      .navigation > li:nth-child(3) > a:hover {
+        padding-left: 10px; } }
+    @media screen and (min-width: 61.25rem) {
+      .navigation > li:nth-child(3) > a:hover {
+        color: #3d5ba9;
+        -webkit-transform: none;
+                transform: none; }
+      .navigation > li:nth-child(3) > a:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 7px;
+        width: 40px;
+        height: 2px;
+        background-color: #3d5ba9;
+        -webkit-transition: all .3s;
+                transition: all .3s;
+        -webkit-transform: translateX(-50%) scale(0);
+                transform: translateX(-50%) scale(0); }
+      .navigation > li:nth-child(3) > a:hover:after {
+        -webkit-transform: translateX(-50%) scale(1);
+                transform: translateX(-50%) scale(1); } }
+  .navigation > li:nth-child(4) {
+    -webkit-animation-delay: .3s;
+            animation-delay: .3s;
+    text-align: center; }
+  @media screen and (min-width: 61.25rem) {
+    .navigation > li {
+      display: inline-block; } }
+  .navigation > li > a {
+    position: relative;
+    display: block;
+    padding: 12px 0 10px 5px;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: .875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    -webkit-transition: all .3s;
+            transition: all .3s; }
+    @media screen and (min-width: 61.25rem) {
+      .navigation > li > a {
+        display: block;
+        padding: 1rem;
+        font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: inherit; }
+        .navigation > li > a:visited {
+          color: inherit; }
+        .navigation > li > a:hover {
+          color: #d53847;
+          -webkit-transform: none;
+                  transform: none; }
+        .navigation > li > a:active {
+          color: #d53847; } }
 
 .pageblock {
-  margin-bottom: 3em; }
+  margin-bottom: 3rem; }
   @media screen and (min-width: 48rem) {
     .pageblock {
-      margin-bottom: 8em; } }
+      margin-bottom: 8rem; }
+      .pageblock--lg {
+        margin-bottom: 10rem; }
+      .pageblock--xl {
+        margin-bottom: 12rem; } }
 
 .primary-nav {
   display: inline-block;
