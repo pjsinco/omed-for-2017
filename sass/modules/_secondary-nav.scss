@@ -12,6 +12,20 @@ nav.secondary-nav {
   transition: transform .5s;
   @include clearfix;
 
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 35px;
+    background-color: transparent;
+    background-image: linear-gradient(to left, $lightgray, rgba($lightgray, 0));
+    pointer-events: none;
+    transition: opacity .2s;
+  }
+
   ul, li, a {
     height: 100%;
     color: inherit;
