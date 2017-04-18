@@ -52,7 +52,7 @@ jQuery(document).ready(($) => {
           console.log('3');
 	 	  		//hide primary nav
 	    		$mainHeader.addClass('is-hidden');
-	    		$secondaryNavigation.addClass('fixed slide-up');
+	    		$secondaryNavigation.addClass('fixed slide-up slide-down');
 	    		$belowNavHeroContent.addClass('secondary-nav-fixed');
 	    	} else if( currentTop > secondaryNavOffsetTop ) {
           console.log('4');

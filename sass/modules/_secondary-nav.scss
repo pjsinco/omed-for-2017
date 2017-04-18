@@ -6,12 +6,16 @@ nav.secondary-nav {
   width: 100%;
   height: $secondary-nav-height-small;
   clear: both;
-  background-color: $lightgray;
+  background-color: rgba($lightgray, .97);
   color: $font-color;
-  transform: translateZ(0) translateY($secondary-nav-height-small);
+  transform: translateZ(0) translateY(-($secondary-nav-height-small + $header-height-small));
   will-change: transform;
   transition: transform .5s;
   @include clearfix;
+
+  @include breakpoint($screen $navflip) {
+    transform: translateZ(0) translateY(-($secondary-nav-height + $header-height));
+  }
 
   &.fixed {
     position: fixed;
@@ -24,7 +28,11 @@ nav.secondary-nav {
   }
 
   &.slide-down {
-    transform: translateY(-$secondary-nav-height-small);
+    transform: translateY(-$secondary-nav-height-small - $header-height-small);
+
+    @include breakpoint($screen $navflip) {
+      transform: translateY(-$secondary-nav-height - $header-height);
+    }
   }
 
   &.slide-up {

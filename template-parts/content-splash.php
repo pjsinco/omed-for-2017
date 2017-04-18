@@ -17,20 +17,11 @@ $splash_body = get_field( 'omed_splash_body', $post->ID );
       <h1 class="splash__header">
         <?php if ($splash_header): echo $splash_header; endif; ?>
       </h1>
-      <p class="splash__body">
+      <p class="splash__body sub-nav-hero">
         <?php if ($splash_body): echo $splash_body; endif; ?>
       </p>
     </div> <!-- .splash__block -->
   </div> <!-- .splash__content -->
-  <nav class="secondary-nav">
-    <ul>
-      <li class="alt"><a href="#">Register</a></li>
-      <li><a href="#">FAQs</a></li>
-      <li><a href="#">Contact Us</a></li>
-      <li><a href="#">For Exhibitors</a></li>
-      <li><a href="#">Marketing Toolkit</a></li>
-    </ul>
-  </nav>
   <div class="splash__border--bottom"></div>
 </section> <!-- .splash -->
 

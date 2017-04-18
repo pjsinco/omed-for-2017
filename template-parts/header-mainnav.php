@@ -30,6 +30,4 @@
     </ul>
     
   </nav> <!-- .primary-nav -->
-
-  
 </header> <!-- .header -->
