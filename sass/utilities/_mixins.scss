@@ -41,18 +41,21 @@
 @mixin edge-spacing( $goToZero: false ) {
   margin-left: auto;
   margin-right: auto;
-  padding-right: 1em;
   padding-left: 1em;
+  padding-right: 1em;
 
   @include breakpoint($screen $medium-start) {
-    padding-right: 2rem;
     padding-left: 2rem;
+    padding-right: 2rem;
   }
 
-  @if $goToZero {
-    @include breakpoint($screen $contentwidth + 2rem) {
-      padding-right: 0 !important;
+  @include breakpoint($screen $contentwidth + 2rem) {
+    @if ($goToZero) {
       padding-left: 0 !important;
+      padding-right: 0 !important;
+    } @else {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
     }
   }
 }

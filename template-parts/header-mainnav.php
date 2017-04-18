@@ -1,4 +1,4 @@
-<header class="header container-fluid--alt">
+<header class="header">
 
   <div class="logo">
     <a href="<?php echo esc_html( home_url('/') ); ?>">
@@ -30,5 +30,15 @@
     </ul>
     
   </nav> <!-- .primary-nav -->
+
+<!--   <nav class="secondary-nav"> -->
+<!--     <ul> -->
+<!--       <li><a href="#">FAQs</a></li> -->
+<!--       <li><a href="#">Contact Us</a></li> -->
+<!--       <li><a href="#">For Exhibitors</a></li> -->
+<!--       <li><a href="#">Marketing</a></li> -->
+<!--     </ul> -->
+    
+  </nav>
   
 </header> <!-- .header -->

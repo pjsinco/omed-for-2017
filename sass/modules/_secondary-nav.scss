@@ -1,0 +1,33 @@
+nav.secondary-nav {
+
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: $secondary-nav-height-small;
+  background-color: $gray;
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform .5s;
+
+  ul, li, a {
+    height: 100%;
+  }
+
+  ul {
+    display: flex;
+    padding: 0 5%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  li {
+    display: inline-block;
+    float: left;
+    flex-shrink: 0;
+  
+    &:last-of-type {
+      padding-left: 1.25rem;
+    }
+  }
+
+}
