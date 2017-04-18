@@ -69,3 +69,29 @@
 @mixin hover-scale($scale: 1.1) {
   transform: scale($scale);
 }
+
+@mixin nav-hover($color: #000000, $width: 100%, $border-size: 2px, $bottom: 17px) {
+  @include breakpoint($screen $navflip) {
+    &:hover {
+      text-decoration: none;
+      color: $color;
+      transform: none;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: $bottom;
+      width: $width;
+      height: $border-size;
+      background-color: $color;
+      transition: all .3s;
+      transform: translateX(-50%) scale(0);
+    }
+
+    &:hover:after {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+}

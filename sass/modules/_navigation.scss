@@ -18,30 +18,6 @@
   }
 }
 
-@mixin nav-hover($color) {
-  @include breakpoint($screen $navflip) {
-    &:hover {
-      color: $color;
-      transform: none;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: 17px;
-      width: 40px;
-      height: 2px;
-      background-color: $color;
-      transition: all .3s;
-      transform: translateX(-50%) scale(0);
-    }
-
-    &:hover:after {
-      transform: translateX(-50%) scale(1);
-    }
-  }
-}
 
 .navigation {
 
@@ -148,7 +124,7 @@
   &:nth-child(1) {
     & > a {
       @include small-nav-hover;
-      @include nav-hover($physicianscolor);
+      @include nav-hover($physicianscolor, 40px);
       @extend %nav-item-background;
     }
   }
@@ -159,7 +135,7 @@
 
     & > a {
       @include small-nav-hover;
-      @include nav-hover($residentscolor);
+      @include nav-hover($residentscolor, 40px);
       @extend %nav-item-background;
     }
   }
@@ -169,7 +145,7 @@
 
     & > a {
       @include small-nav-hover;
-      @include nav-hover($studentscolor);
+      @include nav-hover($studentscolor, 40px);
       @extend %nav-item-background;
     }
   }

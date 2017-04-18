@@ -1,33 +1,72 @@
 nav.secondary-nav {
 
   position: relative;
-  z-index: 10;
+  z-index: 1;
   width: 100%;
   height: $secondary-nav-height-small;
-  background-color: $gray;
+  clear: both;
+  background-color: $lightgray;
+  color: $font-color;
   transform: translateZ(0);
   will-change: transform;
   transition: transform .5s;
+  @include clearfix;
 
   ul, li, a {
     height: 100%;
+    color: inherit;
   }
 
   ul {
     display: flex;
-    padding: 0 5%;
+    @include edge-spacing();
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+
+    @include breakpoint($screen $navflip) {
+      text-align: center;
+      justify-content: center;
+    }
   }
 
   li {
     display: inline-block;
+    margin: 0;
     float: left;
     flex-shrink: 0;
   
-    &:last-of-type {
-      padding-left: 1.25rem;
+    &:not(:last-of-type) {
+      /*padding-left: 1.25rem;*/
     }
+
+    &.alt > a {
+      @include nav-hover($primarycolor, 50%, 1px, 11px);
+    }
+
+    & > a {
+      @include nav-hover($font-color, 50%, 1px, 11px);
+    }
+  }
+
+  li.alt {
+    color: $primarycolor;
+    font-family: $font-medium;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding: 0 2rem 0 0;
+    line-height: 50px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: .6;
+
+    @include breakpoint($screen $navflip) {
+      padding: 0 1rem;
+    }
+    
   }
 
 }
