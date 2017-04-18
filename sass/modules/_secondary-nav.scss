@@ -53,12 +53,17 @@ nav.secondary-nav {
       /*padding-left: 1.25rem;*/
     }
 
-    &.alt > a {
-      @include nav-hover($primarycolor, 50%, 1px, 11px);
-    }
 
     & > a {
-      @include nav-hover($font-color, 50%, 1px, 11px);
+      &:hover {
+        background-color: lighten($lightgray, 15%);
+      }
+    }
+
+    &.alt > a {
+      &:hover {
+        /*background-color: lighten($primarycolor, 25%);*/
+      }
     }
   }
 
@@ -76,6 +81,11 @@ nav.secondary-nav {
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: .6;
+    transition: background-color .3s;
+    
+    &:hover {
+      text-decoration: none;
+    }
 
     @include breakpoint($screen $navflip) {
       padding: 0 1rem;

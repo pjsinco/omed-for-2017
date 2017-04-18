@@ -1687,48 +1687,10 @@ nav.secondary-nav {
             flex-shrink: 0; }
     nav.secondary-nav li:not(:last-of-type) {
       /*padding-left: 1.25rem;*/ }
-    @media screen and (min-width: 61.25rem) {
-      nav.secondary-nav li.alt > a:hover {
-        text-decoration: none;
-        color: #d53847;
-        -webkit-transform: none;
-                transform: none; }
-      nav.secondary-nav li.alt > a:after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: 11px;
-        width: 50%;
-        height: 1px;
-        background-color: #d53847;
-        -webkit-transition: all .3s;
-                transition: all .3s;
-        -webkit-transform: translateX(-50%) scale(0);
-                transform: translateX(-50%) scale(0); }
-      nav.secondary-nav li.alt > a:hover:after {
-        -webkit-transform: translateX(-50%) scale(1);
-                transform: translateX(-50%) scale(1); } }
-    @media screen and (min-width: 61.25rem) {
-      nav.secondary-nav li > a:hover {
-        text-decoration: none;
-        color: #444;
-        -webkit-transform: none;
-                transform: none; }
-      nav.secondary-nav li > a:after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        bottom: 11px;
-        width: 50%;
-        height: 1px;
-        background-color: #444;
-        -webkit-transition: all .3s;
-                transition: all .3s;
-        -webkit-transform: translateX(-50%) scale(0);
-                transform: translateX(-50%) scale(0); }
-      nav.secondary-nav li > a:hover:after {
-        -webkit-transform: translateX(-50%) scale(1);
-                transform: translateX(-50%) scale(1); } }
+    nav.secondary-nav li > a:hover {
+      background-color: white; }
+    nav.secondary-nav li.alt > a:hover {
+      /*background-color: lighten($primarycolor, 25%);*/ }
   nav.secondary-nav li.alt {
     color: #d53847;
     font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -1740,7 +1702,11 @@ nav.secondary-nav {
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    opacity: .6; }
+    opacity: .6;
+    -webkit-transition: background-color .3s;
+            transition: background-color .3s; }
+    nav.secondary-nav a:hover {
+      text-decoration: none; }
     @media screen and (min-width: 61.25rem) {
       nav.secondary-nav a {
         padding: 0 1rem; } }
