@@ -1,0 +1,81 @@
+.content {
+
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  .error404 & {
+    display: block;
+    /*margin-top: 2rem;*/
+    margin-bottom: 4rem;
+  }
+
+  @include breakpoint($screen $navflip) {
+    flex-direction: row;
+    justify-content: space-between;
+    /*margin-top: 7rem;*/
+    margin-top: 0;
+  }
+  
+
+  &__left {
+    display: none;
+
+    @include breakpoint($screen $navflip) {
+      display: block;
+      flex-basis: 16.66666667%; // 2 of 12
+    }
+  }
+
+  &__main {
+    position: relative;
+    margin-bottom: 2rem;
+
+    @include breakpoint($screen $navflip) {
+      flex-basis: 79%;
+      &:before {
+        content: "";
+        position: absolute;
+        /*left: -2.6875rem;*/
+        left: -5.6%;
+        top: 0;
+        bottom: 0;
+        border-right: 1px solid $gray;
+      }
+    }
+
+    &--full {
+      @include breakpoint($screen $navflip) {
+        flex-basis: 100%;
+      }
+    }
+
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    @include breakpoint($screen $medium-minor-minor-start) {
+      flex-direction: row;
+    }
+
+    &--primary {
+      margin-bottom: 2rem;
+
+      @include breakpoint($screen $medium-minor-minor-start) {
+        /*flex-basis: 63.1%;*/
+        flex-basis: 60%;
+      }
+    }
+
+    &--secondary {
+      @include breakpoint($screen $medium-minor-minor-start) {
+        flex-basis: 31.8%;
+      }
+    }
+  }
+}
+

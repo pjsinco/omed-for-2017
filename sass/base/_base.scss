@@ -100,7 +100,7 @@ h3 {
   article & {
     margin-bottom: .25rem;
     padding-bottom: .25rem;
-    border-bottom: 1px solid $secondarycolor;
+    /*border-bottom: 1px solid $secondarycolor;*/
 
     &:not(:first-child) {
       margin-top: 2rem;
