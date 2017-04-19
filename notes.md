@@ -18,6 +18,8 @@
 
 * [imakewebthings/waypoints: Waypoints is a library that makes it easy to execute a function whenever you scroll to an element.](https://github.com/imakewebthings/waypoints)
 
+* [Animsition](http://git.blivesta.com/animsition/)
+
 # FX
 * [Simple Image Lazy Load and Fade](https://davidwalsh.name/lazyload-image-fade)
 

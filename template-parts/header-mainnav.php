@@ -1,4 +1,4 @@
-<header class="header container-fluid--alt">
+<header class="header">
 
   <div class="logo">
     <a href="<?php echo esc_html( home_url('/') ); ?>">
@@ -30,5 +30,4 @@
     </ul>
     
   </nav> <!-- .primary-nav -->
-  
 </header> <!-- .header -->

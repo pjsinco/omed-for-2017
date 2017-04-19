@@ -29,7 +29,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 /* Helpers: Floats and Clearing */
 .container-fluid,
-.container {
+.container, .container-fluid--alt, .menu-container {
   margin-right: auto;
   margin-left: auto; }
 
@@ -50,7 +50,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   margin: 0 auto;
   max-width: 63rem; }
 
-.clearfix:after, .header:after, .navigation:after {
+.clearfix:after, .header:after, .navigation:after, nav.secondary-nav:after {
   content: "";
   display: table;
   clear: both; }
@@ -154,7 +154,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
           hyphens: auto; }
 
 .bordered {
-  border: 1px solid #ddd; }
+  border: 1px solid #f1f1f1; }
 
 @-webkit-keyframes fadeInFromRight {
   from {
@@ -783,7 +783,7 @@ th {
     padding: .5em;
     line-height: 1.4;
     vertical-align: top;
-    border-top: 1px solid #ddd; }
+    border-top: 1px solid #f1f1f1; }
   .table > thead > tr > th,
   .table > tbody > tr > th,
   .table > tfoot > tr > th {
@@ -805,7 +805,7 @@ th {
     text-align: right; }
   .table > thead > tr > th {
     vertical-align: bottom;
-    border-bottom: 2px solid #ddd; }
+    border-bottom: 2px solid #f1f1f1; }
   .table > caption + thead > tr:first-child > th,
   .table > caption + thead > tr:first-child > td,
   .table > colgroup + thead > tr:first-child > th,
@@ -814,7 +814,7 @@ th {
   .table > thead:first-child > tr:first-child > td {
     border-top: 0; }
   .table > tbody + tbody {
-    border-top: 2px solid #ddd; }
+    border-top: 2px solid #f1f1f1; }
   .table .table {
     background-color: #fff; }
 
@@ -830,23 +830,23 @@ th {
   padding: 0.25rem; }
 
 .table-bordered {
-  border: 1px solid #ddd; }
+  border: 1px solid #f1f1f1; }
   .table-bordered > thead > tr > th,
   .table-bordered > thead > tr > td,
   .table-bordered > tbody > tr > th,
   .table-bordered > tbody > tr > td,
   .table-bordered > tfoot > tr > th,
   .table-bordered > tfoot > tr > td {
-    border: 1px solid #ddd; }
+    border: 1px solid #f1f1f1; }
   .table-bordered > thead > tr > th,
   .table-bordered > thead > tr > td {
     border-bottom-width: 2px; }
 
 .table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #ddd; }
+  background-color: #f1f1f1; }
 
 .table-hover > tbody > tr:hover {
-  background-color: #ddd; }
+  background-color: #f1f1f1; }
 
 table col[class*="col-"] {
   position: static;
@@ -869,7 +869,7 @@ table th[class*="col-"] {
       margin-bottom: 1.05;
       overflow-y: hidden;
       -ms-overflow-style: -ms-autohiding-scrollbar;
-      border: 1px solid #ddd; }
+      border: 1px solid #f1f1f1; }
       .table-responsive > .table {
         margin-bottom: 0; }
         .table-responsive > .table > thead > tr > th,
@@ -902,8 +902,6 @@ table th[class*="col-"] {
           border-bottom: 0; } }
 
 .container-fluid--alt, .menu-container {
-  margin-left: auto;
-  margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem; }
   @media screen and (min-width: 30rem) {
@@ -1277,12 +1275,16 @@ table th[class*="col-"] {
 .intro__context {
   margin-left: auto;
   margin-right: auto;
-  padding-right: 1em;
-  padding-left: 1em; }
+  padding-left: 1em;
+  padding-right: 1em; }
   @media screen and (min-width: 30rem) {
     .intro__context {
-      padding-right: 2rem;
-      padding-left: 2rem; } }
+      padding-left: 2rem;
+      padding-right: 2rem; } }
+  @media screen and (min-width: 65rem) {
+    .intro__context {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important; } }
   @media screen and (min-width: 48rem) {
     .intro__context {
       padding-left: 3.375rem; } }
@@ -1299,13 +1301,26 @@ table th[class*="col-"] {
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%); }
+          transform: translateY(-50%);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em; }
+  @media screen and (min-width: 30rem) {
+    .logo {
+      padding-left: 2rem;
+      padding-right: 2rem; } }
+  @media screen and (min-width: 65rem) {
+    .logo {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important; } }
   .logo > a {
     display: block; }
 
 .nav-trigger {
   position: absolute;
   top: 50%;
+  right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   display: table;
@@ -1314,7 +1329,7 @@ table th[class*="col-"] {
   font-size: .75rem;
   text-transform: uppercase;
   color: #444;
-  border-left: 1px solid #ddd; }
+  border-left: 1px solid #f1f1f1; }
   .nav-trigger:link, .nav-trigger:visited
   .nav-trigger:hover, .nav-trigger:active {
     text-decoration: none; }
@@ -1381,7 +1396,19 @@ table th[class*="col-"] {
   /*box-shadow: 0 14px 20px rgba(0,0,0,.2);*/
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   -webkit-transition: max-height .4s, opacity .2s;
-          transition: max-height .4s, opacity .2s; }
+          transition: max-height .4s, opacity .2s;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em; }
+  @media screen and (min-width: 30rem) {
+    .navigation {
+      padding-left: 2rem;
+      padding-right: 2rem; } }
+  @media screen and (min-width: 65rem) {
+    .navigation {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important; } }
   .nav-open .navigation {
     max-height: 100vh;
     opacity: 1;
@@ -1399,7 +1426,8 @@ table th[class*="col-"] {
       top: 0;
       width: 100%;
       height: 100%;
-      padding: 0;
+      padding-top: 0;
+      padding-bottom: 0;
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -1454,6 +1482,7 @@ table th[class*="col-"] {
       padding-left: 10px; } }
   @media screen and (min-width: 61.25rem) {
     .navigation > li:nth-child(1) > a:hover {
+      text-decoration: none;
       color: #d53847;
       -webkit-transform: none;
               transform: none; }
@@ -1480,6 +1509,7 @@ table th[class*="col-"] {
         padding-left: 10px; } }
     @media screen and (min-width: 61.25rem) {
       .navigation > li:nth-child(2) > a:hover {
+        text-decoration: none;
         color: #5c419a;
         -webkit-transform: none;
                 transform: none; }
@@ -1506,6 +1536,7 @@ table th[class*="col-"] {
         padding-left: 10px; } }
     @media screen and (min-width: 61.25rem) {
       .navigation > li:nth-child(3) > a:hover {
+        text-decoration: none;
         color: #3d5ba9;
         -webkit-transform: none;
                 transform: none; }
@@ -1590,6 +1621,121 @@ table th[class*="col-"] {
           -ms-flex-align: center;
               align-items: center;
       padding-right: 0; } }
+
+nav.secondary-nav {
+  position: relative;
+  display: none;
+  z-index: 12;
+  width: 100%;
+  height: 50px;
+  clear: both;
+  background-color: rgba(241, 241, 241, 0.97);
+  color: #444;
+  -webkit-transform: translateZ(0) translateY(-110px);
+          transform: translateZ(0) translateY(-110px);
+  will-change: transform;
+  -webkit-transition: -webkit-transform .5s;
+          transition: transform .5s; }
+  @media screen and (min-width: 61.25rem) {
+    nav.secondary-nav {
+      -webkit-transform: translateZ(0) translateY(-150px);
+              transform: translateZ(0) translateY(-150px); } }
+  nav.secondary-nav.fixed {
+    position: fixed;
+    display: block;
+    top: 60px; }
+    @media screen and (min-width: 61.25rem) {
+      nav.secondary-nav.fixed {
+        top: 80px; } }
+  nav.secondary-nav.slide-down {
+    -webkit-transform: translateY(-110px);
+            transform: translateY(-110px); }
+    @media screen and (min-width: 61.25rem) {
+      nav.secondary-nav.slide-down {
+        -webkit-transform: translateY(-150px);
+                transform: translateY(-150px); } }
+  nav.secondary-nav.slide-up {
+    -webkit-transform: translateY(-60px);
+            transform: translateY(-60px); }
+    @media screen and (min-width: 61.25rem) {
+      nav.secondary-nav.slide-up {
+        -webkit-transform: translateY(-80px);
+                transform: translateY(-80px); } }
+  nav.secondary-nav:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 35px;
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(right, #f1f1f1, rgba(241, 241, 241, 0));
+    background-image: linear-gradient(to left, #f1f1f1, rgba(241, 241, 241, 0));
+    pointer-events: none;
+    -webkit-transition: opacity .2s;
+            transition: opacity .2s; }
+  nav.secondary-nav ul, nav.secondary-nav li, nav.secondary-nav a {
+    height: 100%;
+    color: inherit; }
+  nav.secondary-nav ul {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; }
+    @media screen and (min-width: 30rem) {
+      nav.secondary-nav ul {
+        padding-left: 2rem;
+        padding-right: 2rem; } }
+    @media screen and (min-width: 65rem) {
+      nav.secondary-nav ul {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important; } }
+    @media screen and (min-width: 61.25rem) {
+      nav.secondary-nav ul {
+        text-align: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center; } }
+  nav.secondary-nav li {
+    display: inline-block;
+    margin: 0;
+    float: left;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0; }
+    nav.secondary-nav li:not(:last-of-type) {
+      /*padding-left: 1.25rem;*/ }
+    nav.secondary-nav li > a:hover {
+      background-color: white; }
+    nav.secondary-nav li.alt > a:hover {
+      /*background-color: lighten($primarycolor, 25%);*/ }
+  nav.secondary-nav li.alt {
+    color: #d53847;
+    font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  nav.secondary-nav a {
+    position: relative;
+    display: block;
+    padding: 0 2rem 0 0;
+    line-height: 50px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: .6;
+    -webkit-transition: background-color .3s;
+            transition: background-color .3s; }
+    nav.secondary-nav a:hover {
+      text-decoration: none; }
+    @media screen and (min-width: 61.25rem) {
+      nav.secondary-nav a {
+        padding: 0 1rem; } }
 
 .splash--home-page {
   position: relative;

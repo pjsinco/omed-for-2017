@@ -1,0 +1,127 @@
+nav.secondary-nav {
+
+  position: relative;
+  display: none;
+  z-index: 12;
+  width: 100%;
+  height: $secondary-nav-height-small;
+  clear: both;
+  background-color: rgba($lightgray, .97);
+  color: $font-color;
+  transform: translateZ(0) translateY(-($secondary-nav-height-small + $header-height-small));
+  will-change: transform;
+  transition: transform .5s;
+  @include clearfix;
+
+  @include breakpoint($screen $navflip) {
+    transform: translateZ(0) translateY(-($secondary-nav-height + $header-height));
+  }
+
+  &.fixed {
+    position: fixed;
+    display: block;
+    top: $header-height-small;
+
+    @include breakpoint($screen $navflip) {
+      top: $header-height;
+    }
+  }
+
+  &.slide-down {
+    transform: translateY(-$secondary-nav-height-small - $header-height-small);
+
+    @include breakpoint($screen $navflip) {
+      transform: translateY(-$secondary-nav-height - $header-height);
+    }
+  }
+
+  &.slide-up {
+    transform: translateY(-$header-height-small);
+
+    @include breakpoint($screen $navflip) {
+      transform: translateY(-$header-height);
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 35px;
+    background-color: transparent;
+    background-image: linear-gradient(to left, $lightgray, rgba($lightgray, 0));
+    pointer-events: none;
+    transition: opacity .2s;
+  }
+
+  ul, li, a {
+    height: 100%;
+    color: inherit;
+  }
+
+  ul {
+    display: flex;
+    @include edge-spacing();
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @include breakpoint($screen $navflip) {
+      text-align: center;
+      justify-content: center;
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin: 0;
+    float: left;
+    flex-shrink: 0;
+  
+    &:not(:last-of-type) {
+      /*padding-left: 1.25rem;*/
+    }
+
+
+    & > a {
+      &:hover {
+        background-color: lighten($lightgray, 15%);
+      }
+    }
+
+    &.alt > a {
+      &:hover {
+        /*background-color: lighten($primarycolor, 25%);*/
+      }
+    }
+  }
+
+  li.alt {
+    color: $primarycolor;
+    font-family: $font-medium;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding: 0 2rem 0 0;
+    line-height: 50px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: .6;
+    transition: background-color .3s;
+    
+    &:hover {
+      text-decoration: none;
+    }
+
+    @include breakpoint($screen $navflip) {
+      padding: 0 1rem;
+    }
+    
+  }
+
+}

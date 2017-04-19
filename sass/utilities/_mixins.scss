@@ -41,18 +41,21 @@
 @mixin edge-spacing( $goToZero: false ) {
   margin-left: auto;
   margin-right: auto;
-  padding-right: 1em;
   padding-left: 1em;
+  padding-right: 1em;
 
   @include breakpoint($screen $medium-start) {
-    padding-right: 2rem;
     padding-left: 2rem;
+    padding-right: 2rem;
   }
 
-  @if $goToZero {
-    @include breakpoint($screen $contentwidth + 2rem) {
-      padding-right: 0 !important;
+  @include breakpoint($screen $contentwidth + 2rem) {
+    @if ($goToZero) {
       padding-left: 0 !important;
+      padding-right: 0 !important;
+    } @else {
+      padding-left: 1rem !important;
+      padding-right: 1rem !important;
     }
   }
 }
@@ -65,4 +68,30 @@
 
 @mixin hover-scale($scale: 1.1) {
   transform: scale($scale);
+}
+
+@mixin nav-hover($color: #000000, $width: 100%, $border-size: 2px, $bottom: 17px) {
+  @include breakpoint($screen $navflip) {
+    &:hover {
+      text-decoration: none;
+      color: $color;
+      transform: none;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: $bottom;
+      width: $width;
+      height: $border-size;
+      background-color: $color;
+      transition: all .3s;
+      transform: translateX(-50%) scale(0);
+    }
+
+    &:hover:after {
+      transform: translateX(-50%) scale(1);
+    }
+  }
 }
