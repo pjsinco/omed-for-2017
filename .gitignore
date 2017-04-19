@@ -48,9 +48,9 @@ components/vendor/*
 fonts/*
 img/*
 
-.*.swp
-.*.swo
-.*.swm
+*.swp
+*.swo
+*.swm
 
 misc
 
