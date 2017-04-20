@@ -17,7 +17,7 @@ $splash_body = get_field( 'omed_splash_body', $post->ID );
       <h1 class="splash__header">
         <?php if ($splash_header): echo $splash_header; endif; ?>
       </h1>
-      <p class="splash__body sub-nav-hero">
+      <p class="splash__body scroll-flip-here">
         <?php if ($splash_body): echo $splash_body; endif; ?>
       </p>
     </div> <!-- .splash__block -->
