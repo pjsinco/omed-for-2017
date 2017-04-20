@@ -39,9 +39,20 @@ console.log('changingwebkittextstroke');
         $mainHeader  = $('.header'),
         headerHeight = $mainHeader.height(),
         $secondaryNavigation = $('.secondary-nav'),
-        $belowNavHeroContent = $('.sub-nav-hero');
+        $belowNavHeroContent = $('.sub-nav-hero'),
+        $body = $('body');
+
+  const checkOmedScrolledPoint = (currentTop) => {
+    if (currentTop > scrollOffset) {
+      $body.addClass('omedscrolled');
+    } else {
+      $body.removeClass('omedscrolled');
+    }
+  };
 
   const checkSimpleNavigation = (currentTop) => {
+
+    checkOmedScrolledPoint(currentTop);
 
     if (previousTop - currentTop > scrollDelta) {
       $mainHeader.removeClass('is-hidden');
@@ -52,6 +63,9 @@ console.log('changingwebkittextstroke');
   };
 
 	const checkStickyNavigation = (currentTop) => {
+
+    checkOmedScrolledPoint(currentTop);
+
 		//secondary nav below intro section - sticky secondary nav
 		var secondaryNavOffsetTop = $belowNavHeroContent.offset().top - 
                                 $secondaryNavigation.height() - 

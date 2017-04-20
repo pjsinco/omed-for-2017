@@ -39,9 +39,20 @@ jQuery(document).ready(function ($) {
       $mainHeader = $('.header'),
       headerHeight = $mainHeader.height(),
       $secondaryNavigation = $('.secondary-nav'),
-      $belowNavHeroContent = $('.sub-nav-hero');
+      $belowNavHeroContent = $('.sub-nav-hero'),
+      $body = $('body');
+
+  var checkOmedScrolledPoint = function checkOmedScrolledPoint(currentTop) {
+    if (currentTop > scrollOffset) {
+      $body.addClass('omedscrolled');
+    } else {
+      $body.removeClass('omedscrolled');
+    }
+  };
 
   var checkSimpleNavigation = function checkSimpleNavigation(currentTop) {
+
+    checkOmedScrolledPoint(currentTop);
 
     if (previousTop - currentTop > scrollDelta) {
       $mainHeader.removeClass('is-hidden');
@@ -51,6 +62,9 @@ jQuery(document).ready(function ($) {
   };
 
   var checkStickyNavigation = function checkStickyNavigation(currentTop) {
+
+    checkOmedScrolledPoint(currentTop);
+
     //secondary nav below intro section - sticky secondary nav
     var secondaryNavOffsetTop = $belowNavHeroContent.offset().top - $secondaryNavigation.height() - $mainHeader.height();
 
