@@ -38,10 +38,12 @@ body {
   height: 100%;
 
   &.page-child, 
-  &.page-template-page-standalone,
+  /*&.page-template-page-standalone,*/
   &.error404 {
     @extend %body-with-top-padding;
   }
+
+  
 }
 
 p {

@@ -205,12 +205,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
             transform: none; } }
 @-webkit-keyframes rotate-up {
   100% {
-    -webkit-transform: rotateZ(-4deg);
-            transform: rotateZ(-4deg); } }
+    -webkit-transform: skew(-4deg) rotateZ(-4deg);
+            transform: skew(-4deg) rotateZ(-4deg); } }
 @keyframes rotate-up {
   100% {
-    -webkit-transform: rotateZ(-4deg);
-            transform: rotateZ(-4deg); } }
+    -webkit-transform: skew(-4deg) rotateZ(-4deg);
+            transform: skew(-4deg) rotateZ(-4deg); } }
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -662,7 +662,7 @@ p, li, .entry-content li {
     margin-bottom: 0; }
 
 @media screen and (min-width: 61.25rem) {
-  body.page-child, body.page-template-page-standalone, body.error404 {
+  body.page-child, body.error404 {
     padding-top: 8rem; } }
 
 * {
@@ -1060,7 +1060,7 @@ table th[class*="col-"] {
   margin-top: 2rem;
   margin-bottom: 2rem; }
   body[class*="page-standalone"] .content {
-    margin-top: 0; }
+    margin-top: 1rem; }
   .error404 .content {
     display: block;
     /*margin-top: 2rem;*/
@@ -1148,10 +1148,8 @@ table th[class*="col-"] {
 
 .entry__gradient {
   /*@extend %entry-header-base;*/
-  position: absolute;
-  left: -9.5%;
-  right: -7.5%;
-  padding: 2rem;
+  position: relative;
+  padding: 2rem 0;
   background-image: -webkit-linear-gradient(right, #d53847, #d53847 33%, #5c419a);
   background-image: linear-gradient(to left, #d53847, #d53847 33%, #5c419a);
   color: #fff;
@@ -1161,14 +1159,6 @@ table th[class*="col-"] {
           animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
-  @media screen and (min-width: 23.75rem) {
-    .entry__gradient {
-      left: -8%;
-      right: -8%; } }
-  @media screen and (min-width: 30rem) {
-    .entry__gradient {
-      left: -5%;
-      right: -5%; } }
 .entry__title {
   margin-bottom: 0;
   padding-bottom: 0;

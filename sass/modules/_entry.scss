@@ -6,25 +6,13 @@
 
   &__gradient {
     /*@extend %entry-header-base;*/
-    position: absolute;
-    left: -9.5%;
-    right: -7.5%;
-    padding: 2rem;
+    position: relative;
+    padding: 2rem 0;
     background-image: linear-gradient(to left, $primarycolor, $primarycolor 33%, $accentcolor);
     color: $white;
     transform-origin: 100%;
     animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;
     backface-visibility: hidden;
-
-    @include breakpoint($screen $small-minor-minor-start) {
-      left: -8%;
-      right: -8%;
-    }
-
-    @include breakpoint($screen $medium-start) {
-       left: -5%;
-       right: -5%;
-    }
   }
 
   &__header {
