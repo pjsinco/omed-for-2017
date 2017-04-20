@@ -27,7 +27,7 @@
 
         <div class="content__block--secondary">
             <?php 
-            //get_template_part( 'template-parts/sidebar', 'asides' );
+            get_template_part( 'template-parts/sidebar', 'asides' );
             //get_template_part( 'template-parts/sidebar', 'related' );
             ?>
         </div> <!-- .content__block-secondary -->

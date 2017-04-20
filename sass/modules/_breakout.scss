@@ -1,0 +1,29 @@
+.breakout {
+
+  padding: 1rem;
+  margin-bottom: 2rem;
+  font-size: .875rem;
+  /*background-color: $extralightgray;*/
+  border: 1px solid $primarycolor;
+  border-top-right-radius: 2rem;
+
+  & h3 {
+    margin-bottom: 2rem;
+    font-family: $font-medium;
+    font-size: inherit;
+    color: $primarycolor;
+  }
+
+  & h6 {
+    line-height: 1.65;
+    font-family: "gotham-medium";
+  }
+
+  & p {
+    font-size: inherit;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
