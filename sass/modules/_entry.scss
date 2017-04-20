@@ -1,0 +1,90 @@
+%gradient-position-base {
+  position: relative;
+  transform-origin: 100%;
+  animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;
+  backface-visibility: hidden;
+}
+
+%leadin-base {
+  & h4 {
+    color: $font-color-lightest;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    
+    @include breakpoint($screen $large-minor-minor-start) {
+      font-size: 1.625rem;
+    }
+  }
+}
+
+.entry {
+
+  &__gradient {
+    @extend %gradient-position-base;
+    margin-bottom: 1rem;
+    padding: 2rem 0;
+    background-image: linear-gradient(to left, $primarycolor, $primarycolor 33%, $accentcolor);
+    color: $white;
+
+    @include breakpoint($screen $xlarge-minor-start) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__leadin {
+    @extend %leadin-base;
+
+    &--gradient {
+      @extend %leadin-base;
+      @extend %gradient-position-base;
+    }
+  }
+
+  &__header {
+    margin-bottom: 3rem;
+
+    @include breakpoint($screen $medium-start) {
+      margin-bottom: 4rem;
+    }
+
+    @include breakpoint($screen $medium-minor-minor-start) {
+      margin-bottom: 5rem;
+    }
+
+    @include breakpoint($screen $large-minor-start) {
+      margin-bottom: 6rem;
+    }
+
+    @include breakpoint($screen $large-minor-minor-start) {
+      margin-bottom: 7rem;
+    }
+  }
+
+  &__title {
+
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: inherit;
+    font-family: $font-light;
+    line-height: 1.4;
+    border-bottom: none;
+
+    @include breakpoint($screen $large-start) {
+      font-size: 2.33rem;
+    }
+
+    @include breakpoint($screen $large-minor-minor-start) {
+      font-size: 3rem;
+    }
+
+    &--error {
+      text-align: center;
+    }
+
+  }
+
+  &__body {
+  
+  }
+
+}

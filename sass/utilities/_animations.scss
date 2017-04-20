@@ -36,6 +36,6 @@
 
 @keyframes rotate-up {
   100% {
-    transform: rotateZ(-4deg);
+    transform: skew(-4deg) rotateZ(-4deg);
   }
 }

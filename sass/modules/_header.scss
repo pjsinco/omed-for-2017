@@ -22,16 +22,22 @@
   transition: transform .5s;
   background-color: $white;
   /*box-shadow: 0px -2px 8px 0px rgba(208,208,208,.68);*/
-  box-shadow: 0px -2px 16px 2px rgba(208, 208, 208, 0.68);
   opacity: .97;
   @include clearfix;
+  border-bottom: 1px solid $lightgray;
+
+  .omedscrolled & {
+    box-shadow: 0px -2px 16px 2px rgba(208, 208, 208, 0.3);
+  }
 
   &.is-hidden {
     transform: translateY(-100%);
+    box-shadow: none;
   }
 
   @include breakpoint($screen $navflip) {
     height: $header-height;
+    border-bottom: none;
   }
 
   .admin-bar & {

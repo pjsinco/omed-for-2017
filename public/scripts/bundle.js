@@ -4,6 +4,31 @@
 
 jQuery(document).ready(function ($) {
 
+  /**
+   * Fix font weight issues in Safari
+   * @see http://stackoverflow.com/questions/31056543/safari-font-rendering-issues
+   */
+  var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+  var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
+  var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
+  var is_safari = navigator.userAgent.indexOf('Safari') > -1;
+  var is_opera = navigator.userAgent.indexOf('Presto') > -1;
+  var is_mac = navigator.userAgent.indexOf('Mac OS') != -1;
+  var is_windows = !is_mac;
+
+  if (is_chrome && is_safari) {
+    is_safari = false;
+  }
+
+  if (is_safari || is_windows) {
+    console.log('changingwebkittextstroke');
+    $('body').css('-webkit-text-stroke', '0.25px');
+  }
+
+  /**
+   * Hide and show nav bars
+   *
+   */
   var scrolling = false,
       currentTop = 0,
       previousTop = 0,
@@ -14,9 +39,20 @@ jQuery(document).ready(function ($) {
       $mainHeader = $('.header'),
       headerHeight = $mainHeader.height(),
       $secondaryNavigation = $('.secondary-nav'),
-      $belowNavHeroContent = $('.sub-nav-hero');
+      $belowNavHeroContent = $('.sub-nav-hero'),
+      $body = $('body');
+
+  var checkOmedScrolledPoint = function checkOmedScrolledPoint(currentTop) {
+    if (currentTop > scrollOffset) {
+      $body.addClass('omedscrolled');
+    } else {
+      $body.removeClass('omedscrolled');
+    }
+  };
 
   var checkSimpleNavigation = function checkSimpleNavigation(currentTop) {
+
+    checkOmedScrolledPoint(currentTop);
 
     if (previousTop - currentTop > scrollDelta) {
       $mainHeader.removeClass('is-hidden');
@@ -26,6 +62,9 @@ jQuery(document).ready(function ($) {
   };
 
   var checkStickyNavigation = function checkStickyNavigation(currentTop) {
+
+    checkOmedScrolledPoint(currentTop);
+
     //secondary nav below intro section - sticky secondary nav
     var secondaryNavOffsetTop = $belowNavHeroContent.offset().top - $secondaryNavigation.height() - $mainHeader.height();
 

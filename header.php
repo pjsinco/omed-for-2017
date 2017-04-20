@@ -19,7 +19,7 @@
     <?php wp_head(); ?>
   </head>
 
-  <body <?php if ( is_page_template( 'page-standalone.php' ) || is_page_template( 'page-sublevel.php' ) || is_404() ): body_class('omedscrolled'); else: body_class(); endif; ?>>
+  <body <?php body_class(); ?>>
 
     <?php get_template_part( 'template-parts/header', 'mainnav' ); ?>
 
