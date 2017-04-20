@@ -85,10 +85,9 @@ nav.secondary-nav {
     }
 
 
-    & > a {
-      &:hover {
-        background-color: lighten($lightgray, 15%);
-      }
+    &.current-menu-item > a,
+    & > a:hover {
+      background-color: lighten($lightgray, 15%);
     }
 
     &.alt > a {

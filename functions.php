@@ -32,13 +32,7 @@ function omed_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	register_nav_menus( 
-    array( 
-      'header-menu-major' => 'Header Major Menu', 
-      'header-menu-minor' => 'Header Minor Menu', 
-      'side-nav' => 'Side Navigation', 
-    ) 
-  );
+	register_nav_menu( 'secondary-nav', 'Secondary Navigation' );
 
   add_image_size( 'omed-medium-square', 200, 200, true );
 
