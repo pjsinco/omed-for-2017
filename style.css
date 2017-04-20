@@ -1184,8 +1184,6 @@ table th[class*="col-"] {
   -webkit-transform-origin: 100%;
           transform-origin: 100%;
   /*animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;*/
-  -webkit-transform: skew(-4deg) rotateZ(-4deg);
-          transform: skew(-4deg) rotateZ(-4deg);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
@@ -1201,9 +1199,7 @@ table th[class*="col-"] {
   position: relative;
   margin-bottom: 1rem;
   padding: 2rem 0;
-  color: #fff;
-  -webkit-animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up;
-          animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up; }
+  color: #fff; }
   .entry__gradient > div {
     -webkit-transform-origin: 100%;
             transform-origin: 100%;
@@ -1234,13 +1230,20 @@ table th[class*="col-"] {
     right: 0;
     top: 0;
     z-index: -1;
-    background-image: -webkit-linear-gradient(right, #d53847, #d53847 33%, #5c419a);
-    background-image: linear-gradient(to left, #d53847, #d53847 33%, #5c419a); }
+    background-image: -webkit-linear-gradient(4deg, #d53847, #3d5ba9);
+    background-image: linear-gradient(86deg, #d53847, #3d5ba9);
+    -webkit-transform: skew(-4deg) rotateZ(-4deg);
+            transform: skew(-4deg) rotateZ(-4deg); }
   @media screen and (min-width: 73rem) {
     .entry__gradient {
       margin-bottom: 2rem; } }
+.entry__leadin--gradient {
+  -webkit-transform: rotate(-4deg);
+          transform: rotate(-4deg); }
 .entry__header {
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  -webkit-animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up;
+          animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up; }
   @media screen and (min-width: 30rem) {
     .entry__header {
       margin-bottom: 4rem; } }
