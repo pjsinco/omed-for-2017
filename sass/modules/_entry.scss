@@ -1,7 +1,7 @@
 %gradient-position-base {
   position: relative;
   transform-origin: 100%;
-  animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;
+  /*animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;*/
   backface-visibility: hidden;
 }
 
@@ -20,11 +20,46 @@
 .entry {
 
   &__gradient {
-    @extend %gradient-position-base;
+    position: relative;
     margin-bottom: 1rem;
     padding: 2rem 0;
-    background-image: linear-gradient(to left, $primarycolor, $primarycolor 33%, $accentcolor);
     color: $white;
+
+    > div {
+      transform-origin: 100%;
+      transform: translateY(0%) rotate(-4deg);
+
+      @include breakpoint($screen $xlarge-minor-start) {
+        transform: translateY(1%) rotate(-4deg);
+      }
+
+      @include breakpoint($screen 75rem) {
+        transform: translateY(1%) rotate(-4deg);
+      }
+
+      @include breakpoint($screen 77rem) {
+        transform: translateY(4%) rotate(-4deg);
+      }
+
+      @include breakpoint($screen 80rem) {
+        transform: translateY(10%) rotate(-4deg);
+      }
+    }
+
+    &:after {
+
+      @extend %gradient-position-base;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      z-index: -1;
+      background-image: linear-gradient(86deg, $primarycolor, $secondarycolor);
+      transform: skew(-4deg) rotateZ(-4deg);
+    }
 
     @include breakpoint($screen $xlarge-minor-start) {
       margin-bottom: 2rem;
@@ -37,11 +72,13 @@
     &--gradient {
       @extend %leadin-base;
       @extend %gradient-position-base;
+      transform: rotate(-4deg);
     }
   }
 
   &__header {
     margin-bottom: 3rem;
+    animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up;
 
     @include breakpoint($screen $medium-start) {
       margin-bottom: 4rem;
