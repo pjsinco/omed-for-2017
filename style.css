@@ -1945,7 +1945,7 @@ nav.secondary-nav {
             flex-shrink: 0; }
     nav.secondary-nav li:not(:last-of-type) {
       /*padding-left: 1.25rem;*/ }
-    nav.secondary-nav li > a:hover {
+    nav.secondary-nav li.current-menu-item > a, nav.secondary-nav li > a:hover {
       background-color: white; }
     nav.secondary-nav li.alt > a:hover {
       /*background-color: lighten($primarycolor, 25%);*/ }
