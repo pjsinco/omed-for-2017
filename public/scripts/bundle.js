@@ -5,27 +5,6 @@
 jQuery(document).ready(function ($) {
 
   /**
-   * Fix font weight issues in Safari
-   * @see http://stackoverflow.com/questions/31056543/safari-font-rendering-issues
-   */
-  var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
-  var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
-  var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
-  var is_safari = navigator.userAgent.indexOf('Safari') > -1;
-  var is_opera = navigator.userAgent.indexOf('Presto') > -1;
-  var is_mac = navigator.userAgent.indexOf('Mac OS') != -1;
-  var is_windows = !is_mac;
-
-  if (is_chrome && is_safari) {
-    is_safari = false;
-  }
-
-  if (is_safari || is_windows) {
-    console.log('changingwebkittextstroke');
-    $('body').css('-webkit-text-stroke', '0.25px');
-  }
-
-  /**
    * Hide and show nav bars
    *
    */
@@ -39,7 +18,7 @@ jQuery(document).ready(function ($) {
       $mainHeader = $('.header'),
       headerHeight = $mainHeader.height(),
       $secondaryNavigation = $('.secondary-nav'),
-      $belowNavHeroContent = $('.sub-nav-hero'),
+      $scrollFlipHere = $('.scroll-flip-here'),
       $body = $('body');
 
   var checkOmedScrolledPoint = function checkOmedScrolledPoint(currentTop) {
@@ -66,7 +45,7 @@ jQuery(document).ready(function ($) {
     checkOmedScrolledPoint(currentTop);
 
     //secondary nav below intro section - sticky secondary nav
-    var secondaryNavOffsetTop = $belowNavHeroContent.offset().top - $secondaryNavigation.height() - $mainHeader.height();
+    var secondaryNavOffsetTop = $scrollFlipHere.offset().top - $secondaryNavigation.height() - $mainHeader.height();
 
     if (previousTop >= currentTop) {
       //if scrolling up... 
@@ -75,13 +54,13 @@ jQuery(document).ready(function ($) {
         console.log('1');
         $mainHeader.removeClass('is-hidden');
         $secondaryNavigation.removeClass('fixed slide-up');
-        $belowNavHeroContent.removeClass('secondary-nav-fixed');
+        $scrollFlipHere.removeClass('secondary-nav-fixed');
       } else if (previousTop - currentTop > scrollDelta) {
         console.log('2');
         //secondary nav is fixed
         $mainHeader.removeClass('is-hidden');
         $secondaryNavigation.removeClass('slide-up').addClass('fixed');
-        $belowNavHeroContent.addClass('secondary-nav-fixed');
+        $scrollFlipHere.addClass('secondary-nav-fixed');
       }
     } else {
       //if scrolling down...	
@@ -90,13 +69,13 @@ jQuery(document).ready(function ($) {
         //hide primary nav
         $mainHeader.addClass('is-hidden');
         $secondaryNavigation.addClass('fixed slide-up slide-down');
-        $belowNavHeroContent.addClass('secondary-nav-fixed');
+        $scrollFlipHere.addClass('secondary-nav-fixed');
       } else if (currentTop > secondaryNavOffsetTop) {
         console.log('4');
         //once the secondary nav is fixed, do not hide primary nav if you haven't scrolled more than scrollOffset 
         $mainHeader.removeClass('is-hidden');
         $secondaryNavigation.addClass('fixed slide-down').removeClass('slide-up');
-        $belowNavHeroContent.addClass('secondary-nav-fixed');
+        $scrollFlipHere.addClass('secondary-nav-fixed');
       }
     }
   };
@@ -104,9 +83,7 @@ jQuery(document).ready(function ($) {
   var autoHideHeader = function autoHideHeader() {
     currentTop = $(window).scrollTop();
 
-    //checkNavigation(currentTop);
-
-    $belowNavHeroContent.length > 0 ? checkStickyNavigation(currentTop) : checkSimpleNavigation(currentTop);
+    $scrollFlipHere.length > 0 ? checkStickyNavigation(currentTop) : checkSimpleNavigation(currentTop);
 
     previousTop = currentTop;
     scrolling = false;
@@ -121,6 +98,30 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  /**
+   * Fix font weight issues in Safari
+   * @see http://stackoverflow.com/questions/31056543/safari-font-rendering-issues
+   */
+  var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+  var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
+  var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
+  var is_safari = navigator.userAgent.indexOf('Safari') > -1;
+  var is_opera = navigator.userAgent.indexOf('Presto') > -1;
+  var is_mac = navigator.userAgent.indexOf('Mac OS') != -1;
+  var is_windows = !is_mac;
+
+  if (is_chrome && is_safari) {
+    is_safari = false;
+  }
+
+  if (is_safari || is_windows) {
+    $('body').css('-webkit-text-stroke', '0.25px');
+  }
+
+  /**
+   * Nav behavior
+   *
+   */
   $mainHeader.on('click', '.nav-trigger', function (evt) {
     evt.preventDefault();
     $mainHeader.toggleClass('nav-open');

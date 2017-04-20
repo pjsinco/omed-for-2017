@@ -16,7 +16,7 @@
 
       <?php get_template_part( 'template-parts/page', 'header' ); ?>
 
-      <div class="content__block container-fluid wrap">
+      <div class="content__block container-fluid wrap scroll-flip-here">
         <div class="content__block--primary">
 
           <?php get_template_part( 'template-parts/page', 'article' ); ?>
@@ -27,7 +27,7 @@
 
         <div class="content__block--secondary">
             <?php 
-            //get_template_part( 'template-parts/sidebar', 'asides' );
+            get_template_part( 'template-parts/sidebar', 'asides' );
             //get_template_part( 'template-parts/sidebar', 'related' );
             ?>
         </div> <!-- .content__block-secondary -->
