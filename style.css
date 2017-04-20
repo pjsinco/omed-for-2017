@@ -17,6 +17,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* Buttons */
 /*$btn-reverse-bg: transparent;*/
 /* Breakpoints */
+/*$xlarge-minor-minor-start : 75rem;     // 1200px*/
 /* Fonts */
 /* Tables */
 /* Numbers we use */
@@ -175,6 +176,24 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
     opacity: 1;
     -webkit-transform: translateX(0);
             transform: translateX(0); } }
+@-webkit-keyframes fade-in-up {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0); } }
 @-webkit-keyframes slide {
   from {
     background-position-x: 0%; }
@@ -1160,12 +1179,13 @@ table th[class*="col-"] {
             -ms-flex-preferred-size: 31.8%;
                 flex-basis: 31.8%; } }
 
-.entry__gradient, .entry__leadin--gradient {
+.entry__gradient:after, .entry__leadin--gradient {
   position: relative;
   -webkit-transform-origin: 100%;
           transform-origin: 100%;
-  -webkit-animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;
-          animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;
+  /*animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;*/
+  -webkit-transform: skew(-4deg) rotateZ(-4deg);
+          transform: skew(-4deg) rotateZ(-4deg);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
@@ -1178,11 +1198,44 @@ table th[class*="col-"] {
       font-size: 1.625rem; } }
 
 .entry__gradient {
+  position: relative;
   margin-bottom: 1rem;
   padding: 2rem 0;
-  background-image: -webkit-linear-gradient(right, #d53847, #d53847 33%, #5c419a);
-  background-image: linear-gradient(to left, #d53847, #d53847 33%, #5c419a);
-  color: #fff; }
+  color: #fff;
+  -webkit-animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up;
+          animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up; }
+  .entry__gradient > div {
+    -webkit-transform-origin: 100%;
+            transform-origin: 100%;
+    -webkit-transform: translateY(0%) rotate(-4deg);
+            transform: translateY(0%) rotate(-4deg); }
+    @media screen and (min-width: 73rem) {
+      .entry__gradient > div {
+        -webkit-transform: translateY(1%) rotate(-4deg);
+                transform: translateY(1%) rotate(-4deg); } }
+    @media screen and (min-width: 75rem) {
+      .entry__gradient > div {
+        -webkit-transform: translateY(1%) rotate(-4deg);
+                transform: translateY(1%) rotate(-4deg); } }
+    @media screen and (min-width: 77rem) {
+      .entry__gradient > div {
+        -webkit-transform: translateY(4%) rotate(-4deg);
+                transform: translateY(4%) rotate(-4deg); } }
+    @media screen and (min-width: 80rem) {
+      .entry__gradient > div {
+        -webkit-transform: translateY(10%) rotate(-4deg);
+                transform: translateY(10%) rotate(-4deg); } }
+  .entry__gradient:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    background-image: -webkit-linear-gradient(right, #d53847, #d53847 33%, #5c419a);
+    background-image: linear-gradient(to left, #d53847, #d53847 33%, #5c419a); }
   @media screen and (min-width: 73rem) {
     .entry__gradient {
       margin-bottom: 2rem; } }
