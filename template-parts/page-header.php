@@ -12,9 +12,11 @@
         <?php the_title( '<h1 class="entry__title">', '</h1>' ); ?>
       </div>
     </div>
+    <div class="entry__leadin--gradient container-fluid wrap">
+      <?php if ( $leadin = get_field( 'omed_leadin' ) ): ?>
+        <h4><?php echo $leadin; ?></h4>
+      <?php endif; ?>
+    </div>
 	</header><!-- .entry-header -->
-  <?php if ( $leadin = get_field( 'omed_leadin' ) ): ?>
-    <h4 class="leadin"><?php echo $leadin; ?></h4>
-  <?php endif; ?>
 
 

@@ -1,22 +1,40 @@
-%entry-header-base {
-  margin-bottom: 3rem;
+%gradient-position-base {
+  position: relative;
+  transform-origin: 100%;
+  animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;
+  backface-visibility: hidden;
+}
+
+%leadin-base {
+  & h4 {
+    color: $font-color-lightest;
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
 }
 
 .entry {
 
   &__gradient {
-    /*@extend %entry-header-base;*/
-    position: relative;
+    @extend %gradient-position-base;
+    margin-bottom: 1rem;
     padding: 2rem 0;
     background-image: linear-gradient(to left, $primarycolor, $primarycolor 33%, $accentcolor);
     color: $white;
-    transform-origin: 100%;
-    animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;
-    backface-visibility: hidden;
+
+  }
+
+  &__leadin {
+    @extend %leadin-base;
+
+    &--gradient {
+      @extend %leadin-base;
+      @extend %gradient-position-base;
+    }
   }
 
   &__header {
-    @extend %entry-header-base;
+    margin-bottom: 3rem;
 
     &--gradient {
       
