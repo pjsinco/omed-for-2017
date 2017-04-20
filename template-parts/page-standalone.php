@@ -9,14 +9,14 @@
 
 <?php while (have_posts()): the_post(); ?>
 
-  <div class="container-fluid wrap content">
+  <div class="content">
 
     <!--   Main content -->
     <section class="content__main--full">
 
       <?php get_template_part( 'template-parts/page', 'header' ); ?>
 
-      <div class="content__block">
+      <div class="content__block container-fluid wrap">
         <div class="content__block--primary">
 
           <?php get_template_part( 'template-parts/page', 'article' ); ?>

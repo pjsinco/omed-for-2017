@@ -1044,6 +1044,9 @@ table th[class*="col-"] {
   margin-top: 2rem;
   margin-bottom: 2rem; }
 
+.content__main, .content__main--full {
+  position: relative; }
+
 .content {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1056,6 +1059,8 @@ table th[class*="col-"] {
           flex-direction: column;
   margin-top: 2rem;
   margin-bottom: 2rem; }
+  body[class*="page-standalone"] .content {
+    margin-top: 0; }
   .error404 .content {
     display: block;
     /*margin-top: 2rem;*/
@@ -1082,7 +1087,6 @@ table th[class*="col-"] {
             -ms-flex-preferred-size: 16.66666667%;
                 flex-basis: 16.66666667%; } }
   .content__main {
-    position: relative;
     margin-bottom: 2rem; }
     @media screen and (min-width: 61.25rem) {
       .content__main {
@@ -1097,11 +1101,13 @@ table th[class*="col-"] {
           top: 0;
           bottom: 0;
           border-right: 1px solid #717271; } }
-    @media screen and (min-width: 61.25rem) {
-      .content__main--full {
-        -webkit-flex-basis: 100%;
-            -ms-flex-preferred-size: 100%;
-                flex-basis: 100%; } }
+    .content__main--full {
+      overflow: hidden; }
+      @media screen and (min-width: 61.25rem) {
+        .content__main--full {
+          -webkit-flex-basis: 100%;
+              -ms-flex-preferred-size: 100%;
+                  flex-basis: 100%; } }
   .content__block {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1139,8 +1145,37 @@ table th[class*="col-"] {
 
 .entry__header {
   margin-bottom: 3rem; }
-.entry__title--error {
-  text-align: center; }
+
+.entry__gradient {
+  /*@extend %entry-header-base;*/
+  position: absolute;
+  left: -9.5%;
+  right: -7.5%;
+  padding: 2rem;
+  background-image: -webkit-linear-gradient(right, #d53847, #d53847 33%, #5c419a);
+  background-image: linear-gradient(to left, #d53847, #d53847 33%, #5c419a);
+  color: #fff;
+  -webkit-transform-origin: 100%;
+          transform-origin: 100%;
+  -webkit-animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;
+          animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
+  @media screen and (min-width: 23.75rem) {
+    .entry__gradient {
+      left: -8%;
+      right: -8%; } }
+  @media screen and (min-width: 30rem) {
+    .entry__gradient {
+      left: -5%;
+      right: -5%; } }
+.entry__title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: inherit;
+  border-bottom: none; }
+  .entry__title--error {
+    text-align: center; }
 
 .nav-trigger span em, .nav-trigger span em:before, .nav-trigger span em:after {
   display: block;

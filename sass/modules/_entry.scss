@@ -1,15 +1,52 @@
+%entry-header-base {
+  margin-bottom: 3rem;
+}
+
 .entry {
 
+  &__gradient {
+    /*@extend %entry-header-base;*/
+    position: absolute;
+    left: -9.5%;
+    right: -7.5%;
+    padding: 2rem;
+    background-image: linear-gradient(to left, $primarycolor, $primarycolor 33%, $accentcolor);
+    color: $white;
+    transform-origin: 100%;
+    animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;
+    backface-visibility: hidden;
+
+    @include breakpoint($screen $small-minor-minor-start) {
+      left: -8%;
+      right: -8%;
+    }
+
+    @include breakpoint($screen $medium-start) {
+       left: -5%;
+       right: -5%;
+    }
+  }
+
   &__header {
-    margin-bottom: 3rem;
+    @extend %entry-header-base;
+
+    &--gradient {
+      
+    }
 
   }
 
   &__title {
 
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: inherit;
+    border-bottom: none;
+
     &--error {
       text-align: center;
     }
+
   }
 
   &__body {
