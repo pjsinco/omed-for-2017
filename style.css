@@ -680,7 +680,8 @@ html {
 body {
   font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #fff;
-  height: 100%; }
+  height: 100%;
+  -webkit-font-smoothing: subpixel-antialiased; }
 
 li strong, p strong, li strong {
   font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -1228,7 +1229,8 @@ table th[class*="col-"] {
   opacity: .97; }
   .header.is-hidden {
     -webkit-transform: translateY(-100%);
-            transform: translateY(-100%); }
+            transform: translateY(-100%);
+    box-shadow: none; }
   @media screen and (min-width: 61.25rem) {
     .header {
       height: 80px; } }

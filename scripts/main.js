@@ -2,6 +2,33 @@
 
 jQuery(document).ready(($) => {
 
+
+  /**
+   * Fix font weight issues in Safari
+   * @see http://stackoverflow.com/questions/31056543/safari-font-rendering-issues
+   */
+  const is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
+  const is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
+  const is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
+  let is_safari = navigator.userAgent.indexOf('Safari') > -1;
+  const is_opera = navigator.userAgent.indexOf('Presto') > -1;
+  const is_mac = navigator.userAgent.indexOf('Mac OS') != -1;
+  const is_windows = !is_mac;
+
+  if (is_chrome && is_safari) {
+    is_safari = false;
+  }
+
+  if (is_safari || is_windows) {
+console.log('changingwebkittextstroke');
+    $('body').css('-webkit-text-stroke', '0.25px');
+  }
+
+  
+  /**
+   * Hide and show nav bars
+   *
+   */
   let scrolling = false,
       currentTop = 0,
       previousTop = 0,
