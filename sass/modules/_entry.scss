@@ -10,6 +10,10 @@
     color: $font-color-lightest;
     font-size: 1.25rem;
     line-height: 1.3;
+    
+    @include breakpoint($screen $large-minor-minor-start) {
+      font-size: 1.625rem;
+    }
   }
 }
 
@@ -22,6 +26,9 @@
     background-image: linear-gradient(to left, $primarycolor, $primarycolor 33%, $accentcolor);
     color: $white;
 
+    @include breakpoint($screen $xlarge-minor-start) {
+      margin-bottom: 2rem;
+    }
   }
 
   &__leadin {
@@ -36,10 +43,21 @@
   &__header {
     margin-bottom: 3rem;
 
-    &--gradient {
-      
+    @include breakpoint($screen $medium-start) {
+      margin-bottom: 4rem;
     }
 
+    @include breakpoint($screen $medium-minor-minor-start) {
+      margin-bottom: 5rem;
+    }
+
+    @include breakpoint($screen $large-minor-start) {
+      margin-bottom: 6rem;
+    }
+
+    @include breakpoint($screen $large-minor-minor-start) {
+      margin-bottom: 7rem;
+    }
   }
 
   &__title {
@@ -47,7 +65,17 @@
     margin-bottom: 0;
     padding-bottom: 0;
     color: inherit;
+    font-family: $font-light;
+    line-height: 1.4;
     border-bottom: none;
+
+    @include breakpoint($screen $large-start) {
+      font-size: 2.33rem;
+    }
+
+    @include breakpoint($screen $large-minor-minor-start) {
+      font-size: 3rem;
+    }
 
     &--error {
       text-align: center;

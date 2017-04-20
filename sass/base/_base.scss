@@ -3,7 +3,7 @@
   margin-bottom: 1rem;
   font-size: .875rem;
   line-height: $bodylineheight-bigger;
-  color: $verydark;
+  color: $font-color;
 
   @include breakpoint($screen $large-start) {
     font-size: $font-size-base;

@@ -13,6 +13,7 @@ $mediumgray: #b3b3b3;
 $darkgray: #424242;
 $white: #fff;
 $verydark: #444;
+$prettydark: #666;
 
 $primarycolor: $red;
 $secondarycolor: $blue;
@@ -29,7 +30,7 @@ $font-bold: 'gotham-bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-book: 'gotham-book', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-medium: 'gotham-medium', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $primaryfont: $font-book;
-$font-color: $verydark;
+$font-color: $prettydark;
 $font-color-lighter: $gray;
 $font-color-lightest: $mediumgray;
 $line-height-base: 1.4 !default;
@@ -93,7 +94,7 @@ $medium-minor-minor-start : 41.5rem;   // 664px
 $large-start              : 48rem;     // 768px
 $large-minor-start        : 56rem;     // 896px
 $large-minor-end          : 979px;
-$large-minor-minor-start  : 61.25rem;     // 980px
+$large-minor-minor-start  : 61.25rem;  // 980px
 $xlarge-start             : 67.75rem;  // 1084px
 $xlarge-minor-start       : 73rem;     // 1168px
 $xxlarge-start            : 90rem;     // 1440px
