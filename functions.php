@@ -32,7 +32,11 @@ function omed_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	register_nav_menu( 'secondary-nav', 'Secondary Navigation' );
+	register_nav_menus( array(
+    'secondary-nav' => 'Secondary Navigation',
+    'footer-left' => 'Footer Left',
+    'footer-right' => 'Footer Right',
+  ) );
 
   add_image_size( 'omed-medium-square', 200, 200, true );
 
