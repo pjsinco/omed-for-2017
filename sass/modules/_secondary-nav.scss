@@ -105,7 +105,8 @@ nav.secondary-nav {
   a {
     position: relative;
     display: block;
-    padding: 0 2rem 0 0;
+    /*padding: 0 2rem 0 0;*/
+    padding: 0 1rem;
     line-height: 50px;
     font-size: 12px;
     text-transform: uppercase;
@@ -117,9 +118,9 @@ nav.secondary-nav {
       text-decoration: none;
     }
 
-    @include breakpoint($screen $navflip) {
-      padding: 0 1rem;
-    }
+    /*@include breakpoint($screen $navflip) {*/
+      /*padding: 0 1rem;*/
+    /*}*/
     
   }
 

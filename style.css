@@ -1473,7 +1473,7 @@ table th[class*="col-"] {
 .header {
   position: fixed;
   top: 0;
-  z-index: 1000;
+  z-index: 2;
   /*display: flex;*/
   /*flex-direction: row;*/
   /*justify-content: space-between;*/
@@ -2151,19 +2151,20 @@ nav.secondary-nav {
   nav.secondary-nav a {
     position: relative;
     display: block;
-    padding: 0 2rem 0 0;
+    /*padding: 0 2rem 0 0;*/
+    padding: 0 1rem;
     line-height: 50px;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: .6;
     -webkit-transition: background-color .3s;
-            transition: background-color .3s; }
+            transition: background-color .3s;
+    /*@include breakpoint($screen $navflip) {*/
+    /*padding: 0 1rem;*/
+    /*}*/ }
     nav.secondary-nav a:hover {
       text-decoration: none; }
-    @media screen and (min-width: 61.25rem) {
-      nav.secondary-nav a {
-        padding: 0 1rem; } }
 
 .splash--home-page {
   position: relative;
