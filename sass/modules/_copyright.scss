@@ -1,0 +1,40 @@
+%copyright-li-base {
+  font-size: inherit;
+}
+.copyright {
+
+  padding: 2rem 0 1rem;
+
+  & li {
+    @extend %copyright-li-base;
+
+    &:not(:last-child) {
+      @extend %copyright-li-base;
+      margin-right: 1rem;
+    }
+  }
+
+  & a {
+    color: inherit;
+  }
+
+}
+
+.copyright__body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright__block {
+  font-size: .75rem;
+  color: $font-color;
+
+  &--menu {
+
+    & ul {
+      display: flex;
+      font-size: .75rem;
+    }
+  }
+
+}

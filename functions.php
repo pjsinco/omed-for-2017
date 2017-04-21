@@ -37,6 +37,7 @@ function omed_setup() {
     'footer-left' => 'Footer Left',
     'footer-center' => 'Footer Center',
     'footer-right' => 'Footer Right',
+    'footer-policies' => 'Footer Policies',
   ) );
 
   add_image_size( 'omed-medium-square', 200, 200, true );

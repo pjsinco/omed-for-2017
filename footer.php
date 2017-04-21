@@ -62,8 +62,25 @@
 
 		</div><!-- .wrap -->
     <div class="copyright">
-      
-    </div>
+      <div class="copyright__body container-fluid wrap">
+        <div class="copyright__block">
+          Copyright <?php echo date('Y'); ?>, American Osteopathic Association. <span>All rights reserved.</span>
+        </div>
+
+        <?php 
+          if ( has_nav_menu( 'footer-policies' ) ) {
+            $args = array(
+              'menu' => 'footer-policies',
+              'theme_location' => 'footer-policies',
+              'container_class' => 'copyright__block--menu',
+            );
+
+            wp_nav_menu( $args );
+          }
+        ?>
+
+      </div> <!-- .container-fluid .wrap -->
+    </div> <!-- .copyright -->
 	</footer>
 </div><!-- #page -->
 
