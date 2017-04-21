@@ -1,3 +1,16 @@
+$footerflip: $large-start;
+
+%col-item-base {
+  & ul {
+
+    margin-bottom: 1rem;
+
+    @include breakpoint($screen $medium-start) {
+      margin-bottom: inherit;
+    }
+  }
+}
+
 %col-item-a-base {
   font-size: .875rem;
   color: $font-color;
@@ -17,7 +30,7 @@
   justify-content: space-between;
   border-bottom: 1px solid $bordergray;
 
-  @include breakpoint($screen $large-start) {
+  @include breakpoint($screen $footerflip) {
     flex-direction: row;
   }
 
@@ -26,36 +39,64 @@
 .footer__col {
 
   display: flex;
-  justify-content: space-between;
-  flex-basis: 50%;
-  padding: 2rem;
+  flex-direction: column;
+  padding: 1rem 0;
+  text-align: center;
+
+  & p {
+    font-size: .875rem;
+  }
+
+  @include breakpoint($screen $medium-start) {
+
+    flex-direction: row;
+    justify-content: space-between;
+    flex-basis: 50%;
+    padding: 2rem 0;
+    text-align: left;
+  }
+
+  @include breakpoint($screen $footerflip) {
+    padding: 2rem 0 2rem 2rem;
+  }
 
   &:first-child {
     position: relative;
     text-align: center;
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid $bordergray;
 
-    &:after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 2rem;
-      bottom: 2rem;
-      width: 1px;
-      background-color: $bordergray;
+    @include breakpoint($screen $footerflip) {
+
+      border-bottom: none;
+      padding: 2rem 2rem 2rem 0;
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 2rem;
+        bottom: 2rem;
+        width: 1px;
+        background-color: $bordergray;
+      }
     }
   }
 }
 
 .footer__col-item {
 
+  @extend %col-item-base;
+  
   & a {
     @extend %col-item-a-base;
     font-family: $font-book;
   }
 
   &--highlight {
+
+    @extend %col-item-base;
 
     & a {
       @extend %col-item-a-base;
