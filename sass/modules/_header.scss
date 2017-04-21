@@ -41,10 +41,6 @@
   }
 
   .admin-bar & {
-    top: 46px;
-
-    @include breakpoint($screen $wp-admin-bar-start) {
-      top: 32px;
-    }
+    @include admin-bar;
   }
 }
