@@ -17,8 +17,8 @@
     right: -5%;
     height: 305px;
     /*transform-origin: 0 0;*/
-    /*transform: skewY(-4deg) translateY(-50%);*/
-    transform: skewY(-4deg);
+    /*transform: skewY($rotation) translateY(-50%);*/
+    transform: skewY($rotation);
     backface-visibility: hidden;
     background-image: linear-gradient(to right, $primarycolor, $primarycolor 33%, $accentcolor);
 
