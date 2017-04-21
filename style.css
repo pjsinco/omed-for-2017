@@ -1183,7 +1183,10 @@ table th[class*="col-"] {
   font-size: inherit; }
 
 .copyright {
-  padding: 2rem 0 1rem; }
+  padding: 1rem 0; }
+  @media screen and (min-width: 30rem) {
+    .copyright {
+      padding: 2rem 0 1rem; } }
   .copyright li:not(:last-child) {
     margin-right: 1rem; }
   .copyright a {
@@ -1194,20 +1197,52 @@ table th[class*="col-"] {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  text-align: center; }
+  @media screen and (min-width: 36rem) {
+    .copyright__body {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      text-align: left; } }
 
 .copyright__block {
+  margin-bottom: 1rem;
   font-size: .75rem;
   color: #666; }
+  @media screen and (min-width: 41.5rem) {
+    .copyright__block {
+      -webkit-flex-basis: 50%;
+          -ms-flex-preferred-size: 50%;
+              flex-basis: 50%; } }
+  .copyright__block p, .copyright__block li {
+    font-size: inherit; }
   .copyright__block--menu ul {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     font-size: .75rem; }
+    @media screen and (min-width: 36rem) {
+      .copyright__block--menu ul {
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+            -ms-flex-pack: end;
+                justify-content: flex-end; } }
 
 .entry__gradient:after, .entry__leadin--gradient {
   position: relative;
@@ -1302,6 +1337,12 @@ table th[class*="col-"] {
   .entry__title--error {
     text-align: center; }
 
+.footer__col-item ul, .footer__col-item--highlight ul {
+  margin-bottom: 1rem; }
+  @media screen and (min-width: 30rem) {
+    .footer__col-item ul, .footer__col-item--highlight ul {
+      margin-bottom: inherit; } }
+
 .footer__col-item a, .footer__col-item--highlight a {
   font-size: .875rem;
   color: #666; }
@@ -1324,28 +1365,68 @@ table th[class*="col-"] {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-bottom: 1px solid #d0d0d0; }
+  position: relative; }
+  .footer__body:after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    height: 1px;
+    background-color: #d0d0d0;
+    bottom: 0;
+    /*@include breakpoint($screen $footerflip) {*/
+    /*content: none;*/
+    /*}*/ }
+    @media screen and (min-width: 30rem) {
+      .footer__body:after {
+        left: 2rem;
+        right: 2rem; } }
+    @media screen and (min-width: 65rem) {
+      .footer__body:after {
+        left: 0;
+        right: 0; } }
   @media screen and (min-width: 48rem) {
     .footer__body {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
       -webkit-flex-direction: row;
           -ms-flex-direction: row;
-              flex-direction: row; } }
+              flex-direction: row;
+      /*border-bottom: 1px solid $bordergray;*/ } }
 
 .footer__col {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-flex-basis: 50%;
-      -ms-flex-preferred-size: 50%;
-          flex-basis: 50%;
-  padding: 2rem; }
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem 0 0;
+  text-align: center; }
+  .footer__col p, .footer__col li {
+    font-size: .875rem; }
+  @media screen and (min-width: 30rem) {
+    .footer__col {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      padding: 2rem 0;
+      text-align: left; } }
+  @media screen and (min-width: 48rem) {
+    .footer__col {
+      padding: 2rem 0 2rem 2rem;
+      -webkit-flex-basis: 50%;
+          -ms-flex-preferred-size: 50%;
+              flex-basis: 50%; } }
   .footer__col:first-child {
     position: relative;
     text-align: center;
@@ -1357,15 +1438,24 @@ table th[class*="col-"] {
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
-            flex-direction: column; }
-    .footer__col:first-child:after {
-      content: "";
-      position: absolute;
-      right: 0;
-      top: 2rem;
-      bottom: 2rem;
-      width: 1px;
-      background-color: #d0d0d0; }
+            flex-direction: column;
+    padding: 1rem 0;
+    border-bottom: 1px solid #d0d0d0; }
+    @media screen and (min-width: 30rem) {
+      .footer__col:first-child {
+        padding: 2rem 0; } }
+    @media screen and (min-width: 48rem) {
+      .footer__col:first-child {
+        border-bottom: none;
+        padding: 2rem 2rem 2rem 0; }
+        .footer__col:first-child:after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 2rem;
+          bottom: 2rem;
+          width: 1px;
+          background-color: #d0d0d0; } }
 
 .footer__col-item a {
   font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -1545,9 +1635,9 @@ table th[class*="col-"] {
               transform: translateX(-50%); } }
 
 footer .icon-aoa-with-tagline {
-  width: 300px;
-  height: 100px;
-  padding-bottom: .625rem;
+  width: 288px;
+  height: 91px;
+  padding-bottom: 1rem;
   fill: #666; }
 
 @media screen and (min-width: 48rem) {
