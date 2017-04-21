@@ -2066,8 +2066,7 @@ nav.secondary-nav {
 .splash--nomargin {
   margin-bottom: 0 !important; }
 .splash--home-page:before {
-  /*background-image: url(public/images/omed-splash-drumcorps-1440.jpg);*/
-  background-image: url(public/images/omed-2016-67.jpg);
+  background-image: url(public/images/splash-festival-1.jpg);
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -2160,8 +2159,8 @@ nav.secondary-nav {
   right: 0;
   background-image: -webkit-linear-gradient(left, #d53847 0%, #5c419a 12%, #d53847 24%, #5c419a 36%, #d53847 48%, #5c419a 60%, #d53847 72%, #5c419a 84%, #d53847 100%);
   background-image: linear-gradient(to right, #d53847 0%, #5c419a 12%, #d53847 24%, #5c419a 36%, #d53847 48%, #5c419a 60%, #d53847 72%, #5c419a 84%, #d53847 100%);
-  -webkit-animation: slide 10s infinite linear forwards;
-          animation: slide 10s infinite linear forwards; }
+  -webkit-animation: slide 8s infinite linear forwards;
+          animation: slide 8s infinite linear forwards; }
 
 .splash__border--bottom {
   left: -5%;
@@ -2172,7 +2171,7 @@ nav.secondary-nav {
   background-image: linear-gradient(to right, #5c419a 0%, #d53847 12%, #5c419a 24%, #d53847 36%, #5c419a 48%, #d53847 60%, #5c419a 72%, #d53847 84%, #5c419a 100%);
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
-  -webkit-animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, slide 10s infinite linear forwards;
-          animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, slide 10s infinite linear forwards;
+  -webkit-animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, slide 8s infinite linear forwards;
+          animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, slide 8s infinite linear forwards;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }

@@ -73,8 +73,7 @@ $splash-line-height-small: 1.5;
 
     &:before {
       @extend %splash-before-base;
-      /*background-image: url(public/images/omed-splash-drumcorps-1440.jpg);*/
-      background-image: url(public/images/omed-2016-67.jpg);
+      background-image: url(public/images/splash-festival-1.jpg);
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -206,7 +205,7 @@ $splash-line-height-small: 1.5;
                                     $primarycolor 72%, 
                                     $accentcolor 84%, 
                                     $primarycolor 100%);
-  animation: slide 10s infinite linear forwards;
+  animation: slide 8s infinite linear forwards;
 }
 
 .splash__border--bottom {
@@ -226,6 +225,6 @@ $splash-line-height-small: 1.5;
                                     $primarycolor 84%, 
                                     $accentcolor 100%);
   transform-origin: 0 0;
-  animation: rotate-up .8s cubic-bezier(0,.5,0,1) forwards, slide 10s infinite linear forwards;
+  animation: rotate-up .8s cubic-bezier(0,.5,0,1) forwards, slide 8s infinite linear forwards;
   backface-visibility: hidden;
 }
