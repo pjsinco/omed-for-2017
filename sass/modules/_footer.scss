@@ -1,0 +1,24 @@
+.footer {
+
+  background-color: $extralightgray;  
+}
+
+.footer__body {
+
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint($screen $large-start) {
+    flex-direction: row;
+  }
+
+}
+
+.footer__col {
+  flex-basis: 25%;
+
+
+  &--half {
+    flex-basis: 50%;
+  }
+}
