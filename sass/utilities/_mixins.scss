@@ -96,10 +96,8 @@
   }
 }
 
-@mixin admin-bar($small-screen-top: 0, $large-screen-top: 0) {
-  top: $small-screen-top + 46px;
-
+@mixin admin-bar($top: 0) {
   @include breakpoint($screen $wp-admin-bar-start) {
-    top: $large-screen-top + 32px;
+    top: $top + 32px;
   }
 }

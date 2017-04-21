@@ -24,7 +24,7 @@ nav.secondary-nav {
     top: $header-height-small;
 
     .admin-bar & {
-      @include admin-bar($header-height-small, $header-height);
+      @include admin-bar($header-height);
     }
 
     @include breakpoint($screen $navflip) {

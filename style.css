@@ -1499,11 +1499,9 @@ table th[class*="col-"] {
     .header {
       height: 80px;
       border-bottom: none; } }
-  .admin-bar .header {
-    top: 46px; }
-    @media screen and (min-width: 783px) {
-      .admin-bar .header {
-        top: 32px; } }
+  @media screen and (min-width: 783px) {
+    .admin-bar .header {
+      top: 32px; } }
 
 .highlightable__header, .highlightable__blurb {
   margin-bottom: 1.3125rem;
@@ -2072,11 +2070,9 @@ nav.secondary-nav {
     position: fixed;
     display: block;
     top: 60px; }
-    .admin-bar nav.secondary-nav.fixed {
-      top: 106px; }
-      @media screen and (min-width: 783px) {
-        .admin-bar nav.secondary-nav.fixed {
-          top: 112px; } }
+    @media screen and (min-width: 783px) {
+      .admin-bar nav.secondary-nav.fixed {
+        top: 112px; } }
     @media screen and (min-width: 61.25rem) {
       nav.secondary-nav.fixed {
         top: 80px; } }
