@@ -13,6 +13,7 @@ nav.secondary-nav {
   transition: transform .5s;
   @include clearfix;
 
+
   @include breakpoint($screen $navflip) {
     transform: translateZ(0) translateY(-($secondary-nav-height + $header-height));
   }
@@ -21,6 +22,10 @@ nav.secondary-nav {
     position: fixed;
     display: block;
     top: $header-height-small;
+
+    .admin-bar & {
+      @include admin-bar($header-height);
+    }
 
     @include breakpoint($screen $navflip) {
       top: $header-height;

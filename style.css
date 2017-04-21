@@ -1473,7 +1473,7 @@ table th[class*="col-"] {
 .header {
   position: fixed;
   top: 0;
-  z-index: 2;
+  z-index: 10;
   /*display: flex;*/
   /*flex-direction: row;*/
   /*justify-content: space-between;*/
@@ -1499,11 +1499,9 @@ table th[class*="col-"] {
     .header {
       height: 80px;
       border-bottom: none; } }
-  .admin-bar .header {
-    top: 46px; }
-    @media screen and (min-width: 783px) {
-      .admin-bar .header {
-        top: 32px; } }
+  @media screen and (min-width: 783px) {
+    .admin-bar .header {
+      top: 32px; } }
 
 .highlightable__header, .highlightable__blurb {
   margin-bottom: 1.3125rem;
@@ -1532,7 +1530,7 @@ table th[class*="col-"] {
 
 .highlightable__block {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
@@ -2072,6 +2070,9 @@ nav.secondary-nav {
     position: fixed;
     display: block;
     top: 60px; }
+    @media screen and (min-width: 783px) {
+      .admin-bar nav.secondary-nav.fixed {
+        top: 112px; } }
     @media screen and (min-width: 61.25rem) {
       nav.secondary-nav.fixed {
         top: 80px; } }

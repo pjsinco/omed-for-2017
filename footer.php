@@ -86,7 +86,28 @@
 	</footer>
 </div><!-- #page -->
 
-<?php echo file_get_contents( get_template_directory_uri() . '/public/defs.svg'); ?>
+<?php 
+
+
+  /**
+   * @see http://stackoverflow.com/questions/26148701/
+   *      file-get-contents-ssl-operation-failed-with-code-1-and-more
+   *
+   * This fixes a problem on the server.
+   * 
+   */
+  $arrContextOptions = array(
+    "ssl" => array(
+       "verify_peer"      => false,
+       "verify_peer_name" => false,
+    ),
+  );
+  
+  echo file_get_contents( get_template_directory_uri() . '/public/defs.svg', 
+                          false, 
+                          stream_context_create( $arrContextOptions ) ); 
+?>
+
 
 <?php wp_footer(); ?>
 

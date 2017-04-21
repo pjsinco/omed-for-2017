@@ -23,3 +23,5 @@
 # FX
 * [Simple Image Lazy Load and Fade](https://davidwalsh.name/lazyload-image-fade)
 
+# Misc
+* [php - file_get_contents not working on production server, fine on local - Stack Overflow](http://stackoverflow.com/questions/6729829/file-get-contents-not-working-on-production-server-fine-on-local)
