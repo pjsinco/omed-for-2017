@@ -14,6 +14,12 @@ module.exports = function(grunt) {
 
     svgstore: {
       default: {
+        options: {
+          svg: {
+            xmlns: 'http://www.w3.org/2000/svg',
+            display: 'none',
+          },
+        },
         files: {
           'public/defs.svg': ['images/svg/minified/*.svg'],
         },

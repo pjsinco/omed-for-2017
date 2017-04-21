@@ -1,0 +1,27 @@
+.footer {
+
+  padding: 2rem 0;
+  background-color: $extralightgray;  
+
+}
+
+.footer__body {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include breakpoint($screen $large-start) {
+    flex-direction: row;
+  }
+
+}
+
+.footer__col {
+  flex-basis: 25%;
+
+
+  &--half {
+    flex-basis: 50%;
+  }
+}
