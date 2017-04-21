@@ -35,6 +35,7 @@ function omed_setup() {
 	register_nav_menus( array(
     'secondary-nav' => 'Secondary Navigation',
     'footer-left' => 'Footer Left',
+    'footer-center' => 'Footer Center',
     'footer-right' => 'Footer Right',
   ) );
 
