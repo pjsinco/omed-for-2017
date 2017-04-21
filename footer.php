@@ -46,13 +46,17 @@
         ?>
 
         <?php
-          $args = array(
-            'menu' => 'footer-right',
-            'theme_location' => 'footer-right',
-            'container_class' => 'footer__col-item',
-          );
+
+          if ( has_nav_menu( 'footer-right' ) ) {
+
+            $args = array(
+              'menu' => 'footer-right',
+              'theme_location' => 'footer-right',
+              'container_class' => 'footer__col-item',
+            );
         
-          wp_nav_menu( $args );
+            wp_nav_menu( $args );
+          }
         ?>
       </div> <!-- .footer__col -->
 
