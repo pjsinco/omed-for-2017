@@ -28,10 +28,35 @@ $footerflip: $large-start;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border-bottom: 1px solid $bordergray;
+  position: relative;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    height: 1px;
+    background-color: #d0d0d0;
+    bottom: 0;
+
+    @include breakpoint($screen $medium-start) {
+      left: 2rem;
+      right: 2rem;
+    }
+
+    /*@include breakpoint($screen $footerflip) {*/
+      /*content: none;*/
+    /*}*/
+
+    @include breakpoint($screen $contentwidth + 2rem) {
+       left: 0;
+       right: 0;
+    }
+  }
 
   @include breakpoint($screen $footerflip) {
     flex-direction: row;
+    /*border-bottom: 1px solid $bordergray;*/
   }
 
 }
@@ -40,7 +65,7 @@ $footerflip: $large-start;
 
   display: flex;
   flex-direction: column;
-  padding: 1rem 0;
+  padding: 1rem 0 0;
   text-align: center;
 
   & p {
@@ -51,13 +76,13 @@ $footerflip: $large-start;
 
     flex-direction: row;
     justify-content: space-between;
-    flex-basis: 50%;
     padding: 2rem 0;
     text-align: left;
   }
 
   @include breakpoint($screen $footerflip) {
     padding: 2rem 0 2rem 2rem;
+    flex-basis: 50%;
   }
 
   &:first-child {
@@ -65,7 +90,12 @@ $footerflip: $large-start;
     text-align: center;
     display: flex;
     flex-direction: column;
+    padding: 1rem 0;
     border-bottom: 1px solid $bordergray;
+
+    @include breakpoint($screen $medium-start) {
+      padding: 2rem 0;
+    }
 
     @include breakpoint($screen $footerflip) {
 

@@ -64,7 +64,9 @@
     <div class="copyright">
       <div class="copyright__body container-fluid wrap">
         <div class="copyright__block">
-          Copyright <?php echo date('Y'); ?>, American Osteopathic Association. <span>All rights reserved.</span>
+          <p>
+            Copyright <?php echo date('Y'); ?>, American Osteopathic Association. <span>All rights reserved.</span>
+          </p>
         </div>
 
         <?php 
