@@ -27,22 +27,22 @@
 
     > div {
       transform-origin: 100%;
-      transform: translateY(0%) rotate(-4deg);
+      transform: translateY(0%) rotate($rotation);
 
       @include breakpoint($screen $xlarge-minor-start) {
-        transform: translateY(1%) rotate(-4deg);
+        transform: translateY(1%) rotate($rotation);
       }
 
       @include breakpoint($screen 75rem) {
-        transform: translateY(1%) rotate(-4deg);
+        transform: translateY(1%) rotate($rotation);
       }
 
       @include breakpoint($screen 77rem) {
-        transform: translateY(4%) rotate(-4deg);
+        transform: translateY(4%) rotate($rotation);
       }
 
       @include breakpoint($screen 80rem) {
-        transform: translateY(10%) rotate(-4deg);
+        transform: translateY(10%) rotate($rotation);
       }
     }
 
@@ -58,7 +58,7 @@
       top: 0;
       z-index: -1;
       background-image: linear-gradient(86deg, $primarycolor, $secondarycolor);
-      transform: skew(-4deg) rotateZ(-4deg);
+      transform: skew($rotation) rotateZ($rotation);
     }
 
     @include breakpoint($screen $xlarge-minor-start) {
@@ -72,7 +72,7 @@
     &--gradient {
       @extend %leadin-base;
       @extend %gradient-position-base;
-      transform: rotate(-4deg);
+      transform: rotate($rotation);
     }
   }
 

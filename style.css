@@ -1332,7 +1332,7 @@ table th[class*="col-"] {
     right: -5%;
     height: 305px;
     /*transform-origin: 0 0;*/
-    /*transform: skewY(-4deg) translateY(-50%);*/
+    /*transform: skewY($rotation) translateY(-50%);*/
     -webkit-transform: skewY(-4deg);
             transform: skewY(-4deg);
     -webkit-backface-visibility: hidden;
