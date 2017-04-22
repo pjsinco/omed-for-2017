@@ -1347,9 +1347,13 @@ table th[class*="col-"] {
     -webkit-animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, fade-in 0.8s linear forwards;
             animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, fade-in 0.8s linear forwards; }
     .entry__header--audience h4 {
-      font-size: 1.5rem;
+      font-size: 1.25rem;
       line-height: 1.4;
       color: #666; }
+      @media screen and (min-width: 48rem) {
+        .entry__header--audience h4 {
+          max-width: 80%;
+          font-size: 1.5rem; } }
 
 .entry__title {
   margin-bottom: 0;
@@ -1367,13 +1371,47 @@ table th[class*="col-"] {
   .entry__title--error {
     text-align: center; }
   .entry__title--audience {
-    margin-bottom: 3rem;
+    position: relative;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
     font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 13vw;
-    letter-spacing: -10px; }
+    font-size: calc(20vw - .5rem);
+    letter-spacing: -2.5px; }
+    @media screen and (min-width: 30rem) {
+      .entry__title--audience {
+        font-size: calc(20vw - 1rem);
+        letter-spacing: -4px; } }
+    @media screen and (min-width: 48rem) {
+      .entry__title--audience {
+        font-size: 13vw;
+        letter-spacing: -5px; } }
+    @media screen and (min-width: 56rem) {
+      .entry__title--audience {
+        letter-spacing: -7px; } }
+    @media screen and (min-width: 67.75rem) {
+      .entry__title--audience {
+        letter-spacing: -9px; } }
+    @media screen and (min-width: 73rem) {
+      .entry__title--audience {
+        letter-spacing: -11px; } }
     @media screen and (min-width: 90rem) {
       .entry__title--audience {
         font-size: 12rem; } }
+    .entry__title--audience:after {
+      content: "";
+      left: 50%;
+      right: 0;
+      bottom: 0;
+      width: 120vw;
+      z-index: 2;
+      background-image: -webkit-linear-gradient(left, #5c419a 0%, #d53847 12%, #5c419a 24%, #d53847 36%, #5c419a 48%, #d53847 60%, #5c419a 72%, #d53847 84%, #5c419a 100%);
+      background-image: linear-gradient(to right, #5c419a 0%, #d53847 12%, #5c419a 24%, #d53847 36%, #5c419a 48%, #d53847 60%, #5c419a 72%, #d53847 84%, #5c419a 100%);
+      -webkit-transform-origin: 0 0;
+              transform-origin: 0 0;
+      -webkit-animation: slide 6s infinite linear backwards;
+              animation: slide 6s infinite linear backwards;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); }
     .page-physicians .entry__title--audience {
       color: #d53847; }
     .page-residents .entry__title--audience {
@@ -2282,14 +2320,14 @@ nav.secondary-nav {
   z-index: -1;
   background-size: cover; }
 
-.gradient__bar, .splash__border--top, .splash__border--bottom {
+.entry__title--audience:after, .gradient__bar, .splash__border--top, .splash__border--bottom {
   position: absolute;
   height: 8px;
   background-size: 600vw 600vw;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
   @media screen and (min-width: 30rem) {
-    .gradient__bar, .splash__border--top, .splash__border--bottom {
+    .entry__title--audience:after, .gradient__bar, .splash__border--top, .splash__border--bottom {
       height: 12px; } }
 
 @media screen and (min-width: 61.25rem) {

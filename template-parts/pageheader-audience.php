@@ -16,5 +16,4 @@
   <?php endif; ?>
 </div>
 
-<div class="gradient__bar"></div>
 
