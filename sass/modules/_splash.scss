@@ -138,9 +138,6 @@ $splash-line-height-small: 1.5;
   @include breakpoint($screen $large-start) {
     right: 50%;
     height: 40%;
-    border-left: 2px solid $white;
-    border-top: 2px solid $white;
-    border-right: 2px solid $white;
     border-top-right-radius: 65px;
   }
 

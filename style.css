@@ -2302,9 +2302,6 @@ nav.secondary-nav {
     .splash__block {
       right: 50%;
       height: 40%;
-      border-left: 2px solid #fff;
-      border-top: 2px solid #fff;
-      border-right: 2px solid #fff;
       border-top-right-radius: 65px; } }
   @media screen and (min-width: 1040px) {
     .splash__block {
