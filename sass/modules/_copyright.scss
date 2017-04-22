@@ -39,8 +39,14 @@
 .copyright__block {
 
   margin-bottom: 1rem;
+  margin-right: 1rem;
   font-size: .75rem;
   color: $font-color;
+
+  @include breakpoint($screen $medium-minor-start) {
+    width: 50%;
+    margin-right: 2rem;
+  }
 
   @include breakpoint($screen $medium-minor-minor-start) {
     flex-basis: 50%;

@@ -1226,8 +1226,13 @@ table th[class*="col-"] {
 
 .copyright__block {
   margin-bottom: 1rem;
+  margin-right: 1rem;
   font-size: .75rem;
   color: #666; }
+  @media screen and (min-width: 36rem) {
+    .copyright__block {
+      width: 50%;
+      margin-right: 2rem; } }
   @media screen and (min-width: 41.5rem) {
     .copyright__block {
       -webkit-flex-basis: 50%;
