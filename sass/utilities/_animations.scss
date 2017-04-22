@@ -50,6 +50,12 @@
 
 @keyframes rotate-up {
   100% {
+    transform: rotateZ($rotation);
+  }
+}
+
+@keyframes rotate-up-skew {
+  100% {
     transform: skew($rotation) rotateZ($rotation);
   }
 }

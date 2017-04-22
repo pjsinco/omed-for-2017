@@ -17,9 +17,12 @@
 
       <div class="content__block container-fluid wrap scroll-flip-here">
 
-<?php endwhile; ?>
+        <?php get_template_part( 'template-parts/page', 'article' ); ?>
+
+        <?php endwhile; ?>
 
       </div> <!-- .content__block -->
+
 
     </section>
   </div> <!-- .content -->

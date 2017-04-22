@@ -6,7 +6,7 @@
  */
 
 ?>
-	<header class="entry__header">
+	<header class="entry__header<?php echo ( is_page_template( 'page-audience.php' ) ? '--audience' : '' ); ?>">
 
     <?php if ( is_page_template( 'page-standalone.php' ) ): ?>
 

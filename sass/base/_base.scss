@@ -85,7 +85,7 @@ h1 {
   font-weight: bolder;
   line-height: 1.2;
   letter-spacing: -.5px;
-  border-bottom: 3px solid $secondarycolor;
+  /*border-bottom: 3px solid $secondarycolor;*/
   padding-bottom: 2rem;
 
   @include breakpoint($screen $navflip) {
