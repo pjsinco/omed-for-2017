@@ -51,6 +51,7 @@ $splash-line-height-small: 1.5;
   position: absolute;
   height: 8px;
   background-size: 600vw 600vw;
+  backface-visibility: hidden;
   
   @include breakpoint($screen $medium-start) {
     height: 12px;
@@ -231,5 +232,6 @@ $splash-line-height-small: 1.5;
                                     $accentcolor 100%);
   transform-origin: 0 0;
   animation: rotate-up .8s cubic-bezier(0,.5,0,1) forwards, slide 8s infinite linear forwards;
-  backface-visibility: hidden;
 }
+
+

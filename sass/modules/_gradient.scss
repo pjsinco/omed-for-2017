@@ -1,0 +1,22 @@
+.gradient {
+
+  &__bar {
+    @extend %splash-border-base;
+    left: -5%;
+    right: -5%;
+    bottom: 76px;
+    z-index: 2;
+    background-image: linear-gradient(to right, 
+                                      $accentcolor 0%, 
+                                      $primarycolor 12%, 
+                                      $accentcolor 24%, 
+                                      $primarycolor 36%, 
+                                      $accentcolor 48%, 
+                                      $primarycolor 60%, 
+                                      $accentcolor 72%, 
+                                      $primarycolor 84%, 
+                                      $accentcolor 100%);
+    transform-origin: 0 0;
+    animation: slide 8s infinite linear backwards;
+  }
+}

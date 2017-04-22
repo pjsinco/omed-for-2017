@@ -95,33 +95,122 @@
     @include breakpoint($screen $large-minor-minor-start) {
       margin-bottom: 7rem;
     }
+
+    &--audience {
+      margin-bottom: 3rem;
+      animation: rotate-up .8s cubic-bezier(0,.5,0,1) forwards, fade-in .8s linear forwards;
+
+      & h4 {
+        font-size: 1.25rem;
+        line-height: 1.4;
+        color: $font-color;
+
+        @include breakpoint($screen $large-start) {
+          max-width: 80%;
+          font-size: 1.5rem;
+        }
+      }
+    }
   }
 
-  &__title {
-
-    margin-bottom: 0;
-    padding-bottom: 0;
-    color: inherit;
-    font-family: $font-light;
-    line-height: 1.4;
-    border-bottom: none;
-
-    @include breakpoint($screen $large-start) {
-      font-size: 2.33rem;
-    }
-
-    @include breakpoint($screen $large-minor-minor-start) {
-      font-size: 3rem;
-    }
-
-    &--error {
-      text-align: center;
-    }
-
-  }
 
   &__body {
   
+  }
+
+}
+
+.entry__title {
+
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: inherit;
+  font-family: $font-light;
+  line-height: 1.4;
+  border-bottom: none;
+
+  @include breakpoint($screen $large-start) {
+    font-size: 2.33rem;
+  }
+
+  @include breakpoint($screen $large-minor-minor-start) {
+    font-size: 3rem;
+  }
+
+  &--error {
+    text-align: center;
+  }
+
+  &--audience {
+
+    position: relative;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    font-family: $font-bold;
+    font-size: calc(20vw - .5rem);
+    letter-spacing: -2.5px;
+
+    @include breakpoint($screen $medium-start) {
+      font-size: calc(20vw - 1rem);
+      letter-spacing: -4px;
+    }
+
+    @include breakpoint($screen $large-start) {
+      font-size: 13vw;
+      letter-spacing: -5px;
+    }
+
+    @include breakpoint($screen $large-minor-start) {
+      letter-spacing: -7px;
+    }
+
+    @include breakpoint($screen $xlarge-start) {
+      letter-spacing: -9px;
+    }
+
+    @include breakpoint($screen $xlarge-minor-start) {
+      letter-spacing: -11px;
+    }
+
+    @include breakpoint($screen $xxlarge-start) {
+      font-size: 12rem;
+    }
+
+    &:after {
+      content: "";
+      @extend %splash-border-base;
+      left: 50%;
+      right: 0;
+      bottom: 0;
+      width: 120vw;
+      z-index: 2;
+      background-image: linear-gradient(to right, 
+                                        $accentcolor 0%, 
+                                        $primarycolor 12%, 
+                                        $accentcolor 24%, 
+                                        $primarycolor 36%, 
+                                        $accentcolor 48%, 
+                                        $primarycolor 60%, 
+                                        $accentcolor 72%, 
+                                        $primarycolor 84%, 
+                                        $accentcolor 100%);
+      transform-origin: 0 0;
+      animation: slide 6s infinite linear backwards;
+      transform: translateX(-50%);
+    }
+
+    .page-physicians & {
+      color: $physicianscolor;
+    }
+
+    .page-residents & {
+      color: $residentscolor;
+    }
+
+    .page-students & {
+      color: $studentscolor;
+    }
+
   }
 
 }
