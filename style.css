@@ -2125,6 +2125,46 @@ footer .icon-aoa-with-tagline {
         .navigation > li > a:active {
           color: #d53847; } }
 
+@media screen and (min-width: 61.25rem) {
+  .navigation > li.current-menu-item:nth-child(1) > a {
+    color: #d53847; }
+    .navigation > li.current-menu-item:nth-child(1) > a:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 17px;
+      width: 40px;
+      height: 2px;
+      background-color: #d53847;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); } }
+@media screen and (min-width: 61.25rem) {
+  .navigation > li.current-menu-item:nth-child(2) > a {
+    color: #5c419a; }
+    .navigation > li.current-menu-item:nth-child(2) > a:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 17px;
+      width: 40px;
+      height: 2px;
+      background-color: #5c419a;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); } }
+@media screen and (min-width: 61.25rem) {
+  .navigation > li.current-menu-item:nth-child(3) > a {
+    color: #3d5ba9; }
+    .navigation > li.current-menu-item:nth-child(3) > a:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 17px;
+      width: 40px;
+      height: 2px;
+      background-color: #3d5ba9;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%); } }
+
 .pageblock {
   margin-bottom: 3rem; }
   @media screen and (min-width: 48rem) {

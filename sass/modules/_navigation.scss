@@ -1,3 +1,22 @@
+@mixin current-item-after-base($color) {
+
+  @include breakpoint($screen $navflip) {
+
+    color: $color;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 17px;
+      width: 40px;
+      height: 2px;
+      background-color: $color;
+      transform: translateX(-50%);
+    }
+  }
+}
+
 %nav-item-background {
   background-image: url('images/svg/minified/arrow.svg');
   background-repeat: no-repeat;
@@ -126,6 +145,7 @@
   }
 
   &:nth-child(1) {
+
     & > a {
       @include small-nav-hover;
       @include nav-hover($physicianscolor, 40px);
@@ -196,5 +216,20 @@
         color: $primarycolor;
       }
     }
+  }
+}
+
+.navigation > li.current-menu-item {
+
+  &:nth-child(1) > a {
+    @include current-item-after-base($physicianscolor);
+  }
+
+  &:nth-child(2) > a {
+    @include current-item-after-base($residentscolor);
+  }
+
+  &:nth-child(3) > a {
+    @include current-item-after-base($studentscolor);
   }
 }
