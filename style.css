@@ -11,6 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*
  * Colors
  */
+/* Audiences */
 /* Typography */
 /* Spacing */
 /* Components */
@@ -1716,6 +1717,13 @@ table th[class*="col-"] {
 .navigation a .icon-aoa-logo, .logo a .icon-omed-logo-plain {
   -webkit-transition: -webkit-transform .3s;
           transition: transform .3s; }
+
+.page-physicians .icon-audience {
+  fill: #d53847; }
+.page-residents .icon-audience {
+  fill: #5c419a; }
+.page-students .icon-audience {
+  fill: #3d5ba9; }
 
 .icon-aoa-logo {
   fill: #fff; }

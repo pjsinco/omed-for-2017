@@ -2,6 +2,37 @@
   transition: transform .3s;
 }
 
+%color-for-audience {
+
+  .page-physicians & {
+    color: $physicianscolor;
+  }
+
+  .page-residents & {
+    color: $residentscolor;
+  }
+
+  .page-students & {
+    color: $studentscolor;
+  }
+
+}
+
+%fill-for-audience {
+
+  .page-physicians & {
+    fill: $physicianscolor;
+  }
+
+  .page-residents & {
+    fill: $residentscolor;
+  }
+
+  .page-students & {
+    fill: $studentscolor;
+  }
+
+}
 
 .icon-aoa-logo {
 
@@ -77,5 +108,21 @@
     padding-bottom: 1rem;
     fill: $font-color;
   }
+
+}
+
+.icon-audience {
+  @extend %fill-for-audience;
+}
+
+.icon-bulb {
+
+}
+
+.icon-microscope {
+
+}
+
+.icon-bubble {
 
 }
