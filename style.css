@@ -1465,6 +1465,11 @@ table th[class*="col-"] {
           width: 1px;
           background-color: #d0d0d0; } }
 
+.footer__col-item:not(:last-child), .footer__col-item--highlight {
+  margin-right: 1rem; }
+  @media screen and (min-width: 48rem) {
+    .footer__col-item:not(:last-child), .footer__col-item--highlight {
+      margin-right: 2rem; } }
 .footer__col-item a {
   font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 .footer__col-item--highlight a {
