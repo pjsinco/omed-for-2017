@@ -630,6 +630,7 @@ add_action( 'wp_head', 'omed_add_google_analytics_code' );
 
 function omed_add_custom_ninja_form_class ( $form_class, $form_id ) 
 {
+
   if ( $form_id == 1 ) {
     $form_class .= ' contact-form';
   }
@@ -645,11 +646,11 @@ function omed_add_ninja_form_styles( $form_id ) {
     echo '<style> 
 
     .page-contact-us .ninja-forms-required-items {
-      /* display: none; */
+      display: none;
     }
 
     .page-contact-us .ninja-forms-req-symbol {
-      color: #00b0b9;
+      color: #d53847;
     }
 
     .page-contact-us .ninja-forms-field {
@@ -657,7 +658,7 @@ function omed_add_ninja_form_styles( $form_id ) {
       margin-left: 0 !important;
       margin-right: 0 !important;
       margin-top: .5rem;
-      border-color: #00b0b9;
+      border-color: #717271;
     }
 
     .page-contact-us .ninja-forms-error .ninja-forms-field {
@@ -667,7 +668,7 @@ function omed_add_ninja_form_styles( $form_id ) {
     .page-contact-us .ninja-forms-field-error p {
       font-size: .75rem;
       text-align: center;
-      color: #cb333b;
+      color: #d53847;
     }
 
     .ninja-forms-error-msg {
@@ -676,7 +677,7 @@ function omed_add_ninja_form_styles( $form_id ) {
       background: #fcef06;
       padding: .5rem 0;
       font-size: .875rem;
-      color: #00b0b9;
+      color: #717271;
     }
 
     .field-wrap:nth-last-child(2) {
@@ -686,7 +687,7 @@ function omed_add_ninja_form_styles( $form_id ) {
     </style>';
   }
 }
-//add_action( 'ninja_forms_display_css' , 'omed_add_ninja_form_styles' );
+add_action( 'ninja_forms_display_css' , 'omed_add_ninja_form_styles' );
 
 function omed_adjust_caption_shortcode_width( $width, $atts, $content ) {
 
@@ -700,9 +701,14 @@ function omed_adjust_caption_shortcode_width( $width, $atts, $content ) {
 }
 add_filter ( 'img_caption_shortcode_width', 'omed_adjust_caption_shortcode_width', 10, 3 );
 
+function is_dev_env() {
+
+  return WP_ENV === 'development';
+}
+
 function omed_livereload() {
 
-  if ( WP_ENV === 'development' ) {
+  if ( is_dev_env() ) {
     echo '<script src="//localhost:35729/livereload.js"></script>';
   }
 

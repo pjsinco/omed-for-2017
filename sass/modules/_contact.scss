@@ -1,0 +1,18 @@
+.contact {
+
+  &-form {
+
+    & label {
+      font-size: .875rem;
+      color: $font-color-lighter;
+    }
+
+  }
+
+  &__success {
+    font-size: 2rem;
+    text-align: center;
+    color: $primarycolor;
+  }
+
+}
