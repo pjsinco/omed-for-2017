@@ -7,16 +7,17 @@
 
 ?>
 	<header class="entry__header">
-    <div class="entry__gradient">
-      <div class="container-fluid wrap">
-        <?php the_title( '<h1 class="entry__title">', '</h1>' ); ?>
-      </div>
-    </div>
-    <div class="entry__leadin--gradient container-fluid wrap">
-      <?php if ( $leadin = get_field( 'omed_leadin' ) ): ?>
-        <h4><?php echo $leadin; ?></h4>
-      <?php endif; ?>
-    </div>
+
+    <?php if ( is_page_template( 'page-standalone.php' ) ): ?>
+
+      <?php get_template_part( 'template-parts/pageheader', 'standalone' ) ?>
+
+    <?php elseif ( is_page_template( 'page-audience.php' ) ): ?>
+
+      <?php get_template_part( 'template-parts/pageheader', 'audience' ); ?>
+
+    <?php endif; ?>
+  
 	</header><!-- .entry-header -->
 
 
