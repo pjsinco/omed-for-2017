@@ -1350,6 +1350,11 @@ table th[class*="col-"] {
   .entry__title--error {
     text-align: center; }
 
+@media screen and (min-width: 30rem) {
+  .footer__col-item, .footer__col-item--highlight {
+    -webkit-flex-basis: 33%;
+        -ms-flex-preferred-size: 33%;
+            flex-basis: 33%; } }
 .footer__col-item ul, .footer__col-item--highlight ul {
   margin-bottom: 1rem; }
   @media screen and (min-width: 30rem) {

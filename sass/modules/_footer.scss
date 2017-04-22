@@ -2,6 +2,10 @@ $footerflip: $large-start;
 
 %col-item-base {
 
+  @include breakpoint($screen $medium-start) {
+    flex-basis: 33%;
+  }
+
   & ul {
 
     margin-bottom: 1rem;
