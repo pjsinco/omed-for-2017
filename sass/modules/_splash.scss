@@ -132,15 +132,21 @@ $splash-line-height-small: 1.5;
     left: 2rem;
     right: 2rem;
     padding-bottom: 7.5rem;
+    border-top-right-radius: 55px;
   }
 
   @include breakpoint($screen $large-start) {
     right: 50%;
     height: 40%;
+    border-left: 2px solid $white;
+    border-top: 2px solid $white;
+    border-right: 2px solid $white;
+    border-top-right-radius: 65px;
   }
 
   @include breakpoint($screen 1040px) {
     left: 0;
+    border-top-right-radius: 85px;
   }
   
 }

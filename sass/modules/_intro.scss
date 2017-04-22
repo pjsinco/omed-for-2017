@@ -37,7 +37,7 @@ $goToTwoCol: $large-start;
 
   @include breakpoint($screen $goToTwoCol) {
     &:before {
-      content: "";
+      /*content: "";*/
       position: absolute;
       top: -250px;
       bottom: 4px;

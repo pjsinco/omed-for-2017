@@ -35,6 +35,11 @@
 
   width: 240px;
 
+  .intro__focus & {
+    position: relative;
+    z-index: 1;
+  }
+
   @include breakpoint($screen $medium-minor-start) {
     width: 300px;
   }
@@ -42,6 +47,8 @@
   @include breakpoint($screen $large-minor-minor-start) {
     width: 100%;
   }
+
+  
 }
 
 .icon-arrow1 {
@@ -56,7 +63,7 @@
       bottom: -12px;
       display: block;
       fill: $primarycolor;
-      opacity: .6;
+      opacity: .04;
       transform: translateX(-50%);
     }
   }
