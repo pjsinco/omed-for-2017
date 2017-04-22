@@ -98,7 +98,9 @@
 
     &--audience {
       margin-bottom: 3rem;
-      animation: rotate-up .8s cubic-bezier(0,.5,0,1) forwards, fade-in .8s linear forwards;
+      /*animation: rotate-up 1.8s cubic-bezier(0,.5,0,1) forwards, fade-in 10s linear forwards;*/
+      /*animation: rotate-up-fade-in 1s cubic-bezier(0,.5,0,1) forwards;*/
+      animation: rotate-up-fade-in 1s ease-out forwards;
 
       & h4 {
         font-size: 1.25rem;

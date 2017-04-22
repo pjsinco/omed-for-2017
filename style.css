@@ -230,6 +230,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   100% {
     -webkit-transform: rotateZ(-4deg);
             transform: rotateZ(-4deg); } }
+@-webkit-keyframes rotate-up-fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1;
+    -webkit-transform: rotateZ(-4deg);
+            transform: rotateZ(-4deg); } }
+@keyframes rotate-up-fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1;
+    -webkit-transform: rotateZ(-4deg);
+            transform: rotateZ(-4deg); } }
 @-webkit-keyframes rotate-up-skew {
   100% {
     -webkit-transform: skew(-4deg) rotateZ(-4deg);
@@ -1344,8 +1358,10 @@ table th[class*="col-"] {
       margin-bottom: 7rem; } }
   .entry__header--audience {
     margin-bottom: 3rem;
-    -webkit-animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, fade-in 0.8s linear forwards;
-            animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, fade-in 0.8s linear forwards; }
+    /*animation: rotate-up 1.8s cubic-bezier(0,.5,0,1) forwards, fade-in 10s linear forwards;*/
+    /*animation: rotate-up-fade-in 1s cubic-bezier(0,.5,0,1) forwards;*/
+    -webkit-animation: rotate-up-fade-in 1s ease-out forwards;
+            animation: rotate-up-fade-in 1s ease-out forwards; }
     .entry__header--audience h4 {
       font-size: 1.25rem;
       line-height: 1.4;
