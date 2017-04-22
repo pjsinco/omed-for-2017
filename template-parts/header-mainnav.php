@@ -22,6 +22,7 @@
         'menu' => 'primary-nav',
         'theme_location' => 'primary-nav',
         'menu_class' => 'navigation',
+        'container_class' => 'navigation__container',
         'items_wrap' => primary_nav_wrap(),
       );
 

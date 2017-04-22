@@ -69,6 +69,10 @@
   }
 }
 
+.navigation__container {
+  height: 100%;
+}
+
 .navigation > li:not(:last-child) {
 
   @include breakpoint($screen $navflip) {

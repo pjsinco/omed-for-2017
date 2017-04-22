@@ -1892,6 +1892,9 @@ footer .icon-aoa-with-tagline {
       border-bottom: none;
       max-height: none; } }
 
+.navigation__container {
+  height: 100%; }
+
 @media screen and (min-width: 61.25rem) {
   .navigation > li:not(:last-child) {
     /*margin-right: 4rem;*/ } }
