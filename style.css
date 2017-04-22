@@ -2125,6 +2125,11 @@ footer .icon-aoa-with-tagline {
         .navigation > li > a:active {
           color: #d53847; } }
 
+@media screen and (max-width: 979px) {
+  .navigation > li.current-menu-item:nth-child(1) > a {
+    opacity: .6; }
+    .navigation > li.current-menu-item:nth-child(1) > a:hover {
+      padding-left: 5px; } }
 @media screen and (min-width: 61.25rem) {
   .navigation > li.current-menu-item:nth-child(1) > a {
     color: #d53847; }
@@ -2138,6 +2143,11 @@ footer .icon-aoa-with-tagline {
       background-color: #d53847;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%); } }
+@media screen and (max-width: 979px) {
+  .navigation > li.current-menu-item:nth-child(2) > a {
+    opacity: .6; }
+    .navigation > li.current-menu-item:nth-child(2) > a:hover {
+      padding-left: 5px; } }
 @media screen and (min-width: 61.25rem) {
   .navigation > li.current-menu-item:nth-child(2) > a {
     color: #5c419a; }
@@ -2151,6 +2161,11 @@ footer .icon-aoa-with-tagline {
       background-color: #5c419a;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%); } }
+@media screen and (max-width: 979px) {
+  .navigation > li.current-menu-item:nth-child(3) > a {
+    opacity: .6; }
+    .navigation > li.current-menu-item:nth-child(3) > a:hover {
+      padding-left: 5px; } }
 @media screen and (min-width: 61.25rem) {
   .navigation > li.current-menu-item:nth-child(3) > a {
     color: #3d5ba9; }
