@@ -1346,6 +1346,10 @@ table th[class*="col-"] {
     margin-bottom: 3rem;
     -webkit-animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, fade-in 0.8s linear forwards;
             animation: rotate-up 0.8s cubic-bezier(0, 0.5, 0, 1) forwards, fade-in 0.8s linear forwards; }
+    .entry__header--audience h4 {
+      font-size: 1.5rem;
+      line-height: 1.4;
+      color: #666; }
 
 .entry__title {
   margin-bottom: 0;
@@ -1363,10 +1367,19 @@ table th[class*="col-"] {
   .entry__title--error {
     text-align: center; }
   .entry__title--audience {
+    margin-bottom: 3rem;
     font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 13vw;
-    letter-spacing: -10px;
-    color: #5c419a; }
+    letter-spacing: -10px; }
+    @media screen and (min-width: 90rem) {
+      .entry__title--audience {
+        font-size: 12rem; } }
+    .page-physicians .entry__title--audience {
+      color: #d53847; }
+    .page-residents .entry__title--audience {
+      color: #5c419a; }
+    .page-students .entry__title--audience {
+      color: #3d5ba9; }
 
 @media screen and (min-width: 30rem) {
   .footer__col-item, .footer__col-item--highlight {
@@ -1506,7 +1519,7 @@ table th[class*="col-"] {
 .gradient__bar {
   left: -5%;
   right: -5%;
-  bottom: 0;
+  bottom: 76px;
   z-index: 2;
   background-image: -webkit-linear-gradient(left, #5c419a 0%, #d53847 12%, #5c419a 24%, #d53847 36%, #5c419a 48%, #d53847 60%, #5c419a 72%, #d53847 84%, #5c419a 100%);
   background-image: linear-gradient(to right, #5c419a 0%, #d53847 12%, #5c419a 24%, #d53847 36%, #5c419a 48%, #d53847 60%, #5c419a 72%, #d53847 84%, #5c419a 100%);
