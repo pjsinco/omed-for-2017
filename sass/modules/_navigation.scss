@@ -98,6 +98,11 @@
 
 .navigation__container {
   height: 100%;
+  display: none;
+
+  .nav-open & {
+    display: block;
+  }
 }
 
 .navigation > li:not(:last-child) {
