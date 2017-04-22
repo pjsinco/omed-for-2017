@@ -1,6 +1,7 @@
 $footerflip: $large-start;
 
 %col-item-base {
+
   & ul {
 
     margin-bottom: 1rem;
@@ -115,9 +116,20 @@ $footerflip: $large-start;
   }
 }
 
+
 .footer__col-item {
 
   @extend %col-item-base;
+
+  &:not(:last-child),
+  &--highlight {
+    margin-right: 1rem;
+    
+    @include breakpoint($screen $footerflip) {
+      margin-right: 2rem;
+    }
+  }
+  
   
   & a {
     @extend %col-item-a-base;
