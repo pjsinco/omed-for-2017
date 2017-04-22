@@ -33,6 +33,7 @@ function omed_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	register_nav_menus( array(
+    'primary-nav' => 'Primary Navigation',
     'secondary-nav' => 'Secondary Navigation',
     'footer-left' => 'Footer Left',
     'footer-center' => 'Footer Center',
@@ -712,4 +713,32 @@ function omed_livereload() {
     echo '<script src="//localhost:35729/livereload.js"></script>';
   }
 
+}
+
+/**
+ * Add the AOA logo to the primary-nav menu.
+ *
+ * @see https://galengidman.com/2014/05/08/
+ *      adding-static-menu-items-to-wp_nav_menu/
+ *
+ */
+function primary_nav_wrap() {
+
+  // original: <ul id="%1$s" class="%2$s">%3$s</ul>
+
+  $wrap  = '<ul id="%1$s" class="%2$s">';
+  $wrap .= '%3$s';
+
+  // Add the AOA logo
+  $wrap .=  '<li>';
+  $wrap .=    '<a href="http://osteopathic.org">';
+  $wrap .=      '<svg class="icon icon-aoa-logo" preserveAspectRatio="xMidYMid meet" width="70" height="33">';
+  $wrap .=        '<use xlink:href="' .  get_template_directory_uri() . '/public/defs.svg?version=' . filemtime(get_template_directory() . '/public/defs.svg') . '#aoaLogoNoFill" />';
+  $wrap .=       '</svg>';
+  $wrap .=     '</a>';
+  $wrap .=  '</li>';
+
+  $wrap .= '</ul>';
+
+  return $wrap;
 }

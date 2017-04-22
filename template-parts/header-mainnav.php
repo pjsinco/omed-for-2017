@@ -16,18 +16,16 @@
       </span>
     </a> <!-- .nav-trigger -->
 
-    <ul class="navigation">
-      <li><a href="/physicians" >Physicians</a></li>
-      <li><a href="/residents" >Residents</a></li>
-      <li><a href="/students" >Students</a></li>
-      <li>
-        <a href="http://osteopathic.org">
-          <svg class="icon icon-aoa-logo" preserveAspectRatio="xMidYMid meet" width="70" height="33">
-            <use xlink:href="<?php echo get_template_directory_uri(); ?>/public/defs.svg?version=<?php echo filemtime(get_template_directory() . '/public/defs.svg'); ?>#aoaLogoNoFill" />
-          </svg>
-        </a>
-      </li>
-    </ul>
-    
+    <?php 
+
+      $args = array(
+        'menu' => 'primary-nav',
+        'theme_location' => 'primary-nav',
+        'menu_class' => 'navigation',
+        'items_wrap' => primary_nav_wrap(),
+      );
+
+      wp_nav_menu( $args );
+    ?>
   </nav> <!-- .primary-nav -->
 </header> <!-- .header -->
