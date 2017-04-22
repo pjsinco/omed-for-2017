@@ -1635,6 +1635,9 @@ table th[class*="col-"] {
 
 .icon-omed-logo-full {
   width: 240px; }
+  .intro__focus .icon-omed-logo-full {
+    position: relative;
+    z-index: 1; }
   @media screen and (min-width: 36rem) {
     .icon-omed-logo-full {
       width: 300px; } }
@@ -1651,7 +1654,7 @@ table th[class*="col-"] {
       bottom: -12px;
       display: block;
       fill: #d53847;
-      opacity: .6;
+      opacity: .04;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%); } }
 
@@ -1714,7 +1717,7 @@ footer .icon-aoa-with-tagline {
           align-items: center; }
   @media screen and (min-width: 48rem) {
     .intro__focus:before {
-      content: "";
+      /*content: "";*/
       position: absolute;
       top: -250px;
       bottom: 4px;
@@ -2293,14 +2296,17 @@ nav.secondary-nav {
       width: auto;
       left: 2rem;
       right: 2rem;
-      padding-bottom: 7.5rem; } }
+      padding-bottom: 7.5rem;
+      border-top-right-radius: 55px; } }
   @media screen and (min-width: 48rem) {
     .splash__block {
       right: 50%;
-      height: 40%; } }
+      height: 40%;
+      border-top-right-radius: 65px; } }
   @media screen and (min-width: 1040px) {
     .splash__block {
-      left: 0; } }
+      left: 0;
+      border-top-right-radius: 85px; } }
 
 .splash__header {
   margin-bottom: 0;
