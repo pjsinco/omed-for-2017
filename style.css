@@ -2311,8 +2311,10 @@ nav.secondary-nav {
   @media screen and (min-width: 48rem) {
     .splash__header {
       margin-bottom: .25rem;
-      font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 2rem; } }
+      font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 2rem;
+      letter-spacing: -.5px;
+      word-spacing: -3px; } }
   @media screen and (min-width: 61.25rem) {
     .splash__header {
       font-size: 2.5rem; } }
