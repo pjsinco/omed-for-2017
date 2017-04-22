@@ -98,10 +98,13 @@
 
 .navigation__container {
   height: 100%;
-  display: none;
 
-  .nav-open & {
-    display: block;
+  @include breakpoint($screen max-width $large-minor-end) {
+    display: none;
+
+    .nav-open & {
+      display: block;
+    }
   }
 }
 

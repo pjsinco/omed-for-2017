@@ -1977,10 +1977,12 @@ footer .icon-aoa-with-tagline {
       max-height: none; } }
 
 .navigation__container {
-  height: 100%;
-  display: none; }
-  .nav-open .navigation__container {
-    display: block; }
+  height: 100%; }
+  @media screen and (max-width: 979px) {
+    .navigation__container {
+      display: none; }
+      .nav-open .navigation__container {
+        display: block; } }
 
 @media screen and (min-width: 61.25rem) {
   .navigation > li:not(:last-child) {
