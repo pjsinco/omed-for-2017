@@ -2526,6 +2526,8 @@ footer .icon-aoa-with-tagline {
   @media screen and (min-width: 48rem) {
     .pageblock {
       margin-bottom: 8rem; }
+      .pageblock--sm {
+        margin-bottom: 6rem; }
       .pageblock--lg {
         margin-bottom: 10rem; }
       .pageblock--xl {

@@ -5,6 +5,10 @@
   @include breakpoint($screen $large-start) {
     margin-bottom: 8rem;
 
+    &--sm {
+      margin-bottom: 6rem;
+    }
+
     &--lg {
       margin-bottom: 10rem;
     }
