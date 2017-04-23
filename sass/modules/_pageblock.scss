@@ -1,25 +1,44 @@
+%pageblock-base {
+  margin-bottom: 3rem;
+} 
+
 .pageblock {
 
-  margin-bottom: 3rem;
+  @extend %pageblock-base;
 
   @include breakpoint($screen $large-start) {
     margin-bottom: 8rem;
+  }
 
-    &--xs {
+  &--xs {
+    @extend %pageblock-base;
+
+    @include breakpoint($screen $large-start) {
       margin-bottom: 4rem;
-    }
-
-    &--sm {
-      margin-bottom: 6rem;
-    }
-
-    &--lg {
-      margin-bottom: 10rem;
-    }
-
-    &--xl {
-      margin-bottom: 12rem;
     }
   }
 
+  &--sm {
+    @extend %pageblock-base;
+
+    @include breakpoint($screen $large-start) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  &--lg {
+    @extend %pageblock-base;
+
+    @include breakpoint($screen $large-start) {
+      margin-bottom: 10rem;
+    }
+  }
+
+  &--xl {
+    @extend %pageblock-base;
+
+    @include breakpoint($screen $large-start) {
+      margin-bottom: 12rem;
+    }
+  }
 }
