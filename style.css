@@ -158,6 +158,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .bordered {
   border: 1px solid #f1f1f1; }
 
+.page-physicians .icon-block__body h5, .icon-block__body .page-physicians h5, .page-physicians .icon-block__body p, .icon-block__body .page-physicians p, .page-physicians .icon-block__body li, .icon-block__body .page-physicians li {
+  color: #d53847; }
+.page-residents .icon-block__body h5, .icon-block__body .page-residents h5, .page-residents .icon-block__body p, .icon-block__body .page-residents p, .page-residents .icon-block__body li, .icon-block__body .page-residents li {
+  color: #5c419a; }
+.page-students .icon-block__body h5, .icon-block__body .page-students h5, .page-students .icon-block__body p, .icon-block__body .page-students p, .page-students .icon-block__body li, .icon-block__body .page-students li {
+  color: #3d5ba9; }
+
+.page-physicians .icon-audience {
+  fill: #d53847; }
+.page-residents .icon-audience {
+  fill: #5c419a; }
+.page-students .icon-audience {
+  fill: #3d5ba9; }
+
 @-webkit-keyframes fadeInFromRight {
   from {
     opacity: 0;
@@ -1583,6 +1597,65 @@ table th[class*="col-"] {
   -webkit-animation: slide 8s infinite linear backwards;
           animation: slide 8s infinite linear backwards; }
 
+.icon-block {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center; }
+  .icon-block:nth-child(1) {
+    padding-left: 0;
+    padding-right: 1rem; }
+  .icon-block:nth-child(2) {
+    padding-left: 1rem;
+    padding-right: 1rem; }
+  .icon-block:nth-child(3) {
+    padding-left: 1rem;
+    padding-right: 0; }
+
+.icon-block__blocks {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media screen and (min-width: 36rem) {
+    .icon-block__blocks {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+
+.icon-block__icon {
+  margin-bottom: 1rem; }
+
+.icon-block__body h5 {
+  margin-bottom: .625rem;
+  font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 1px;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  opacity: .6; }
+  @media screen and (min-width: 36rem) {
+    .icon-block__body h5 {
+      font-size: 1.3125rem; } }
+.icon-block__body p, .icon-block__body li {
+  font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.4; }
+  @media screen and (min-width: 36rem) {
+    .icon-block__body p, .icon-block__body li {
+      font-size: .875rem; } }
+  @media screen and (min-width: 48rem) {
+    .icon-block__body p, .icon-block__body li {
+      font-size: 1rem; } }
+  @media screen and (min-width: 67.75rem) {
+    .icon-block__body p, .icon-block__body li {
+      font-size: 1.125rem; } }
+
 .nav-trigger span em, .nav-trigger span em:before, .nav-trigger span em:after {
   display: block;
   height: 2px;
@@ -1718,13 +1791,6 @@ table th[class*="col-"] {
   -webkit-transition: -webkit-transform .3s;
           transition: transform .3s; }
 
-.page-physicians .icon-audience {
-  fill: #d53847; }
-.page-residents .icon-audience {
-  fill: #5c419a; }
-.page-students .icon-audience {
-  fill: #3d5ba9; }
-
 .icon-aoa-logo {
   fill: #fff; }
   .navigation a:hover .icon-aoa-logo {
@@ -1768,6 +1834,18 @@ footer .icon-aoa-with-tagline {
   height: 91px;
   padding-bottom: 1rem;
   fill: #666; }
+
+.icon-block .icon-bulb {
+  width: 102px;
+  height: 103px; }
+
+.icon-block .icon-microscope {
+  width: 102px;
+  height: 103px; }
+
+.icon-block .icon-bubble {
+  width: 102px;
+  height: 103px; }
 
 @media screen and (min-width: 48rem) {
   .intro__focus, .intro__context {

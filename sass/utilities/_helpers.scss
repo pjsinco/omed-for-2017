@@ -183,3 +183,35 @@
 .bordered {
   border: 1px solid $lightgray;
 }
+
+%color-for-audience {
+
+  .page-physicians & {
+    color: $physicianscolor;
+  }
+
+  .page-residents & {
+    color: $residentscolor;
+  }
+
+  .page-students & {
+    color: $studentscolor;
+  }
+
+}
+
+%fill-for-audience {
+
+  .page-physicians & {
+    fill: $physicianscolor;
+  }
+
+  .page-residents & {
+    fill: $residentscolor;
+  }
+
+  .page-students & {
+    fill: $studentscolor;
+  }
+
+}

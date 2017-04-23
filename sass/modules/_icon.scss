@@ -2,36 +2,12 @@
   transition: transform .3s;
 }
 
-%color-for-audience {
+@mixin icon-block-icon {
 
-  .page-physicians & {
-    color: $physicianscolor;
+  .icon-block & {
+    width: 102px;
+    height: 103px;
   }
-
-  .page-residents & {
-    color: $residentscolor;
-  }
-
-  .page-students & {
-    color: $studentscolor;
-  }
-
-}
-
-%fill-for-audience {
-
-  .page-physicians & {
-    fill: $physicianscolor;
-  }
-
-  .page-residents & {
-    fill: $residentscolor;
-  }
-
-  .page-students & {
-    fill: $studentscolor;
-  }
-
 }
 
 .icon-aoa-logo {
@@ -116,13 +92,13 @@
 }
 
 .icon-bulb {
-
+  @include icon-block-icon;
 }
 
 .icon-microscope {
-
+  @include icon-block-icon;
 }
 
 .icon-bubble {
-
+  @include icon-block-icon;
 }
