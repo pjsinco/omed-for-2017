@@ -52,4 +52,15 @@
 
 .billboard__button {
 
+  #{$physicianspage} &.btn--reverse {
+    @include billboard-button($physicianscolor);
+  }
+
+  #{$residentspage} &.btn--reverse {
+    @include billboard-button($residentscolor);
+  }
+
+  #{$studentspage} &.btn--reverse {
+    @include billboard-button($studentscolor);
+  }
 }

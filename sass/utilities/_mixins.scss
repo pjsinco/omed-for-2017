@@ -101,3 +101,13 @@
     top: $top + 32px;
   }
 }
+
+@mixin billboard-button($color) {
+
+  @include button-variant($btn-reverse-color, $color, $btn-reverse-border);
+
+  &:hover {
+    color: $white;
+    background-color: darken($color, 8%); 
+  }
+}

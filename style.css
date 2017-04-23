@@ -1038,6 +1038,40 @@ table th[class*="col-"] {
   min-height: 1px;
   background-image: url(http://placekitten.com/840/560); }
 
+.page-physicians .billboard__button.btn--reverse {
+  color: #fff;
+  background-color: #d53847;
+  box-shadow: inset 0 0 0 1px #fff; }
+  .page-physicians .billboard__button.btn--reverse:hover {
+    color: #fff;
+    background-color: #d53847;
+    /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .page-physicians .billboard__button.btn--reverse:hover {
+    color: #fff;
+    background-color: #bc2836; }
+.page-residents .billboard__button.btn--reverse {
+  color: #fff;
+  background-color: #5c419a;
+  box-shadow: inset 0 0 0 1px #fff; }
+  .page-residents .billboard__button.btn--reverse:hover {
+    color: #fff;
+    background-color: #d53847;
+    /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .page-residents .billboard__button.btn--reverse:hover {
+    color: #fff;
+    background-color: #4b357d; }
+.page-students .billboard__button.btn--reverse {
+  color: #fff;
+  background-color: #3d5ba9;
+  box-shadow: inset 0 0 0 1px #fff; }
+  .page-students .billboard__button.btn--reverse:hover {
+    color: #fff;
+    background-color: #d53847;
+    /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .page-students .billboard__button.btn--reverse:hover {
+    color: #fff;
+    background-color: #324b8b; }
+
 .breakout {
   padding: 1rem;
   margin-bottom: 2rem;
@@ -1106,6 +1140,30 @@ table th[class*="col-"] {
       color: #fff;
       background-color: #d53847;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .btn--reverse-secondary {
+    color: #fff;
+    background-color: #3d5ba9;
+    box-shadow: inset 0 0 0 1px #fff; }
+    .btn--reverse-secondary:hover {
+      color: #fff;
+      background-color: #d53847;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+    .btn--reverse-secondary:hover {
+      /*box-shadow: inset 0 0 0 1px darken($secondarycolor, 8%);*/
+      color: #fff;
+      background-color: #324b8b; }
+  .btn--reverse-primary {
+    color: #fff;
+    background-color: #d53847;
+    box-shadow: inset 0 0 0 1px #fff; }
+    .btn--reverse-primary:hover {
+      color: #fff;
+      background-color: #d53847;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+    .btn--reverse-primary:hover {
+      /*box-shadow: inset 0 0 0 1px darken($secondarycolor, 8%);*/
+      color: #fff;
+      background-color: #bc2836; }
   .btn--reverse {
     color: #fff;
     background-color: transparent;

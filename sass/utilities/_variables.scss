@@ -24,13 +24,13 @@ $linkcolor: $red;
 
 /* Audiences */
 $physicianscolor: $red;
-$physicianspage: page-physicians;
+$physicianspage: '.page-physicians';
 
 $residentscolor: $purple;
-$residentspage: page-residents;
+$residentspage: '.page-residents';
 
 $studentscolor: $blue;
-$studentspage: page-students;
+$studentspage: '.page-students';
 
 /* Typography */
 $font-light: 'gotham-light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
