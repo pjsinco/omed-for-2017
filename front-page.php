@@ -58,13 +58,13 @@
     <section class="highlightable container-fluid pageblock"  >
       <div class="highlightable__block wrap">
         <div class="highlightable__body">
-          <div class="highlightable__imagecontainer wow" data-wow-offset="200">
+          <div class="highlightable__imagecontainer">
             <img class="highlightable__image" src="wp-content/themes/omed-for-2017/public/images/omed-2016-04.jpg" alt="OMT session">
           </div> <!-- .highlightable__imagecontainer -->
           <div class="highlightable__text">
             <h5 class="highlightable__header">Nibh Tortor Magna</h5>
             <h4 class="highlightable__blurb">Sed posuere consectetur est at lob. Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.</h4>
-            <a href="#" class="btn btn--sm btn--reverse">Learn more</a>
+            <a href="#" class="highlightable__button btn btn--sm btn--reverse">Learn more</a>
           </div> <!-- .highlightable__text -->
         </div> <!-- .highlightable__body -->
       </div> <!-- .highlightable__block -->
