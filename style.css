@@ -1005,10 +1005,10 @@ table th[class*="col-"] {
   @media screen and (min-width: 56rem) {
     .billboard__row {
       -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -webkit-flex-direction: row;
-          -ms-flex-direction: row;
-              flex-direction: row; } }
+      -webkit-box-direction: reverse;
+      -webkit-flex-direction: row-reverse;
+          -ms-flex-direction: row-reverse;
+              flex-direction: row-reverse; } }
 
 .billboard__section {
   min-height: 1px; }
@@ -1055,10 +1055,14 @@ table th[class*="col-"] {
     .billboard__text {
       display: block;
       padding-right: 2rem;
-      text-align: right; } }
+      text-align: left; } }
+  @media screen and (min-width: 61.25rem) {
+    .billboard__text {
+      padding: 2rem; } }
   @media screen and (min-width: 75rem) {
     .billboard__text {
-      padding: 2rem 2rem 2rem 0; } }
+      /*padding: 2rem 2rem 2rem 0;*/
+      padding: 2rem 2rem 2.5rem; } }
 
 .billboard__body {
   margin-left: auto;
@@ -1069,7 +1073,7 @@ table th[class*="col-"] {
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      margin-right: 0;
+      margin-left: 0;
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -webkit-flex-direction: column;
@@ -1085,6 +1089,8 @@ table th[class*="col-"] {
     position: relative;
     margin-bottom: -1rem;
     font-size: 2rem;
+    font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: -.5px;
     line-height: 1.2;
     padding: 1rem;
     color: white;
@@ -1119,8 +1125,11 @@ table th[class*="col-"] {
         box-shadow: none;
         -webkit-transform: none;
                 transform: none;
-        font-size: 1.75rem; } }
+        font-size: 1.5rem; } }
     @media screen and (min-width: 67.75rem) {
+      .billboard__body h3 {
+        font-size: 1.75rem; } }
+    @media screen and (min-width: 75rem) {
       .billboard__body h3 {
         font-size: 2.5rem; } }
   .billboard__body p, .billboard__body li {
@@ -1136,7 +1145,10 @@ table th[class*="col-"] {
         padding-top: 2rem; } }
     @media screen and (min-width: 67.75rem) {
       .billboard__body p, .billboard__body li {
-        font-size: 1.5rem; } }
+        font-size: 1.125rem; } }
+    @media screen and (min-width: 75rem) {
+      .billboard__body p, .billboard__body li {
+        font-size: 1.25rem; } }
 
 .billboard__figure {
   min-height: 1px; }

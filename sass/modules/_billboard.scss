@@ -11,6 +11,10 @@ $bbh3maxwidth: 36rem;
 %billboard-section-base {
   min-height: 1px;
   max-width: 50%;
+
+  @include breakpoint($screen $bbflip) {
+    flex-basis: 50%;
+  }
 }
 
 .billboard {
@@ -22,7 +26,7 @@ $bbh3maxwidth: 36rem;
   overflow-x: hidden;
 
   @include breakpoint($screen $bbflip) {
-    flex-direction: row;
+    flex-direction: row-reverse;
   }
 }
 
@@ -60,11 +64,16 @@ $bbh3maxwidth: 36rem;
   @include breakpoint($screen $bbflip) {
     display: block;
     padding-right: 2rem;
-    text-align: right;
+    text-align: left;
+  }
+
+  @include breakpoint($screen $large-minor-minor-start) {
+    padding: 2rem;
   }
 
   @include breakpoint($screen $xlarge-minor-minor-start) {
-    padding: 2rem 2rem 2rem 0;
+    /*padding: 2rem 2rem 2rem 0;*/
+    padding: 2rem 2rem 2.5rem;
   }
 }
 
@@ -75,7 +84,7 @@ $bbh3maxwidth: 36rem;
 
   @include breakpoint($screen $bbflip) {
     display: flex;
-    margin-right: 0;
+    margin-left: 0;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
@@ -87,6 +96,8 @@ $bbh3maxwidth: 36rem;
     position: relative;
     margin-bottom: -1rem;
     font-size: 2rem;
+    font-family: $font-medium;
+    letter-spacing: -.5px;
     line-height: 1.2;
     padding: 1rem;
     color: white;
@@ -127,11 +138,16 @@ $bbh3maxwidth: 36rem;
       background-color: transparent;
       box-shadow: none;
       transform: none;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
     }
 
     @include breakpoint($screen $xlarge-start) {
+      font-size: 1.75rem;
+    }
+
+    @include breakpoint($screen $xlarge-minor-minor-start) {
       font-size: 2.5rem;
+
     }
   }
 
@@ -155,7 +171,11 @@ $bbh3maxwidth: 36rem;
     }
   
     @include breakpoint($screen $xlarge-start) {
-      font-size: 1.5rem;
+      font-size: 1.125rem;
+    }
+
+    @include breakpoint($screen $xlarge-minor-minor-start) {
+      font-size: 1.25rem;
     }
   }
 }
