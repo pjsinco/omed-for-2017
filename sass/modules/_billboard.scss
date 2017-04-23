@@ -1,8 +1,11 @@
-$bbflip: $large-start;
+$bbflip: $large-minor-start;
+$bbh3maxwidth: 36rem;
 
 %billboard-body-base {
+  max-width: $bbh3maxwidth;
   font-family: $font-light;
   color: $white;
+
 }
 
 %billboard-section-base {
@@ -11,7 +14,6 @@ $bbflip: $large-start;
 }
 
 .billboard {
-
 }
 
 .billboard__row {
@@ -22,10 +24,10 @@ $bbflip: $large-start;
   @include breakpoint($screen $bbflip) {
     flex-direction: row;
   }
-  
 }
 
 .billboard__section {
+
   min-height: 1px;
 
   & img {
@@ -48,7 +50,6 @@ $bbflip: $large-start;
 
 .billboard__text {
   padding: 1rem 1rem 1.5rem;
-  flex-basis: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,25 +58,80 @@ $bbflip: $large-start;
   @extend %background-color-for-audience;
 
   @include breakpoint($screen $bbflip) {
+    display: block;
     padding-right: 2rem;
     text-align: right;
   }
 
+  @include breakpoint($screen $xlarge-minor-minor-start) {
+    padding: 2rem 2rem 2rem 0;
+  }
 }
 
 .billboard__body {
 
-  max-width: calc(#{$contentwidth} / 2 - 2rem);
+  margin-left: auto;
+  margin-right: auto;
 
+  @include breakpoint($screen $bbflip) {
+    display: flex;
+    margin-right: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-width: calc(#{$contentwidth} / 2 - 2rem);
+  }
+  
   & h3 {
     @extend %billboard-body-base;
-    margin-bottom: 1rem;
+    position: relative;
+    margin-bottom: -1rem;
     font-size: 2rem;
     line-height: 1.2;
+    padding: 1rem;
+    color: white;
+    transform: translateY(-40px);
+    position: relative;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    
+    #{$physicianspage} & {
+      background-color: $physicianscolor;
+    }
+
+    #{$residentspage} & {
+      background-color: $residentscolor;
+    }
+
+    #{$studentspage} & {
+      background-color: $studentscolor;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 5px;
+      background-image: linear-gradient(to right, $primarycolor -7%, $secondarycolor);
+      text-shadow: 3px 3px 8px rgba(42, 65, 125, 0.84);
+
+      @include breakpoint($screen $bbflip) {
+        content: none;
+      }
+    }
 
     @include breakpoint($screen $bbflip) {
-      font-size: 2.625rem;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1rem;
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
+      transform: none;
+      font-size: 1.75rem;
+    }
+
+    @include breakpoint($screen $xlarge-start) {
+      font-size: 2.5rem;
     }
   }
 
@@ -84,25 +140,28 @@ $bbflip: $large-start;
     font-size: 1.125rem;
     line-height: 1.38;
 
-    &:not(:last-of-type) {
+    &:first-of-type {
       margin-bottom: 1.5rem;
+  
+      @include breakpoint($screen $bbflip) {
+        margin-bottom: auto;
+      }
     }
 
-    @include breakpoint($screen $bbflip) {
-      font-size: 1.75rem;
+    &:last-of-type {
+      @include breakpoint($screen $bbflip) {
+        padding-top: 2rem; // Safari hack for now
+      }
+    }
+  
+    @include breakpoint($screen $xlarge-start) {
+      font-size: 1.5rem;
     }
   }
 }
 
 .billboard__figure {
-
-  flex-basis: 50%;
   min-height: 1px;
-  /*background-image: url(http://placekitten.com/900/600);*/
-
-  & img {
-
-  }
 }
 
 .billboard__button {
