@@ -15,15 +15,13 @@
 
       <?php get_template_part( 'template-parts/page', 'header' ); ?>
 
-      <div class="content__block container-fluid wrap scroll-flip-here">
+      <div class="scroll-flip-here">
 
       	<?php the_content(); ?>
 
         <?php endwhile; ?>
 
       </div> <!-- .content__block -->
-
-
     </section>
   </div> <!-- .content -->
 

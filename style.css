@@ -158,6 +158,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .bordered {
   border: 1px solid #f1f1f1; }
 
+.page-physicians .billboard__text {
+  background-color: #d53847; }
+.page-residents .billboard__text {
+  background-color: #5c419a; }
+.page-students .billboard__text {
+  background-color: #3d5ba9; }
+
 .page-physicians .icon-block__body h5, .icon-block__body .page-physicians h5, .page-physicians .icon-block__body p, .icon-block__body .page-physicians p, .page-physicians .icon-block__body li, .icon-block__body .page-physicians li {
   color: #d53847; }
 .page-residents .icon-block__body h5, .icon-block__body .page-residents h5, .page-residents .icon-block__body p, .icon-block__body .page-residents p, .page-residents .icon-block__body li, .icon-block__body .page-residents li {
@@ -739,6 +746,9 @@ body {
   height: 100%;
   -webkit-font-smoothing: subpixel-antialiased; }
 
+p:empty, li:empty {
+  display: none; }
+
 li strong, p strong, li strong {
   font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal; }
@@ -976,6 +986,37 @@ table th[class*="col-"] {
   @media screen and (min-width: 61.25rem) {
     .site-content {
       padding-top: 80px; } }
+
+.billboard {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.billboard__text {
+  padding: 2rem;
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: right; }
+
+.billboard__figure {
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%; }
 
 .breakout {
   padding: 1rem;
