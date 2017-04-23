@@ -987,6 +987,10 @@ table th[class*="col-"] {
     .site-content {
       padding-top: 80px; } }
 
+.billboard__body h3, .billboard__body p, .billboard__body li {
+  font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff; }
+
 .billboard {
   display: -webkit-box;
   display: -webkit-flex;
@@ -1011,12 +1015,28 @@ table th[class*="col-"] {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   text-align: right; }
+
+.billboard__body {
+  max-width: calc(63rem / 2 - 2rem); }
+  .billboard__body h3 {
+    margin-bottom: 1.75rem;
+    font-size: 2.625rem;
+    line-height: 1.2; }
+  .billboard__body p, .billboard__body li {
+    font-size: 1.75rem;
+    line-height: 1.38; }
 
 .billboard__figure {
   -webkit-flex-basis: 50%;
       -ms-flex-preferred-size: 50%;
-          flex-basis: 50%; }
+          flex-basis: 50%;
+  min-height: 1px;
+  background-image: url(http://placekitten.com/840/560); }
 
 .breakout {
   padding: 1rem;

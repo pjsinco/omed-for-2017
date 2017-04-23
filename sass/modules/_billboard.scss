@@ -1,3 +1,8 @@
+%billboard-body-base {
+  font-family: $font-light;
+  color: $white;
+}
+
 .billboard {
 
   display: flex;
@@ -10,14 +15,39 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-end;
   text-align: right;
-  
   @extend %background-color-for-audience;
+
+}
+
+.billboard__body {
+
+  max-width: calc(#{$contentwidth} / 2 - 2rem);
+
+  & h3 {
+    @extend %billboard-body-base;
+    margin-bottom: 1.75rem;
+    font-size: 2.625rem;
+    line-height: 1.2;
+  }
+
+  & p {
+    @extend %billboard-body-base;
+    font-size: 1.75rem;
+    line-height: 1.38;
+  }
 }
 
 .billboard__figure {
 
   flex-basis: 50%;
+  min-height: 1px;
+  background-image: url(http://placekitten.com/840/560);
+
+  & img {
+
+  }
 }
 
 .billboard__button {
