@@ -2,6 +2,13 @@
   transition: transform .3s;
 }
 
+@mixin icon-block-icon {
+
+  .icon-block & {
+    width: 102px;
+    height: 103px;
+  }
+}
 
 .icon-aoa-logo {
 
@@ -78,4 +85,20 @@
     fill: $font-color;
   }
 
+}
+
+.icon-audience {
+  @extend %fill-for-audience;
+}
+
+.icon-bulb {
+  @include icon-block-icon;
+}
+
+.icon-microscope {
+  @include icon-block-icon;
+}
+
+.icon-bubble {
+  @include icon-block-icon;
 }
