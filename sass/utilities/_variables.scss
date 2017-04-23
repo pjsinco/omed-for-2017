@@ -24,13 +24,13 @@ $linkcolor: $red;
 
 /* Audiences */
 $physicianscolor: $red;
-$physicianspage: page-physicians;
+$physicianspage: '.page-physicians';
 
 $residentscolor: $purple;
-$residentspage: page-residents;
+$residentspage: '.page-residents';
 
 $studentscolor: $blue;
-$studentspage: page-students;
+$studentspage: '.page-students';
 
 /* Typography */
 $font-light: 'gotham-light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -105,7 +105,7 @@ $large-minor-end          : 979px;
 $large-minor-minor-start  : 61.25rem;  // 980px
 $xlarge-start             : 67.75rem;  // 1084px
 $xlarge-minor-start       : 73rem;     // 1168px
-/*$xlarge-minor-minor-start : 75rem;     // 1200px*/
+$xlarge-minor-minor-start : 75rem;     // 1200px
 $xxlarge-start            : 90rem;     // 1440px
 $wp-admin-bar-start       : 783px;
 

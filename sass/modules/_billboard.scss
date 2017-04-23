@@ -1,25 +1,180 @@
-.billboard {
+$bbflip: $large-minor-start;
+$bbh3maxwidth: 36rem;
 
+%billboard-body-base {
+  max-width: $bbh3maxwidth;
+  font-family: $font-light;
+  color: $white;
+
+}
+
+%billboard-section-base {
+  min-height: 1px;
+  max-width: 50%;
+}
+
+.billboard {
+}
+
+.billboard__row {
   display: flex;
+  flex-direction: column-reverse;
+  overflow-x: hidden;
+
+  @include breakpoint($screen $bbflip) {
+    flex-direction: row;
+  }
+}
+
+.billboard__section {
+
+  min-height: 1px;
+
+  & img {
+    float: left;
+    min-height: 1px;
+  }
+
+  @include breakpoint($screen $bbflip) {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    position: relative;
+  }
+
+
+  &--image {
+  }
+
 }
 
 .billboard__text {
-
-  padding: 2rem;
-  flex-basis: 50%;
+  padding: 1rem 1rem 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: right;
-  
+  align-items: flex-end;
+  text-align: center;
   @extend %background-color-for-audience;
+
+  @include breakpoint($screen $bbflip) {
+    display: block;
+    padding-right: 2rem;
+    text-align: right;
+  }
+
+  @include breakpoint($screen $xlarge-minor-minor-start) {
+    padding: 2rem 2rem 2rem 0;
+  }
+}
+
+.billboard__body {
+
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint($screen $bbflip) {
+    display: flex;
+    margin-right: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    max-width: calc(#{$contentwidth} / 2 - 2rem);
+  }
+  
+  & h3 {
+    @extend %billboard-body-base;
+    position: relative;
+    margin-bottom: -1rem;
+    font-size: 2rem;
+    line-height: 1.2;
+    padding: 1rem;
+    color: white;
+    transform: translateY(-40px);
+    position: relative;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+    
+    #{$physicianspage} & {
+      background-color: $physicianscolor;
+    }
+
+    #{$residentspage} & {
+      background-color: $residentscolor;
+    }
+
+    #{$studentspage} & {
+      background-color: $studentscolor;
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 5px;
+      background-image: linear-gradient(to right, $primarycolor -7%, $secondarycolor);
+      text-shadow: 3px 3px 8px rgba(42, 65, 125, 0.84);
+
+      @include breakpoint($screen $bbflip) {
+        content: none;
+      }
+    }
+
+    @include breakpoint($screen $bbflip) {
+      margin-bottom: 1rem;
+      padding: 0;
+      background-color: transparent;
+      box-shadow: none;
+      transform: none;
+      font-size: 1.75rem;
+    }
+
+    @include breakpoint($screen $xlarge-start) {
+      font-size: 2.5rem;
+    }
+  }
+
+  & p {
+    @extend %billboard-body-base;
+    font-size: 1.125rem;
+    line-height: 1.38;
+
+    &:first-of-type {
+      margin-bottom: 1.5rem;
+  
+      @include breakpoint($screen $bbflip) {
+        margin-bottom: auto;
+      }
+    }
+
+    &:last-of-type {
+      @include breakpoint($screen $bbflip) {
+        padding-top: 2rem; // Safari hack for now
+      }
+    }
+  
+    @include breakpoint($screen $xlarge-start) {
+      font-size: 1.5rem;
+    }
+  }
 }
 
 .billboard__figure {
-
-  flex-basis: 50%;
+  min-height: 1px;
 }
 
 .billboard__button {
 
+  #{$physicianspage} &.btn--reverse {
+    @include billboard-button($physicianscolor);
+  }
+
+  #{$residentspage} &.btn--reverse {
+    @include billboard-button($residentscolor);
+  }
+
+  #{$studentspage} &.btn--reverse {
+    @include billboard-button($studentscolor);
+  }
 }

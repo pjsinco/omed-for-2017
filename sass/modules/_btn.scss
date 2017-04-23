@@ -31,6 +31,24 @@
     @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
   }
 
+  &--reverse-secondary {
+    @include button-variant($btn-reverse-color, $secondarycolor, $btn-reverse-border);
+    &:hover {
+      /*box-shadow: inset 0 0 0 1px darken($secondarycolor, 8%);*/
+      color: $white;
+      background-color: darken($secondarycolor, 8%); 
+    }
+  }
+
+  &--reverse-primary {
+    @include button-variant($btn-reverse-color, $primarycolor, $btn-reverse-border);
+    &:hover {
+      /*box-shadow: inset 0 0 0 1px darken($secondarycolor, 8%);*/
+      color: $white;
+      background-color: darken($primarycolor, 8%); 
+    }
+  }
+
   &--reverse {
     @include button-variant($btn-reverse-color, $btn-primary-bg, $btn-reverse-border);
     &:hover {
@@ -47,7 +65,6 @@
       color: $red;
       background-color: $white; 
     }
-
   }
 
   /*
