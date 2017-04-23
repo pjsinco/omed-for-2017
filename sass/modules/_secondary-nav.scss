@@ -96,9 +96,7 @@ nav.secondary-nav {
     }
 
     &.alt > a {
-      &:hover {
-        /*background-color: lighten($primarycolor, 25%);*/
-      }
+      opacity: .75;
     }
   }
 

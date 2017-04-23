@@ -2738,8 +2738,8 @@ nav.secondary-nav {
       /*padding-left: 1.25rem;*/ }
     nav.secondary-nav li.current-menu-item > a, nav.secondary-nav li > a:hover {
       background-color: white; }
-    nav.secondary-nav li.alt > a:hover {
-      /*background-color: lighten($primarycolor, 25%);*/ }
+    nav.secondary-nav li.alt > a {
+      opacity: .75; }
   nav.secondary-nav li.alt {
     color: #d53847;
     font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
