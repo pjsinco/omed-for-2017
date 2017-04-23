@@ -17,7 +17,7 @@
 
       <div class="content__block container-fluid wrap scroll-flip-here">
 
-        <?php get_template_part( 'template-parts/page', 'article' ); ?>
+      	<?php the_content(); ?>
 
         <?php endwhile; ?>
 
