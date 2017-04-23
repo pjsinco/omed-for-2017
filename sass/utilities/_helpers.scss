@@ -184,6 +184,21 @@
   border: 1px solid $lightgray;
 }
 
+%background-color-for-audience {
+
+  .page-physicians & {
+    background-color: $physicianscolor;
+  }
+
+  .page-residents & {
+    background-color: $residentscolor;
+  }
+
+  .page-students & {
+    background-color: $studentscolor;
+  }
+}
+
 %color-for-audience {
 
   .page-physicians & {
@@ -197,7 +212,6 @@
   .page-students & {
     color: $studentscolor;
   }
-
 }
 
 %fill-for-audience {
@@ -213,5 +227,4 @@
   .page-students & {
     fill: $studentscolor;
   }
-
 }

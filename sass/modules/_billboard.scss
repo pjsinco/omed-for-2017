@@ -1,0 +1,25 @@
+.billboard {
+
+  display: flex;
+}
+
+.billboard__text {
+
+  padding: 2rem;
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+  
+  @extend %background-color-for-audience;
+}
+
+.billboard__figure {
+
+  flex-basis: 50%;
+}
+
+.billboard__button {
+
+}
