@@ -2056,7 +2056,7 @@ table th[class*="col-"] {
   padding: .25rem;
   /*max-width: 650px;*/
   border-radius: 1px;
-  box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17);
+  box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.32);
   background-color: #fff; }
   .highlightable__imagecontainer > img {
     float: left; }
@@ -2079,6 +2079,9 @@ table th[class*="col-"] {
 .highlightable__button.btn {
   background-color: #5c419a;
   box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #5c419a; }
+.highlightable__button:hover {
+  box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #513988;
+  background-color: #513988; }
 
 .navigation a .icon-aoa-logo, .logo a .icon-omed-logo-plain {
   -webkit-transition: -webkit-transform .3s;

@@ -128,7 +128,7 @@ $hflip2: $large-minor-start;
   padding: .25rem;
   /*max-width: 650px;*/
   border-radius: 1px;
-  box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17);
+  box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.32);
   background-color: $white;
 
   & > img {
@@ -156,5 +156,10 @@ $hflip2: $large-minor-start;
   &.btn {
     background-color: $accentcolor;
     box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px $accentcolor;
+  }
+
+  &:hover {
+    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($accentcolor, 5%);
+    background-color: darken($accentcolor, 5%); 
   }
 }
