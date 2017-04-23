@@ -1,23 +1,65 @@
+$bbflip: $large-start;
+
 %billboard-body-base {
   font-family: $font-light;
   color: $white;
 }
 
+%billboard-section-base {
+  min-height: 1px;
+  max-width: 50%;
+}
+
 .billboard {
 
+}
+
+.billboard__row {
   display: flex;
+  flex-direction: column-reverse;
+  overflow-x: hidden;
+
+  @include breakpoint($screen $bbflip) {
+    flex-direction: row;
+  }
+  
+}
+
+.billboard__section {
+  min-height: 1px;
+
+  & img {
+    float: left;
+    min-height: 1px;
+  }
+
+  @include breakpoint($screen $bbflip) {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    position: relative;
+  }
+
+
+  &--image {
+  }
+
 }
 
 .billboard__text {
-
-  padding: 2rem;
+  padding: 1rem 1rem 1.5rem;
   flex-basis: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  text-align: right;
+  text-align: center;
   @extend %background-color-for-audience;
+
+  @include breakpoint($screen $bbflip) {
+    padding-right: 2rem;
+    text-align: right;
+  }
 
 }
 
@@ -27,15 +69,28 @@
 
   & h3 {
     @extend %billboard-body-base;
-    margin-bottom: 1.75rem;
-    font-size: 2.625rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
     line-height: 1.2;
+
+    @include breakpoint($screen $bbflip) {
+      font-size: 2.625rem;
+      margin-bottom: 1.75rem;
+    }
   }
 
   & p {
     @extend %billboard-body-base;
-    font-size: 1.75rem;
+    font-size: 1.125rem;
     line-height: 1.38;
+
+    &:not(:last-of-type) {
+      margin-bottom: 1.5rem;
+    }
+
+    @include breakpoint($screen $bbflip) {
+      font-size: 1.75rem;
+    }
   }
 }
 
@@ -43,7 +98,7 @@
 
   flex-basis: 50%;
   min-height: 1px;
-  background-image: url(http://placekitten.com/840/560);
+  /*background-image: url(http://placekitten.com/900/600);*/
 
   & img {
 
