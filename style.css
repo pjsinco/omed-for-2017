@@ -1961,8 +1961,8 @@ table th[class*="col-"] {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -5%;
-    right: -5%;
+    left: 0;
+    right: 0;
     -webkit-transform: skewY(-4deg) translateY(2rem);
             transform: skewY(-4deg) translateY(2rem);
     -webkit-backface-visibility: hidden;
