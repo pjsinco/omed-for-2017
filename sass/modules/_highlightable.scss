@@ -104,6 +104,7 @@ $hflip2: $large-minor-start;
 
   @include breakpoint($screen $hflip2) {
     /*font-size: 1.75rem;*/
+    margin-bottom: .25rem;
   }
 }
 
@@ -119,6 +120,7 @@ $hflip2: $large-minor-start;
 
   @include breakpoint($screen $hflip2) {
     /*font-size: 1.125rem;*/
+    margin-bottom: .75rem;
   }
 }
 
