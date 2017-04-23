@@ -1,4 +1,5 @@
-$hflip: $medium-start;
+$hflip: $medium-minor-minor-start;
+$hflip2: $large-minor-start;
 
 %highlightable-text-base {
   font-family: $font-light;
@@ -13,8 +14,13 @@ $hflip: $medium-start;
   position: relative;
 
   @include breakpoint($screen $hflip) {
+    margin-top: 7rem;
+  }
+
+  @include breakpoint($screen $hflip2) {
     height: 533px;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    
   }
 
   &:before {
@@ -24,17 +30,26 @@ $hflip: $medium-start;
     bottom: 0;
     left: -5%;
     right: -5%;
-    /*transform-origin: 0 0;*/
-    /*transform: skewY($rotation) translateY(-50%);*/
     transform: skewY($rotation) translateY(2rem);
     backface-visibility: hidden;
     background-image: linear-gradient(to right, $primarycolor, $accentcolor);
 
     @include breakpoint($screen $hflip) {
-      
-      top: 19%;
-      height: 305px;
+      top: -3rem;
+      bottom: -3rem;
       background-image: linear-gradient(to right, $primarycolor, $primarycolor 33%, $accentcolor);
+      transform: skewY($rotation);
+    }
+
+    @include breakpoint($screen $hflip2) {
+      /*top: 35%;*/
+      top: 19%;
+      /*top: 50%;*/
+      bottom: 0;
+      height: 305px;
+      /*height: 60%;*/
+      /*transform-origin: 0 0;*/
+      /*transform: skewY($rotation) translateY(-50%);*/
     }
   }
 }
@@ -44,6 +59,10 @@ $hflip: $medium-start;
   z-index: 2;
 
   @include breakpoint($screen $hflip) {
+
+  }
+
+  @include breakpoint($screen $hflip2) {
     top: 50%;
     transform: translateY(-50%);
   }
@@ -54,7 +73,7 @@ $hflip: $medium-start;
   display: flex;
   flex-direction: column; 
 
-  @include breakpoint($screen $medium-start) {
+  @include breakpoint($screen $hflip) {
     flex-direction: row; 
   }  
 }
@@ -66,15 +85,26 @@ $hflip: $medium-start;
 
   @include breakpoint($screen $hflip) {
     flex-basis: 32%;
+  }
+
+  @include breakpoint($screen $hflip2) {
     transform: translateY(-9%);
-    
   }
 }
 
 .highlightable__header {
   @extend %highlightable-text-base;
   margin-bottom: 1.125rem;
+  line-height: 1.3;
   font-size: 1.75rem;
+
+  @include breakpoint($screen $hflip) {
+    font-size: 1.5rem;
+  }
+
+  @include breakpoint($screen $hflip2) {
+    /*font-size: 1.75rem;*/
+  }
 }
 
 .highlightable__blurb {
@@ -82,6 +112,14 @@ $hflip: $medium-start;
   margin-bottom: 1.625rem;
   font-size: 1.125rem;
   line-height: 1.6;
+
+  @include breakpoint($screen $hflip) {
+    font-size: 1rem;
+  }
+
+  @include breakpoint($screen $hflip2) {
+    /*font-size: 1.125rem;*/
+  }
 }
 
 .highlightable__imagecontainer {
@@ -89,7 +127,7 @@ $hflip: $medium-start;
   margin-bottom: 1.625rem;
   padding: .25rem;
   /*max-width: 650px;*/
-  border-radius: 2px;
+  border-radius: 1px;
   box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17);
   background-color: $white;
 
@@ -100,8 +138,14 @@ $hflip: $medium-start;
   @include breakpoint($screen $hflip) {
     
     flex-basis: 65%;
+    align-self: flex-start;
     margin-right: 2rem;
     margin-bottom: 0;
+    padding: .5rem;
+  }
+
+  @include breakpoint($screen $hflip2) {
+    
     padding: 1rem;
     border-radius: 3px;
   }

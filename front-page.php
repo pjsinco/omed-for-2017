@@ -62,7 +62,7 @@
             <img class="highlightable__image" src="wp-content/themes/omed-for-2017/public/images/omed-2016-04.jpg" alt="OMT session">
           </div> <!-- .highlightable__imagecontainer -->
           <div class="highlightable__text">
-            <h5 class="highlightable__header">Nibh Tortor Magna</h5>
+            <h5 class="highlightable__header">Maecenas sed diam eget risus varius blandit</h5>
             <h4 class="highlightable__blurb">Sed posuere consectetur est at lob. Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.</h4>
             <a href="#" class="highlightable__button btn btn--sm btn--reverse">Learn more</a>
           </div> <!-- .highlightable__text -->

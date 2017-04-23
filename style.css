@@ -1931,16 +1931,19 @@ table th[class*="col-"] {
 .highlightable__header, .highlightable__blurb {
   font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff; }
-  @media screen and (min-width: 30rem) {
+  @media screen and (min-width: 41.5rem) {
     .highlightable__header, .highlightable__blurb {
       margin-bottom: 1.3125rem; } }
 
 .highlightable {
   position: relative; }
-  @media screen and (min-width: 30rem) {
+  @media screen and (min-width: 41.5rem) {
+    .highlightable {
+      margin-top: 7rem; } }
+  @media screen and (min-width: 56rem) {
     .highlightable {
       height: 533px;
-      overflow: hidden; } }
+      /*overflow: hidden;*/ } }
   .highlightable:before {
     content: "";
     position: absolute;
@@ -1948,25 +1951,35 @@ table th[class*="col-"] {
     bottom: 0;
     left: -5%;
     right: -5%;
-    /*transform-origin: 0 0;*/
-    /*transform: skewY($rotation) translateY(-50%);*/
     -webkit-transform: skewY(-4deg) translateY(2rem);
             transform: skewY(-4deg) translateY(2rem);
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
     background-image: -webkit-linear-gradient(left, #d53847, #5c419a);
     background-image: linear-gradient(to right, #d53847, #5c419a); }
-    @media screen and (min-width: 30rem) {
+    @media screen and (min-width: 41.5rem) {
       .highlightable:before {
-        top: 19%;
-        height: 305px;
+        top: -3rem;
+        bottom: -3rem;
         background-image: -webkit-linear-gradient(left, #d53847, #d53847 33%, #5c419a);
-        background-image: linear-gradient(to right, #d53847, #d53847 33%, #5c419a); } }
+        background-image: linear-gradient(to right, #d53847, #d53847 33%, #5c419a);
+        -webkit-transform: skewY(-4deg);
+                transform: skewY(-4deg); } }
+    @media screen and (min-width: 56rem) {
+      .highlightable:before {
+        /*top: 35%;*/
+        top: 19%;
+        /*top: 50%;*/
+        bottom: 0;
+        height: 305px;
+        /*height: 60%;*/
+        /*transform-origin: 0 0;*/
+        /*transform: skewY($rotation) translateY(-50%);*/ } }
 
 .highlightable__block {
   position: relative;
   z-index: 2; }
-  @media screen and (min-width: 30rem) {
+  @media screen and (min-width: 56rem) {
     .highlightable__block {
       top: 50%;
       -webkit-transform: translateY(-50%);
@@ -1983,7 +1996,7 @@ table th[class*="col-"] {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column; }
-  @media screen and (min-width: 30rem) {
+  @media screen and (min-width: 41.5rem) {
     .highlightable__body {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
@@ -2005,40 +2018,61 @@ table th[class*="col-"] {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  @media screen and (min-width: 30rem) {
+  @media screen and (min-width: 41.5rem) {
     .highlightable__text {
       -webkit-flex-basis: 32%;
           -ms-flex-preferred-size: 32%;
-              flex-basis: 32%;
+              flex-basis: 32%; } }
+  @media screen and (min-width: 56rem) {
+    .highlightable__text {
       -webkit-transform: translateY(-9%);
               transform: translateY(-9%); } }
 
 .highlightable__header {
   margin-bottom: 1.125rem;
+  line-height: 1.3;
   font-size: 1.75rem; }
+  @media screen and (min-width: 41.5rem) {
+    .highlightable__header {
+      font-size: 1.5rem; } }
+  @media screen and (min-width: 56rem) {
+    .highlightable__header {
+      /*font-size: 1.75rem;*/ } }
 
 .highlightable__blurb {
   margin-bottom: 1.625rem;
   font-size: 1.125rem;
   line-height: 1.6; }
+  @media screen and (min-width: 41.5rem) {
+    .highlightable__blurb {
+      font-size: 1rem; } }
+  @media screen and (min-width: 56rem) {
+    .highlightable__blurb {
+      /*font-size: 1.125rem;*/ } }
 
 .highlightable__imagecontainer {
   position: relative;
   margin-bottom: 1.625rem;
   padding: .25rem;
   /*max-width: 650px;*/
-  border-radius: 2px;
+  border-radius: 1px;
   box-shadow: 0 0 13px -1px rgba(0, 0, 0, 0.17);
   background-color: #fff; }
   .highlightable__imagecontainer > img {
     float: left; }
-  @media screen and (min-width: 30rem) {
+  @media screen and (min-width: 41.5rem) {
     .highlightable__imagecontainer {
       -webkit-flex-basis: 65%;
           -ms-flex-preferred-size: 65%;
               flex-basis: 65%;
+      -webkit-align-self: flex-start;
+          -ms-flex-item-align: start;
+              align-self: flex-start;
       margin-right: 2rem;
       margin-bottom: 0;
+      padding: .5rem; } }
+  @media screen and (min-width: 56rem) {
+    .highlightable__imagecontainer {
       padding: 1rem;
       border-radius: 3px; } }
 
