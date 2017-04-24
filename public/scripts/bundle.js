@@ -5,6 +5,21 @@
 jQuery(document).ready(function ($) {
 
   /**
+   * For IE compatibility, apply a transform to an svg
+   *
+   */
+
+  var svg = document.querySelector('svg.icon-omed-logo-plain');
+
+  $('.logo > a').on('hover', function (evt) {
+    var transform = window.getComputedStyle(svg).getPropertyValue('transform');
+    svg.setAttribute('transform', transform);
+  }, function (evt) {
+    var transform = window.getComputedStyle(svg).getPropertyValue('transform');
+    svg.setAttribute('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+  });
+
+  /**
    * Hide and show nav bars
    *
    */

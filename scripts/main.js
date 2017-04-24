@@ -1,6 +1,21 @@
 /* @source https://codyhouse.co/gem/auto-hiding-navigation */
 
 jQuery(document).ready(($) => {
+
+  /**
+   * For IE compatibility, apply a transform to an svg
+   *
+   */
+
+  const svg = document.querySelector('svg.icon-omed-logo-plain');
+
+  $('.logo > a').on('hover', (evt) => {
+    const transform = window.getComputedStyle(svg).getPropertyValue('transform');
+    svg.setAttribute('transform', transform);
+  }, (evt) => {
+    const transform = window.getComputedStyle(svg).getPropertyValue('transform');
+    svg.setAttribute('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+  });
   
   /**
    * Hide and show nav bars
