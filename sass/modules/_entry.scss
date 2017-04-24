@@ -23,7 +23,7 @@
   &__gradient {
     position: relative;
     top: 1vw;
-    margin-bottom: 0;
+    margin-bottom: 1vw;
     padding: 2rem 0;
     color: $white;
     /*transform: rotate(-4deg);*/
@@ -90,25 +90,16 @@
   &__header {
     position: relative;
     top: 1vw;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     /*animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up;*/
     animation: 1s ease-out forwards fade-in-up;
 
-    @include breakpoint($screen $medium-start) {
-      margin-bottom: 3rem;
-    }
-
     @include breakpoint($screen $medium-minor-minor-start) {
-      /*margin-bottom: 5rem;*/
-    }
-
-    @include breakpoint($screen $large-minor-start) {
-      /*margin-bottom: 6rem;*/
-    }
-
-    @include breakpoint($screen $large-minor-minor-start) {
-      /*margin-bottom: 7rem;*/
       margin-bottom: 4rem;
+    }
+
+    @include breakpoint($screen $contentwidth + 2rem) {
+      margin-bottom: 5rem;
     }
 
     &--audience {
