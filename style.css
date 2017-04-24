@@ -1130,7 +1130,7 @@ table th[class*="col-"] {
         margin-bottom: 1rem;
         padding: 0;
         background-color: transparent;
-        background-image: none;
+        background-image: none !important;
         box-shadow: none;
         -webkit-transform: none;
                 transform: none;
