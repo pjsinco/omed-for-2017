@@ -45,7 +45,7 @@
         </ul>
       </div>
     </div> <!-- .intro__block -->
-    <svg class="icon icon-arrow1" preserveAspectRatio="xMidYMid meet" width="1000" height="1000">
+    <svg class="icon icon-arrow1" preserveAspectRatio="xMidYMid meet">
       <use xlink:href="#arrow1" />
     </svg>
     <div class="intro__button">
