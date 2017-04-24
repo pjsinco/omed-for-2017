@@ -59,12 +59,14 @@ $bbh3maxwidth: 36rem;
   justify-content: center;
   align-items: flex-end;
   text-align: center;
+  box-shadow: inset 0px 13px 10px -11px rgba(0, 0, 0, 0.21);
   @extend %background-color-for-audience;
 
   @include breakpoint($screen $bbflip) {
     display: block;
     padding-right: 2rem;
     text-align: left;
+    box-shadow: none;
   }
 
   @include breakpoint($screen $large-minor-minor-start) {
