@@ -64,7 +64,7 @@
           <div class="highlightable__text">
             <h5 class="highlightable__header">Q: What is the Experience Zone?</h5>
             <h4 class="highlightable__blurb">The Experience Zone is the center of the action at OMED&mdash;a hub for gathering and networking and a place to discover technologies.</h4>
-            <a href="/omed-2017-faqs/" class="highlightable__button btn btn--sm btn--reverse">Learn more</a>
+            <a href="/omed-2017-faqs/" class="highlightable__button btn btn--sm btn--reverse">See more FAQs</a>
           </div> <!-- .highlightable__text -->
         </div> <!-- .highlightable__body -->
       </div> <!-- .highlightable__block -->
