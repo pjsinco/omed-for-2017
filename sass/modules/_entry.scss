@@ -237,3 +237,22 @@
   }
 
 }
+
+.entry-content {
+
+  & > p:first-of-type:first-letter {
+    height: .7em;
+    margin: .13em 0 -.05em 0;
+    padding: 0 .1em 0 0;
+    font-family: $font-light;
+    font-size: 49px;
+    line-height: .7em;
+    float: left;
+    color: $gray;
+
+    @include breakpoint($screen $large-start) {
+      font-size: 53px;
+    }
+  }
+
+}
