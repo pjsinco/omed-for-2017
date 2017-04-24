@@ -9,15 +9,15 @@ jQuery(document).ready(function ($) {
    *
    */
 
-  var svg = document.querySelector('svg.icon-omed-logo-plain');
+  //const svg = document.querySelector('svg.icon-omed-logo-plain');
 
-  $('.logo > a').on('hover', function (evt) {
-    var transform = window.getComputedStyle(svg).getPropertyValue('transform');
-    svg.setAttribute('transform', transform);
-  }, function (evt) {
-    var transform = window.getComputedStyle(svg).getPropertyValue('transform');
-    svg.setAttribute('transform', 'matrix(1, 0, 0, 1, 0, 0)');
-  });
+  //$('.logo > a').on('hover', (evt) => {
+  //const transform = window.getComputedStyle(svg).getPropertyValue('transform');
+  //svg.setAttribute('transform', transform);
+  //}, (evt) => {
+  //const transform = window.getComputedStyle(svg).getPropertyValue('transform');
+  //svg.setAttribute('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+  //});
 
   /**
    * Hide and show nav bars
