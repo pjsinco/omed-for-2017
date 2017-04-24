@@ -2,6 +2,10 @@
   transition: transform .3s;
 }
 
+%icon-opacity-scale-setup {
+  transition: opacity .3s;
+}
+
 @mixin icon-block-icon {
 
   .icon-block & {
@@ -15,11 +19,13 @@
   fill: $white;
 
   .navigation a & {
-    @extend %icon-hover-scale-setup;
+    /*@extend %icon-hover-scale-setup;*/
+    @extend %icon-opacity-scale-setup;
   }
 
   .navigation a:hover & {
-    @include hover-scale();
+    /*@include hover-scale();*/
+    opacity: .75;
   }
 
   @include breakpoint($screen $navflip) {
@@ -30,11 +36,13 @@
 .icon-omed-logo-plain {
 
   .logo a & {
-    @extend %icon-hover-scale-setup;
+    /*@extend %icon-hover-scale-setup;*/
+    @extend %icon-opacity-scale-setup;
   }
 
   .logo a:hover & {
-    @include hover-scale(1.04);
+    /*@include hover-scale(1.04);*/
+    opacity: .75;
   }
 }
 

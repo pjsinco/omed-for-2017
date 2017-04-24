@@ -2127,21 +2127,25 @@ table th[class*="col-"] {
   background-color: #513988; }
 
 .navigation a .icon-aoa-logo, .logo a .icon-omed-logo-plain {
-  -webkit-transition: -webkit-transform .3s;
-          transition: transform .3s; }
+  -webkit-transition: opacity .3s;
+          transition: opacity .3s; }
 
 .icon-aoa-logo {
   fill: #fff; }
+  .navigation a .icon-aoa-logo {
+    /*@extend %icon-hover-scale-setup;*/ }
   .navigation a:hover .icon-aoa-logo {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1); }
+    /*@include hover-scale();*/
+    opacity: .75; }
   @media screen and (min-width: 61.25rem) {
     .icon-aoa-logo {
       fill: #1c446c; } }
 
+.logo a .icon-omed-logo-plain {
+  /*@extend %icon-hover-scale-setup;*/ }
 .logo a:hover .icon-omed-logo-plain {
-  -webkit-transform: scale(1.04);
-          transform: scale(1.04); }
+  /*@include hover-scale(1.04);*/
+  opacity: .75; }
 
 .icon-omed-logo-full {
   width: 240px; }
