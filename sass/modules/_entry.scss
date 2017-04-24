@@ -7,7 +7,7 @@
 
 %leadin-base {
   & h4 {
-    color: $font-color-lightest;
+    color: $font-color;
     font-size: 1.25rem;
     line-height: 1.3;
     
@@ -21,29 +21,39 @@
 
   &__gradient {
     position: relative;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     padding: 2rem 0;
     color: $white;
+    /*transform: rotate(-4deg);*/
 
     > div {
       transform-origin: 100%;
-      transform: translateY(0%) rotate($rotation);
+      transform: translateY(0%) rotate($standalonerotation);
 
       @include breakpoint($screen $xlarge-minor-start) {
-        transform: translateY(1%) rotate($rotation);
+        /*transform: translateY(1%) rotate($rotation);*/
       }
 
       @include breakpoint($screen 75rem) {
-        transform: translateY(1%) rotate($rotation);
+        /*transform: translateY(1%) rotate($rotation);*/
       }
 
       @include breakpoint($screen 77rem) {
-        transform: translateY(4%) rotate($rotation);
+        /*transform: translateY(4%) rotate($rotation);*/
       }
 
       @include breakpoint($screen 80rem) {
-        transform: translateY(10%) rotate($rotation);
+        /*transform: translateY(10%) rotate($rotation);*/
       }
+
+      @include breakpoint($screen $contentwidth + 2rem) {
+        transform: translateY(calc(2vw - 15%)) rotate($standalonerotation);
+      }
+
+      @include breakpoint($screen 1800px) {
+        transform: translateY(calc(2vw - 12%)) rotate($standalonerotation);
+      }
+      
     }
 
     &:after {
@@ -51,18 +61,17 @@
       @extend %gradient-position-base;
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
+      top: 8%;
+      bottom: 8%;
       left: 0;
       right: 0;
-      top: 0;
       z-index: -1;
       background-image: linear-gradient(86deg, $primarycolor, $secondarycolor);
-      transform: skew($rotation) rotateZ($rotation);
+      transform: skew($standalonerotation) rotateZ($standalonerotation);
     }
 
     @include breakpoint($screen $xlarge-minor-start) {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
   }
 
@@ -72,7 +81,7 @@
     &--gradient {
       @extend %leadin-base;
       @extend %gradient-position-base;
-      transform: rotate($rotation);
+      transform: rotate($standalonerotation);
     }
   }
 
@@ -139,7 +148,7 @@
   margin-bottom: 0;
   padding-bottom: 0;
   color: inherit;
-  font-family: $font-light;
+  font-family: $font-book;
   line-height: 1.4;
   border-bottom: none;
 
