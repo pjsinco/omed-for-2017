@@ -20,6 +20,6 @@ if ( empty( $images ) ) {
       </li>        
     <?php endforeach ?>
     </ul>
-    <a href="https://omed.osteopathic.org/become-an-omed-sponsor" class="btn btn--primary">Become a sponsor</a>
+    <a href="/become-an-omed-sponsor" class="btn btn--primary">Become a sponsor</a>
   </div>
 </div>
