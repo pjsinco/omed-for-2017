@@ -1971,13 +1971,19 @@ table th[class*="col-"] {
       margin-bottom: 1.3125rem; } }
 
 .highlightable {
-  position: relative; }
+  position: relative;
+  margin-top: 4rem;
+  margin-bottom: 6rem !important; }
   @media screen and (min-width: 41.5rem) {
     .highlightable {
       margin-top: 7rem; } }
+  @media screen and (min-width: 48rem) {
+    .highlightable {
+      margin-top: 16rem; } }
   @media screen and (min-width: 56rem) {
     .highlightable {
       height: 533px;
+      margin-top: -2rem;
       /*overflow: hidden;*/ } }
   .highlightable:before {
     content: "";
@@ -2193,7 +2199,9 @@ footer .icon-aoa-with-tagline {
   /*padding-bottom: 2rem;*/ }
   .intro h5 {
     font-size: 1.3125rem;
-    font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    margin-bottom: .1875rem; }
 
 .intro__block {
   display: -webkit-box;
@@ -2232,7 +2240,11 @@ footer .icon-aoa-with-tagline {
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  margin-bottom: 1rem; }
+  @media screen and (min-width: 36rem) {
+    .intro__focus {
+      margin-bottom: 2rem; } }
   @media screen and (min-width: 48rem) {
     .intro__focus:before {
       /*content: "";*/
@@ -2240,6 +2252,7 @@ footer .icon-aoa-with-tagline {
       top: -250px;
       bottom: 4px;
       right: 50%;
+      margin-bottom: 0;
       border-right: 1px dotted #d53847; } }
 
 .intro__context {

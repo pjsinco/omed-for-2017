@@ -14,6 +14,8 @@ $goToTwoCol: $large-start;
   & h5 {
     font-size: 1.3125rem;
     font-family: $font-medium;
+    line-height: 1.4;
+    margin-bottom: .1875rem;
   }
 }
 
@@ -34,6 +36,11 @@ $goToTwoCol: $large-start;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
+
+  @include breakpoint($screen $medium-minor-start) {
+    margin-bottom: 2rem;
+  }
 
   @include breakpoint($screen $goToTwoCol) {
     &:before {
@@ -42,6 +49,7 @@ $goToTwoCol: $large-start;
       top: -250px;
       bottom: 4px;
       right: 50%;
+      margin-bottom: 0;
       border-right: 1px dotted $primarycolor;
     }
   }

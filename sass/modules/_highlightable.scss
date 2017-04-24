@@ -12,13 +12,20 @@ $hflip2: $large-minor-start;
 
 .highlightable {
   position: relative;
+  margin-top: 4rem;
+  margin-bottom: 6rem !important;
 
   @include breakpoint($screen $hflip) {
     margin-top: 7rem;
   }
 
+  @include breakpoint($screen $large-start) {
+    margin-top: 16rem;
+  }
+
   @include breakpoint($screen $hflip2) {
     height: 533px;
+    margin-top: -2rem;
     /*overflow: hidden;*/
     
   }
