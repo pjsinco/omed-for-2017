@@ -1530,8 +1530,9 @@ table th[class*="col-"] {
 
 .entry__gradient:after, .entry__leadin--gradient {
   position: relative;
-  -webkit-transform-origin: 100%;
-          transform-origin: 100%;
+  /*transform-origin: 100%;*/
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
   /*animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards rotate-up;*/
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
@@ -1546,13 +1547,14 @@ table th[class*="col-"] {
 
 .entry__gradient {
   position: relative;
+  top: 1vw;
   margin-bottom: 0;
   padding: 2rem 0;
   color: #fff;
   /*transform: rotate(-4deg);*/ }
   .entry__gradient > div {
-    -webkit-transform-origin: 100%;
-            transform-origin: 100%;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
     -webkit-transform: translateY(0%) rotate(-3deg);
             transform: translateY(0%) rotate(-3deg); }
     @media screen and (min-width: 73rem) {
@@ -1569,12 +1571,10 @@ table th[class*="col-"] {
         /*transform: translateY(10%) rotate($rotation);*/ } }
     @media screen and (min-width: 65rem) {
       .entry__gradient > div {
-        -webkit-transform: translateY(calc(2vw - 15%)) rotate(-3deg);
-                transform: translateY(calc(2vw - 15%)) rotate(-3deg); } }
+        /*transform: translateY(calc(2vw - 15%)) rotate($standalonerotation);*/ } }
     @media screen and (min-width: 1800px) {
       .entry__gradient > div {
-        -webkit-transform: translateY(calc(2vw - 12%)) rotate(-3deg);
-                transform: translateY(calc(2vw - 12%)) rotate(-3deg); } }
+        /*transform: translateY(calc(2vw - 12%)) rotate($standalonerotation);*/ } }
   .entry__gradient:after {
     content: '';
     position: absolute;
@@ -1594,21 +1594,25 @@ table th[class*="col-"] {
   -webkit-transform: rotate(-3deg);
           transform: rotate(-3deg); }
 .entry__header {
-  margin-bottom: 3rem;
-  -webkit-animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up;
-          animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up; }
+  position: relative;
+  top: 1vw;
+  margin-bottom: 2rem;
+  /*animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up;*/
+  -webkit-animation: 1s ease-out forwards fade-in-up;
+          animation: 1s ease-out forwards fade-in-up; }
   @media screen and (min-width: 30rem) {
     .entry__header {
-      margin-bottom: 4rem; } }
+      margin-bottom: 3rem; } }
   @media screen and (min-width: 41.5rem) {
     .entry__header {
-      margin-bottom: 5rem; } }
+      /*margin-bottom: 5rem;*/ } }
   @media screen and (min-width: 56rem) {
     .entry__header {
-      margin-bottom: 6rem; } }
+      /*margin-bottom: 6rem;*/ } }
   @media screen and (min-width: 61.25rem) {
     .entry__header {
-      margin-bottom: 7rem; } }
+      /*margin-bottom: 7rem;*/
+      margin-bottom: 4rem; } }
   .entry__header--audience {
     margin-bottom: 2rem;
     /*animation: rotate-up 1.8s cubic-bezier(0,.5,0,1) forwards, fade-in 10s linear forwards;*/
