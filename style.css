@@ -2058,9 +2058,8 @@ table th[class*="col-"] {
           justify-content: center; }
   @media screen and (min-width: 41.5rem) {
     .highlightable__text {
-      -webkit-flex-basis: 32%;
-          -ms-flex-preferred-size: 32%;
-              flex-basis: 32%; } }
+      /*flex-basis: 32%;*/
+      width: 32%; } }
   @media screen and (min-width: 56rem) {
     .highlightable__text {
       -webkit-transform: translateY(-9%);
@@ -2102,9 +2101,8 @@ table th[class*="col-"] {
     float: left; }
   @media screen and (min-width: 41.5rem) {
     .highlightable__imagecontainer {
-      -webkit-flex-basis: 65%;
-          -ms-flex-preferred-size: 65%;
-              flex-basis: 65%;
+      width: 65%;
+      /*flex-basis: 65%;*/
       -webkit-align-self: flex-start;
           -ms-flex-item-align: start;
               align-self: flex-start;

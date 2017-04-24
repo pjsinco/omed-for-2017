@@ -91,7 +91,8 @@ $hflip2: $large-minor-start;
   justify-content: center;
 
   @include breakpoint($screen $hflip) {
-    flex-basis: 32%;
+    /*flex-basis: 32%;*/
+    width: 32%;
   }
 
   @include breakpoint($screen $hflip2) {
@@ -145,8 +146,8 @@ $hflip2: $large-minor-start;
   }
 
   @include breakpoint($screen $hflip) {
-    
-    flex-basis: 65%;
+    width: 65%;
+    /*flex-basis: 65%;*/
     align-self: flex-start;
     margin-right: 2rem;
     margin-bottom: 0;
