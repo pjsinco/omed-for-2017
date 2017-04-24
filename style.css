@@ -2918,7 +2918,7 @@ nav.secondary-nav {
   left: auto;
   bottom: 0;
   width: 100%;
-  height: 33%;
+  height: 43%;
   padding-top: 1rem;
   padding-right: 1rem;
   padding-bottom: 6.5rem;
@@ -2932,6 +2932,7 @@ nav.secondary-nav {
       padding-left: 2rem; } }
   @media screen and (min-width: 36rem) {
     .splash__block {
+      height: 30%;
       width: auto;
       left: 2rem;
       right: 2rem;
@@ -2976,11 +2977,11 @@ nav.secondary-nav {
   /*}*/ }
   @media screen and (min-width: 36rem) {
     .splash__body {
-      width: 80%; } }
+      /*width: 80%;*/ } }
   @media screen and (min-width: 48rem) {
     .splash__body {
       font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      width: 100%; } }
+      /*width: 100%;*/ } }
   @media screen and (min-width: 61.25rem) {
     .splash__body {
       font-size: 1.3125rem; } }

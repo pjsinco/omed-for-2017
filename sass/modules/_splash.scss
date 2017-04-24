@@ -114,7 +114,7 @@ $splash-line-height-small: 1.5;
   left: auto;
   bottom: 0;
   width: 100%;
-  height: 33%;
+  height: 43%;
   padding-top: 1rem;
   padding-right: 1rem;
   padding-bottom: 6.5rem;
@@ -129,6 +129,7 @@ $splash-line-height-small: 1.5;
   }
 
   @include breakpoint($screen $medium-minor-start) {
+    height: 30%;
     width: auto;
     left: 2rem;
     right: 2rem;
@@ -178,12 +179,12 @@ $splash-line-height-small: 1.5;
   color: inherit;
 
   @include breakpoint($screen $medium-minor-start) {
-    width: 80%;
+    /*width: 80%;*/
   }
 
   @include breakpoint($screen $large-start) {
     font-family: $font-light;
-    width: 100%;
+    /*width: 100%;*/
   }
 
   @include breakpoint($screen $large-minor-minor-start) {
