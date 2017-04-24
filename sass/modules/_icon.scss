@@ -20,12 +20,12 @@
 
   .navigation a & {
     /*@extend %icon-hover-scale-setup;*/
-    @extend %icon-opacity-scale-setup;
+    /*@extend %icon-opacity-scale-setup;*/
   }
 
   .navigation a:hover & {
     /*@include hover-scale();*/
-    opacity: .75;
+    /*opacity: .75;*/
   }
 
   @include breakpoint($screen $navflip) {
@@ -37,12 +37,12 @@
 
   .logo a & {
     /*@extend %icon-hover-scale-setup;*/
-    @extend %icon-opacity-scale-setup;
+    /*@extend %icon-opacity-scale-setup;*/
   }
 
   .logo a:hover & {
     /*@include hover-scale(1.04);*/
-    opacity: .75;
+    /*opacity: .75;*/
   }
 }
 

@@ -2126,26 +2126,24 @@ table th[class*="col-"] {
   box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #513988;
   background-color: #513988; }
 
-.navigation a .icon-aoa-logo, .logo a .icon-omed-logo-plain {
-  -webkit-transition: opacity .3s;
-          transition: opacity .3s; }
-
 .icon-aoa-logo {
   fill: #fff; }
   .navigation a .icon-aoa-logo {
-    /*@extend %icon-hover-scale-setup;*/ }
+    /*@extend %icon-hover-scale-setup;*/
+    /*@extend %icon-opacity-scale-setup;*/ }
   .navigation a:hover .icon-aoa-logo {
     /*@include hover-scale();*/
-    opacity: .75; }
+    /*opacity: .75;*/ }
   @media screen and (min-width: 61.25rem) {
     .icon-aoa-logo {
       fill: #1c446c; } }
 
 .logo a .icon-omed-logo-plain {
-  /*@extend %icon-hover-scale-setup;*/ }
+  /*@extend %icon-hover-scale-setup;*/
+  /*@extend %icon-opacity-scale-setup;*/ }
 .logo a:hover .icon-omed-logo-plain {
   /*@include hover-scale(1.04);*/
-  opacity: .75; }
+  /*opacity: .75;*/ }
 
 .icon-omed-logo-full {
   width: 240px; }
@@ -2324,7 +2322,11 @@ footer .icon-aoa-with-tagline {
       padding-left: 1rem !important;
       padding-right: 1rem !important; } }
   .logo > a {
-    display: block; }
+    display: block;
+    -webkit-transition: opacity .3s;
+            transition: opacity .3s; }
+    .logo > a:hover {
+      opacity: .75; }
 
 .nav-trigger {
   position: absolute;
@@ -2476,13 +2478,18 @@ footer .icon-aoa-with-tagline {
   @media screen and (min-width: 61.25rem) {
     .navigation > li:last-child {
       display: table; } }
-  @media screen and (min-width: 61.25rem) {
-    .navigation > li:last-child a {
-      display: table-cell;
-      vertical-align: middle;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      padding-left: 1rem; } }
+  .navigation > li:last-child a {
+    -webkit-transition: opacity .3s linear;
+            transition: opacity .3s linear; }
+    .navigation > li:last-child a:hover {
+      opacity: .75; }
+    @media screen and (min-width: 61.25rem) {
+      .navigation > li:last-child a {
+        display: table-cell;
+        vertical-align: middle;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1rem; } }
   @media screen and (min-width: 61.25rem) {
     .navigation > li {
       height: 100%;

@@ -125,7 +125,6 @@
     border-bottom: 1px solid rgba($white, .63);
 
     & a {
-
       @include breakpoint($screen $navflip) {
         padding: 1rem 2rem;        
         line-height: 3.5;
@@ -140,6 +139,13 @@
     }
 
     & a {
+      transition: opacity .3s linear;
+
+      &:hover {
+        opacity: .75;
+      }
+
+
       @include breakpoint($screen $navflip) {
         display: table-cell;
         vertical-align: middle;
