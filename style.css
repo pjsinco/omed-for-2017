@@ -711,16 +711,16 @@ textarea {
   /* Legacy iOS */
   font-weight: normal;
   font-style: normal; }
-p, li, .entry-content li {
+p, li, .entry-content li, .video__caption {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: .875rem;
   line-height: 1.65;
   color: #666; }
   @media screen and (min-width: 48rem) {
-    p, li, .entry-content li {
+    p, li, .entry-content li, .video__caption {
       font-size: 1rem; } }
-  p:last-child, li:last-child {
+  p:last-child, li:last-child, .video__caption:last-child {
     margin-bottom: 0; }
 
 @media screen and (min-width: 61.25rem) {
@@ -3106,3 +3106,17 @@ nav.secondary-nav {
           -ms-flex-preferred-size: 50%;
               flex-basis: 50%;
       position: relative; } }
+
+.video__block, .video__block--nopad {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 2rem;
+  max-width: 42rem; }
+
+.video__block {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem; }
+.video__container {
+  margin-bottom: .5rem; }
+.video__caption {
+  color: #717271; }
