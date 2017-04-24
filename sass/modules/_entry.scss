@@ -92,7 +92,7 @@
     top: 1vw;
     margin-bottom: 3rem;
     /*animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up;*/
-    animation: 1s ease-out forwards fade-in-up;
+    animation: .6s ease-out forwards fade-in-up;
 
     @include breakpoint($screen $medium-minor-minor-start) {
       margin-bottom: 4rem;

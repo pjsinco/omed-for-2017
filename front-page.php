@@ -30,16 +30,16 @@
       <div class="intro__context">
         <ul>
           <li>
-            <h5>Lorem ipsum dolor</h5>
-            <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h5><a href="/registration-housing">Register Now <span>&raquo;</span></a></h5>
+            <p>Reserve your spot among thousands of DOs and medical students at OMED 2017.</p>
           </li>
           <li>
-            <h5>Dolor lorem</h5>
-            <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h5><a href="/omed-2017-faqs">Frequently Asked Questions <span>&raquo;</span></a></h5>
+            <p>Get details on registration, housing, programming and more.</p>
           </li>
           <li>
-            <h5>Lorem ipsum dolor</h5>
-            <p>Donec id elit non mi porta gravida at eget metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h5><a href="/contact-us">Contact Us <span>&raquo;</span></a></h5>
+            <p>Drop us a line or give us a call.</p>
           </li>
           
         </ul>
@@ -49,7 +49,7 @@
       <use xlink:href="#arrow1" />
     </svg>
     <div class="intro__button">
-      <a class="btn btn--primary btn--lg btn--wide" href="#">Register Now</a>
+      <a class="btn btn--primary btn--lg btn--wide" href="/registration-housing">Register Now</a>
     </div>
   </section>
 

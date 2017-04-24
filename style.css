@@ -1600,8 +1600,8 @@ table th[class*="col-"] {
   top: 1vw;
   margin-bottom: 3rem;
   /*animation: 1s cubic-bezier(0, 0.5, 0, 1) forwards fade-in-up;*/
-  -webkit-animation: 1s ease-out forwards fade-in-up;
-          animation: 1s ease-out forwards fade-in-up; }
+  -webkit-animation: .6s ease-out forwards fade-in-up;
+          animation: .6s ease-out forwards fade-in-up; }
   @media screen and (min-width: 41.5rem) {
     .entry__header {
       margin-bottom: 4rem; } }
@@ -2239,7 +2239,9 @@ footer .icon-aoa-with-tagline {
   margin-left: auto;
   margin-right: auto;
   padding-left: 1em;
-  padding-right: 1em; }
+  padding-right: 1em;
+  position: relative;
+  z-index: 1; }
   @media screen and (min-width: 30rem) {
     .intro__context {
       padding-left: 2rem;
@@ -2251,6 +2253,27 @@ footer .icon-aoa-with-tagline {
   @media screen and (min-width: 48rem) {
     .intro__context {
       padding-left: 3.375rem; } }
+  .intro__context a {
+    text-decoration: none;
+    -webkit-transition: opacity .2s linear;
+            transition: opacity .2s linear; }
+  .intro__context ul li a:hover {
+    opacity: .7; }
+    .intro__context ul li a:hover > span {
+      -webkit-transform: translateX(3px);
+              transform: translateX(3px); }
+  .intro__context ul li a > span {
+    font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    margin-left: 2px;
+    font-size: 1.25rem;
+    -webkit-transform: translate3d(0);
+            transform: translate3d(0);
+    -webkit-transition: -webkit-transform .2s linear;
+            transition: transform .2s linear;
+    will-change: transform; }
 
 .intro__button {
   position: relative;
