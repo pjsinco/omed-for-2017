@@ -109,17 +109,17 @@ $bbh3maxwidth: 36rem;
 
     #{$physicianspage} & {
       background-color: $physicianscolor;
-      background-image: linear-gradient(to top, rgba(255, 255, 255, 0.05) 9%, $physicianscolor 50%, $physicianscolor);
+      /*background-image: linear-gradient(to top, rgba(255, 255, 255, 0.05) 9%, $physicianscolor 50%, $physicianscolor);*/
     }
 
     #{$residentspage} & {
       background-color: $residentscolor;
-      background-image: linear-gradient(to top, rgba(255, 255, 255, 0.05) 9%, $residentscolor 50%, $residentscolor);
+      /*background-image: linear-gradient(to top, rgba(255, 255, 255, 0.05) 9%, $residentscolor 50%, $residentscolor);*/
     }
 
     #{$studentspage} & {
       background-color: $studentscolor;
-      background-image: linear-gradient(to top, rgba(255, 255, 255, 0.05) 9%, $studentscolor 50%, $studentscolor);
+      /*background-image: linear-gradient(to top, rgba(255, 255, 255, 0.05) 9%, $studentscolor 50%, $studentscolor);*/
     }
 
 
@@ -142,7 +142,7 @@ $bbh3maxwidth: 36rem;
       margin-bottom: 1rem;
       padding: 0;
       background-color: transparent;
-      background-image: none !important;
+      /*background-image: none !important;*/
       box-shadow: none;
       transform: none;
       font-size: 1.5rem;
