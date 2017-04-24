@@ -9,6 +9,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-babel");
   grunt.loadNpmTasks("grunt-contrib-imagemin");
   grunt.loadNpmTasks("grunt-newer");
+  grunt.loadNpmTasks("grunt-contrib-uglify");
 
   grunt.initConfig({
 
@@ -83,6 +84,17 @@ module.exports = function(grunt) {
       },
     },
 
+    uglify: {
+      dist: {
+        options: {
+          
+        },
+        files: {
+          'public/scripts/bundle.min.js': 'public/scripts/bundle.js',
+        },
+      },
+    },
+
     notify: {
       sass: {
         options: {
@@ -101,7 +113,7 @@ module.exports = function(grunt) {
       scripts: {
         options: {
           title: 'Scripts',
-          message: 'Babelified!',
+          message: 'Babelified! Uglified!',
         },
       },
 
@@ -153,7 +165,7 @@ module.exports = function(grunt) {
 
       scripts: {
         files: ['scripts/**/*.js'],
-        tasks: ['babel:dist', 'notify:scripts'],
+        tasks: ['babel:dist', 'uglify:dist', 'notify:scripts'],
       },
 
       svg: {

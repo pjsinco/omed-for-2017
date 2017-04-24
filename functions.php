@@ -134,9 +134,9 @@ function omed_scripts() {
 
   wp_register_script( 
     'omed-bundle', 
-    get_template_directory_uri() . '/public/scripts/bundle.js', 
+    get_template_directory_uri() . '/public/scripts/bundle.min.js', 
     array( 'jquery' ),
-    filemtime( get_template_directory() . '/public/scripts/bundle.js' ), 
+    filemtime( get_template_directory() . '/public/scripts/bundle.min.js' ), 
     true
   );
 
