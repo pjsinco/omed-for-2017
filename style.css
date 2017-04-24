@@ -1864,15 +1864,16 @@ table th[class*="col-"] {
   padding-top: 1rem;
   padding-bottom: 1rem;
   text-align: center; }
-  .icon-block:nth-child(1) {
-    padding-left: 0;
-    padding-right: 1rem; }
-  .icon-block:nth-child(2) {
-    padding-left: 1rem;
-    padding-right: 1rem; }
-  .icon-block:nth-child(3) {
-    padding-left: 1rem;
-    padding-right: 0; }
+  @media screen and (min-width: 36rem) {
+    .icon-block:nth-child(1) {
+      padding-left: 0;
+      padding-right: 1rem; }
+    .icon-block:nth-child(2) {
+      padding-left: 1rem;
+      padding-right: 1rem; }
+    .icon-block:nth-child(3) {
+      padding-left: 1rem;
+      padding-right: 0; } }
 
 .icon-block__blocks {
   display: -webkit-box;
