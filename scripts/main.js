@@ -52,12 +52,12 @@ jQuery(document).ready(($) => {
 	    	//if scrolling up... 
 	    	if( currentTop < secondaryNavOffsetTop ) {
 	    		//secondary nav is not fixed
-          console.log('1');
+          //console.log('1');
 	    		$mainHeader.removeClass('is-hidden');
 	    		$secondaryNavigation.removeClass('fixed slide-up');
 	    		$scrollFlipHere.removeClass('secondary-nav-fixed');
 	    	} else if( previousTop - currentTop > scrollDelta ) {
-          console.log('2');
+          //console.log('2');
 	    		//secondary nav is fixed
 	    		$mainHeader.removeClass('is-hidden');
 	    		$secondaryNavigation.removeClass('slide-up').addClass('fixed'); 
@@ -67,13 +67,13 @@ jQuery(document).ready(($) => {
 	    } else {
 	    	//if scrolling down...	
 	 	  	if( currentTop > secondaryNavOffsetTop + scrollOffset ) {
-          console.log('3');
+          //console.log('3');
 	 	  		//hide primary nav
 	    		$mainHeader.addClass('is-hidden');
 	    		$secondaryNavigation.addClass('fixed slide-up slide-down');
 	    		$scrollFlipHere.addClass('secondary-nav-fixed');
 	    	} else if( currentTop > secondaryNavOffsetTop ) {
-          console.log('4');
+          //console.log('4');
 	    		//once the secondary nav is fixed, do not hide primary nav if you haven't scrolled more than scrollOffset 
 	    		$mainHeader.removeClass('is-hidden');
 	    		$secondaryNavigation.addClass('fixed slide-down').removeClass('slide-up');
