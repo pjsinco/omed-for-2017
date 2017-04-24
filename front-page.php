@@ -62,9 +62,9 @@
             <img class="highlightable__image" src="wp-content/uploads/2017/04/omed-201.jpg" alt="OMT session">
           </div> <!-- .highlightable__imagecontainer -->
           <div class="highlightable__text">
-            <h5 class="highlightable__header">Maecenas sed diam eget risus varius blandit</h5>
-            <h4 class="highlightable__blurb">Sed posuere consectetur est at lob. Lorem ipsum dolor sit amet, cons ectetur adipiscing elit.</h4>
-            <a href="#" class="highlightable__button btn btn--sm btn--reverse">Learn more</a>
+            <h5 class="highlightable__header">Q: What is the Experience Zone?</h5>
+            <h4 class="highlightable__blurb">The Experience Zone is the center of the action at OMED&mdash;a hub for gathering and networking and a place to discover technologies.</h4>
+            <a href="/omed-2017-faqs/" class="highlightable__button btn btn--sm btn--reverse">Learn more</a>
           </div> <!-- .highlightable__text -->
         </div> <!-- .highlightable__body -->
       </div> <!-- .highlightable__block -->
