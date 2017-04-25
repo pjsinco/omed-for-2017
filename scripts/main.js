@@ -7,7 +7,6 @@ jQuery(document).ready(($) => {
    * Track outbound links for Google Analytics
    *
    */
-  ga('create', 'UA-2910609-39', 'auto');
 
   const trackOutboundLink = (evt) => {
 
@@ -17,8 +16,11 @@ jQuery(document).ready(($) => {
     }
 
     const url = evt.target.href;
+    const text = evt.target.text;
 
-    ga('send', 'event', 'Outbound Link', 'click', url, {
+    ga('create', 'UA-2910609-39', 'auto');
+
+    ga('send', 'event', 'Outbound Link', url, text, {
       'transport': 'beacon',
       'hitCallback': () => document.location = url
     });
