@@ -133,11 +133,12 @@ function omed_scripts() {
     'all'
   );
 
+  $omed_bundle_path = get_template_directory_uri() . '/public/scripts/bundle.min.js';
   wp_register_script( 
     'omed-bundle', 
-    get_template_directory_uri() . '/public/scripts/bundle.min.js', 
+    $omed_bundle_path,
     array( 'jquery' ),
-    filemtime( get_template_directory() . '/public/scripts/bundle.min.js' ), 
+    filemtime( $omed_bundle_path ), 
     true
   );
 
@@ -663,10 +664,25 @@ function omed_add_google_analytics_code() {
   ga('send', 'pageview');
  
 </script>
+
+<script>
+  var trackOutboundLink = function(evt)  {
+    // Make sure tag is an anchor and that it is outbound
+    if (evt.target.tagName !== 'A' || evt.target.hostname === window.location.hostname) {
+      return;
+    }
+    var url = evt.target.href;
+    console.log('STG: ' + url);
+    ga('send', 'event', 'Outbound Link', 'click', url, {
+      'transport': 'beacon',
+      'hitCallback': function() { document.location = url; }
+    });
+  };
+  document.addEventListener('click', trackOutboundLink, false);
+</script>
 <?php
 }
 add_action( 'wp_head', 'omed_add_google_analytics_code' );
-
 
 function omed_add_custom_ninja_form_class ( $form_class, $form_id ) 
 {
