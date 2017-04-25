@@ -38,7 +38,7 @@
             <p>Browse hundreds of opportunities for learning and networking.</p>
           </li>
           <li>
-            <h5><a href="/omed-2017-faqs">Frequently Asked Questions <span>&raquo;</span></a></h5>
+            <h5><a href="/faq">Frequently Asked Questions <span>&raquo;</span></a></h5>
             <p>Get details on registration, housing, programming and more.</p>
           </li>
           
