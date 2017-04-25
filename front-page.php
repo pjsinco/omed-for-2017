@@ -30,16 +30,16 @@
       <div class="intro__context">
         <ul>
           <li>
-            <h5><a href="/registration-housing">Register Now <span>&raquo;</span></a></h5>
-            <p>Reserve your spot among thousands of DOs and medical students at OMED 2017.</p>
+            <h5><a href="/registration-housing">Housing and Registration <span>&raquo;</span></a></h5>
+            <p>Reserve your spot at the premier osteopathic event of the year.</p>
+          </li>
+          <li>
+            <h5><a href="http://mydigitalpublication.com/publication?i=403769">Conference Program <span>&raquo;</span></a></h5>
+            <p>Browse hundreds of opportunities for learning and networking.</p>
           </li>
           <li>
             <h5><a href="/omed-2017-faqs">Frequently Asked Questions <span>&raquo;</span></a></h5>
             <p>Get details on registration, housing, programming and more.</p>
-          </li>
-          <li>
-            <h5><a href="/contact-us">Contact Us <span>&raquo;</span></a></h5>
-            <p>Drop us a line or give us a call.</p>
           </li>
           
         </ul>
