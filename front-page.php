@@ -27,23 +27,19 @@
         </svg>
         <i class="icon icon-arrow1"></i>
       </div>
-      <div class="intro__context">
-        <ul>
-          <li>
-            <h5><a href="/registration-housing">Housing and Registration <span>&raquo;</span></a></h5>
-            <p>Reserve your spot at the premier osteopathic event of the year.</p>
-          </li>
-          <li>
-            <h5><a href="http://mydigitalpublication.com/publication?i=403769">Conference Program <span>&raquo;</span></a></h5>
-            <p>Browse hundreds of opportunities for learning and networking.</p>
-          </li>
-          <li>
-            <h5><a href="/omed-2017-faqs">Frequently Asked Questions <span>&raquo;</span></a></h5>
-            <p>Get details on registration, housing, programming and more.</p>
-          </li>
+
+        <?php 
+          $args = array(
+            'menu' => 'intro-block',
+            'theme_location' => 'intro-block',
+            'container' => 'div',
+            'container_class' => 'intro__context',
+            'walker' => new Menu_With_Description(),
+          );
+        
+          wp_nav_menu( $args );
+        ?>
           
-        </ul>
-      </div>
     </div> <!-- .intro__block -->
     <svg class="icon icon-arrow1" preserveAspectRatio="xMidYMid meet">
       <use xlink:href="#arrow1" />
