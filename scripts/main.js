@@ -8,6 +8,8 @@ jQuery(document).ready(($) => {
    *
    */
 
+  ga('create', 'UA-2910609-39', 'auto');
+
   const trackOutboundLink = (evt) => {
 
     // Make sure tag is an anchor and that it is outbound
@@ -18,7 +20,6 @@ jQuery(document).ready(($) => {
     const url = evt.target.href;
     const text = evt.target.text;
 
-    ga('create', 'UA-2910609-39', 'auto');
 
     ga('send', 'event', 'Outbound Link', url, text, {
       'transport': 'beacon',
