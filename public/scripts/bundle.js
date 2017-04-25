@@ -5,6 +5,31 @@
 jQuery(document).ready(function ($) {
 
   /**
+   * Track outbound links for Google Analytics
+   *
+   */
+  ga('create', 'UA-2910609-39', 'auto');
+
+  var trackOutboundLink = function trackOutboundLink(evt) {
+
+    // Make sure tag is an anchor and that it is outbound
+    if (evt.target.tagName !== 'A' || evt.target.hostname === window.location.hostname) {
+      return;
+    }
+
+    var url = evt.target.href;
+
+    ga('send', 'event', 'Outbound Link', 'click', url, {
+      'transport': 'beacon',
+      'hitCallback': function hitCallback() {
+        return document.location = url;
+      }
+    });
+  };
+
+  document.addEventListener('click', trackOutboundLink, false);
+
+  /**
    * Hide and show nav bars
    *
    */

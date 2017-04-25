@@ -668,29 +668,6 @@ function omed_add_google_analytics_code() {
 }
 add_action( 'wp_head', 'omed_add_google_analytics_code', 10 );
 
-function omed_track_outbound_links() {
-  if ( WP_ENV === 'development' ) {
-    return;
-  }
-?>
-  <script>
-    var trackOutboundLink = function(evt)  {
-      // Make sure tag is an anchor and that it is outbound
-      if (evt.target.tagName !== 'A' || evt.target.hostname === window.location.hostname) {
-        return;
-      }
-      var url = evt.target.href;
-      ga('send', 'event', 'Outbound Link', 'click', url, {
-        'transport': 'beacon',
-        'hitCallback': function() { document.location = url; }
-      });
-    };
-    document.addEventListener('click', trackOutboundLink, false);
-  </script>
-<?php
-}
-add_action( 'wp_head', 'omed_track_outbound_links', 29 );
-
 function omed_add_custom_ninja_form_class ( $form_class, $form_id ) 
 {
 
