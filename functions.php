@@ -650,9 +650,9 @@ function add_owl_carousel_script() {
 add_action( 'wp_footer' , 'add_owl_carousel_script', 50 );
 
 function omed_add_google_analytics_code() {
-  if ( WP_ENV === 'development' ) {
-    return;
-  }
+  //if ( WP_ENV === 'development' ) {
+    //return;
+  //}
 ?>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -661,7 +661,12 @@ function omed_add_google_analytics_code() {
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
    
     ga('create', 'UA-2910609-39', 'auto');
-    ga('send', 'pageview');
+
+    <?php 
+      if ( WP_ENV === 'development' ) {
+        echo "ga('send', 'pageview');";
+      }
+     ?>
    
   </script>
 <?php
