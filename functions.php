@@ -35,6 +35,7 @@ function omed_setup() {
 	register_nav_menus( array(
     'primary-nav' => 'Primary Navigation',
     'secondary-nav' => 'Secondary Navigation',
+    'intro-block' => 'Homepage Intro',
     'footer-left' => 'Footer Left',
     'footer-center' => 'Footer Center',
     'footer-right' => 'Footer Right',
@@ -295,6 +296,44 @@ function omed_add_page_slug_to_body_class( $classes ) {
 }
 add_filter( 'body_class', 'omed_add_page_slug_to_body_class' );
 
+
+/**
+ * @see http://www.wpbeginner.com/wp-themes/
+ *      how-to-add-menu-descriptions-in-your-wordpress-themes/
+ *
+ */
+class Menu_With_Description extends Walker_Nav_Menu {
+
+	function start_el(&$output, $item, $depth, $args) {
+
+		global $wp_query;
+
+		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+		
+		$class_names = $value = '';
+
+		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
+		$class_names = ' class="' . esc_attr( $class_names ) . '"';
+
+		$output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
+
+		$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) .'"' : '';
+		$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
+		$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
+		$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
+
+		$item_output = $args->before;
+		$item_output .= '<a'. $attributes .'><h5>';
+		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+    $item_output .= ' <span>&raquo;</span></a></h5>';
+		$item_output .= $args->after;
+		$item_output .= '<p>' . $item->description . '</p>';
+
+		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+	}
+}
 
 class Omed_Major_Nav_Walker_Class extends Walker_Nav_Menu {
 
