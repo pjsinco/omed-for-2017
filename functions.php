@@ -680,7 +680,6 @@ function omed_track_outbound_links() {
         return;
       }
       var url = evt.target.href;
-      console.log('STG: ' + url);
       ga('send', 'event', 'Outbound Link', 'click', url, {
         'transport': 'beacon',
         'hitCallback': function() { document.location = url; }
