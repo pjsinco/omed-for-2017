@@ -21,6 +21,10 @@
     margin-bottom: 2rem;
     filter: grayscale(100%) opacity(90%);
 
+    &:last-child {
+      margin-bottom: 2rem;
+    }
+
     @include breakpoint($screen $medium-minor-start) {
       flex-basis: 33%;
     }
