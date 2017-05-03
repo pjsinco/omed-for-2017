@@ -9,27 +9,27 @@ jQuery(document).ready(function ($) {
    *
    */
 
-  ga('create', 'UA-2910609-39', 'auto');
+  //  ga('create', 'UA-2910609-39', 'auto');
+  //
+  //  const trackOutboundLink = (evt) => {
+  //
+  //    // Make sure tag is an anchor and that it is outbound
+  //    if (evt.target.tagName !== 'A' || evt.target.hostname === window.location.hostname) {
+  //      return;
+  //    }
+  //
+  //    const url = evt.target.href;
+  //    const text = evt.target.text;
+  //
+  //
+  //    ga('send', 'event', 'Outbound Link', url, text, {
+  //      'transport': 'beacon',
+  //      'hitCallback': () => document.location = url
+  //    });
+  //  };
+  //
+  //  document.addEventListener('click', trackOutboundLink, false);
 
-  var trackOutboundLink = function trackOutboundLink(evt) {
-
-    // Make sure tag is an anchor and that it is outbound
-    if (evt.target.tagName !== 'A' || evt.target.hostname === window.location.hostname) {
-      return;
-    }
-
-    var url = evt.target.href;
-    var text = evt.target.text;
-
-    ga('send', 'event', 'Outbound Link', url, text, {
-      'transport': 'beacon',
-      'hitCallback': function hitCallback() {
-        return document.location = url;
-      }
-    });
-  };
-
-  document.addEventListener('click', trackOutboundLink, false);
 
   /**
    * Hide and show nav bars

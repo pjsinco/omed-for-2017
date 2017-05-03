@@ -650,9 +650,9 @@ function add_owl_carousel_script() {
 add_action( 'wp_footer' , 'add_owl_carousel_script', 50 );
 
 function omed_add_google_analytics_code() {
-  //if ( WP_ENV === 'development' ) {
-    //return;
-  //}
+  if ( is_dev_env() ) {
+    return;
+  }
 ?>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -661,17 +661,42 @@ function omed_add_google_analytics_code() {
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
    
     ga('create', 'UA-2910609-39', 'auto');
-
-    <?php 
-      if ( WP_ENV !== 'development' ) {
-        echo "ga('send', 'pageview');";
-      }
-     ?>
-   
+    ga('send', 'pageview');
   </script>
+
 <?php
 }
 add_action( 'wp_head', 'omed_add_google_analytics_code', 10 );
+
+function omed_add_google_tag_manager_code() {
+  if ( is_dev_env() ) {
+    return;
+  }
+?>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NHLFMJV');</script>
+  <!-- End Google Tag Manager -->
+
+<?php
+}
+add_action( 'wp_head', 'omed_add_google_tag_manager_code', 11 );
+
+function omed_add_google_tag_manager_body_code() {
+  if ( is_dev_env() ) {
+    return;
+  }
+?>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NHLFMJV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<?php
+}
+add_action( 'just_opened_body_tag' , 'omed_add_google_tag_manager_body_code' );
 
 function omed_add_custom_ninja_form_class ( $form_class, $form_id ) 
 {
@@ -747,7 +772,6 @@ function omed_adjust_caption_shortcode_width( $width, $atts, $content ) {
 add_filter ( 'img_caption_shortcode_width', 'omed_adjust_caption_shortcode_width', 10, 3 );
 
 function is_dev_env() {
-
   return WP_ENV === 'development';
 }
 
