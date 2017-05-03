@@ -663,7 +663,7 @@ function omed_add_google_analytics_code() {
     ga('create', 'UA-2910609-39', 'auto');
 
     <?php 
-      if ( WP_ENV === 'development' ) {
+      if ( WP_ENV !== 'development' ) {
         echo "ga('send', 'pageview');";
       }
      ?>

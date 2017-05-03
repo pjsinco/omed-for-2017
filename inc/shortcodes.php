@@ -96,6 +96,7 @@ function omed_button_shortcode( $atts, $content = null ) {
         'link' => '',
         'text' => '',
         'style' => '',
+        'target' => '',
       ), $atts
     )
   );
@@ -106,7 +107,9 @@ function omed_button_shortcode( $atts, $content = null ) {
   $output .= '' . PHP_EOL;
   $output .= "<p class='omed-button'>" . PHP_EOL;
   $output .= 
-    "<a href='$link' class='btn btn--primary $btn_style'>$text</a>" .  PHP_EOL;
+    "<a href='$link' class='btn btn--primary $btn_style' "; 
+  $output .= $target == '_blank' ? "target='_blank'" : "";
+  $output .= ">$text</a>" .  PHP_EOL;
   $output .= "</p>" . PHP_EOL;
   
   return $output;
