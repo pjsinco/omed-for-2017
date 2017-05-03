@@ -20,6 +20,7 @@
   </head>
 
   <body <?php body_class(); ?>>
+    <?php do_action( 'just_opened_body_tag' ); ?>
 
     <?php get_template_part( 'template-parts/header', 'mainnav' ); ?>
 
