@@ -237,7 +237,7 @@ function omed_scripts() {
   wp_enqueue_script( 'grunticon-loader' );
   wp_enqueue_script( 'jquery' );
   wp_enqueue_script( 'jquery-migrate' );
-  wp_enqueue_script( 'wowjs' );
+  //wp_enqueue_script( 'wowjs' );
   wp_enqueue_script( 'omed-bundle' );
   wp_enqueue_script( 'svg4everybody' );
 }
