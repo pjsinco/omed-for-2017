@@ -23,5 +23,9 @@
 # FX
 * [Simple Image Lazy Load and Fade](https://davidwalsh.name/lazyload-image-fade)
 
+# Analytics
+* [Google Tag Manager v2 Tutorial Part 1 | Amazee Metrics](http://www.amazeemetrics.com/en/blog/google-tag-manager-tutorial-part-1-tracking-outbound-links-gtm-version-2)
+
 # Misc
 * [php - file_get_contents not working on production server, fine on local - Stack Overflow](http://stackoverflow.com/questions/6729829/file-get-contents-not-working-on-production-server-fine-on-local)
+
