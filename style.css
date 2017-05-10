@@ -711,16 +711,16 @@ textarea {
   /* Legacy iOS */
   font-weight: normal;
   font-style: normal; }
-p, li, .chart__subhead, .entry-content li, .video__caption {
+p, li, .chart__subhead, .entry-content li, .chart, .video__caption {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: .875rem;
   line-height: 1.65;
   color: #666; }
   @media screen and (min-width: 48rem) {
-    p, li, .chart__subhead, .entry-content li, .video__caption {
+    p, li, .chart__subhead, .entry-content li, .chart, .video__caption {
       font-size: 1rem; } }
-  p:last-child, li:last-child, .chart__subhead:last-child, .video__caption:last-child {
+  p:last-child, li:last-child, .chart__subhead:last-child, .chart:last-child, .video__caption:last-child {
     margin-bottom: 0; }
 
 @media screen and (min-width: 61.25rem) {
