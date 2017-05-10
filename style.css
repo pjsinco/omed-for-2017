@@ -1360,8 +1360,8 @@ table th[class*="col-"] {
 
 .chart {
   margin-bottom: 1em;
-  border-top: 1px solid #f1f1f1;
-  border-bottom: 1px solid #f1f1f1; }
+  /*border-top: 1px solid $lightgray;*/
+  /*border-bottom: 1px solid $lightgray;*/ }
   .chart__title {
     margin-top: .5em;
     font-weight: 200;
