@@ -164,11 +164,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .page-students .billboard__text {
   background-color: #3d5ba9; }
 
-.page-physicians .icon-block__body h5, .icon-block__body .page-physicians h5, .page-physicians .icon-block__body p, .icon-block__body .page-physicians p, .page-physicians .icon-block__body li, .icon-block__body .page-physicians li {
+.page-physicians .icon-block__body h5, .icon-block__body .page-physicians h5, .page-physicians .icon-block__body p, .icon-block__body .page-physicians p, .page-physicians .icon-block__body li, .icon-block__body .page-physicians li, .page-physicians .icon-block__body .chart__subhead, .icon-block__body .page-physicians .chart__subhead {
   color: #d53847; }
-.page-residents .icon-block__body h5, .icon-block__body .page-residents h5, .page-residents .icon-block__body p, .icon-block__body .page-residents p, .page-residents .icon-block__body li, .icon-block__body .page-residents li {
+.page-residents .icon-block__body h5, .icon-block__body .page-residents h5, .page-residents .icon-block__body p, .icon-block__body .page-residents p, .page-residents .icon-block__body li, .icon-block__body .page-residents li, .page-residents .icon-block__body .chart__subhead, .icon-block__body .page-residents .chart__subhead {
   color: #5c419a; }
-.page-students .icon-block__body h5, .icon-block__body .page-students h5, .page-students .icon-block__body p, .icon-block__body .page-students p, .page-students .icon-block__body li, .icon-block__body .page-students li {
+.page-students .icon-block__body h5, .icon-block__body .page-students h5, .page-students .icon-block__body p, .icon-block__body .page-students p, .page-students .icon-block__body li, .icon-block__body .page-students li, .page-students .icon-block__body .chart__subhead, .icon-block__body .page-students .chart__subhead {
   color: #3d5ba9; }
 
 .page-physicians .icon-audience {
@@ -711,16 +711,16 @@ textarea {
   /* Legacy iOS */
   font-weight: normal;
   font-style: normal; }
-p, li, .entry-content li, .video__caption {
+p, li, .chart__subhead, .entry-content li, .video__caption {
   margin-top: 0;
   margin-bottom: 1rem;
   font-size: .875rem;
   line-height: 1.65;
   color: #666; }
   @media screen and (min-width: 48rem) {
-    p, li, .entry-content li, .video__caption {
+    p, li, .chart__subhead, .entry-content li, .video__caption {
       font-size: 1rem; } }
-  p:last-child, li:last-child, .video__caption:last-child {
+  p:last-child, li:last-child, .chart__subhead:last-child, .video__caption:last-child {
     margin-bottom: 0; }
 
 @media screen and (min-width: 61.25rem) {
@@ -745,10 +745,10 @@ body {
   height: 100%;
   -webkit-font-smoothing: subpixel-antialiased; }
 
-p:empty, li:empty {
+p:empty, li:empty, .chart__subhead:empty {
   display: none; }
 
-li strong, p strong, li strong {
+li strong, p strong, li strong, .chart__subhead strong {
   font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal; }
 
@@ -987,7 +987,7 @@ table th[class*="col-"] {
     .site-content {
       padding-top: 80px; } }
 
-.billboard__body h3, .billboard__body p, .billboard__body li {
+.billboard__body h3, .billboard__body p, .billboard__body li, .billboard__body .chart__subhead {
   max-width: 36rem;
   font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff; }
@@ -1139,22 +1139,22 @@ table th[class*="col-"] {
     @media screen and (min-width: 75rem) {
       .billboard__body h3 {
         font-size: 2.5rem; } }
-  .billboard__body p, .billboard__body li {
+  .billboard__body p, .billboard__body li, .billboard__body .chart__subhead {
     font-size: 1.125rem;
     line-height: 1.38; }
-    .billboard__body p:first-of-type, .billboard__body li:first-of-type {
+    .billboard__body p:first-of-type, .billboard__body li:first-of-type, .billboard__body .chart__subhead:first-of-type {
       margin-bottom: 1.5rem; }
       @media screen and (min-width: 56rem) {
-        .billboard__body p:first-of-type, .billboard__body li:first-of-type {
+        .billboard__body p:first-of-type, .billboard__body li:first-of-type, .billboard__body .chart__subhead:first-of-type {
           margin-bottom: auto; } }
     @media screen and (min-width: 56rem) {
-      .billboard__body p:last-of-type, .billboard__body li:last-of-type {
+      .billboard__body p:last-of-type, .billboard__body li:last-of-type, .billboard__body .chart__subhead:last-of-type {
         padding-top: 2rem; } }
     @media screen and (min-width: 67.75rem) {
-      .billboard__body p, .billboard__body li {
+      .billboard__body p, .billboard__body li, .billboard__body .chart__subhead {
         font-size: 1.125rem; } }
     @media screen and (min-width: 75rem) {
-      .billboard__body p, .billboard__body li {
+      .billboard__body p, .billboard__body li, .billboard__body .chart__subhead {
         font-size: 1.25rem; } }
 
 .billboard__figure {
@@ -1209,9 +1209,9 @@ table th[class*="col-"] {
   .breakout h6 {
     line-height: 1.65;
     font-family: "gotham-medium"; }
-  .breakout p, .breakout li {
+  .breakout p, .breakout li, .breakout .chart__subhead {
     font-size: inherit; }
-    .breakout p:last-child, .breakout li:last-child {
+    .breakout p:last-child, .breakout li:last-child, .breakout .chart__subhead:last-child {
       margin-bottom: 0; }
 
 .btn {
@@ -1357,6 +1357,22 @@ table th[class*="col-"] {
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem; }
+
+.chart {
+  margin-bottom: 1em;
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1; }
+  .chart__title {
+    margin-top: .5em;
+    font-weight: 200;
+    font-size: 2em;
+    line-height: 1.25; }
+  .chart__subhead {
+    font-weight: 600; }
+  .chart__source {
+    color: #717271;
+    font-size: .875em;
+    text-align: right; }
 
 .contact-form label {
   font-size: .875rem;
@@ -1516,7 +1532,7 @@ table th[class*="col-"] {
       -webkit-flex-basis: 50%;
           -ms-flex-preferred-size: 50%;
               flex-basis: 50%; } }
-  .copyright__block p, .copyright__block li {
+  .copyright__block p, .copyright__block li, .copyright__block .chart__subhead {
     font-size: inherit; }
   .copyright__block--menu ul {
     display: -webkit-box;
@@ -1701,7 +1717,7 @@ table th[class*="col-"] {
     .page-students .entry__title--audience {
       color: #3d5ba9; }
 
-.entry-content > p:first-of-type:first-letter, .entry-content > li:first-of-type:first-letter {
+.entry-content > p:first-of-type:first-letter, .entry-content > li:first-of-type:first-letter, .entry-content > .chart__subhead:first-of-type:first-letter {
   height: .7em;
   margin: .13em 0 -.05em 0;
   padding: 0 .1em 0 0;
@@ -1711,7 +1727,7 @@ table th[class*="col-"] {
   float: left;
   color: #717271; }
   @media screen and (min-width: 48rem) {
-    .entry-content > p:first-of-type:first-letter, .entry-content > li:first-of-type:first-letter {
+    .entry-content > p:first-of-type:first-letter, .entry-content > li:first-of-type:first-letter, .entry-content > .chart__subhead:first-of-type:first-letter {
       font-size: 53px; } }
 
 @media screen and (min-width: 30rem) {
@@ -1788,7 +1804,7 @@ table th[class*="col-"] {
           flex-direction: column;
   padding: 1rem 0 0;
   text-align: center; }
-  .footer__col p, .footer__col li {
+  .footer__col p, .footer__col li, .footer__col .chart__subhead {
     font-size: .875rem; }
   @media screen and (min-width: 30rem) {
     .footer__col {
@@ -1907,18 +1923,18 @@ table th[class*="col-"] {
   @media screen and (min-width: 36rem) {
     .icon-block__body h5 {
       font-size: 1.3125rem; } }
-.icon-block__body p, .icon-block__body li {
+.icon-block__body p, .icon-block__body li, .icon-block__body .chart__subhead {
   font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.4; }
   @media screen and (min-width: 36rem) {
-    .icon-block__body p, .icon-block__body li {
+    .icon-block__body p, .icon-block__body li, .icon-block__body .chart__subhead {
       font-size: .875rem; } }
   @media screen and (min-width: 48rem) {
-    .icon-block__body p, .icon-block__body li {
+    .icon-block__body p, .icon-block__body li, .icon-block__body .chart__subhead {
       font-size: 1rem; } }
   @media screen and (min-width: 67.75rem) {
-    .icon-block__body p, .icon-block__body li {
+    .icon-block__body p, .icon-block__body li, .icon-block__body .chart__subhead {
       font-size: 1.125rem; } }
 
 .nav-trigger span em, .nav-trigger span em:before, .nav-trigger span em:after {
