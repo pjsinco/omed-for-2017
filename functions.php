@@ -128,7 +128,8 @@ function omed_scripts() {
   wp_register_style(  
     'omed-style',
     get_stylesheet_uri(),
-    array('owl-carousel-css'),
+    //array('owl-carousel-css'),
+    array(),
     filemtime( get_template_directory() . '/style.css' ), 
     'all'
   );
@@ -151,10 +152,10 @@ function omed_scripts() {
     get_template_directory_uri() . '/scripts/wow.min.js'
   );
 
-  wp_register_style(
-    'animate-css',
-    get_template_directory_uri() . '/styles/animate.min.css'
-  );
+  //wp_register_style(
+    //'animate-css',
+    //get_template_directory_uri() . '/styles/animate.min.css'
+  //);
 
   /**
    * SVG4Everybody
@@ -193,9 +194,9 @@ function omed_scripts() {
   );
 
   if ( is_front_page() ) {
-    wp_enqueue_style( 'owl-carousel-css' );
-    wp_enqueue_style( 'owl-theme-css' );
-    wp_enqueue_script( 'owl-carousel-js' );
+    //wp_enqueue_style( 'owl-carousel-css' );
+    //wp_enqueue_style( 'owl-theme-css' );
+    //wp_enqueue_script( 'owl-carousel-js' );
   }
 
   /**
@@ -233,7 +234,7 @@ function omed_scripts() {
 
 
 	wp_enqueue_style( 'omed-style' );
-	wp_enqueue_style( 'animate-css' );
+	//wp_enqueue_style( 'animate-css' );
   wp_enqueue_script( 'grunticon-loader' );
   wp_enqueue_script( 'jquery' );
   wp_enqueue_script( 'jquery-migrate' );
