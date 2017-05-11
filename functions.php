@@ -125,12 +125,13 @@ add_action( 'widgets_init', 'omed_widgets_init' );
  */
 function omed_scripts() {
 
+  $stylesheet_name = 'style.min.css';
   wp_register_style(  
     'omed-style',
-    get_stylesheet_uri(),
+    sprintf( '%s/%s', get_stylesheet_directory_uri(), $stylesheet_name ),
     //array('owl-carousel-css'),
     array(),
-    filemtime( get_template_directory() . '/style.css' ), 
+    filemtime( get_template_directory() . '/' . $stylesheet_name ), 
     'all'
   );
 
@@ -648,7 +649,7 @@ function add_owl_carousel_script() {
 
 <?php
 }
-add_action( 'wp_footer' , 'add_owl_carousel_script', 50 );
+//add_action( 'wp_footer' , 'add_owl_carousel_script', 50 );
 
 function omed_add_google_analytics_code() {
   if ( is_dev_env() ) {

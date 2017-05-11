@@ -10,6 +10,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-imagemin");
   grunt.loadNpmTasks("grunt-newer");
   grunt.loadNpmTasks("grunt-contrib-uglify");
+  grunt.loadNpmTasks("grunt-contrib-cssmin");
 
   grunt.initConfig({
 
@@ -53,6 +54,21 @@ module.exports = function(grunt) {
           cwd: 'images',
           src: ['**/*.{png,jpg,gif}'],
           dest: 'public/images',
+        }],
+      },
+    },
+
+    cssmin: {
+      dist: {
+        options: {
+          sourceMap: true,
+        },
+        files: [{
+          expand: true,
+          cwd: '.',
+          src: 'style.css',
+          dest: '.',
+          ext: '.min.css',
         }],
       },
     },
@@ -158,9 +174,9 @@ module.exports = function(grunt) {
         tasks: ['newer:imagemin', 'notify:images'],
       },
       
-      sass: {
+      styles: {
         files: ['sass/**/*.scss'],
-        tasks: ['sass:dist', 'notify:sass', 'autoprefixer:css'],
+        tasks: ['sass:dist', 'notify:sass', 'autoprefixer:css', 'cssmin:dist'],
       },
 
       scripts: {
