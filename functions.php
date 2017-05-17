@@ -812,3 +812,14 @@ function primary_nav_wrap() {
 
   return $wrap;
 }
+
+/**
+ * @see https://wordpress.stackexchange.com/questions/178322/
+ *      wpautop-disable-br-tags-keep-p-tags
+ *
+ */
+remove_filter( 'the_content', 'wpautop' );
+$br = false;
+add_filter( 'the_content', function( $content ) use ( $br ) {
+  return wpautop( $content, $br );
+}, 10);

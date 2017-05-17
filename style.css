@@ -759,7 +759,7 @@ img {
   max-width: 100%;
   height: auto; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, .elit-accordion .accordion-head, h5, h6 {
   margin: 0;
   padding: 0;
   font-size: inherit;
@@ -1551,6 +1551,18 @@ table th[class*="col-"] {
             -ms-flex-pack: end;
                 justify-content: flex-end; } }
 
+.elit-accordion .accordion-head {
+  padding: 1.5rem 0;
+  line-height: 1.4; }
+.elit-accordion section:not(:last-child) > .accordion-head:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #d0d0d0; }
+
 .entry__gradient:after, .entry__leadin--gradient {
   position: relative;
   /*transform-origin: 100%;*/
@@ -1560,12 +1572,12 @@ table th[class*="col-"] {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden; }
 
-.entry__leadin h4, .entry__leadin--gradient h4 {
+.entry__leadin h4, .entry__leadin--gradient h4, .entry__leadin .elit-accordion .accordion-head, .elit-accordion .entry__leadin .accordion-head, .entry__leadin--gradient .elit-accordion .accordion-head, .elit-accordion .entry__leadin--gradient .accordion-head {
   color: #666;
   font-size: 1.25rem;
   line-height: 1.3; }
   @media screen and (min-width: 61.25rem) {
-    .entry__leadin h4, .entry__leadin--gradient h4 {
+    .entry__leadin h4, .entry__leadin--gradient h4, .entry__leadin .elit-accordion .accordion-head, .elit-accordion .entry__leadin .accordion-head, .entry__leadin--gradient .elit-accordion .accordion-head, .elit-accordion .entry__leadin--gradient .accordion-head {
       font-size: 1.625rem; } }
 
 .entry__gradient {
@@ -1644,12 +1656,12 @@ table th[class*="col-"] {
     @media screen and (min-width: 67.75rem) {
       .entry__header--audience {
         margin-bottom: 6rem; } }
-    .entry__header--audience h4 {
+    .entry__header--audience h4, .entry__header--audience .elit-accordion .accordion-head, .elit-accordion .entry__header--audience .accordion-head {
       font-size: 1.25rem;
       line-height: 1.4;
       color: #666; }
       @media screen and (min-width: 48rem) {
-        .entry__header--audience h4 {
+        .entry__header--audience h4, .entry__header--audience .elit-accordion .accordion-head, .elit-accordion .entry__header--audience .accordion-head {
           max-width: 80%;
           font-size: 1.5rem; } }
 
