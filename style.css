@@ -4,7 +4,7 @@ Theme URI:
 Author: PJS
 Author URI: http://github.com/pjsinco
 Description: OMED 2017 theme
-Version: 0.1.0
+Version: 0.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -2859,6 +2859,35 @@ nav.secondary-nav {
     /*}*/ }
     nav.secondary-nav a:hover {
       text-decoration: none; }
+
+.section__header {
+  position: relative;
+  margin-bottom: 3rem;
+  font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.25rem;
+  text-align: center;
+  color: #d53847; }
+  @media screen and (min-width: 48rem) {
+    .section__header {
+      font-size: 2rem; } }
+  .section__header:after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 32%;
+    border-bottom: 1px solid #d0d0d0; }
+    @media screen and (min-width: 30rem) {
+      .section__header:after {
+        width: 20%; } }
+    @media screen and (min-width: 48rem) {
+      .section__header:after {
+        width: 12%; } }
+    @media screen and (min-width: 48rem) {
+      .section__header:after {
+        width: 8%; } }
 
 .splash--home-page {
   position: relative;
