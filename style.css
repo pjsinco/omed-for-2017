@@ -1374,6 +1374,19 @@ table th[class*="col-"] {
     font-size: .875em;
     text-align: right; }
 
+.clearable {
+  padding-right: 73px; }
+  .clearable.has-content {
+    background-image: url(data:image/gif;base64,R0lGODlhBwAHAIAAAP///5KSkiH5BAAAAAAALAAAAAAHAAcAAAIMTICmsGrIXnLxuDMLADs=);
+    background-repeat: no-repeat;
+    background-position: right 53px top 50%; }
+    .clearable.has-content.onX {
+      cursor: pointer; }
+  .clearable::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0; }
+
 .contact-form label {
   font-size: .875rem;
   color: #717271; }

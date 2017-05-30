@@ -1,0 +1,22 @@
+.clearable {
+
+  padding-right: 73px;
+
+  &.has-content {
+    
+    background-image: url(data:image/gif;base64,R0lGODlhBwAHAIAAAP///5KSkiH5BAAAAAAALAAAAAAHAAcAAAIMTICmsGrIXnLxuDMLADs=);
+    background-repeat: no-repeat;
+    background-position: right 53px top 50%;
+
+    &.onX {
+      cursor: pointer;
+    }
+  }
+
+  &::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+}

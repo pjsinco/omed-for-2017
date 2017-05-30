@@ -14,7 +14,7 @@ jQuery(document).ready(($) => {
     };
   });
 
-  $('#faqFilter').on('keyup', function(evt) {
+  $('#faqFilter').on('input', function(evt) {
     const s = $(this).val().trim();
     if (s == '') {
       $('.faqs section').show();
@@ -30,7 +30,35 @@ jQuery(document).ready(($) => {
     evt.preventDefault();
   });
 
-
+  /**
+   * @see https://stackoverflow.com/questions/6258521/
+   *              clear-icon-inside-input-text
+   *
+   */
+  $(document).on('input', '.clearable', function(evt) {
+    if ($(this).val() == '') {
+      $(this).removeClass('has-content');
+    } else {
+      $(this).addClass('has-content');
+    }
+  }).on('touchstart', '.has-content', function(evt) {
+    if ((this.offsetWidth - 73) < (evt.originalEvent.touches[0].pageX - this.getBoundingClientRect().left)) {
+      $(this).addClass('onX');
+    } else {
+      $(this).removeClass('onX');
+    }
+  }).on('mousemove', '.has-content', function(evt) {
+    if ((this.offsetWidth - 73) < (evt.clientX - this.getBoundingClientRect().left)) {
+      $(this).addClass('onX');
+    } else {
+      $(this).removeClass('onX');
+    }
+  }).on('touchstart click', '.onX', function(evt) {
+    evt.preventDefault();
+    console.log('clickonX');
+    $(this).removeClass('has-content onX').val('').trigger('input');
+  });
+  
 
   /**
    * Track outbound links for Google Analytics
