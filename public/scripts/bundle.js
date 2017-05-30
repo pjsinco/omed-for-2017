@@ -5,6 +5,8 @@
 jQuery(document).ready(function ($) {
 
   /**
+   * FAQs
+   *
    * Custom jQuery :icontains selector for finding element based on its text
    * @see https://gist.github.com/pklauzinski/b6f836f99cfa11100488
    */
@@ -23,6 +25,10 @@ jQuery(document).ready(function ($) {
       var $matches = $('.faqs section:icontains(' + s + ') ');
       $matches.show();
     }
+  });
+
+  $('.faqs__form').submit(function (evt) {
+    evt.preventDefault();
   });
 
   /**
