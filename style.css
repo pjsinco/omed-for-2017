@@ -1566,7 +1566,8 @@ table th[class*="col-"] {
 
 .elit-accordion .accordion-head {
   padding: 1.5rem 0;
-  line-height: 1.4; }
+  line-height: 1.4;
+  color: #666; }
 .elit-accordion section:not(:last-child) > .accordion-head:after {
   content: "";
   position: absolute;
