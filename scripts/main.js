@@ -2,6 +2,63 @@
 
 jQuery(document).ready(($) => {
 
+  /**
+   * FAQs
+   *
+   * Custom jQuery :icontains selector for finding element based on its text
+   * @see https://gist.github.com/pklauzinski/b6f836f99cfa11100488
+   */
+  $.expr[':'].icontains = $.expr.createPseudo(function(text) {
+    return function(evt) {
+      return $(evt).text().toLowerCase().indexOf(text.toLowerCase()) > -1;
+    };
+  });
+
+  $('#faqFilter').on('input', function(evt) {
+    const s = $(this).val().trim();
+    if (s == '') {
+      $('.faqs section').show();
+
+    } else {
+      $('.faqs section').hide();
+      const $matches = $('.faqs section:icontains(' + s + ') ');
+      $matches.show();
+    }
+  });
+
+  $('.faqs__form').submit(function(evt) {
+    evt.preventDefault();
+  });
+
+  /**
+   * @see https://stackoverflow.com/questions/6258521/
+   *              clear-icon-inside-input-text
+   *
+   */
+  $(document).on('input', '.clearable', function(evt) {
+    if ($(this).val() == '') {
+      $(this).removeClass('has-content');
+    } else {
+      $(this).addClass('has-content');
+    }
+  }).on('touchstart', '.has-content', function(evt) {
+    if ((this.offsetWidth - 73) < (evt.originalEvent.touches[0].pageX - this.getBoundingClientRect().left)) {
+      $(this).addClass('onX');
+    } else {
+      $(this).removeClass('onX');
+    }
+  }).on('mousemove', '.has-content', function(evt) {
+    if ((this.offsetWidth - 73) < (evt.clientX - this.getBoundingClientRect().left)) {
+      $(this).addClass('onX');
+    } else {
+      $(this).removeClass('onX');
+    }
+  }).on('touchstart click', '.onX', function(evt) {
+    evt.preventDefault();
+    console.log('clickonX');
+    $(this).removeClass('has-content onX').val('').trigger('input');
+  });
+  
 
   /**
    * Track outbound links for Google Analytics

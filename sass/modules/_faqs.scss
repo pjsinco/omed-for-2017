@@ -1,0 +1,39 @@
+.faqs {
+
+  
+
+}
+
+.faqs__form {
+  position: relative;
+  margin: 3rem 0 1rem;
+
+  & label {
+    display: block;
+    margin-bottom: .75rem;
+    font-size: .875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $prettydark;
+  }
+
+  & input {
+    line-height: 1.2;
+  }
+
+  & input[type="text"] {
+    width: 100%;
+  }
+
+  & input[type="submit"] {
+    position: absolute;
+    right: 0;
+    height: 37px;
+    width: 40px;
+    text-indent: -9999px;
+    border: none;
+    border-radius: 0;
+    background: url('./public/images/icon-search.svg') $primarycolor 50% no-repeat;
+    background-size: 34%;
+  }
+}

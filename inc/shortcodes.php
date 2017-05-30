@@ -116,3 +116,14 @@ function omed_button_shortcode( $atts, $content = null ) {
 
 }
 add_shortcode('omed-button', 'omed_button_shortcode' );
+
+function omed_faq_search_shortcode( ) {
+  $output  = '<form class="faqs__form">';
+  $output .= '  <label>Search FAQs</label>';
+  $output .= '  <input class="clearable" type="text"  id="faqFilter" value="" /><input class="btn btn--primary" type="submit" id="faqFilterSubmit" />';
+  $output .= '</form>';
+
+  return $output;
+}
+add_shortcode('faq-search', 'omed_faq_search_shortcode' );
+
