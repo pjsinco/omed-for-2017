@@ -5,6 +5,27 @@
 jQuery(document).ready(function ($) {
 
   /**
+   * Custom jQuery :icontains selector for finding element based on its text
+   * @see https://gist.github.com/pklauzinski/b6f836f99cfa11100488
+   */
+  $.expr[':'].icontains = $.expr.createPseudo(function (text) {
+    return function (evt) {
+      return $(evt).text().toLowerCase().indexOf(text.toLowerCase()) > -1;
+    };
+  });
+
+  $('#faqFilter').on('keyup', function (evt) {
+    var s = $(this).val().trim();
+    if (s == '') {
+      $('.faqs section').show();
+    } else {
+      $('.faqs section').hide();
+      var $matches = $('.faqs section:icontains(' + s + ') ');
+      $matches.show();
+    }
+  });
+
+  /**
    * Track outbound links for Google Analytics
    *
    */
