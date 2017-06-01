@@ -31,3 +31,5 @@
 # Misc
 * [php - file_get_contents not working on production server, fine on local - Stack Overflow](http://stackoverflow.com/questions/6729829/file-get-contents-not-working-on-production-server-fine-on-local)
 
+# .ics Files
+* [A convenient script to generate iCalendar (.ics) files on the fly in PHP. · GitHub](https://gist.github.com/jakebellacera/635416)
