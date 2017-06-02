@@ -1,0 +1,56 @@
+/* 
+ * Owl Carousel overrides
+ *
+ */
+
+%owl-nav-base {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent !important;
+
+  & > i {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.owl-nav {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+}
+
+.owl-prev {
+  @extend %owl-nav-base;
+  float: left;
+  left: -1rem;
+
+  @include breakpoint($screen $medium-start) {
+    left: -2.3rem;
+  }
+}
+
+.owl-next {
+  @extend %owl-nav-base;
+  float: right;
+  right: -1.733333rem;
+
+  @include breakpoint($screen $medium-start) {
+    right: -3rem;
+  }
+
+}
+
+.owl-theme .owl-nav .disabled {
+  opacity: 1 !important;
+}
+
+.owl-carousel .owl-stage-outer {
+  /*overflow: visible;*/
+}
+
+.owl-dots {
+  transform: translateY(-5rem);
+}

@@ -1,0 +1,122 @@
+$fsbreak: $large-start;
+
+.fs {
+
+  &__block {
+
+  }
+
+  &__items {
+  }
+  &__itemcontainer {
+
+  }
+
+  &__item {
+    position: relative;
+    top: -5rem;
+    margin-bottom: 1rem;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    padding: 6rem 1rem 2rem;
+    text-align: center;
+    border-top: 1px solid $extralightgray;
+    border-left: 1px solid $extralightgray;
+    border-right: 1px solid $extralightgray;
+    background: $white;
+    box-shadow: 3px 3px 6px $bordergray;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: -1px;
+      right: -1px;
+      bottom: 0;
+      border-bottom: 5px solid $primarycolor;
+    }
+
+    @include breakpoint($screen $medium-start) {
+      margin-left: .75rem;
+      margin-right: .75rem;
+    }
+
+    @include breakpoint($screen $navflip) {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      max-width: 18.375rem;
+    }
+
+    @include breakpoint($screen $large-minor-minor-start) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @include breakpoint($screen $fsbreak) {
+      /*flex-basis: 30%;*/
+    }
+  }
+
+  &__name {
+    position: relative;
+    margin-bottom: 1.25rem;
+    text-transform: uppercase;
+    font-size: .75rem;
+    letter-spacing: .5px;
+    line-height: 1.4;
+    color: $primarycolor;
+    opacity: .6;
+
+//    &:after {
+//      content: "";
+//      /* height: 10px; */
+//      position: absolute;
+//      top: -5px;
+//      left: -1rem;
+//      right: -1rem;
+//      height: calc(100% + 10px);
+//      z-index: -1;
+//      background-color: rgba($primarycolor, .3);
+//    }
+  }
+
+  &__kicker {
+    display: inline-block;
+    margin-bottom: .5rem;
+    padding-bottom: .5rem;
+    font-family: $font-medium;
+    font-size: .875rem;
+    line-height: 1.4;
+    border-bottom: 1px solid $primarycolor;
+  }
+
+  &__header {
+    font-family: $font-light;
+    color: $font-color-lighter;
+    font-weight: 200;
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+
+    &--minor {
+      margin-bottom: 1rem;
+      font-size: .75rem;
+      line-height: 1.4;
+      color: $primarycolor;
+    }
+  }
+
+  &__imagecontainer {
+    position: relative;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    max-width: 128px;
+    transform: translateX(-50%);
+  }
+
+  &__image {
+    /*filter: hue-rotate(114deg) saturate(2) sepia();*/
+    clip-path: ellipse(50% 50% at 50% 50%);
+  }
+
+}
+
