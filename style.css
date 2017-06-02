@@ -733,7 +733,6 @@ p, li, .chart__subhead, .entry-content li, .chart, .video__caption {
   box-sizing: border-box; }
 
 html {
-  height: 100%;
   font-size: 16px;
   line-height: 1;
   -webkit-text-size-adjust: 100%;
