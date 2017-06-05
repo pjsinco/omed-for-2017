@@ -22,39 +22,43 @@ class Omed2016_Featured_Sessions_Block extends WP_Widget {
     echo $args['before_widget'];
   ?>
 
-   <section class="fs__block container-fluid pageblock wrap">
-     <ul class="fs__items owl-carousel owl-theme" id="fsCarousel" >
-       
-     <?php 
-       $post_args = array(
-         //'posts_per_page' => 3,
-         'post_type' => 'omed_session',
-       );
+  <section class="fs__block container-fluid pageblock">
+    <div class="fs__illos" data-rellax-speed="2">
+      <img class="fs__illos--0 rellax" data-rellax-speed="1" src="wp-content/themes/omed-for-2017/public/images/pie-1.png" />
+      <img class="fs__illos--1 rellax" data-rellax-speed="-1" src="wp-content/themes/omed-for-2017/public/images/arrow-1.png" />
+    </div>
+    <ul class="fs__items owl-carousel owl-theme wrap" id="fsCarousel" >
+      
+    <?php 
+      $post_args = array(
+        //'posts_per_page' => 3,
+        'post_type' => 'omed_session',
+      );
 
-       $sessions = get_posts( $post_args );
+      $sessions = get_posts( $post_args );
 
-       foreach ( $sessions as $session ):
-         setup_postdata( $session );
-     ?>        
-       <div class="fs__itemcontainer">
-        <div class="fs__imagecontainer">
-          <img class="fs__image" src="<?php echo get_field( 'session_speaker_photo_url', $session->ID ); ?>">
-        </div>
-        <div class="fs__item">
-          <h5 class="fs__name"><?php echo get_field( 'session_speaker_name', $session->ID ); ?></h5>
-          <h6 class="fs__kicker"><?php echo get_field( 'session_sponsor', $session->ID ); ?></h6>
-          <h3 class="fs__header"><?php echo get_field( 'session_title', $session->ID ) ?></h3>
-          <div class="fs__header--minor"><?php echo get_field( 'session_date_and_time', $session->ID ); ?></div>
-          <a href="<?php echo get_field( 'session_more_info_link', $session->ID ); ?>" class="btn btn--primary btn--sm" <?php echo ( get_field( 'session_open_link_in_new_window', $session->ID ) ? 'target="_blank"' : '' ); ?>>Add to Calendar</a>
-        </div> <!-- .fs__item -->
-      </div> <!-- .fs__itemcontainer -->
-     <?php
-       endforeach;
+      foreach ( $sessions as $session ):
+        setup_postdata( $session );
+    ?>        
+      <div class="fs__itemcontainer">
+       <div class="fs__imagecontainer">
+         <img class="fs__image" src="<?php echo get_field( 'session_speaker_photo_url', $session->ID ); ?>">
+       </div>
+       <div class="fs__item">
+         <h5 class="fs__name"><?php echo get_field( 'session_speaker_name', $session->ID ); ?></h5>
+         <h6 class="fs__kicker"><?php echo get_field( 'session_sponsor', $session->ID ); ?></h6>
+         <h3 class="fs__header"><?php echo get_field( 'session_title', $session->ID ) ?></h3>
+         <div class="fs__header--minor"><?php echo get_field( 'session_date_and_time', $session->ID ); ?></div>
+         <a href="<?php echo get_field( 'session_more_info_link', $session->ID ); ?>" class="btn btn--primary btn--sm" <?php echo ( get_field( 'session_open_link_in_new_window', $session->ID ) ? 'target="_blank"' : '' ); ?>>Add to Calendar</a>
+       </div> <!-- .fs__item -->
+     </div> <!-- .fs__itemcontainer -->
+    <?php
+      endforeach;
 
-     echo $args['after_widget'];
-     ?>
-     </ul>
-   </section>
+    echo $args['after_widget'];
+    ?>
+    </ul>
+  </section>
    <?php
   }
 

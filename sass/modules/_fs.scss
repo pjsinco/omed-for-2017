@@ -1,8 +1,39 @@
 $fsbreak: $large-start;
 
+%illos-base {
+  position: absolute;
+  height: auto;
+}
+
 .fs {
 
+  &__illos {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+
+    &--0 {
+      @extend %illos-base;
+      top: 0;
+      left: 0;
+      width: 22.1875vw;
+    }
+    
+    &--1 {
+      @extend %illos-base;
+      top: 0;
+      right: 0;
+      width: 22.1875vw;
+    }
+  }
+
   &__block {
+    position: relative;
     /*background-image: url(public/images/dot-pattern-2.png);*/
   }
 

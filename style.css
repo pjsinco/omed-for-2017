@@ -1917,7 +1917,69 @@ table th[class*="col-"] {
 .footer__col-item--highlight a {
   font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+.fragment, .fragment-1, .fragment-2, .fragment-3 {
+  position: absolute;
+  background-image: url("public/images/dot-pattern-2.png");
+  background-size: 40px; }
+
+.fragment__container, .fragment__container--right, .fragment__container--left {
+  position: absolute;
+  z-index: -1;
+  height: 500px;
+  width: 500px; }
+
+.fragment__container--right {
+  right: 0;
+  /*right: -87%;*/ }
+.fragment__container--left {
+  left: 0;
+  /*left: -14%;*/ }
+
+.fragment-1 {
+  top: -100%;
+  right: -73%;
+  height: 630px;
+  width: 1000px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+.fragment-2 {
+  top: 0;
+  left: -80%;
+  height: 500px;
+  width: 500px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+.fragment-3 {
+  top: -240%;
+  right: -60%;
+  height: 1000px;
+  width: 590px;
+  -webkit-transform: rotate(26deg);
+          transform: rotate(26deg); }
+
+.fs__illos--0, .fs__illos--1 {
+  position: absolute;
+  height: auto; }
+
+.fs__illos {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .2; }
+  .fs__illos--0 {
+    top: 0;
+    left: 0;
+    width: 22.1875vw; }
+  .fs__illos--1 {
+    top: 0;
+    right: 0;
+    width: 22.1875vw; }
 .fs__block {
+  position: relative;
   /*background-image: url(public/images/dot-pattern-2.png);*/ }
 .fs__item {
   position: relative;

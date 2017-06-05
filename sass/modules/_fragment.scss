@@ -1,0 +1,61 @@
+%fragment-base {
+  position: absolute;
+  background-image: url('public/images/dot-pattern-2.png');
+  background-size: 40px;
+
+}
+
+%fragment-container-base {
+  position: absolute;
+  z-index: -1;
+  height: 500px;
+  width: 500px;
+}
+
+.fragment__container {
+  @extend %fragment-container-base;
+
+  &--right {
+    @extend %fragment-container-base;
+    right: 0;
+    /*right: -87%;*/
+  }
+
+  &--left {
+    @extend %fragment-container-base;
+    left: 0;
+    /*left: -14%;*/
+  }
+}
+
+.fragment {
+  @extend %fragment-base;
+
+  &-1 {
+    @extend %fragment-base;
+    top: -100%;
+    right: -73%;
+    height: 630px;
+    width: 1000px;
+    transform: rotate(45deg);
+  }
+
+  &-2 {
+    @extend %fragment-base;
+    top: 0;
+    left: -80%;
+    height: 500px;
+    width: 500px;
+    transform: rotate(45deg);
+  }
+
+  &-3 {
+    @extend %fragment-base;
+    top: -240%;
+    right: -60%;
+    height: 1000px;
+    width: 590px;
+    transform: rotate(26deg);
+  }
+}
+
