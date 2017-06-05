@@ -1917,6 +1917,8 @@ table th[class*="col-"] {
 .footer__col-item--highlight a {
   font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+.fs__block {
+  /*background-image: url(public/images/dot-pattern-2.png);*/ }
 .fs__item {
   position: relative;
   top: -5rem;
