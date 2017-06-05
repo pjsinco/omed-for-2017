@@ -33,7 +33,13 @@ class Omed2016_Featured_Sessions_Block extends WP_Widget {
       $post_args = array(
         //'posts_per_page' => 3,
         'post_type' => 'omed_session',
+        'orderby' => 'post__in',
       );
+
+      if ( !empty( $instance['ids'] ) ):
+        $post_args['post__in'] = array_map( 'trim', explode( ',', $instance['ids'] ) );
+        $post_args['posts_per_page'] = -1;
+      endif;
 
       $sessions = get_posts( $post_args );
 
@@ -49,7 +55,7 @@ class Omed2016_Featured_Sessions_Block extends WP_Widget {
          <h6 class="fs__kicker"><?php echo get_field( 'session_sponsor', $session->ID ); ?></h6>
          <h3 class="fs__header"><?php echo get_field( 'session_title', $session->ID ) ?></h3>
          <div class="fs__header--minor"><?php echo get_field( 'session_date_and_time', $session->ID ); ?></div>
-         <a href="<?php echo get_field( 'session_more_info_link', $session->ID ); ?>" class="btn btn--primary btn--sm" <?php echo ( get_field( 'session_open_link_in_new_window', $session->ID ) ? 'target="_blank"' : '' ); ?>>Add to Calendar</a>
+         <a href="<?php echo get_field( 'session_more_info_link', $session->ID ); ?>" class="btn btn--audience btn--sm" <?php echo ( get_field( 'session_open_link_in_new_window', $session->ID ) ? 'target="_blank"' : '' ); ?>>Add to Calendar</a>
        </div> <!-- .fs__item -->
      </div> <!-- .fs__itemcontainer -->
     <?php

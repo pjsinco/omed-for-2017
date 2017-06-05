@@ -647,9 +647,9 @@ add_action( 'wp_footer' , 'omed_call_svg4everybody', 9999);
 
 
 function add_owl_carousel_script() {
-  if ( !is_front_page() ) {
-    return;
-  }
+  //if ( !is_front_page() ) {
+    //return;
+  //}
 ?>
   <script>
     jQuery(document).ready(function() {

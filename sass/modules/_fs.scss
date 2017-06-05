@@ -64,6 +64,8 @@ $fsbreak: $large-start;
       right: -1px;
       bottom: 0;
       border-bottom: 5px solid $primarycolor;
+
+      @extend %border-color-for-audience;
     }
 
     @include breakpoint($screen $medium-start) {
@@ -97,6 +99,8 @@ $fsbreak: $large-start;
     color: $primarycolor;
     opacity: .6;
 
+    @extend %color-for-audience;
+
 //    &:after {
 //      content: "";
 //      /* height: 10px; */
@@ -118,6 +122,10 @@ $fsbreak: $large-start;
     font-size: .875rem;
     line-height: 1.4;
     border-bottom: 1px solid $primarycolor;
+
+    @extend %color-for-audience;
+    @extend %border-color-for-audience;
+    
   }
 
   &__header {
@@ -132,6 +140,8 @@ $fsbreak: $large-start;
       font-size: .75rem;
       line-height: 1.4;
       color: $primarycolor;
+  
+      @extend %color-for-audience;
     }
   }
 

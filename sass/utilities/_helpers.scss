@@ -228,3 +228,19 @@
     fill: $studentscolor;
   }
 }
+
+%border-color-for-audience {
+
+  .page-physicians & {
+    border-color: $physicianscolor;
+  }
+
+  .page-residents & {
+    border-color: $residentscolor;
+  }
+
+  .page-students & {
+    border-color: $studentscolor;
+  }
+
+}
