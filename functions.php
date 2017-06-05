@@ -152,6 +152,32 @@ function omed_scripts() {
     get_template_directory_uri() . '/scripts/wow.min.js'
   );
 
+  /**
+   * Parallax JS
+   *
+   * @see https://github.com/pixelcog/parallax.js/
+   */
+  wp_register_script(
+    'parallax-js',
+    get_template_directory_uri() . '/scripts/parallax.min.js',
+    array( 'jquery' ),
+    false,
+    true
+  );
+
+  /**
+   * Rellax JS
+   *
+   * @see https://github.com/dixonandmoe/rellax
+   */
+  wp_register_script(
+    'rellax-js',
+    get_template_directory_uri() . '/scripts/rellax.min.js',
+    array(),
+    false,
+    true
+  );
+
   //wp_register_style(
     //'animate-css',
     //get_template_directory_uri() . '/styles/animate.min.css'
@@ -241,6 +267,8 @@ function omed_scripts() {
   //wp_enqueue_script( 'wowjs' );
   wp_enqueue_script( 'omed-bundle' );
   wp_enqueue_script( 'svg4everybody' );
+  //wp_enqueue_script( 'parallax-js' );
+  wp_enqueue_script( 'rellax-js' );
 }
 add_action( 'wp_enqueue_scripts', 'omed_scripts' );
 
@@ -598,6 +626,16 @@ function omed_add_fitvids_script() {
   <?php
 }
 
+function omed_add_rellax_script() {
+?>
+  <script>
+    var rellax = new Rellax('.rellax');
+  </script>
+<?php
+}
+add_action('wp_footer' , 'omed_add_rellax_script', 9999);
+
+
 function omed_call_svg4everybody() {
   ?>
   <script>
@@ -609,9 +647,9 @@ add_action( 'wp_footer' , 'omed_call_svg4everybody', 9999);
 
 
 function add_owl_carousel_script() {
-  if ( !is_front_page() ) {
-    return;
-  }
+  //if ( !is_front_page() ) {
+    //return;
+  //}
 ?>
   <script>
     jQuery(document).ready(function() {

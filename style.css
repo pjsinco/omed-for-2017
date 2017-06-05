@@ -164,11 +164,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .page-students .billboard__text {
   background-color: #3d5ba9; }
 
-.page-physicians .icon-block__body h5, .icon-block__body .page-physicians h5, .page-physicians .icon-block__body p, .icon-block__body .page-physicians p, .page-physicians .icon-block__body li, .icon-block__body .page-physicians li, .page-physicians .icon-block__body .chart__subhead, .icon-block__body .page-physicians .chart__subhead {
+.page-physicians .fs__name, .page-physicians .fs__kicker, .page-physicians .fs__header--minor, .page-physicians .icon-block__body h5, .icon-block__body .page-physicians h5, .page-physicians .icon-block__body p, .icon-block__body .page-physicians p, .page-physicians .icon-block__body li, .icon-block__body .page-physicians li, .page-physicians .icon-block__body .chart__subhead, .icon-block__body .page-physicians .chart__subhead, .page-physicians .section__header {
   color: #d53847; }
-.page-residents .icon-block__body h5, .icon-block__body .page-residents h5, .page-residents .icon-block__body p, .icon-block__body .page-residents p, .page-residents .icon-block__body li, .icon-block__body .page-residents li, .page-residents .icon-block__body .chart__subhead, .icon-block__body .page-residents .chart__subhead {
+.page-residents .fs__name, .page-residents .fs__kicker, .page-residents .fs__header--minor, .page-residents .icon-block__body h5, .icon-block__body .page-residents h5, .page-residents .icon-block__body p, .icon-block__body .page-residents p, .page-residents .icon-block__body li, .icon-block__body .page-residents li, .page-residents .icon-block__body .chart__subhead, .icon-block__body .page-residents .chart__subhead, .page-residents .section__header {
   color: #5c419a; }
-.page-students .icon-block__body h5, .icon-block__body .page-students h5, .page-students .icon-block__body p, .icon-block__body .page-students p, .page-students .icon-block__body li, .icon-block__body .page-students li, .page-students .icon-block__body .chart__subhead, .icon-block__body .page-students .chart__subhead {
+.page-students .fs__name, .page-students .fs__kicker, .page-students .fs__header--minor, .page-students .icon-block__body h5, .icon-block__body .page-students h5, .page-students .icon-block__body p, .icon-block__body .page-students p, .page-students .icon-block__body li, .icon-block__body .page-students li, .page-students .icon-block__body .chart__subhead, .icon-block__body .page-students .chart__subhead, .page-students .section__header {
   color: #3d5ba9; }
 
 .page-physicians .icon-audience {
@@ -177,6 +177,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
   fill: #5c419a; }
 .page-students .icon-audience {
   fill: #3d5ba9; }
+
+.page-physicians .fs__item:after, .page-physicians .fs__kicker {
+  border-color: #d53847; }
+.page-residents .fs__item:after, .page-residents .fs__kicker {
+  border-color: #5c419a; }
+.page-students .fs__item:after, .page-students .fs__kicker {
+  border-color: #3d5ba9; }
 
 @-webkit-keyframes fadeInFromRight {
   from {
@@ -1167,7 +1174,7 @@ table th[class*="col-"] {
   box-shadow: inset 0 0 0 1px #fff; }
   .page-physicians .billboard__button.btn--reverse:hover {
     color: #fff;
-    background-color: #d53847;
+    background-color: #fff;
     /*box-shadow: inset 0 0 0 1px $border;*/ }
   .page-physicians .billboard__button.btn--reverse:hover {
     color: #fff;
@@ -1178,7 +1185,7 @@ table th[class*="col-"] {
   box-shadow: inset 0 0 0 1px #fff; }
   .page-residents .billboard__button.btn--reverse:hover {
     color: #fff;
-    background-color: #d53847;
+    background-color: #fff;
     /*box-shadow: inset 0 0 0 1px $border;*/ }
   .page-residents .billboard__button.btn--reverse:hover {
     color: #fff;
@@ -1189,7 +1196,7 @@ table th[class*="col-"] {
   box-shadow: inset 0 0 0 1px #fff; }
   .page-students .billboard__button.btn--reverse:hover {
     color: #fff;
-    background-color: #d53847;
+    background-color: #fff;
     /*box-shadow: inset 0 0 0 1px $border;*/ }
   .page-students .billboard__button.btn--reverse:hover {
     color: #fff;
@@ -1253,6 +1260,30 @@ table th[class*="col-"] {
     box-shadow: inset 0 0 0 1px #717271; }
     .btn--default:hover {
       color: #fff;
+      background-color: #666;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .page-students .btn--audience {
+    color: #3d5ba9;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #3d5ba9; }
+    .page-students .btn--audience:hover {
+      color: #fff;
+      background-color: #3d5ba9;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .page-residents .btn--audience {
+    color: #5c419a;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #5c419a; }
+    .page-residents .btn--audience:hover {
+      color: #fff;
+      background-color: #5c419a;
+      /*box-shadow: inset 0 0 0 1px $border;*/ }
+  .home .btn--audience, .page-physicians .btn--audience {
+    color: #d53847;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px #d53847; }
+    .home .btn--audience:hover, .page-physicians .btn--audience:hover {
+      color: #fff;
       background-color: #d53847;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
   .btn--primary, .btn--red {
@@ -1269,7 +1300,7 @@ table th[class*="col-"] {
     box-shadow: inset 0 0 0 1px #fff; }
     .btn--reverse-secondary:hover {
       color: #fff;
-      background-color: #d53847;
+      background-color: #fff;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
     .btn--reverse-secondary:hover {
       /*box-shadow: inset 0 0 0 1px darken($secondarycolor, 8%);*/
@@ -1281,7 +1312,7 @@ table th[class*="col-"] {
     box-shadow: inset 0 0 0 1px #fff; }
     .btn--reverse-primary:hover {
       color: #fff;
-      background-color: #d53847;
+      background-color: #fff;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
     .btn--reverse-primary:hover {
       /*box-shadow: inset 0 0 0 1px darken($secondarycolor, 8%);*/
@@ -1293,7 +1324,7 @@ table th[class*="col-"] {
     box-shadow: inset 0 0 0 1px #fff; }
     .btn--reverse:hover {
       color: #fff;
-      background-color: #d53847;
+      background-color: #fff;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
     .btn--reverse:hover {
       box-shadow: inset 0 0 0 1px #d53847;
@@ -1305,7 +1336,7 @@ table th[class*="col-"] {
     box-shadow: inset 0 0 0 1px #d53847; }
     .btn--solid:hover {
       color: #fff;
-      background-color: #d53847;
+      background-color: #fff;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
     .btn--solid:hover {
       box-shadow: inset 0 0 0 1px #d53847;
@@ -1325,7 +1356,7 @@ table th[class*="col-"] {
     box-shadow: inset 0 0 0 1px #3d5ba9; }
     .btn--blue:hover {
       color: #fff;
-      background-color: #d53847;
+      background-color: #3d5ba9;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
   .btn--purple {
     color: #5c419a;
@@ -1333,7 +1364,7 @@ table th[class*="col-"] {
     box-shadow: inset 0 0 0 1px #5c419a; }
     .btn--purple:hover {
       color: #fff;
-      background-color: #d53847;
+      background-color: #5c419a;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
   .btn--xs {
     padding: 0.5rem 1rem;
@@ -1917,7 +1948,69 @@ table th[class*="col-"] {
 .footer__col-item--highlight a {
   font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
+.fragment, .fragment-1, .fragment-2, .fragment-3 {
+  position: absolute;
+  background-image: url("public/images/dot-pattern-2.png");
+  background-size: 40px; }
+
+.fragment__container, .fragment__container--right, .fragment__container--left {
+  position: absolute;
+  z-index: -1;
+  height: 500px;
+  width: 500px; }
+
+.fragment__container--right {
+  right: 0;
+  /*right: -87%;*/ }
+.fragment__container--left {
+  left: 0;
+  /*left: -14%;*/ }
+
+.fragment-1 {
+  top: -100%;
+  right: -73%;
+  height: 630px;
+  width: 1000px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+.fragment-2 {
+  top: 0;
+  left: -80%;
+  height: 500px;
+  width: 500px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+.fragment-3 {
+  top: -240%;
+  right: -60%;
+  height: 1000px;
+  width: 590px;
+  -webkit-transform: rotate(26deg);
+          transform: rotate(26deg); }
+
+.fs__illos--0, .fs__illos--1 {
+  position: absolute;
+  height: auto; }
+
+.fs__illos {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .2; }
+  .fs__illos--0 {
+    top: 0;
+    left: 0;
+    width: 22.1875vw; }
+  .fs__illos--1 {
+    top: 0;
+    right: 0;
+    width: 22.1875vw; }
 .fs__block {
+  position: relative;
   /*background-image: url(public/images/dot-pattern-2.png);*/ }
 .fs__item {
   position: relative;
@@ -1973,11 +2066,12 @@ table th[class*="col-"] {
   line-height: 1.4;
   border-bottom: 1px solid #d53847; }
 .fs__header {
-  font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #717271;
-  font-weight: 200;
   margin-bottom: 1rem;
-  font-size: 1.125rem; }
+  min-height: 4.6875rem;
+  font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  font-size: 1.125rem;
+  color: #717271; }
   .fs__header--minor {
     margin-bottom: 1rem;
     font-size: .75rem;
