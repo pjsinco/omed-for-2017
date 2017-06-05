@@ -129,11 +129,13 @@ $fsbreak: $large-start;
   }
 
   &__header {
-    font-family: $font-light;
-    color: $font-color-lighter;
-    font-weight: 200;
+
     margin-bottom: 1rem;
+    min-height: 4.6875rem;
+    font-family: $font-light;
+    font-weight: 200;
     font-size: 1.125rem;
+    color: $font-color-lighter;
 
     &--minor {
       margin-bottom: 1rem;

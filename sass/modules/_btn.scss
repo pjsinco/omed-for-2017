@@ -36,9 +36,11 @@
       @include button-variant($residentscolor, $btn-primary-bg, $residentscolor);
     }
 
+    .home &,
     .page-physicians & {
       @include button-variant($physicianscolor, $btn-primary-bg, $physicianscolor);
     }
+
   }
 
   &--primary, &--red {

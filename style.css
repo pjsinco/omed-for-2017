@@ -1278,11 +1278,11 @@ table th[class*="col-"] {
       color: #fff;
       background-color: #5c419a;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
-  .page-physicians .btn--audience {
+  .home .btn--audience, .page-physicians .btn--audience {
     color: #d53847;
     background-color: transparent;
     box-shadow: inset 0 0 0 1px #d53847; }
-    .page-physicians .btn--audience:hover {
+    .home .btn--audience:hover, .page-physicians .btn--audience:hover {
       color: #fff;
       background-color: #d53847;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
@@ -2066,11 +2066,12 @@ table th[class*="col-"] {
   line-height: 1.4;
   border-bottom: 1px solid #d53847; }
 .fs__header {
-  font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #717271;
-  font-weight: 200;
   margin-bottom: 1rem;
-  font-size: 1.125rem; }
+  min-height: 4.6875rem;
+  font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 200;
+  font-size: 1.125rem;
+  color: #717271; }
   .fs__header--minor {
     margin-bottom: 1rem;
     font-size: .75rem;
