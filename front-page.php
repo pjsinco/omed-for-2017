@@ -55,7 +55,11 @@
       <div class="highlightable__block wrap">
         <div class="highlightable__body">
           <div class="highlightable__imagecontainer">
+          <?php if ( is_dev_env() ): ?>
+            <img class="highlightable__image" src="wp-content/uploads/2017/04/omed-861.jpg" alt="OMT session">
+          <?php else: ?>
             <img class="highlightable__image" src="wp-content/uploads/2016/11/omed-861.jpg" alt="OMT session">
+          <?php endif ?>
           </div> <!-- .highlightable__imagecontainer -->
           <div class="highlightable__text">
             <h5 class="highlightable__header">Q: What is the Experience Zone?</h5>

@@ -129,8 +129,7 @@ function omed_scripts() {
   wp_register_style(  
     'omed-style',
     sprintf( '%s/%s', get_stylesheet_directory_uri(), $stylesheet_name ),
-    //array('owl-carousel-css'),
-    array(),
+    array('owl-carousel-css'),
     filemtime( get_template_directory() . '/' . $stylesheet_name ), 
     'all'
   );
@@ -194,11 +193,11 @@ function omed_scripts() {
     array( 'owl-carousel-css' )
   );
 
-  if ( is_front_page() ) {
-    //wp_enqueue_style( 'owl-carousel-css' );
-    //wp_enqueue_style( 'owl-theme-css' );
-    //wp_enqueue_script( 'owl-carousel-js' );
-  }
+  //if ( is_front_page() ) {
+    wp_enqueue_style( 'owl-carousel-css' );
+    wp_enqueue_style( 'owl-theme-css' );
+    wp_enqueue_script( 'owl-carousel-js' );
+  //}
 
   /**
    * Fitvids
@@ -622,7 +621,8 @@ function add_owl_carousel_script() {
         //'itemsDesktop': [1199, 3],
       //});
 
-      jQuery('#qlCarousel').owlCarousel({
+      //jQuery('#qlCarousel').owlCarousel({
+      jQuery('#fsCarousel').owlCarousel({
         items: 3,
         responsive: {
           0: {
@@ -636,11 +636,11 @@ function add_owl_carousel_script() {
           },
         },
         slideBy: 'page',
-        nav: true,
-        navText: [
-          '<i class="icon-chevron-left"></i>',
-          '<i class="icon-chevron-right"></i>'
-        ],
+        nav: false,
+        //navText: [
+          //'<svg class="icon icon-chevron-left" preserveAspectRatio="xMidYMid meet" width="50" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use></svg>',
+          //'<svg class="icon icon-chevron-right" preserveAspectRatio="xMidYMid meet" width="50" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use></svg>',
+        //],
         itemElement: 'li',
         stageElement: 'ul'
       });
@@ -649,7 +649,7 @@ function add_owl_carousel_script() {
 
 <?php
 }
-//add_action( 'wp_footer' , 'add_owl_carousel_script', 50 );
+add_action( 'wp_footer' , 'add_owl_carousel_script', 50 );
 
 function omed_add_google_analytics_code() {
   if ( is_dev_env() ) {
