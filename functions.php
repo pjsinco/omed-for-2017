@@ -267,7 +267,7 @@ function omed_scripts() {
   //wp_enqueue_script( 'wowjs' );
   wp_enqueue_script( 'omed-bundle' );
   wp_enqueue_script( 'svg4everybody' );
-  //wp_enqueue_script( 'parallax-js' );
+  wp_enqueue_script( 'parallax-js' );
   wp_enqueue_script( 'rellax-js' );
 }
 add_action( 'wp_enqueue_scripts', 'omed_scripts' );
@@ -634,7 +634,6 @@ function omed_add_rellax_script() {
 <?php
 }
 add_action('wp_footer' , 'omed_add_rellax_script', 9999);
-
 
 function omed_call_svg4everybody() {
   ?>

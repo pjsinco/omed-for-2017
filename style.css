@@ -2002,7 +2002,7 @@ table th[class*="col-"] {
   height: 100%;
   opacity: .2; }
   .fs__illos--0 {
-    top: 0;
+    top: 33%;
     left: 0;
     width: 22.1875vw; }
   .fs__illos--1 {
@@ -2973,6 +2973,10 @@ footer .icon-aoa-with-tagline {
 @media screen and (min-width: 48rem) {
   .pageblock--xl {
     margin-bottom: 12rem; } }
+
+.parallax-window {
+  min-height: 600px;
+  background-color: transparent; }
 
 .primary-nav {
   display: inline-block;
