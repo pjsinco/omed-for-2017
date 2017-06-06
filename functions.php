@@ -138,8 +138,34 @@ function omed_scripts() {
   wp_register_script( 
     'omed-bundle', 
     $omed_bundle_path,
-    array( 'jquery' ),
+    array( 'jquery', 'vex-js', 'rellax-js', 'parallax-js' ),
     filemtime( $omed_bundle_path ), 
+    true
+  );
+
+  /**
+   * Vex.js
+   *
+   */
+//  wp_register_style(
+//    'vex-style',
+//    get_template_directory_uri() . '/public/styles/vendor/vex.css' ,
+//    array(),
+//    false
+//  );
+//
+//  wp_register_style(
+//    'vex-theme-style',
+//    get_template_directory_uri() . '/public/styles/vendor/vex-theme-default.css',
+//    array( 'vex-style' ),
+//    false
+//  );
+
+  wp_register_script(
+    'vex-js',
+    get_template_directory_uri() . '/scripts/vex.combined.min.js',
+    array(),
+    false,
     true
   );
 
@@ -219,11 +245,6 @@ function omed_scripts() {
     array( 'owl-carousel-css' )
   );
 
-  //if ( is_front_page() ) {
-    wp_enqueue_style( 'owl-carousel-css' );
-    wp_enqueue_style( 'owl-theme-css' );
-    wp_enqueue_script( 'owl-carousel-js' );
-  //}
 
   /**
    * Fitvids
@@ -269,6 +290,16 @@ function omed_scripts() {
   wp_enqueue_script( 'svg4everybody' );
   wp_enqueue_script( 'parallax-js' );
   wp_enqueue_script( 'rellax-js' );
+
+  //if ( is_front_page() ) {
+    wp_enqueue_style( 'owl-carousel-css' );
+    wp_enqueue_style( 'owl-theme-css' );
+    wp_enqueue_script( 'owl-carousel-js' );
+    wp_enqueue_script( 'vex-js' );
+    //wp_enqueue_style( 'vex-style' );
+    //wp_enqueue_style( 'vex-theme-style' );
+  //}
+
 }
 add_action( 'wp_enqueue_scripts', 'omed_scripts' );
 

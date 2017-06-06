@@ -1,8 +1,22 @@
 'use strict';
 
-/* @source https://codyhouse.co/gem/auto-hiding-navigation */
-
 jQuery(document).ready(function ($) {
+
+  /**
+   * Modals
+   *
+   */
+
+  vex.defaultOptions.className = 'vex-theme-omed';
+
+  $('.btn--audience').on('click', function () {
+
+    //vex.dialog.alert('hiyafromvextdialogalert');
+
+    vex.dialog.open({
+      unsafeMessage: '<div class="foo">\n                        <h1>Hello from H1</h1>\n                        <h5>Hello from down here in H5</h5>\n                        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>\n                      </div>'
+    });
+  });
 
   /**
    * FAQs
@@ -90,6 +104,7 @@ jQuery(document).ready(function ($) {
   /**
    * Hide and show nav bars
    *
+   * @see https://codyhouse.co/gem/auto-hiding-navigation
    */
   var scrolling = false,
       currentTop = 0,
