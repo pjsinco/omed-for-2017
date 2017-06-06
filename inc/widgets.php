@@ -55,7 +55,7 @@ class Omed2016_Featured_Sessions_Block extends WP_Widget {
          <h6 class="fs__kicker"><?php echo get_field( 'session_sponsor', $session->ID ); ?></h6>
          <h3 class="fs__header"><?php echo get_field( 'session_title', $session->ID ) ?></h3>
          <div class="fs__header--minor"><?php echo get_field( 'session_date_and_time', $session->ID ); ?></div>
-         <a href="<?php echo get_field( 'session_more_info_link', $session->ID ); ?>" class="btn btn--audience btn--sm" <?php echo ( get_field( 'session_open_link_in_new_window', $session->ID ) ? 'target="_blank"' : '' ); ?>>Add to Calendar</a>
+         <a href="<?php echo get_field( 'session_more_info_link', $session->ID ); ?>" class="btn btn--audience btn--sm" <?php echo ( get_field( 'session_open_link_in_new_window', $session->ID ) ? 'target="_blank"' : '' ); ?>>Learn More</a>
        </div> <!-- .fs__item -->
      </div> <!-- .fs__itemcontainer -->
     <?php
