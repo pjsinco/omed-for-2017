@@ -1819,6 +1819,8 @@ table th[class*="col-"] {
   margin-bottom: 2rem; }
   body[class*="page-standalone"] .content {
     margin-top: 1rem; }
+  .page-template-page-audience .content {
+    margin-bottom: 0; }
   .error404 .content {
     display: block;
     /*margin-top: 2rem;*/
