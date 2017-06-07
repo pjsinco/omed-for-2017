@@ -13,8 +13,10 @@ jQuery(document).ready(function ($) {
 
     //vex.dialog.alert('hiyafromvextdialogalert');
 
-    vex.dialog.open({
-      unsafeMessage: '<div class="foo">\n                        <h1>Hello from H1</h1>\n                        <h5>Hello from down here in H5</h5>\n                        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>\n                      </div>'
+    vex.dialog.buttons.YES.text = 'Done';
+
+    vex.dialog.alert({
+      unsafeMessage: '<div class="foo">\n                        <h1>Hello from H1</h1>\n                        <h5>Hello from down here in H5</h5>\n                        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>\n                        <p><a href="https://www.google.com" class="btn btn--audience">Learn more</a></p>\n                      </div>'
     });
   });
 

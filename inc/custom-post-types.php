@@ -159,12 +159,71 @@ function omed2016_custom_post_types() {
     'supports'            => array( 'title', 'revision' ),
   );
 
+  $event_labels = array(
+    'name'               => 'Events',
+    'singular_name'      => 'Event',
+    'menu_name'          => 'Events',
+    'name_admin_bar'     => 'Event',
+    'add_new'            => 'Add new',
+    'add_new_item'       => 'Add new event',
+    'edit_item'          => 'Edit event',
+    'view_item'          => 'View event',
+    'all_items'          => 'All events',
+    'search_items'       => 'Search events',
+    'not_found'          => 'No events found',
+    'not_found_in_trash' => 'No events found in trash.',
+  );
+
+  $event_args = array(
+    'labels'              => $event_labels,
+    'public'              => false,
+    'publicly_queryable'  => false,
+    'exclude_from_search' => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => 22,
+    'capability_type'     => 'post',
+    'hierarchical'        => false,
+    'rewrite'             => array( 'slug' => 'event' ),
+    'supports'            => array( 'title', 'revision' ),
+  );
+
+  $modal_labels = array(
+    'name'               => 'Modals',
+    'singular_name'      => 'Modal',
+    'menu_name'          => 'Modals',
+    'name_admin_bar'     => 'Modal',
+    'add_new'            => 'Add new',
+    'add_new_item'       => 'Add new modal',
+    'edit_item'          => 'Edit modal',
+    'view_item'          => 'View modal',
+    'all_items'          => 'All modals',
+    'search_items'       => 'Search modals',
+    'not_found'          => 'No modals found',
+    'not_found_in_trash' => 'No modals found in trash.',
+  );
+
+  $modal_args = array(
+    'labels'              => $modal_labels,
+    'public'              => false,
+    'publicly_queryable'  => false,
+    'exclude_from_search' => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'show_in_admin_bar'   => true,
+    'menu_position'       => 20,
+    'capability_type'     => 'post',
+    'hierarchical'        => false,
+    'rewrite'             => array( 'slug' => 'modal' ),
+    'supports'            => array( 'title', 'revision' ),
+  );
+
   register_post_type( 'omed_session', $featured_session_args );
   register_post_type( 'omed_aside', $aside_args );
-  register_post_type( 'omed_quicklink', $quicklink_args );
+  //register_post_type( 'omed_quicklink', $quicklink_args );
   register_post_type( 'omed_highlightable', $highlightable_args );
-  register_post_type( 'omed_splinkle', $splinkle_args );
+  //register_post_type( 'omed_splinkle', $splinkle_args );
+  register_post_type( 'omed_event', $event_args );
+  register_post_type( 'omed_modal', $modal_args );
 }
-
-
-
