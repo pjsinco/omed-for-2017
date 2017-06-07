@@ -1,3 +1,44 @@
+%card-base {
+  position: relative;
+  margin-bottom: 1rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  text-align: center;
+  border-top: 1px solid $extralightgray;
+  border-left: 1px solid $extralightgray;
+  border-right: 1px solid $extralightgray;
+  background: $white;
+  box-shadow: 3px 3px 6px $bordergray;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    bottom: 0;
+    border-bottom: 5px solid $primarycolor;
+
+    @extend %border-color-for-audience;
+  }
+
+  @include breakpoint($screen $medium-start) {
+    margin-left: .75rem;
+    margin-right: .75rem;
+  }
+
+  @include breakpoint($screen $navflip) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 18.375rem;
+  }
+
+  @include breakpoint($screen $large-minor-minor-start) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
 /* Helpers: Floats and Clearing */
 %container-base {
   margin-right: auto;
