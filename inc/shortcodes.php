@@ -127,3 +127,27 @@ function omed_faq_search_shortcode( ) {
 }
 add_shortcode('faq-search', 'omed_faq_search_shortcode' );
 
+function omed_event_shortcode( $atts, $content = null ) {
+
+  
+  $a = shortcode_atts( array( 'id' => ''), $atts );
+
+  $event_fields = get_fields( $a['id'] );
+
+  if ( ! $event_fields ) return;
+
+  $output  = '<li class="event__item">';
+  $output .= '  <div class="event__imagecontainer">';
+  $output .= '    <img src="' . $event_fields['omed_event_image'] . '">';
+  $output .= '  </div>';
+  $output .= '  <div class="event__body">';
+  $output .= '    <h4>' . $event_fields['omed_event_title'] . '</h4>';
+  $output .= '    <p>' . $event_fields['omed_event_blurb'] . '</p>';
+  $output .= '    <p><button class="btn btn--audience">Learn more</button></p>';
+  $output .= '  </div>';
+  $output .= '</li>';
+
+  return $output;
+
+}
+add_shortcode('event', 'omed_event_shortcode' );

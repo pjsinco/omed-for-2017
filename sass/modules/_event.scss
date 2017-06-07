@@ -1,12 +1,14 @@
 .event {
-  position: absolute;
-  bottom: -570px;
-  width: 100%;
 
   &__body {
-    padding: 1rem;
+    padding: 1rem 1rem 2rem;
 
     & h4 {
+      margin-bottom: .75rem;
+      font-family: $font-medium;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      letter-spacing: -.25px;
       @extend %color-for-audience;
     }
   }
@@ -26,4 +28,10 @@
     justify-content: space-between;
   }
 
+
+  &__itemscontainer {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+  }
 }
