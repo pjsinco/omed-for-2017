@@ -16,8 +16,9 @@
     left: -1px;
     right: -1px;
     bottom: 0;
+    /*height: 4px;*/
+    /*background-image: linear-gradient(to right,#5c419a, #d53847 50%, #5c419a 100%);*/
     border-bottom: 5px solid $primarycolor;
-
     @extend %border-color-for-audience;
   }
 
