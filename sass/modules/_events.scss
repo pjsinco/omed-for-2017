@@ -1,0 +1,54 @@
+.events {
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255,255,255,.6));
+  }
+
+  &__body {
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    right: 0;
+    line-height: 1.2;
+    color: white;
+
+    & h3 {
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 54px;
+      line-height: 1.2;
+      font-family: $font-light;
+      text-align: center;
+      @extend %color-for-audience;
+    }
+
+    & h5 {
+      width: 100%;
+      font-size: 18px;
+      line-height: 1.4;
+      text-align: center;
+      color: #666;
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    left: -1px;
+  }
+
+
+  &__imagecontainer {
+    height: 870px; // TODO temp
+    /*background-image: linear-gradient(to bottom, black, transparent);*/
+    overflow: hidden;
+  }
+
+}
