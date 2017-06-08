@@ -21,10 +21,19 @@
   top: 50%;
   width: 100%;
   transform: translateY(-50%);
+  opacity: .2;
 
   #fsCarousel & {
     top: 30%;
     transform: none;
+  }
+
+  #eventsCarousel & {
+    opacity: .4;
+
+    @include breakpoint($screen $medium-start) {
+      opacity: .6;
+    }
   }
 }
 
