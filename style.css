@@ -375,7 +375,8 @@ body.vex-open {
   font-size: 2rem;
   letter-spacing: -1px;
   font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.2; }
+  line-height: 1.2;
+  text-shadow: 2px 2px 1px rgba(92, 65, 154, 0.15); }
   @media screen and (min-width: 48rem) {
     .events__body h3, .section__header {
       font-size: 3rem; } }
@@ -546,13 +547,13 @@ body.vex-open {
 .bordered {
   border: 1px solid #f1f1f1; }
 
-.billboard__text, #fsCarousel .owl-dot span, #eventsCarousel .owl-dot span {
+.billboard__text, .highlightable:before, #fsCarousel .owl-dot span, #eventsCarousel .owl-dot span {
   background-color: #d53847; }
-.page-physicians .billboard__text, .page-physicians #fsCarousel .owl-dot span, #fsCarousel .owl-dot .page-physicians span, .page-physicians #eventsCarousel .owl-dot span, #eventsCarousel .owl-dot .page-physicians span {
+.page-physicians .billboard__text, .page-physicians .highlightable:before, .page-physicians #fsCarousel .owl-dot span, #fsCarousel .owl-dot .page-physicians span, .page-physicians #eventsCarousel .owl-dot span, #eventsCarousel .owl-dot .page-physicians span {
   background-color: #d53847; }
-.page-residents .billboard__text, .page-residents #fsCarousel .owl-dot span, #fsCarousel .owl-dot .page-residents span, .page-residents #eventsCarousel .owl-dot span, #eventsCarousel .owl-dot .page-residents span {
+.page-residents .billboard__text, .page-residents .highlightable:before, .page-residents #fsCarousel .owl-dot span, #fsCarousel .owl-dot .page-residents span, .page-residents #eventsCarousel .owl-dot span, #eventsCarousel .owl-dot .page-residents span {
   background-color: #5c419a; }
-.page-students .billboard__text, .page-students #fsCarousel .owl-dot span, #fsCarousel .owl-dot .page-students span, .page-students #eventsCarousel .owl-dot span, #eventsCarousel .owl-dot .page-students span {
+.page-students .billboard__text, .page-students .highlightable:before, .page-students #fsCarousel .owl-dot span, #fsCarousel .owl-dot .page-students span, .page-students #eventsCarousel .owl-dot span, #eventsCarousel .owl-dot .page-students span {
   background-color: #3d5ba9; }
 
 .event__body h4, .event__body .elit-accordion .accordion-head, .elit-accordion .event__body .accordion-head, .events__body h3, .fs__name, .fs__kicker, .fs__header--minor, .icon-block__body h5, .icon-block__body p, .icon-block__body li, .icon-block__body .chart__subhead, .section__header {
@@ -2659,11 +2660,11 @@ table th[class*="col-"] {
     .admin-bar .header {
       top: 32px; } }
 
-.highlightable__header, .highlightable__blurb {
+.highlightable__blurb {
   font-family: "gotham-light", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff; }
   @media screen and (min-width: 41.5rem) {
-    .highlightable__header, .highlightable__blurb {
+    .highlightable__blurb {
       margin-bottom: 1.3125rem; } }
 
 .highlightable {
@@ -2692,14 +2693,17 @@ table th[class*="col-"] {
             transform: skewY(-4deg) translateY(2rem);
     -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-    background-image: -webkit-linear-gradient(left, #d53847, #5c419a);
-    background-image: linear-gradient(to right, #d53847, #5c419a); }
+    /*background-image: linear-gradient(to right, $primarycolor, $accentcolor);*/
+    border-top: 4px solid; }
+    .highlightable:before, .page-physicians .highlightable:before {
+      border-color: #5c419a; }
+    .page-students .highlightable:before, .page-residents .highlightable:before {
+      border-color: #d53847; }
     @media screen and (min-width: 41.5rem) {
       .highlightable:before {
         top: -3rem;
         bottom: -3rem;
-        background-image: -webkit-linear-gradient(left, #d53847, #d53847 33%, #5c419a);
-        background-image: linear-gradient(to right, #d53847, #d53847 33%, #5c419a);
+        /*background-image: linear-gradient(to right, $primarycolor, $primarycolor 33%, $accentcolor);*/
         -webkit-transform: skewY(-4deg);
                 transform: skewY(-4deg); } }
     @media screen and (min-width: 56rem) {
@@ -2767,7 +2771,9 @@ table th[class*="col-"] {
 .highlightable__header {
   margin-bottom: 1.125rem;
   line-height: 1.3;
-  font-size: 1.75rem; }
+  font-size: 1.75rem;
+  font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff; }
   @media screen and (min-width: 41.5rem) {
     .highlightable__header {
       font-size: 1.5rem; } }
@@ -2813,12 +2819,20 @@ table th[class*="col-"] {
       padding: 1rem;
       border-radius: 3px; } }
 
-.highlightable__button.btn {
-  background-color: #5c419a;
-  box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #5c419a; }
-.highlightable__button:hover {
-  box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #513988;
-  background-color: #513988; }
+.highlightable__button {
+  color: #fff; }
+  .highlightable__button.btn, .page-physicians .highlightable__button.btn {
+    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #5c419a;
+    background-color: #5c419a; }
+  .page-residents .highlightable__button.btn, .page-students .highlightable__button.btn {
+    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #d53847;
+    background-color: #d53847; }
+  .highlightable__button:hover, .page-physicians .highlightable__button:hover {
+    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #513988;
+    background-color: #513988; }
+  .page-residents .highlightable__button:hover, .page-students .highlightable__button:hover {
+    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #c92a3a;
+    background-color: #c92a3a; }
 
 .navigation a .icon-aoa-logo, .logo a .icon-omed-logo-plain {
   -webkit-transition: -webkit-transform .3s;

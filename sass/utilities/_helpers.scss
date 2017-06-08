@@ -3,6 +3,7 @@
   letter-spacing: -1px;
   font-family: $font-bold;
   line-height: 1.2;
+  text-shadow: 2px 2px 1px rgba(92, 65, 154, 0.15);
 
   @include breakpoint($screen $large-start) {
     font-size: 3rem;
