@@ -3386,11 +3386,17 @@ footer .icon-aoa-with-tagline {
   top: 50%;
   width: 100%;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%); }
+          transform: translateY(-50%);
+  opacity: .2; }
   #fsCarousel .owl-nav {
     top: 30%;
     -webkit-transform: none;
             transform: none; }
+  #eventsCarousel .owl-nav {
+    opacity: .4; }
+    @media screen and (min-width: 30rem) {
+      #eventsCarousel .owl-nav {
+        opacity: .6; } }
 
 .owl-prev {
   float: left;
