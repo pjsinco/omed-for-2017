@@ -371,6 +371,18 @@ body.vex-open {
  * https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_buttons.scss 
  *
  */
+.events__body h3, .section__header {
+  font-size: 2rem;
+  letter-spacing: -1px;
+  font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.2; }
+  @media screen and (min-width: 48rem) {
+    .events__body h3, .section__header {
+      font-size: 3rem; } }
+  @media screen and (min-width: 67.75rem) {
+    .events__body h3, .section__header {
+      font-size: 3.375rem; } }
+
 .event__item, .fs__item {
   position: relative;
   margin-bottom: 1rem;
@@ -2228,17 +2240,7 @@ table th[class*="col-"] {
   .events__body h3 {
     width: 100%;
     margin-bottom: 1rem;
-    font-size: 2rem;
-    line-height: 1.2;
-    font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    letter-spacing: -1px;
     text-align: center; }
-    @media screen and (min-width: 48rem) {
-      .events__body h3 {
-        font-size: 3rem; } }
-    @media screen and (min-width: 67.75rem) {
-      .events__body h3 {
-        font-size: 3.375rem; } }
   .events__body h5 {
     width: 100%;
     margin-left: auto;
@@ -3613,13 +3615,8 @@ nav.secondary-nav {
 .section__header {
   position: relative;
   margin-bottom: 3rem;
-  font-family: "gotham-book", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.25rem;
   text-align: center;
   color: #d53847; }
-  @media screen and (min-width: 48rem) {
-    .section__header {
-      font-size: 2rem; } }
   .section__header:after {
     content: '';
     position: absolute;

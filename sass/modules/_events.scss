@@ -22,24 +22,9 @@
     & h3 {
       width: 100%;
       margin-bottom: 1rem;
-      font-size: 2rem;
-      line-height: 1.2;
-      font-family: $font-bold;
-      letter-spacing: -1px;
       text-align: center;
       @extend %color-for-audience;
-
-      
-      @include breakpoint($screen $large-start) {
-        font-size: 3rem;
-      }
-
-
-
-      @include breakpoint($screen $xlarge-start) {
-        
-        font-size: 3.375rem;
-      }
+      @extend %page-header;
     }
 
     & h5 {
