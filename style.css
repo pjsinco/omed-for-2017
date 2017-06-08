@@ -534,13 +534,17 @@ body.vex-open {
 .bordered {
   border: 1px solid #f1f1f1; }
 
-.page-physicians .billboard__text {
+.billboard__text, #fsCarousel .owl-dot span, #eventsCarousel .owl-dot span {
   background-color: #d53847; }
-.page-residents .billboard__text {
+.page-physicians .billboard__text, .page-physicians #fsCarousel .owl-dot span, #fsCarousel .owl-dot .page-physicians span, .page-physicians #eventsCarousel .owl-dot span, #eventsCarousel .owl-dot .page-physicians span {
+  background-color: #d53847; }
+.page-residents .billboard__text, .page-residents #fsCarousel .owl-dot span, #fsCarousel .owl-dot .page-residents span, .page-residents #eventsCarousel .owl-dot span, #eventsCarousel .owl-dot .page-residents span {
   background-color: #5c419a; }
-.page-students .billboard__text {
+.page-students .billboard__text, .page-students #fsCarousel .owl-dot span, #fsCarousel .owl-dot .page-students span, .page-students #eventsCarousel .owl-dot span, #eventsCarousel .owl-dot .page-students span {
   background-color: #3d5ba9; }
 
+.event__body h4, .event__body .elit-accordion .accordion-head, .elit-accordion .event__body .accordion-head, .events__body h3, .fs__name, .fs__kicker, .fs__header--minor, .icon-block__body h5, .icon-block__body p, .icon-block__body li, .icon-block__body .chart__subhead, .section__header {
+  color: #d53847; }
 .page-physicians .event__body h4, .event__body .page-physicians h4, .page-physicians .event__body .elit-accordion .accordion-head, .event__body .elit-accordion .page-physicians .accordion-head, .page-physicians .elit-accordion .event__body .accordion-head, .elit-accordion .event__body .page-physicians .accordion-head, .page-physicians .events__body h3, .events__body .page-physicians h3, .page-physicians .fs__name, .page-physicians .fs__kicker, .page-physicians .fs__header--minor, .page-physicians .icon-block__body h5, .icon-block__body .page-physicians h5, .page-physicians .icon-block__body p, .icon-block__body .page-physicians p, .page-physicians .icon-block__body li, .icon-block__body .page-physicians li, .page-physicians .icon-block__body .chart__subhead, .icon-block__body .page-physicians .chart__subhead, .page-physicians .section__header {
   color: #d53847; }
 .page-residents .event__body h4, .event__body .page-residents h4, .page-residents .event__body .elit-accordion .accordion-head, .event__body .elit-accordion .page-residents .accordion-head, .page-residents .elit-accordion .event__body .accordion-head, .elit-accordion .event__body .page-residents .accordion-head, .page-residents .events__body h3, .events__body .page-residents h3, .page-residents .fs__name, .page-residents .fs__kicker, .page-residents .fs__header--minor, .page-residents .icon-block__body h5, .icon-block__body .page-residents h5, .page-residents .icon-block__body p, .icon-block__body .page-residents p, .page-residents .icon-block__body li, .icon-block__body .page-residents li, .page-residents .icon-block__body .chart__subhead, .icon-block__body .page-residents .chart__subhead, .page-residents .section__header {
@@ -548,13 +552,21 @@ body.vex-open {
 .page-students .event__body h4, .event__body .page-students h4, .page-students .event__body .elit-accordion .accordion-head, .event__body .elit-accordion .page-students .accordion-head, .page-students .elit-accordion .event__body .accordion-head, .elit-accordion .event__body .page-students .accordion-head, .page-students .events__body h3, .events__body .page-students h3, .page-students .fs__name, .page-students .fs__kicker, .page-students .fs__header--minor, .page-students .icon-block__body h5, .icon-block__body .page-students h5, .page-students .icon-block__body p, .icon-block__body .page-students p, .page-students .icon-block__body li, .icon-block__body .page-students li, .page-students .icon-block__body .chart__subhead, .icon-block__body .page-students .chart__subhead, .page-students .section__header {
   color: #3d5ba9; }
 
-.page-physicians .icon-audience {
+.icon-audience, .icon-chevron-left,
+.icon-chevron-right {
   fill: #d53847; }
-.page-residents .icon-audience {
+.page-physicians .icon-audience, .page-physicians .icon-chevron-left,
+.page-physicians .icon-chevron-right {
+  fill: #d53847; }
+.page-residents .icon-audience, .page-residents .icon-chevron-left,
+.page-residents .icon-chevron-right {
   fill: #5c419a; }
-.page-students .icon-audience {
+.page-students .icon-audience, .page-students .icon-chevron-left,
+.page-students .icon-chevron-right {
   fill: #3d5ba9; }
 
+.event__item:after, .fs__item:after, .fs__kicker {
+  border-color: #d53847; }
 .page-physicians .event__item:after, .page-physicians .fs__item:after, .page-physicians .fs__kicker {
   border-color: #d53847; }
 .page-residents .event__item:after, .page-residents .fs__item:after, .page-residents .fs__kicker {
@@ -2193,6 +2205,7 @@ table th[class*="col-"] {
 .event__itemscontainer {
   /*position: absolute;*/
   /*bottom: 2rem;*/
+  padding-bottom: 1rem;
   width: 100%; }
 
 .events:before {
@@ -2209,24 +2222,35 @@ table th[class*="col-"] {
   /*top: 3rem;*/
   /*left: 0;*/
   /*right: 0;*/
+  margin-bottom: 2rem;
   line-height: 1.2;
   color: white; }
   .events__body h3 {
     width: 100%;
     margin-bottom: 1rem;
-    font-size: 54px;
+    font-size: 2rem;
     line-height: 1.2;
     font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: -1px;
     text-align: center; }
+    @media screen and (min-width: 48rem) {
+      .events__body h3 {
+        font-size: 3rem; } }
+    @media screen and (min-width: 67.75rem) {
+      .events__body h3 {
+        font-size: 3.375rem; } }
   .events__body h5 {
-    width: 60%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1.5rem;
     line-height: 1.4;
     text-align: center;
+    font-size: 1rem;
     color: #666; }
+    @media screen and (min-width: 48rem) {
+      .events__body h5 {
+        width: 60%;
+        font-size: 1.5rem; } }
 .events__container {
   position: relative;
   z-index: 1;
@@ -3359,22 +3383,40 @@ footer .icon-aoa-with-tagline {
 
 .owl-nav {
   position: absolute;
-  top: 30%;
-  width: 100%; }
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%); }
+  #fsCarousel .owl-nav {
+    top: 30%;
+    -webkit-transform: none;
+            transform: none; }
 
 .owl-prev {
   float: left;
   left: -1rem; }
   @media screen and (min-width: 30rem) {
     .owl-prev {
-      left: -2.3rem; } }
+      left: -2.25rem; } }
+  @media screen and (min-width: 65rem) {
+    .owl-prev {
+      left: -1.5rem; } }
+  @media screen and (min-width: 67.75rem) {
+    .owl-prev {
+      left: -2.25rem; } }
 
 .owl-next {
   float: right;
-  right: -1.733333rem; }
+  right: -1rem; }
   @media screen and (min-width: 30rem) {
     .owl-next {
-      right: -3rem; } }
+      right: -2.25rem; } }
+  @media screen and (min-width: 65rem) {
+    .owl-next {
+      right: -1.5rem; } }
+  @media screen and (min-width: 67.75rem) {
+    .owl-next {
+      right: -2.25rem; } }
 
 .owl-theme .owl-nav .disabled {
   opacity: 1 !important; }
@@ -3382,9 +3424,20 @@ footer .icon-aoa-with-tagline {
 .owl-carousel .owl-stage-outer {
   /*overflow: visible;*/ }
 
-.owl-dots {
+.owl-dot {
+  /*#eventsCarousel &.active span {*/
+  /*@extend %background-color-for-audience;*/
+  /*}*/ }
+  #fsCarousel .owl-dot:not(.active) span, #eventsCarousel .owl-dot:not(.active) span {
+    opacity: .3; }
+
+#fsCarousel .owl-dots {
   -webkit-transform: translateY(-5rem);
           transform: translateY(-5rem); }
+
+#fsCarousel .owl-nav [class*='owl-'], #eventsCarousel .owl-nav [class*='owl-'] {
+  margin: 0;
+  padding: 0; }
 
 .pageblock, .pageblock--xs, .pageblock--sm, .pageblock--lg, .pageblock--xl {
   margin-bottom: 3rem; }

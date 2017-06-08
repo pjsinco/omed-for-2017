@@ -112,3 +112,8 @@
 .icon-bubble {
   @include icon-block-icon;
 }
+
+.icon-chevron-left,
+.icon-chevron-right {
+  @extend %fill-for-audience;
+}
