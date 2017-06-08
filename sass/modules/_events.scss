@@ -11,10 +11,10 @@
   }
 
   &__body {
-    position: absolute;
-    top: 3rem;
-    left: 0;
-    right: 0;
+    /*position: absolute;*/
+    /*top: 3rem;*/
+    /*left: 0;*/
+    /*right: 0;*/
     line-height: 1.2;
     color: white;
 
@@ -45,13 +45,34 @@
     z-index: 1;
     width: 100%;
     left: -1px;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    &:before {
+      background-image: linear-gradient(to bottom,#fff,rgba(255,255,255,.6));
+      z-index: -1;
+    }
+
+    &:after {
+      background-image: url(/wp-content/themes/omed-for-2017/public/images/saturyday-303.jpg);
+      background-size: cover;
+      z-index: -2;
+    }
   }
 
 
   &__imagecontainer {
-    height: 870px; // TODO temp
+    /*height: 870px; // TODO temp*/
     /*background-image: linear-gradient(to bottom, black, transparent);*/
-    overflow: hidden;
+    /*overflow: hidden;*/
   }
 
 }
