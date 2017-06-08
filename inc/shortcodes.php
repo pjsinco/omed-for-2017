@@ -127,14 +127,24 @@ function omed_faq_search_shortcode( ) {
 }
 add_shortcode('faq-search', 'omed_faq_search_shortcode' );
 
-function omed_event_shortcode( $atts, $content = null ) {
+function omed_event_format_date( $date ) {
 
+  $new_date = DateTime::createFromFormat('Ymd', $date);
+  return date_format($new_date, 'F j');
+  
+}
+
+function omed_event_shortcode( $atts, $content = null ) {
   
   $a = shortcode_atts( array( 'id' => ''), $atts );
 
   $event_fields = get_fields( $a['id'] );
 
-  if ( ! $event_fields ) return;
+  if ( ! $event_fields || ! $event_fields['omed_event_modal'] ) return;
+
+  $event_modal = $event_fields['omed_event_modal'];
+
+  $modal = get_fields( $event_modal->ID );
 
   $output  = '<li class="event__item">';
   $output .= '  <div class="event__imagecontainer">';
@@ -143,7 +153,15 @@ function omed_event_shortcode( $atts, $content = null ) {
   $output .= '  <div class="event__body">';
   $output .= '    <h4>' . $event_fields['omed_event_title'] . '</h4>';
   $output .= '    <p>' . $event_fields['omed_event_blurb'] . '</p>';
-  $output .= '    <p><button class="btn btn--audience">Learn more</button></p>';
+  $output .= '    <p><button class="btn btn--audience" ';
+  $output .= '               data-omed-modal-title="' . $modal['omed_modal_title'] . '"';
+  $output .= '               data-omed-modal-blurb="' . $modal['omed_modal_blurb'] . '"';
+  $output .= '               data-omed-modal-date="' . omed_event_format_date( $modal['omed_modal_date'] ) . '"';
+  $output .= '               data-omed-modal-time="' . $modal['omed_modal_time'] . '"';
+  if ( $link = $modal['omed_modal_link'] ) {
+    $output .= '               data-omed-modal-link="' . $link . '"';
+  }
+  $output .= '       >Learn more</button></p>';
   $output .= '  </div>';
   $output .= '</li>';
 

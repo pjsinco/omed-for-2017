@@ -8,21 +8,20 @@ jQuery(document).ready(($) => {
 
   vex.defaultOptions.className = 'vex-theme-omed';
 
-  $('.btn--audience').on('click', () => {
+  $('.btn--audience').on('click', (evt) => {
 
-    //vex.dialog.alert('hiyafromvextdialogalert');
-
+    const dataset = evt.target.dataset; 
+console.dir(dataset);
+    
     vex.dialog.buttons.YES.text = 'Done';
 
     vex.dialog.alert({
-      unsafeMessage: `<div class="foo">
-                        <h1>Hello from H1</h1>
-                        <h5>Hello from down here in H5</h5>
-                        <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Nulla vitae elit libero, a pharetra augue.</p>
-                        <p><a href="https://www.google.com" class="btn btn--audience">Learn more</a></p>
+      unsafeMessage: `<div class="omed-modal">
+                        <h3>${dataset.omedModalTitle}</h3>
+                        ${dataset.omedModalBlurb}
+                        ${dataset.omedModalLink ? '<p><a href=' + dataset.omedModalLink + ' class="btn btn--audience" target="_blank">More details</a></p>' : ''}
                       </div>`
     });
-
   });
 
   /**
