@@ -2176,10 +2176,9 @@ table th[class*="col-"] {
     line-height: 1.4;
     letter-spacing: -.25px; }
 .event__item {
-  margin: 0;
-  padding: 0;
+  /*margin: 0;*/
+  /*padding: 0;*/
   border: 0;
-  background-color: white;
   background-color: white;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); }
 .event__items {

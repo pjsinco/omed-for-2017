@@ -682,7 +682,7 @@ function add_owl_carousel_script() {
   //}
 ?>
   <script>
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function($) {
 
       //jQuery('#fsCarousel').owlCarousel({
         //'items': 3,
@@ -690,7 +690,7 @@ function add_owl_carousel_script() {
       //});
 
       //jQuery('#qlCarousel').owlCarousel({
-      jQuery('#fsCarousel').owlCarousel({
+      $('#fsCarousel, #eventsCarousel').owlCarousel({
         items: 3,
         responsive: {
           0: {
@@ -704,14 +704,15 @@ function add_owl_carousel_script() {
           },
         },
         slideBy: 'page',
-        nav: false,
-        //navText: [
-          //'<svg class="icon icon-chevron-left" preserveAspectRatio="xMidYMid meet" width="50" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use></svg>',
-          //'<svg class="icon icon-chevron-right" preserveAspectRatio="xMidYMid meet" width="50" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use></svg>',
-        //],
+        nav: true,
+        navText: [
+          '<svg class="icon icon-chevron-left" preserveAspectRatio="xMidYMid meet" width="50" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use></svg>',
+          '<svg class="icon icon-chevron-right" preserveAspectRatio="xMidYMid meet" width="50" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use></svg>',
+        ],
         itemElement: 'li',
         stageElement: 'ul'
       });
+
     });
   </script>
 
