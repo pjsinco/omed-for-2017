@@ -18,8 +18,14 @@
 
 .owl-nav {
   position: absolute;
-  top: 30%;
+  top: 50%;
   width: 100%;
+  transform: translateY(-50%);
+
+  #fsCarousel & {
+    top: 30%;
+    transform: none;
+  }
 }
 
 .owl-prev {
@@ -28,19 +34,34 @@
   left: -1rem;
 
   @include breakpoint($screen $medium-start) {
-    left: -2.3rem;
+    left: -2.25rem;
+  }
+
+  @include breakpoint($screen $contentwidth + 2rem) {
+    left: -1.5rem;
+  }
+
+  @include breakpoint($screen $xlarge-start) {
+    left: -2.25rem;
   }
 }
 
 .owl-next {
   @extend %owl-nav-base;
   float: right;
-  right: -1.733333rem;
+  right: -1rem;
 
   @include breakpoint($screen $medium-start) {
-    right: -3rem;
+    right: -2.25rem;
   }
 
+  @include breakpoint($screen $contentwidth + 2rem) {
+    right: -1.5rem;
+  }
+
+  @include breakpoint($screen $xlarge-start) {
+    right: -2.25rem;
+  }
 }
 
 .owl-theme .owl-nav .disabled {
@@ -51,6 +72,37 @@
   /*overflow: visible;*/
 }
 
-.owl-dots {
-  transform: translateY(-5rem);
+.owl-dot {
+  
+  
+  #fsCarousel & span,
+  #eventsCarousel & span {
+    @extend %background-color-for-audience;
+  }
+
+  #fsCarousel &:not(.active) span,
+  #eventsCarousel &:not(.active) span {
+    opacity: .3;
+  }
+
+  /*#eventsCarousel &.active span {*/
+    /*@extend %background-color-for-audience;*/
+  /*}*/
+
 }
+
+.owl-dots {
+
+  #fsCarousel & {
+    transform: translateY(-5rem);
+  }
+}
+
+.owl-nav [class*='owl-'] {
+  #fsCarousel &,
+  #eventsCarousel & {
+    margin: 0;
+    padding: 0;
+  }
+}
+

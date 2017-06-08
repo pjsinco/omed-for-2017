@@ -706,8 +706,8 @@ function add_owl_carousel_script() {
         slideBy: 'page',
         nav: true,
         navText: [
-          '<svg class="icon icon-chevron-left" preserveAspectRatio="xMidYMid meet" width="50" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use></svg>',
-          '<svg class="icon icon-chevron-right" preserveAspectRatio="xMidYMid meet" width="50" height="50"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use></svg>',
+          '<svg class="icon icon-chevron-left" preserveAspectRatio="xMidYMid meet" width="40" height="40"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use></svg>',
+          '<svg class="icon icon-chevron-right" preserveAspectRatio="xMidYMid meet" width="40" height="40"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use></svg>',
         ],
         itemElement: 'li',
         stageElement: 'ul'

@@ -227,6 +227,9 @@
 }
 
 %background-color-for-audience {
+  & {
+    background-color: $primarycolor;
+  }
 
   .page-physicians & {
     background-color: $physicianscolor;
@@ -243,6 +246,9 @@
 }
 
 %color-for-audience {
+  & {
+    color: $primarycolor;
+  }
 
   .page-physicians & {
     color: $physicianscolor;
@@ -258,6 +264,9 @@
 }
 
 %fill-for-audience {
+  & {
+    fill: $primarycolor;
+  }
 
   .page-physicians & {
     fill: $physicianscolor;
@@ -274,6 +283,10 @@
 
 %border-color-for-audience {
 
+  & {
+    border-color: $primarycolor;
+  }
+
   .page-physicians & {
     border-color: $physicianscolor;
   }
@@ -285,5 +298,4 @@
   .page-students & {
     border-color: $studentscolor;
   }
-
 }

@@ -15,28 +15,46 @@
     /*top: 3rem;*/
     /*left: 0;*/
     /*right: 0;*/
+    margin-bottom: 2rem;
     line-height: 1.2;
     color: white;
 
     & h3 {
       width: 100%;
       margin-bottom: 1rem;
-      font-size: 54px;
+      font-size: 2rem;
       line-height: 1.2;
       font-family: $font-bold;
       letter-spacing: -1px;
       text-align: center;
       @extend %color-for-audience;
+
+      
+      @include breakpoint($screen $large-start) {
+        font-size: 3rem;
+      }
+
+
+
+      @include breakpoint($screen $xlarge-start) {
+        
+        font-size: 3.375rem;
+      }
     }
 
     & h5 {
-      width: 60%;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
-      font-size: 1.5rem;
       line-height: 1.4;
       text-align: center;
+      font-size: 1rem;
       color: #666;
+
+      @include breakpoint($screen $large-start) {
+        width: 60%;
+        font-size: 1.5rem;
+      }
     }
   }
 
