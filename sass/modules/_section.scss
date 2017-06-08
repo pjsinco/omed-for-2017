@@ -1,19 +1,14 @@
 .section {
 
   &__header {
+    @extend %page-header;
     position: relative;
     margin-bottom: 3rem;
-    font-family: $font-book;
-    font-size: 1.25rem;
     text-align: center;
     color: $primarycolor;
 
     @extend %color-for-audience;
     
-    @include breakpoint($screen $large-start) {
-      font-size: 2rem;
-    }
-
     &:after {
       content: '';
       position: absolute;
