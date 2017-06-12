@@ -237,7 +237,7 @@ function omed_parallax_window_shortcode( $atts, $content = null ) {
   return $output;
 }
 
-add_shortcode( 'parallax-window', 'omed_parallax_window_shortcode' );
+add_shortcode( 'big-window', 'omed_parallax_window_shortcode' );
 
 function omed_highlightable_shortcode( $atts, $content = null ) {
 
