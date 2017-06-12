@@ -238,3 +238,38 @@ function omed_parallax_window_shortcode( $atts, $content = null ) {
 }
 
 add_shortcode( 'parallax-window', 'omed_parallax_window_shortcode' );
+
+function omed_highlightable_shortcode( $atts, $content = null ) {
+
+  $a = shortcode_atts(
+    array(
+      'id' => ''
+    ), $atts
+  );
+
+  if ( ! $a['id'] ) return;
+
+  $fields = get_fields( $a['id'] );
+
+  if ( ! $fields ) return;
+
+  $button_text = $fields['omed_highlightable_button_text'] ? $fields['omed_highlightable_button_text'] : 'Learn more';
+
+  $output  = '<section class="highlightable container-fluid pageblock">';
+  $output .= '  <div class="highlightable__block wrap">';
+  $output .= '    <div class="highlightable__body">';
+  $output .= '      <div class="highlightable__imagecontainer">';
+  $output .= '        <img class="highlightable__image" src="' . $fields['omed_highlightable_image']['url'] . '" alt="' . $fields['omed_highlightable_image']['alt'] . '">';
+  $output .= '      </div>';
+  $output .= '      <div class="highlightable__text">';
+  $output .= '        <h5 class="highlightable__header">' . $fields['omed_highlightable_header'] . '</h5>';
+  $output .= '        <h4 class="highlightable__blurb">' . $fields['omed_highlightable_blurb'] . '</h4>';
+  $output .= '        <p><a href="' . $fields['omed_highlightable_link'] . '" class="highlightable__button btn btn--sm btn--reverse">' . $button_text . '</a></p>';
+  $output .= '      </div>';
+  $output .= '    </div>';
+  $output .= '  </div>';
+  $output .= '</section>';
+
+  return $output;
+}
+add_shortcode( 'highlightable', 'omed_highlightable_shortcode' );
