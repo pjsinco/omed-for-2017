@@ -170,6 +170,42 @@ function omed_event_shortcode( $atts, $content = null ) {
 }
 add_shortcode('event', 'omed_event_shortcode' );
 
+function omed_events_shortcode( $atts, $content = null ) {
+
+  $a = shortcode_atts(
+    array(
+      'image-id' => '',
+      'header' => '',
+      'blurb' => '',
+      'ids' => ''
+    ), $atts
+  );
+
+  if ( ! $a['image-id'] || ! $a['ids'] ) return;
+
+  $ids = array_map('trim', explode(',', $a['ids']));
+
+  $output  = '<div class="events__container">';
+  $output .= '  <div class="events__body wrap container-fluid">';
+  $output .= '    <h3>🎉 Cras mattis consectetur purus sit amet fermentum</h3>';
+  $output .= '    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta.</h5>';
+  $output .= '  </div>';
+  $output .= '  <div class="event__itemscontainer container-fluid">';
+  $output .= '    <ul class="event__items wrap owl-carousel owl-theme" id="eventsCarousel">';
+
+  foreach ( $ids as $id ) {
+    $shortcode = sprintf( '[event id="%s"]', $id );
+    $output .= do_shortcode( $shortcode );
+  }
+
+  $output .= '    </ul>';
+  $output .= '  </div>';
+  $output .= '</div>';
+
+  return $output;
+}
+add_shortcode('events', 'omed_events_shortcode' );
+
 function omed_parallax_window_shortcode( $atts, $content = null ) {
 
   $a = shortcode_atts(
