@@ -371,17 +371,17 @@ body.vex-open {
  * https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_buttons.scss 
  *
  */
-.events__body h3, .section__header {
+.events__body h3, .section__header, .window__body h2 {
   font-size: 2rem;
   letter-spacing: -1px;
   font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.2;
   text-shadow: 2px 2px 1px rgba(92, 65, 154, 0.15); }
   @media screen and (min-width: 48rem) {
-    .events__body h3, .section__header {
+    .events__body h3, .section__header, .window__body h2 {
       font-size: 3rem; } }
   @media screen and (min-width: 67.75rem) {
-    .events__body h3, .section__header {
+    .events__body h3, .section__header, .window__body h2 {
       font-size: 3.375rem; } }
 
 .event__item, .fs__item {
@@ -2479,7 +2479,7 @@ table th[class*="col-"] {
   -webkit-transform: rotate(26deg);
           transform: rotate(26deg); }
 
-.fs__illos--0, .fs__illos--1 {
+.fs__illos--0, .fs__illos--1, .fs__illos--2 {
   position: absolute;
   height: auto; }
 
@@ -2497,9 +2497,13 @@ table th[class*="col-"] {
     left: 0;
     width: 22.1875vw; }
   .fs__illos--1 {
-    top: 0;
-    right: 0;
-    width: 22.1875vw; }
+    top: 3rem;
+    right: 3%;
+    width: 12.1875vw; }
+  .fs__illos--2 {
+    top: 80vh;
+    left: -5%;
+    width: 10vw; }
 .fs__block {
   position: relative;
   /*background-image: url(public/images/dot-pattern-2.png);*/ }
@@ -4192,3 +4196,35 @@ nav.secondary-nav {
   margin-bottom: .5rem; }
 .video__caption {
   color: #717271; }
+
+.window {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 9rem; }
+  .window, .page-physicians .window {
+    background-image: -webkit-linear-gradient(bottom, #d53847 0%, rgba(213, 56, 71, 0.738) 19%, rgba(213, 56, 71, 0.541) 34%, rgba(213, 56, 71, 0.382) 47%, rgba(213, 56, 71, 0.278) 56.5%, rgba(213, 56, 71, 0.194) 65%, rgba(213, 56, 71, 0.126) 73%, rgba(213, 56, 71, 0.075) 80.2%, rgba(213, 56, 71, 0.042) 86.1%, rgba(213, 56, 71, 0.021) 91%, rgba(213, 56, 71, 0.008) 95.2%, rgba(213, 56, 71, 0.002) 98.2%, rgba(213, 56, 71, 0) 100%);
+    background-image: linear-gradient(to top, #d53847 0%, rgba(213, 56, 71, 0.738) 19%, rgba(213, 56, 71, 0.541) 34%, rgba(213, 56, 71, 0.382) 47%, rgba(213, 56, 71, 0.278) 56.5%, rgba(213, 56, 71, 0.194) 65%, rgba(213, 56, 71, 0.126) 73%, rgba(213, 56, 71, 0.075) 80.2%, rgba(213, 56, 71, 0.042) 86.1%, rgba(213, 56, 71, 0.021) 91%, rgba(213, 56, 71, 0.008) 95.2%, rgba(213, 56, 71, 0.002) 98.2%, rgba(213, 56, 71, 0) 100%); }
+  .page-residents .window {
+    background-image: -webkit-linear-gradient(bottom, #5c419a 0%, rgba(92, 65, 154, 0.738) 19%, rgba(92, 65, 154, 0.541) 34%, rgba(92, 65, 154, 0.382) 47%, rgba(92, 65, 154, 0.278) 56.5%, rgba(92, 65, 154, 0.194) 65%, rgba(92, 65, 154, 0.126) 73%, rgba(92, 65, 154, 0.075) 80.2%, rgba(92, 65, 154, 0.042) 86.1%, rgba(92, 65, 154, 0.021) 91%, rgba(92, 65, 154, 0.008) 95.2%, rgba(92, 65, 154, 0.002) 98.2%, rgba(92, 65, 154, 0) 100%);
+    background-image: linear-gradient(to top, #5c419a 0%, rgba(92, 65, 154, 0.738) 19%, rgba(92, 65, 154, 0.541) 34%, rgba(92, 65, 154, 0.382) 47%, rgba(92, 65, 154, 0.278) 56.5%, rgba(92, 65, 154, 0.194) 65%, rgba(92, 65, 154, 0.126) 73%, rgba(92, 65, 154, 0.075) 80.2%, rgba(92, 65, 154, 0.042) 86.1%, rgba(92, 65, 154, 0.021) 91%, rgba(92, 65, 154, 0.008) 95.2%, rgba(92, 65, 154, 0.002) 98.2%, rgba(92, 65, 154, 0) 100%); }
+  .page-students .window {
+    background-image: -webkit-linear-gradient(bottom, #3d5ba9 0%, rgba(61, 91, 169, 0.738) 19%, rgba(61, 91, 169, 0.541) 34%, rgba(61, 91, 169, 0.382) 47%, rgba(61, 91, 169, 0.278) 56.5%, rgba(61, 91, 169, 0.194) 65%, rgba(61, 91, 169, 0.126) 73%, rgba(61, 91, 169, 0.075) 80.2%, rgba(61, 91, 169, 0.042) 86.1%, rgba(61, 91, 169, 0.021) 91%, rgba(61, 91, 169, 0.008) 95.2%, rgba(61, 91, 169, 0.002) 98.2%, rgba(61, 91, 169, 0) 100%);
+    background-image: linear-gradient(to top, #3d5ba9 0%, rgba(61, 91, 169, 0.738) 19%, rgba(61, 91, 169, 0.541) 34%, rgba(61, 91, 169, 0.382) 47%, rgba(61, 91, 169, 0.278) 56.5%, rgba(61, 91, 169, 0.194) 65%, rgba(61, 91, 169, 0.126) 73%, rgba(61, 91, 169, 0.075) 80.2%, rgba(61, 91, 169, 0.042) 86.1%, rgba(61, 91, 169, 0.021) 91%, rgba(61, 91, 169, 0.008) 95.2%, rgba(61, 91, 169, 0.002) 98.2%, rgba(61, 91, 169, 0) 100%); }
+  .window__body {
+    position: relative;
+    left: 0;
+    padding: 2rem; }
+    .window__body h2 {
+      color: white;
+      margin-bottom: 1rem; }
+    .window__body p, .window__body li, .window__body .chart__subhead {
+      color: #fff;
+      font-size: 19px;
+      width: 78%; }
+  .window__cta {
+    color: #fff;
+    font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .window__container {
+    overflow: hidden; }

@@ -169,3 +169,36 @@ function omed_event_shortcode( $atts, $content = null ) {
 
 }
 add_shortcode('event', 'omed_event_shortcode' );
+
+function omed_parallax_window_shortcode( $atts, $content = null ) {
+
+  $a = shortcode_atts(
+    array(
+      'header' => '',
+      'blurb' => '',
+      'action-text' => '',
+      'action-link' => '',
+      'image-id' => '',
+    ),
+    $atts 
+  );
+
+  if ( ! $a['image-id'] ) return;
+
+  $image = wp_get_attachment_url($a['image-id']);
+
+  if ( ! $image ) return;
+
+  $output  = '<div class="window__container pageblock parallax-window relative container-fluid" data-parallax="scroll" data-image-src="' . $image . '">';
+  $output .= '  <div class="window">';
+  $output .= '    <div class="window__body wrap">';
+  $output .= '      <h2>' . $a['header'] . '</h2>';
+  $output .= '      <p>' . $a['blurb'] . ' <a href="' . $a['action-link'] . '" class="window__cta">' . $a['action-text'] . ' »</a></p>';
+  $output .= '    </div>';
+  $output .= '  </div>';
+  $output .= '</div>';
+
+  return $output;
+}
+
+add_shortcode( 'parallax-window', 'omed_parallax_window_shortcode' );

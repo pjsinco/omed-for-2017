@@ -26,9 +26,16 @@ $fsbreak: $large-start;
     
     &--1 {
       @extend %illos-base;
-      top: 0;
-      right: 0;
-      width: 22.1875vw;
+      top: 3rem;
+      right: 3%;
+      width: 12.1875vw;
+    }
+
+    &--2 {
+      @extend %illos-base;
+      top: 80vh;
+      left: -5%;
+      width: 10vw;
     }
   }
 

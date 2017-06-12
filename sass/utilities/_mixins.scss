@@ -111,3 +111,19 @@
     background-color: darken($color, 8%); 
   }
 }
+
+@mixin scrim($color) {
+  background-image: linear-gradient(to top, hsla(hue($color), saturation($color), lightness($color), 1) 0%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0.738) 19%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0.541) 34%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0.382) 47%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0.278) 56.5%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0.194) 65%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0.126) 73%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0.075) 80.2%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0.042) 86.1%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0.021) 91%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0.008) 95.2%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0.002) 98.2%,
+                                            hsla(hue($color), saturation($color), lightness($color), 0) 100% );
+}
