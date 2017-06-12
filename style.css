@@ -2769,8 +2769,8 @@ table th[class*="col-"] {
       width: 32%; } }
   @media screen and (min-width: 56rem) {
     .highlightable__text {
-      -webkit-transform: translateY(-9%);
-              transform: translateY(-9%); } }
+      -webkit-transform: translateY(-8%);
+              transform: translateY(-8%); } }
 
 .highlightable__header {
   margin-bottom: 1.125rem;

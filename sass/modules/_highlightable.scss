@@ -109,7 +109,7 @@ $hflip2: $large-minor-start;
   }
 
   @include breakpoint($screen $hflip2) {
-    transform: translateY(-9%);
+    transform: translateY(-8%);
   }
 }
 
