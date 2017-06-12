@@ -153,15 +153,34 @@ function omed_event_shortcode( $atts, $content = null ) {
   $output .= '  <div class="event__body">';
   $output .= '    <h4>' . $event_fields['omed_event_title'] . '</h4>';
   $output .= '    <p>' . $event_fields['omed_event_blurb'] . '</p>';
-  $output .= '    <p><button class="btn btn--audience" ';
-  $output .= '               data-omed-modal-title="' . $modal['omed_modal_title'] . '"';
-  $output .= '               data-omed-modal-blurb="' . $modal['omed_modal_blurb'] . '"';
-  $output .= '               data-omed-modal-date="' . omed_event_format_date( $modal['omed_modal_date'] ) . '"';
-  $output .= '               data-omed-modal-time="' . $modal['omed_modal_time'] . '"';
+  $output .= '    <p><button class="btn btn--audience modal-button" ';
+
+  if ( $header = $modal['omed_modal_header'] ) {
+    $output .= '               data-omed-modal-header="' . $header . '"';
+  }
+
+  if ( $blurb = $modal['omed_modal_blurb'] ) {
+    $output .= '               data-omed-modal-blurb="' . $blurb . '"';
+  }
+
+  if ( $date = $modal['omed_modal_date'] ) {
+    $output .= '               data-omed-modal-date="' . omed_event_format_date( $date ) . '"';
+  }
+
+  if ( $time = $modal['omed_modal_time'] ) {
+    $output .= '               data-omed-modal-time="' . $time . '"';
+  }
+
+  if ( $location = $modal['omed_modal_location'] ) {
+    $output .= '               data-omed-modal-location="' . $location . '"';
+  }
+
   if ( $link = $modal['omed_modal_link'] ) {
     $output .= '               data-omed-modal-link="' . $link . '"';
   }
-  $output .= '       >Learn more</button></p>';
+
+  $output .= '>Learn more</button>';
+  $output .= '    </p>';
   $output .= '  </div>';
   $output .= '</li>';
 

@@ -9,16 +9,47 @@ jQuery(document).ready(function ($) {
 
   vex.defaultOptions.className = 'vex-theme-omed';
 
-  $('.btn--audience').on('click', function (evt) {
+  $('.modal-button').on('click', function (evt) {
+
+    evt.preventDefault();
 
     var dataset = evt.target.dataset;
-    console.dir(dataset);
 
     vex.dialog.buttons.YES.text = 'Done';
 
     vex.dialog.alert({
-      unsafeMessage: '<div class="omed-modal">\n                        <h3>' + dataset.omedModalTitle + '</h3>\n                        ' + dataset.omedModalBlurb + '\n                        ' + (dataset.omedModalLink ? '<p><a href=' + dataset.omedModalLink + ' class="btn btn--audience" target="_blank">More details</a></p>' : '') + '\n                      </div>'
+      appendLocation: '.event__items',
+      unsafeMessage: '<div class="omed-modal">\n                        <h3>' + dataset.omedModalHeader + '</h3>\n                        <div class="omed-modal__deets">\n                          <h5><span>When: </span> ' + (dataset.omedModalDate || '') + (dataset.omedModalTime ? ', ' + dataset.omedModalTime : '') + '</h5>\n                          ' + (dataset.omedModalLocation ? '<h5><span>Where: </span>' + dataset.omedModalLocation + '</h5>' : '') + '\n                        </div>\n                        ' + (dataset.omedModalBlurb || '') + '\n                        ' + (dataset.omedModalLink ? '<p><a href=' + dataset.omedModalLink + ' class="btn btn--audience" target="_blank">More details</a></p>' : '') + '\n                      </div>',
+      afterOpen: function afterOpen(vex) {}
     });
+
+    var content = document.querySelector('.vex-content');
+
+    content.addEventListener('transitionend', function (evt) {
+
+      console.log('donetransitioning');
+    });
+
+    // Only reposition modal on small screens
+    var minScreenSize = 480;
+    if ($(window).width() >= minScreenSize) return;
+    console.log($(window).width());
+    var navHeight = $(window).width() > 980 ? 70 : 50; // 50px
+    var scrollTop = $(window).scrollTop();
+    var topOfLiveArea = scrollTop + navHeight;
+
+    console.dir(content);
+    console.log('scrollTop: ' + scrollTop);
+    console.log('topOfLiveArea: ' + topOfLiveArea);
+
+    //$('.vex-content').offset({ top: topOfLiveArea - 40, left: 0 }); // TODO why 40?
+    $('.vex-content').offset(function (i, coords) {
+      return {
+        top: $(window).scrollTop() + navHeight - 40,
+        left: coords.left
+      };
+    }); // TODO why 40?
+
   });
 
   /**

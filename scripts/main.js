@@ -8,20 +8,58 @@ jQuery(document).ready(($) => {
 
   vex.defaultOptions.className = 'vex-theme-omed';
 
-  $('.btn--audience').on('click', (evt) => {
+  $('.modal-button').on('click', (evt) => {
+
+    evt.preventDefault();
 
     const dataset = evt.target.dataset; 
-console.dir(dataset);
     
     vex.dialog.buttons.YES.text = 'Done';
 
     vex.dialog.alert({
+      appendLocation: '.event__items',
       unsafeMessage: `<div class="omed-modal">
-                        <h3>${dataset.omedModalTitle}</h3>
-                        ${dataset.omedModalBlurb}
+                        <h3>${dataset.omedModalHeader}</h3>
+                        <div class="omed-modal__deets">
+                          <h5><span>When: </span> ${dataset.omedModalDate || ''}${ dataset.omedModalTime ? ', ' + dataset.omedModalTime : ''}</h5>
+                          ${dataset.omedModalLocation ? '<h5><span>Where: </span>' + dataset.omedModalLocation + '</h5>': ''}
+                        </div>
+                        ${dataset.omedModalBlurb || ''}
                         ${dataset.omedModalLink ? '<p><a href=' + dataset.omedModalLink + ' class="btn btn--audience" target="_blank">More details</a></p>' : ''}
-                      </div>`
+                      </div>`,
+      afterOpen: function(vex) {
+
+      }
     });
+
+    const content = document.querySelector('.vex-content');
+    
+    content.addEventListener('transitionend', function(evt) {
+
+console.log('donetransitioning');
+    });
+
+    // Only reposition modal on small screens
+    const minScreenSize = 480;
+    if ($(window).width() >= minScreenSize) return;
+console.log($(window).width());
+    const navHeight = ($(window).width() > 980) ? 70 : 50; // 50px
+    const scrollTop = $(window).scrollTop();
+    const topOfLiveArea = scrollTop + navHeight;
+
+console.dir(content);
+console.log('scrollTop: ' + scrollTop);
+console.log('topOfLiveArea: ' + topOfLiveArea);
+
+    //$('.vex-content').offset({ top: topOfLiveArea - 40, left: 0 }); // TODO why 40?
+    $('.vex-content').offset(function(i, coords) {
+      return {
+        top: $(window).scrollTop() + navHeight - 40,
+        left: coords.left,
+      };
+    }); // TODO why 40?
+
+    
   });
 
   /**
