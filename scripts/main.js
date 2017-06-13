@@ -8,20 +8,38 @@ jQuery(document).ready(($) => {
 
   vex.defaultOptions.className = 'vex-theme-omed';
 
-  $('.btn--audience').on('click', (evt) => {
+  $('.modal-button').on('click', (evt) => {
+
+    evt.preventDefault();
 
     const dataset = evt.target.dataset; 
-console.dir(dataset);
     
     vex.dialog.buttons.YES.text = 'Done';
 
     vex.dialog.alert({
+      appendLocation: '.event__items',
       unsafeMessage: `<div class="omed-modal">
-                        <h3>${dataset.omedModalTitle}</h3>
-                        ${dataset.omedModalBlurb}
+                        <h3>${dataset.omedModalHeader}</h3>
+                        <div class="omed-modal__deets">
+                          <h5><span>When: </span> ${dataset.omedModalDate || ''}${ dataset.omedModalTime ? ', ' + dataset.omedModalTime : ''}</h5>
+                          ${dataset.omedModalLocation ? '<h5><span>Where: </span>' + dataset.omedModalLocation + '</h5>': ''}
+                        </div>
+                        ${dataset.omedModalBlurb || ''}
                         ${dataset.omedModalLink ? '<p><a href=' + dataset.omedModalLink + ' class="btn btn--audience" target="_blank">More details</a></p>' : ''}
-                      </div>`
+                      </div>`,
     });
+
+    // Reposition modal on small screens
+    const minScreenSize = 480;
+
+    if ($(window).width() >= minScreenSize) return;
+
+    $('.vex-content').offset(function(i, coords) {
+      return {
+        top: $(window).scrollTop(),
+        left: coords.left,
+      };
+    }); 
   });
 
   /**
