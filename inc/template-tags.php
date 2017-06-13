@@ -90,3 +90,42 @@ function omed2016_category_transient_flusher() {
 }
 add_action( 'edit_category', 'omed2016_category_transient_flusher' );
 add_action( 'save_post',     'omed2016_category_transient_flusher' );
+
+/**
+ * Change a hyphen to an underscore in the keys to an array.
+ *
+ * @param array $atts The shortcode attributes
+ * @return array $atts The shortcode attributes with replaced keys
+ */
+function omed_format_atts( $atts ) {
+  
+  return array_combine(
+    array_map( function( $key ) use ( $atts ) { 
+      return str_replace( '-', '_', $key );
+    }, array_keys( $atts ) ), 
+    array_values( $atts )
+  );
+}
+
+
+/**
+ * Generate a data attributes for a modal button.
+ *
+ * @param  object $modal An object returned from ACF's get_fields()
+ * @return string ex. 'data-omed-modal-header="Foo" data-omed-modal-date="2017-06-11" '
+ */
+function omed_modal_button_attributes( $modal ) {
+
+  $output  = '';
+
+  foreach ( $modal as $key => $value ) {
+
+    if ( empty( $value ) ) continue;
+
+    $output .= sprintf( 'data-%s="%s "', 
+                        str_replace( '_', '-', $key ),
+                        $value );
+  }
+
+  return $output;
+}
