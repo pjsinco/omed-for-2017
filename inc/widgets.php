@@ -46,19 +46,38 @@ class Omed2016_Featured_Sessions_Block extends WP_Widget {
 
       foreach ( $sessions as $session ):
         setup_postdata( $session );
+        $fields = get_fields( $session->ID );
+
+        if ( ! $fields ) return;
     ?>        
       <div class="fs__itemcontainer">
        <div class="fs__imagecontainer">
-         <img class="fs__image" src="<?php echo get_field( 'session_speaker_photo_url', $session->ID ); ?>">
+         <img class="fs__image" src="<?php echo $fields['session_speaker_photo_url']; ?>">
        </div>
        <div class="fs__item">
-         <h5 class="fs__name"><?php echo get_field( 'session_speaker_name', $session->ID ); ?></h5>
-         <h6 class="fs__kicker"><?php echo get_field( 'session_sponsor', $session->ID ); ?></h6>
-         <h3 class="fs__header"><?php echo get_field( 'session_title', $session->ID ) ?></h3>
-         <div class="fs__header--minor"><?php echo get_field( 'session_date_and_time', $session->ID ); ?></div>
+         <h5 class="fs__name"><?php echo $fields['session_speaker_name']; ?></h5>
+         <h6 class="fs__kicker"><?php echo $fields['session_sponsor']; ?></h6>
+         <h3 class="fs__header"><?php echo $fields['session_title'] ?></h3>
+         <div class="fs__header--minor"><?php echo $fields['session_date_and_time']; ?></div>
+    <?php
+      if ( $fields['session_more_info_type'] == 'link' ):
+    ?>        
          <a href="<?php echo get_field( 'session_more_info_link', $session->ID ); ?>" class="btn btn--audience btn--sm" <?php echo ( get_field( 'session_open_link_in_new_window', $session->ID ) ? 'target="_blank"' : '' ); ?>>Learn More</a>
+    <?php
+      else:
+        $modal = get_fields( $fields['session_modal']->ID );
+        if ( ! $modal ) return;
+        $data_attrs = omed_modal_button_attributes( $modal );
+        
+        echo '<button class="btn btn--audience btn--sm modal-button" ' . $data_attrs . '>';
+        echo 'Learn more</button>';
+    ?>
+    <?php
+      endif;
+    ?>
        </div> <!-- .fs__item -->
      </div> <!-- .fs__itemcontainer -->
+
     <?php
       endforeach;
 
