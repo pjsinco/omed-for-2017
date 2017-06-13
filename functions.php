@@ -143,24 +143,6 @@ function omed_scripts() {
     true
   );
 
-  /**
-   * Vex.js
-   *
-   */
-//  wp_register_style(
-//    'vex-style',
-//    get_template_directory_uri() . '/public/styles/vendor/vex.css' ,
-//    array(),
-//    false
-//  );
-//
-//  wp_register_style(
-//    'vex-theme-style',
-//    get_template_directory_uri() . '/public/styles/vendor/vex-theme-default.css',
-//    array( 'vex-style' ),
-//    false
-//  );
-
   wp_register_script(
     'vex-js',
     get_template_directory_uri() . '/scripts/vex.combined.min.js',
@@ -296,8 +278,6 @@ function omed_scripts() {
     wp_enqueue_style( 'owl-theme-css' );
     wp_enqueue_script( 'owl-carousel-js' );
     wp_enqueue_script( 'vex-js' );
-    //wp_enqueue_style( 'vex-style' );
-    //wp_enqueue_style( 'vex-theme-style' );
   //}
 
 }

@@ -17,7 +17,8 @@ jQuery(document).ready(($) => {
     vex.dialog.buttons.YES.text = 'Done';
 
     vex.dialog.alert({
-      appendLocation: '.event__items',
+      //appendLocation: '.event__items',
+      appendLocation: '.site-content',
       unsafeMessage: `<div class="omed-modal">
                         <h3>${dataset.omedModalHeader}</h3>
                         <div class="omed-modal__deets">
