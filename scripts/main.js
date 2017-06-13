@@ -29,11 +29,7 @@ jQuery(document).ready(($) => {
                       </div>`,
     });
 
-    // Reposition modal on small screens
-    const minScreenSize = 480;
-
-    if ($(window).width() >= minScreenSize) return;
-
+    // Scroll to top of modal
     $('.vex-content').offset(function(i, coords) {
       return {
         top: $(window).scrollTop(),
