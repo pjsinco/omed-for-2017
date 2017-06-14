@@ -2764,11 +2764,11 @@ table th[class*="col-"] {
       color: #fff;
       background-color: #5c419a;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
-  .home .btn--audience, .page-physicians .btn--audience {
+  .btn--audience, .page-physicians .btn--audience {
     color: #d53847;
     background-color: transparent;
     box-shadow: inset 0 0 0 1px #d53847; }
-    .home .btn--audience:hover, .page-physicians .btn--audience:hover {
+    .btn--audience:hover, .page-physicians .btn--audience:hover {
       color: #fff;
       background-color: #d53847;
       /*box-shadow: inset 0 0 0 1px $border;*/ }
