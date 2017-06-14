@@ -22,7 +22,7 @@ class Omed2016_Featured_Sessions_Block extends WP_Widget {
     echo $args['before_widget'];
   ?>
 
-  <section class="fs__block container-fluid pageblock">
+  <section class="fs__block container-fluid">
     <div class="fs__illos" data-rellax-speed="2">
       <img class="fs__illos--0 rellax" data-rellax-speed="1" src="wp-content/themes/omed-for-2017/public/images/chart-2.png" />
       <img class="fs__illos--1 rellax" data-rellax-speed="-1" src="wp-content/themes/omed-for-2017/public/images/checkmark-1.png" />

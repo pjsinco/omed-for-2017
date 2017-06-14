@@ -3575,7 +3575,11 @@ table th[class*="col-"] {
   right: 0;
   width: 100%;
   height: 100%;
+  display: none;
   opacity: .2; }
+  @media screen and (min-width: 67.75rem) {
+    .fs__illos {
+      display: block; } }
   .fs__illos--0 {
     top: 33%;
     left: 0;
@@ -3757,19 +3761,25 @@ table th[class*="col-"] {
 
 .highlightable {
   position: relative;
-  margin-top: 4rem;
-  margin-bottom: 6rem !important; }
+  /*margin-top: 4rem;*/
+  margin-top: 0;
+  /*margin-bottom: 6rem !important;*/
+  margin-bottom: 8rem !important;
+  text-align: center; }
   @media screen and (min-width: 41.5rem) {
     .highlightable {
-      margin-top: 7rem; } }
-  @media screen and (min-width: 48rem) {
-    .highlightable {
-      margin-top: 16rem; } }
+      margin-top: 4rem;
+      margin-bottom: 10rem !important;
+      text-align: left; } }
   @media screen and (min-width: 56rem) {
     .highlightable {
       height: 533px;
       margin-top: -2rem;
+      margin-bottom: 4rem !important;
       /*overflow: hidden;*/ } }
+  @media screen and (min-width: 63rem) {
+    .highlightable {
+      margin-top: -1rem; } }
   .highlightable:before {
     content: "";
     position: absolute;
@@ -4569,8 +4579,11 @@ footer .icon-aoa-with-tagline {
     margin-bottom: 12rem; } }
 
 .parallax-window {
-  min-height: 600px;
+  min-height: 500px;
   background-color: transparent; }
+  @media screen and (min-width: 48rem) {
+    .parallax-window {
+      min-height: 600px; } }
 
 .primary-nav {
   display: inline-block;
