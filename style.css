@@ -3355,7 +3355,7 @@ table th[class*="col-"] {
     background-image: linear-gradient(to bottom, #fff, rgba(255, 255, 255, 0.6));
     z-index: -1; }
   .events__container:after {
-    background-image: url(/wp-content/themes/omed-for-2017/public/images/saturyday-303.jpg);
+    background-image: url(/wp-content/themes/omed-for-2017/public/images/saturday-303.jpg);
     background-size: cover;
     z-index: -2; }
 .events__imagecontainer {
