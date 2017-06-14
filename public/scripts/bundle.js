@@ -8,7 +8,6 @@ jQuery(document).ready(function ($) {
    *
    */
   function formatDate(dateString) {
-    console.log(dateString);
     var isoDate = void 0;
 
     try {
@@ -16,20 +15,17 @@ jQuery(document).ready(function ($) {
     } catch (e) {
       return;
     }
-    console.log(isoDate);
 
-    var date = new Date("" + isoDate);
-    console.dir(date);
+    // https://stackoverflow.com/questions/4310953/
+    //         invalid-date-in-safari#answer-5646753
+
+    var date = new Date(isoDate.replace(/-/g, '/'));
 
     var months = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
 
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    console.log('day ' + days[date.getDay()]);
-    console.log('month ' + months[date.getMonth()]);
-    console.log('date ' + date.getDate());
 
     var stringDate = days[date.getDay()] + ", " + months[date.getMonth()] + " " + date.getDate();
-    console.log(stringDate);
 
     return stringDate;
   }
