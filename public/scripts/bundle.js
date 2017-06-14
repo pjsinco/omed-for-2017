@@ -18,10 +18,14 @@ jQuery(document).ready(function ($) {
     }
     console.log(isoDate);
     var date = new Date(isoDate);
+    console.dir(date);
 
     var months = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
 
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    console.log('day ' + days[date.getDay()]);
+    console.log('month ' + months[date.getMonth()]);
+    console.log('date ' + date.getDate());
 
     var stringDate = days[date.getDay()] + ", " + months[date.getMonth()] + " " + date.getDate();
     console.log(stringDate);

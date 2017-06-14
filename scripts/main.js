@@ -17,6 +17,7 @@ console.log(dateString);
     }
 console.log(isoDate);
     const date = new Date(isoDate);
+console.dir(date);
 
     const months = [
       "Jan.", "Feb.", "March",
@@ -30,6 +31,9 @@ console.log(isoDate);
       "Wednesday", "Thursday", "Friday",
       "Saturday", "Sunday" 
     ];
+console.log('day ' + days[date.getDay()]);
+console.log('month ' + months[date.getMonth()]);
+console.log('date ' + date.getDate());
 
     const stringDate = `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`;
 console.log(stringDate);
