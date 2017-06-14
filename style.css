@@ -1457,13 +1457,21 @@ body.vex-open {
  */
 .events__body h3, .section__header, .window__body h2 {
   font-size: 2rem;
-  letter-spacing: -1px;
+  letter-spacing: -.5px;
   font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  line-height: 1.2;
-  text-shadow: 2px 2px 1px rgba(92, 65, 154, 0.15); }
+  line-height: 1.2; }
+  .events__body h3, .section__header, .window__body h2 {
+    text-shadow: 2px 2px 1px rgba(213, 56, 71, 0.15); }
+  .page-physicians .events__body h3, .events__body .page-physicians h3, .page-physicians .section__header, .page-physicians .window__body h2, .window__body .page-physicians h2 {
+    text-shadow: 2px 2px 1px rgba(213, 56, 71, 0.15); }
+  .page-residents .events__body h3, .events__body .page-residents h3, .page-residents .section__header, .page-residents .window__body h2, .window__body .page-residents h2 {
+    text-shadow: 2px 2px 1px rgba(92, 65, 154, 0.15); }
+  .page-students .events__body h3, .events__body .page-students h3, .page-students .section__header, .page-students .window__body h2, .window__body .page-students h2 {
+    text-shadow: 2px 2px 1px rgba(61, 91, 169, 0.15); }
   @media screen and (min-width: 48rem) {
     .events__body h3, .section__header, .window__body h2 {
-      font-size: 3rem; } }
+      font-size: 3rem;
+      letter-spacing: -1px; } }
   @media screen and (min-width: 67.75rem) {
     .events__body h3, .section__header, .window__body h2 {
       font-size: 3.375rem; } }
@@ -4579,11 +4587,8 @@ footer .icon-aoa-with-tagline {
     margin-bottom: 12rem; } }
 
 .parallax-window {
-  min-height: 500px;
+  min-height: 600px;
   background-color: transparent; }
-  @media screen and (min-width: 48rem) {
-    .parallax-window {
-      min-height: 600px; } }
 
 .primary-nav {
   display: inline-block;
@@ -5280,11 +5285,16 @@ nav.secondary-nav {
       color: white;
       margin-bottom: 1rem; }
     .window__body p, .window__body li, .window__body .chart__subhead {
-      color: #fff;
+      width: 100%;
       font-size: 19px;
-      width: 78%; }
+      line-height: 1.4;
+      color: #fff; }
+      @media screen and (min-width: 48rem) {
+        .window__body p, .window__body li, .window__body .chart__subhead {
+          width: 78%; } }
   .window__cta {
-    color: #fff;
-    font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+    display: block;
+    font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #fff; }
   .window__container {
     overflow: hidden; }
