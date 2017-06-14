@@ -16,14 +16,17 @@ jQuery(document).ready(function ($) {
     } catch (e) {
       return;
     }
-
+    console.log(isoDate);
     var date = new Date(isoDate);
 
     var months = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
 
     var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-    return days[date.getDay()] + ", " + months[date.getMonth()] + " " + date.getDate();
+    var stringDate = days[date.getDay()] + ", " + months[date.getMonth()] + " " + date.getDate();
+    console.log(stringDate);
+
+    return stringDate;
   }
 
   /**

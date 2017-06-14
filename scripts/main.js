@@ -15,7 +15,7 @@ console.log(dateString);
     } catch(e) {
       return;
     }
-
+console.log(isoDate);
     const date = new Date(isoDate);
 
     const months = [
@@ -31,7 +31,10 @@ console.log(dateString);
       "Saturday", "Sunday" 
     ];
 
-    return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`;
+    const stringDate = `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`;
+console.log(stringDate);
+
+    return stringDate;
   }
 
   /**
