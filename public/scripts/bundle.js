@@ -17,7 +17,8 @@ jQuery(document).ready(function ($) {
       return;
     }
     console.log(isoDate);
-    var date = new Date(isoDate);
+
+    var date = new Date("" + isoDate);
     console.dir(date);
 
     var months = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];

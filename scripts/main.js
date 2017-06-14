@@ -16,7 +16,8 @@ console.log(dateString);
       return;
     }
 console.log(isoDate);
-    const date = new Date(isoDate);
+
+    const date = new Date(`${isoDate}`);
 console.dir(date);
 
     const months = [
