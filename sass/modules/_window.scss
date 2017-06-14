@@ -32,16 +32,22 @@
     }
 
     & p {
-      color: $white;
+      width: 100%;
       font-size: 19px;
-      width: 78%;
+      line-height: 1.4;
+      color: $white;
+
+      @include breakpoint($screen $large-start) {
+        width: 78%;
+      }
     }
     
   }
 
   &__cta {
-    color: $white;
+    display: block;
     font-family: $font-bold;
+    color: $white;
   }
 
   &__container {
