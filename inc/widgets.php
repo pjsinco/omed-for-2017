@@ -24,8 +24,8 @@ class Omed2016_Featured_Sessions_Block extends WP_Widget {
 
   <section class="fs__block container-fluid">
     <div class="fs__illos" data-rellax-speed="2">
-      <img class="fs__illos--0 rellax" data-rellax-speed="1" src="wp-content/themes/omed-for-2017/public/images/chart-2.png" />
-      <img class="fs__illos--1 rellax" data-rellax-speed="-1" src="wp-content/themes/omed-for-2017/public/images/checkmark-1.png" />
+<!--       <img class="fs__illos--0 rellax" data-rellax-speed="1" src="wp-content/themes/omed-for-2017/public/images/chart-2.png" /> -->
+<!--       <img class="fs__illos--1 rellax" data-rellax-speed="-1" src="wp-content/themes/omed-for-2017/public/images/checkmark-1.png" /> -->
 <!--       <img class="fs__illos--2 rellax" data-rellax-speed="2.5" src="wp-content/themes/omed-for-2017/public/images/pie-1.png" /> -->
     </div>
     <ul class="fs__items owl-carousel owl-theme wrap" id="fsCarousel" >
