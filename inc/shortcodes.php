@@ -181,7 +181,8 @@ function omed_events_shortcode( $atts, $content = null ) {
     ), $atts
   );
 
-  if ( ! $a['image-id'] || ! $a['ids'] ) return;
+  //if ( ! $a['image-id'] || ! $a['ids'] ) return;
+  if ( ! $a['ids'] ) return;
 
   $ids = array_map('trim', explode(',', $a['ids']));
 
