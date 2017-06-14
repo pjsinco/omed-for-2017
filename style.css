@@ -5153,6 +5153,7 @@ nav.secondary-nav {
     color: inherit; }
   .vex.vex-theme-omed .vex-content h3 {
     margin-bottom: 1rem;
+    padding: .8rem .9rem 0;
     font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-align: center;
     font-size: 2rem;
@@ -5182,8 +5183,15 @@ nav.secondary-nav {
     color: #bbb;
     background: transparent; }
   .vex.vex-theme-omed .vex-close:hover:before, .vex.vex-theme-omed .vex-close:active:before {
-    color: #777;
-    background: #e0e0e0; }
+    color: #fff; }
+    .vex.vex-theme-omed .vex-close:hover:before, .vex.vex-theme-omed .vex-close:active:before {
+      background-color: rgba(213, 56, 71, 0.5); }
+    .page-physicians .vex.vex-theme-omed .vex-close:hover:before, .page-physicians .vex.vex-theme-omed .vex-close:active:before {
+      background-color: rgba(213, 56, 71, 0.5); }
+    .page-residents .vex.vex-theme-omed .vex-close:hover:before, .page-residents .vex.vex-theme-omed .vex-close:active:before {
+      background-color: rgba(92, 65, 154, 0.5); }
+    .page-students .vex.vex-theme-omed .vex-close:hover:before, .page-students .vex.vex-theme-omed .vex-close:active:before {
+      background-color: rgba(61, 91, 169, 0.5); }
 .vex.vex-theme-omed .vex-dialog-form .vex-dialog-message {
   margin-bottom: 0.5em; }
 .vex.vex-theme-omed .vex-dialog-form .vex-dialog-input {

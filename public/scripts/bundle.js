@@ -1,6 +1,30 @@
-'use strict';
+"use strict";
 
 jQuery(document).ready(function ($) {
+
+  /**
+   * Convert a YYYYMMDD-formatted date into
+   * a string that can be used in an event modal.
+   *
+   */
+  function formatDate(dateString) {
+
+    var isoDate = void 0;
+
+    try {
+      isoDate = dateString.slice(0, 4) + "-" + dateString.slice(4, 6) + "-" + dateString.slice(6);
+    } catch (e) {
+      return;
+    }
+
+    var date = new Date(isoDate);
+
+    var months = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+    return days[date.getDay()] + ", " + months[date.getMonth()] + " " + date.getDate();
+  }
 
   /**
    * --------------------------------------------------------------------------
@@ -17,12 +41,17 @@ jQuery(document).ready(function ($) {
 
     var dataset = evt.target.dataset;
 
+    var date = formatDate(dataset.omedModalDate);
+
+    if (!date) return;
+
     vex.dialog.buttons.YES.text = 'Done';
 
     vex.dialog.alert({
       //appendLocation: '.event__items',
+      showCloseButton: true,
       appendLocation: '.site-content',
-      unsafeMessage: '<div class="omed-modal">\n                        <h3>' + dataset.omedModalHeader + '</h3>\n                        <div class="omed-modal__deets">\n                          <h5><span>When: </span> ' + (dataset.omedModalDate || '') + (dataset.omedModalTime ? ', ' + dataset.omedModalTime : '') + '</h5>\n                          ' + (dataset.omedModalLocation ? '<h5><span>Where: </span>' + dataset.omedModalLocation + '</h5>' : '') + '\n                        </div>\n                        ' + (dataset.omedModalBlurb || '') + '\n                        ' + (dataset.omedModalLink ? '<p><a href=' + dataset.omedModalLink + ' class="btn btn--audience" target="_blank">More details</a></p>' : '') + '\n                      </div>'
+      unsafeMessage: "<div class=\"omed-modal\">\n                        <h3>" + dataset.omedModalHeader + "</h3>\n                        <div class=\"omed-modal__deets\">\n                          <h5><span>When: </span> " + (date || '') + (dataset.omedModalTime ? ', ' + dataset.omedModalTime : '') + "</h5>\n                          " + (dataset.omedModalLocation ? '<h5><span>Where: </span>' + dataset.omedModalLocation + '</h5>' : '') + "\n                        </div>\n                        " + (dataset.omedModalBlurb || '') + "\n                        " + (dataset.omedModalLink ? '<p><a href=' + dataset.omedModalLink + ' class="btn btn--audience" target="_blank">More details</a></p>' : '') + "\n                      </div>"
     });
 
     // Scroll to top of modal

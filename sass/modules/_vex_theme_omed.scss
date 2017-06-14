@@ -76,11 +76,11 @@
 
     h3 {
       margin-bottom: 1rem;
+      padding: .8rem .9rem 0; 
       font-family: $font-bold;
       text-align: center;
       font-size: 2rem;
       line-height: 1.2;
-
     }
 
     h5 {
@@ -122,8 +122,8 @@
     }
 
     &:hover:before, &:active:before {
-      color: #777;
-      background: #e0e0e0;
+      color: $white;
+      @include background-color-for-audience(.5);
     }
   }
 

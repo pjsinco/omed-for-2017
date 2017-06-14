@@ -2,6 +2,39 @@
 jQuery(document).ready(($) => {
 
   /**
+   * Convert a YYYYMMDD-formatted date into
+   * a string that can be used in an event modal.
+   *
+   */
+  function formatDate(dateString) {
+
+    let isoDate;
+
+    try {
+      isoDate = `${dateString.slice(0, 4)}-${dateString.slice(4, 6)}-${dateString.slice(6)}`;
+    } catch(e) {
+      return;
+    }
+
+    const date = new Date(isoDate);
+
+    const months = [
+      "Jan.", "Feb.", "March",
+      "April", "May", "June", "July",
+      "Aug.", "Sept.", "Oct.",
+      "Nov.", "Dec."
+    ];
+
+    const days = [
+      "Sunday", "Monday", "Tuesday",
+      "Wednesday", "Thursday", "Friday",
+      "Saturday", "Sunday" 
+    ];
+
+    return `${days[date.getDay()]}, ${months[date.getMonth()]} ${date.getDate()}`;
+  }
+
+  /**
    * --------------------------------------------------------------------------
    *
    * Modals
@@ -16,15 +49,20 @@ jQuery(document).ready(($) => {
 
     const dataset = evt.target.dataset; 
     
+    const date = formatDate(dataset.omedModalDate);
+
+    if (! date) return;
+    
     vex.dialog.buttons.YES.text = 'Done';
 
     vex.dialog.alert({
       //appendLocation: '.event__items',
+      showCloseButton: true,
       appendLocation: '.site-content',
       unsafeMessage: `<div class="omed-modal">
                         <h3>${dataset.omedModalHeader}</h3>
                         <div class="omed-modal__deets">
-                          <h5><span>When: </span> ${dataset.omedModalDate || ''}${ dataset.omedModalTime ? ', ' + dataset.omedModalTime : ''}</h5>
+                          <h5><span>When: </span> ${date || ''}${ dataset.omedModalTime ? ', ' + dataset.omedModalTime : ''}</h5>
                           ${dataset.omedModalLocation ? '<h5><span>Where: </span>' + dataset.omedModalLocation + '</h5>': ''}
                         </div>
                         ${dataset.omedModalBlurb || ''}

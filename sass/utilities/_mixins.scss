@@ -102,6 +102,26 @@
   }
 }
 
+@mixin background-color-for-audience($opacity) {
+
+  & {
+    background-color: rgba($primarycolor, $opacity);
+  }
+
+  .page-physicians & {
+    background-color: rgba($physicianscolor, $opacity);
+  }
+
+  .page-residents & {
+    background-color: rgba($residentscolor, $opacity);
+  }
+
+  .page-students & {
+    background-color: rgba($studentscolor, $opacity);
+  }
+}
+
+
 @mixin billboard-button($color) {
 
   @include button-variant($btn-reverse-color, $color, $btn-reverse-border);
