@@ -644,7 +644,7 @@ function omed_add_rellax_script() {
   </script>
 <?php
 }
-add_action('wp_footer' , 'omed_add_rellax_script', 9999);
+//add_action('wp_footer' , 'omed_add_rellax_script', 9999);
 
 function omed_call_svg4everybody() {
   ?>

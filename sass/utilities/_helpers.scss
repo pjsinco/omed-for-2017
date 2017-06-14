@@ -260,22 +260,7 @@
 }
 
 %background-color-for-audience {
-  & {
-    background-color: $primarycolor;
-  }
-
-  .page-physicians & {
-    background-color: $physicianscolor;
-  }
-
-  .page-residents & {
-    background-color: $residentscolor;
-  }
-
-  .page-students & {
-    background-color: $studentscolor;
-  }
-
+  @include background-color-for-audience(1);
 }
 
 %color-for-audience {
