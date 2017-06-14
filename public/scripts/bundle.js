@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
    *
    */
   function formatDate(dateString) {
-
+    console.log(dateString);
     var isoDate = void 0;
 
     try {
