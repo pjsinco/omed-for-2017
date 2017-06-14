@@ -12,22 +12,31 @@ $hflip2: $large-minor-start;
 
 .highlightable {
   position: relative;
-  margin-top: 4rem;
-  margin-bottom: 6rem !important;
+  /*margin-top: 4rem;*/
+  margin-top: 0;
+  /*margin-bottom: 6rem !important;*/
+  margin-bottom: 8rem !important;
+  text-align: center;
 
   @include breakpoint($screen $hflip) {
-    margin-top: 7rem;
+    margin-top: 4rem;
+    margin-bottom: 10rem !important;
+    text-align: left;
   }
 
-  @include breakpoint($screen $large-start) {
-    margin-top: 16rem;
-  }
+//  @include breakpoint($screen $large-start) {
+//    margin-top: 16rem;
+//  }
 
   @include breakpoint($screen $hflip2) {
     height: 533px;
     margin-top: -2rem;
+    margin-bottom: 4rem !important;
     /*overflow: hidden;*/
-    
+  }
+
+  @include breakpoint($screen $contentwidth) {
+    margin-top: -1rem;
   }
 
   &:before {
@@ -209,3 +218,4 @@ $hflip2: $large-minor-start;
     }
   }
 }
+

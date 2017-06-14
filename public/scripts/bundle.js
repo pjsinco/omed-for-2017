@@ -3,10 +3,12 @@
 jQuery(document).ready(function ($) {
 
   /**
+   * --------------------------------------------------------------------------
+   *
    * Modals
    *
+   * --------------------------------------------------------------------------
    */
-
   vex.defaultOptions.className = 'vex-theme-omed';
 
   $('.modal-button').on('click', function (evt) {
@@ -33,8 +35,11 @@ jQuery(document).ready(function ($) {
   });
 
   /**
+   * --------------------------------------------------------------------------
+   *
    * FAQs
    *
+   * --------------------------------------------------------------------------
    * Custom jQuery :icontains selector for finding element based on its text
    * @see https://gist.github.com/pklauzinski/b6f836f99cfa11100488
    */
@@ -116,8 +121,11 @@ jQuery(document).ready(function ($) {
 
 
   /**
+   * --------------------------------------------------------------------------
+   *
    * Hide and show nav bars
    *
+   * --------------------------------------------------------------------------
    * @see https://codyhouse.co/gem/auto-hiding-navigation
    */
   var scrolling = false,
@@ -211,8 +219,12 @@ jQuery(document).ready(function ($) {
   });
 
   /**
+   * --------------------------------------------------------------------------
+   *
    * Fix font weight issues in Safari
    * @see http://stackoverflow.com/questions/31056543/safari-font-rendering-issues
+   *
+   * --------------------------------------------------------------------------
    */
   var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
   var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;
