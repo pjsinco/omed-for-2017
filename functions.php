@@ -129,8 +129,7 @@ function omed_scripts() {
   wp_register_style(  
     'omed-style',
     sprintf( '%s/%s', get_stylesheet_directory_uri(), $stylesheet_name ),
-    //array('owl-carousel-css'),
-    array(),
+    array('owl-carousel-css'),
     filemtime( get_template_directory() . '/' . $stylesheet_name ), 
     'all'
   );
@@ -139,8 +138,16 @@ function omed_scripts() {
   wp_register_script( 
     'omed-bundle', 
     $omed_bundle_path,
-    array( 'jquery' ),
+    array( 'jquery', 'vex-js', 'rellax-js', 'parallax-js' ),
     filemtime( $omed_bundle_path ), 
+    true
+  );
+
+  wp_register_script(
+    'vex-js',
+    get_template_directory_uri() . '/scripts/vex.combined.min.js',
+    array(),
+    false,
     true
   );
 
@@ -151,6 +158,32 @@ function omed_scripts() {
   wp_register_script(
     'wowjs',
     get_template_directory_uri() . '/scripts/wow.min.js'
+  );
+
+  /**
+   * Parallax JS
+   *
+   * @see https://github.com/pixelcog/parallax.js/
+   */
+  wp_register_script(
+    'parallax-js',
+    get_template_directory_uri() . '/scripts/parallax.min.js',
+    array( 'jquery' ),
+    false,
+    true
+  );
+
+  /**
+   * Rellax JS
+   *
+   * @see https://github.com/dixonandmoe/rellax
+   */
+  wp_register_script(
+    'rellax-js',
+    get_template_directory_uri() . '/scripts/rellax.min.js',
+    array(),
+    false,
+    true
   );
 
   //wp_register_style(
@@ -194,11 +227,6 @@ function omed_scripts() {
     array( 'owl-carousel-css' )
   );
 
-  if ( is_front_page() ) {
-    //wp_enqueue_style( 'owl-carousel-css' );
-    //wp_enqueue_style( 'owl-theme-css' );
-    //wp_enqueue_script( 'owl-carousel-js' );
-  }
 
   /**
    * Fitvids
@@ -242,6 +270,16 @@ function omed_scripts() {
   //wp_enqueue_script( 'wowjs' );
   wp_enqueue_script( 'omed-bundle' );
   wp_enqueue_script( 'svg4everybody' );
+  wp_enqueue_script( 'parallax-js' );
+  wp_enqueue_script( 'rellax-js' );
+
+  //if ( is_front_page() ) {
+    wp_enqueue_style( 'owl-carousel-css' );
+    wp_enqueue_style( 'owl-theme-css' );
+    wp_enqueue_script( 'owl-carousel-js' );
+    wp_enqueue_script( 'vex-js' );
+  //}
+
 }
 add_action( 'wp_enqueue_scripts', 'omed_scripts' );
 
@@ -599,6 +637,15 @@ function omed_add_fitvids_script() {
   <?php
 }
 
+function omed_add_rellax_script() {
+?>
+  <script>
+    var rellax = new Rellax('.rellax');
+  </script>
+<?php
+}
+//add_action('wp_footer' , 'omed_add_rellax_script', 9999);
+
 function omed_call_svg4everybody() {
   ?>
   <script>
@@ -610,19 +657,20 @@ add_action( 'wp_footer' , 'omed_call_svg4everybody', 9999);
 
 
 function add_owl_carousel_script() {
-  if ( !is_front_page() ) {
-    return;
-  }
+  //if ( !is_front_page() ) {
+    //return;
+  //}
 ?>
   <script>
-    jQuery(document).ready(function() {
+    jQuery(document).ready(function($) {
 
       //jQuery('#fsCarousel').owlCarousel({
         //'items': 3,
         //'itemsDesktop': [1199, 3],
       //});
 
-      jQuery('#qlCarousel').owlCarousel({
+      //jQuery('#qlCarousel').owlCarousel({
+      $('#fsCarousel, #eventsCarousel').owlCarousel({
         items: 3,
         responsive: {
           0: {
@@ -638,18 +686,19 @@ function add_owl_carousel_script() {
         slideBy: 'page',
         nav: true,
         navText: [
-          '<i class="icon-chevron-left"></i>',
-          '<i class="icon-chevron-right"></i>'
+          '<svg class="icon icon-chevron-left" preserveAspectRatio="xMidYMid meet" width="40" height="40"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-left"></use></svg>',
+          '<svg class="icon icon-chevron-right" preserveAspectRatio="xMidYMid meet" width="40" height="40"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#chevron-right"></use></svg>',
         ],
         itemElement: 'li',
         stageElement: 'ul'
       });
+
     });
   </script>
 
 <?php
 }
-//add_action( 'wp_footer' , 'add_owl_carousel_script', 50 );
+add_action( 'wp_footer' , 'add_owl_carousel_script', 50 );
 
 function omed_add_google_analytics_code() {
   if ( is_dev_env() ) {

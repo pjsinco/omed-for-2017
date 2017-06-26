@@ -1,0 +1,39 @@
+.event {
+
+  &__body {
+    padding: 1rem 1rem 2rem;
+
+    & h4 {
+      margin-bottom: .75rem;
+      font-family: $font-medium;
+      font-size: 1.25rem;
+      line-height: 1.4;
+      letter-spacing: -.25px;
+      @extend %color-for-audience;
+    }
+  }
+
+  &__item {
+    @extend %card-base;
+    /*margin: 0;*/
+    /*padding: 0;*/
+    border: 0;
+    background-color: white;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  &__itemscontainer {
+    /*position: absolute;*/
+    /*bottom: 2rem;*/
+    padding-bottom: 1rem;
+    width: 100%;
+
+    
+  }
+}

@@ -1,12 +1,78 @@
-'use strict';
-
-/* @source https://codyhouse.co/gem/auto-hiding-navigation */
+"use strict";
 
 jQuery(document).ready(function ($) {
 
   /**
+   * Convert a YYYYMMDD-formatted date into
+   * a string that can be used in an event modal.
+   *
+   */
+  function formatDate(dateString) {
+    var isoDate = void 0;
+
+    try {
+      isoDate = dateString.slice(0, 4) + "-" + dateString.slice(4, 6) + "-" + dateString.slice(6);
+    } catch (e) {
+      return;
+    }
+
+    // https://stackoverflow.com/questions/4310953/
+    //         invalid-date-in-safari#answer-5646753
+
+    var date = new Date(isoDate.replace(/-/g, '/'));
+
+    var months = ["Jan.", "Feb.", "March", "April", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec."];
+
+    var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+    var stringDate = days[date.getDay()] + ", " + months[date.getMonth()] + " " + date.getDate();
+
+    return stringDate;
+  }
+
+  /**
+   * --------------------------------------------------------------------------
+   *
+   * Modals
+   *
+   * --------------------------------------------------------------------------
+   */
+  vex.defaultOptions.className = 'vex-theme-omed';
+
+  $('.modal-button').on('click', function (evt) {
+
+    evt.preventDefault();
+
+    var dataset = evt.target.dataset;
+
+    var date = formatDate(dataset.omedModalDate);
+
+    if (!date) return;
+
+    vex.dialog.buttons.YES.text = 'Done';
+
+    vex.dialog.alert({
+      //appendLocation: '.event__items',
+      showCloseButton: true,
+      appendLocation: '.site-content',
+      unsafeMessage: "<div class=\"omed-modal\">\n                        <h3>" + dataset.omedModalHeader + "</h3>\n                        <div class=\"omed-modal__deets\">\n                          <h5><span>When: </span> " + (date || '') + (dataset.omedModalTime ? ', ' + dataset.omedModalTime : '') + "</h5>\n                          " + (dataset.omedModalLocation ? '<h5><span>Where: </span>' + dataset.omedModalLocation + '</h5>' : '') + "\n                        </div>\n                        " + (dataset.omedModalBlurb || '') + "\n                        " + (dataset.omedModalLink ? '<p><a href=' + dataset.omedModalLink + ' class="btn btn--audience" target="_blank">More details</a></p>' : '') + "\n                      </div>"
+    });
+
+    // Scroll to top of modal
+    $('.vex-content').offset(function (i, coords) {
+      return {
+        top: $(window).scrollTop(),
+        left: coords.left
+      };
+    });
+  });
+
+  /**
+   * --------------------------------------------------------------------------
+   *
    * FAQs
    *
+   * --------------------------------------------------------------------------
    * Custom jQuery :icontains selector for finding element based on its text
    * @see https://gist.github.com/pklauzinski/b6f836f99cfa11100488
    */
@@ -88,8 +154,12 @@ jQuery(document).ready(function ($) {
 
 
   /**
+   * --------------------------------------------------------------------------
+   *
    * Hide and show nav bars
    *
+   * --------------------------------------------------------------------------
+   * @see https://codyhouse.co/gem/auto-hiding-navigation
    */
   var scrolling = false,
       currentTop = 0,
@@ -182,8 +252,12 @@ jQuery(document).ready(function ($) {
   });
 
   /**
+   * --------------------------------------------------------------------------
+   *
    * Fix font weight issues in Safari
    * @see http://stackoverflow.com/questions/31056543/safari-font-rendering-issues
+   *
+   * --------------------------------------------------------------------------
    */
   var is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
   var is_explorer = navigator.userAgent.indexOf('MSIE') > -1;

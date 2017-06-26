@@ -1,0 +1,81 @@
+.events {
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255,255,255,.6));
+  }
+
+  &__body {
+    /*position: absolute;*/
+    /*top: 3rem;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    margin-bottom: 2rem;
+    line-height: 1.2;
+    color: white;
+
+    & h3 {
+      width: 100%;
+      margin-bottom: 1rem;
+      text-align: center;
+      @extend %color-for-audience;
+      @extend %page-header;
+    }
+
+    & h5 {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.4;
+      text-align: center;
+      font-size: 1rem;
+      color: #666;
+
+      @include breakpoint($screen $large-start) {
+        width: 60%;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    left: -1px;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+
+    &:before {
+      background-image: linear-gradient(to bottom,#fff,rgba(255,255,255,.6));
+      z-index: -1;
+    }
+
+    &:after {
+      background-image: url(/wp-content/themes/omed-for-2017/public/images/saturday-303.jpg);
+      background-size: cover;
+      z-index: -2;
+    }
+  }
+
+
+  &__imagecontainer {
+    /*height: 870px; // TODO temp*/
+    /*background-image: linear-gradient(to bottom, black, transparent);*/
+    /*overflow: hidden;*/
+  }
+
+}

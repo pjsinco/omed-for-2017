@@ -32,6 +32,8 @@ $residentspage: '.page-residents';
 $studentscolor: $blue;
 $studentspage: '.page-students';
 
+$audiencepage: '.page-template-page-audience';
+
 /* Typography */
 $font-light: 'gotham-light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-bold: 'gotham-bold', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -135,7 +137,7 @@ $standalonerotation: -3deg;
 /* Header */
 $header-height: 80px;
 $header-height-small: 60px;
-$secondary-nav-height: 70px;
+$secondary-nav-height: 50px;
 $secondary-nav-height-small: 50px;
 
 

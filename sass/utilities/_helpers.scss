@@ -1,3 +1,78 @@
+%page-header {
+  font-size: 2rem;
+  letter-spacing: -.5px;
+  font-family: $font-bold;
+  line-height: 1.2;
+
+  & {
+    text-shadow: 2px 2px 1px rgba($primarycolor, 0.15);
+  }
+
+  .page-physicians & {
+    text-shadow: 2px 2px 1px rgba($physicianscolor, 0.15);
+  }
+
+  .page-residents & {
+    text-shadow: 2px 2px 1px rgba($residentscolor, 0.15);
+  }
+
+  .page-students & {
+    text-shadow: 2px 2px 1px rgba($studentscolor, 0.15);
+  }
+
+  @include breakpoint($screen $large-start) {
+    font-size: 3rem;
+    letter-spacing: -1px;
+  }
+
+  @include breakpoint($screen $xlarge-start) {
+    font-size: 3.375rem;
+  }
+
+}
+
+%card-base {
+  position: relative;
+  margin-bottom: 1rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
+  text-align: center;
+  border-top: 1px solid $extralightgray;
+  border-left: 1px solid $extralightgray;
+  border-right: 1px solid $extralightgray;
+  background: $white;
+  box-shadow: 3px 3px 6px $bordergray;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    bottom: 0;
+    /*height: 4px;*/
+    /*background-image: linear-gradient(to right,#5c419a, #d53847 50%, #5c419a 100%);*/
+    border-bottom: 5px solid $primarycolor;
+    @extend %border-color-for-audience;
+  }
+
+  @include breakpoint($screen $medium-start) {
+    margin-left: .75rem;
+    margin-right: .75rem;
+  }
+
+  @include breakpoint($screen $navflip) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-width: 18.375rem;
+  }
+
+  @include breakpoint($screen $large-minor-minor-start) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
 /* Helpers: Floats and Clearing */
 %container-base {
   margin-right: auto;
@@ -185,21 +260,13 @@
 }
 
 %background-color-for-audience {
-
-  .page-physicians & {
-    background-color: $physicianscolor;
-  }
-
-  .page-residents & {
-    background-color: $residentscolor;
-  }
-
-  .page-students & {
-    background-color: $studentscolor;
-  }
+  @include background-color-for-audience(1);
 }
 
 %color-for-audience {
+  & {
+    color: $primarycolor;
+  }
 
   .page-physicians & {
     color: $physicianscolor;
@@ -215,6 +282,9 @@
 }
 
 %fill-for-audience {
+  & {
+    fill: $primarycolor;
+  }
 
   .page-physicians & {
     fill: $physicianscolor;
@@ -226,5 +296,24 @@
 
   .page-students & {
     fill: $studentscolor;
+  }
+}
+
+%border-color-for-audience {
+
+  & {
+    border-color: $primarycolor;
+  }
+
+  .page-physicians & {
+    border-color: $physicianscolor;
+  }
+
+  .page-residents & {
+    border-color: $residentscolor;
+  }
+
+  .page-students & {
+    border-color: $studentscolor;
   }
 }

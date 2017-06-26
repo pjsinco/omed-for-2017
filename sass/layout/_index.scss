@@ -3,6 +3,7 @@
 
 .site-content {
 
+  height: 100%;
   padding-top: $header-height-small;
 
   @include breakpoint($screen $navflip) {

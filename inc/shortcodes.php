@@ -127,3 +127,150 @@ function omed_faq_search_shortcode( ) {
 }
 add_shortcode('faq-search', 'omed_faq_search_shortcode' );
 
+function omed_event_format_date( $date ) {
+
+  $new_date = DateTime::createFromFormat('Ymd', $date);
+  return date_format($new_date, 'F j');
+  
+}
+
+function omed_event_shortcode( $atts, $content = null ) {
+  
+  $a = shortcode_atts( array( 'id' => ''), $atts );
+
+  $event_fields = get_fields( $a['id'] );
+
+  if ( ! $event_fields || ! $event_fields['omed_event_modal'] ) return;
+
+  $event_modal = $event_fields['omed_event_modal'];
+
+  $modal = get_fields( $event_modal->ID );
+
+
+  $output  = '<li class="event__item">';
+  $output .= '  <div class="event__imagecontainer">';
+  $output .= '    <img src="' . $event_fields['omed_event_image'] . '">';
+  $output .= '  </div>';
+  $output .= '  <div class="event__body">';
+  $output .= '    <h4>' . $event_fields['omed_event_title'] . '</h4>';
+  $output .= '    <p>' . $event_fields['omed_event_blurb'] . '</p>';
+  $output .= '    <p>';
+  $output .= '      <button class="btn btn--audience modal-button" ';
+
+  $data_attrs = omed_modal_button_attributes( $modal );
+  $output .= $data_attrs . '>';
+
+  $output .= 'Learn more</button>';
+  $output .= '    </p>';
+  $output .= '  </div>';
+  $output .= '</li>';
+
+  return $output;
+
+}
+add_shortcode('event', 'omed_event_shortcode' );
+
+function omed_events_shortcode( $atts, $content = null ) {
+
+  $a = shortcode_atts(
+    array(
+      'image-id' => '',
+      'header' => '',
+      'blurb' => '',
+      'ids' => ''
+    ), $atts
+  );
+
+  //if ( ! $a['image-id'] || ! $a['ids'] ) return;
+  if ( ! $a['ids'] ) return;
+
+  $ids = array_map('trim', explode(',', $a['ids']));
+
+  $output  = '<div class="events__container">';
+  $output .= '  <div class="events__body wrap container-fluid">';
+  $output .= '    <h3>🎉 Cras mattis consectetur purus sit amet fermentum</h3>';
+  $output .= '    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta.</h5>';
+  $output .= '  </div>';
+  $output .= '  <div class="event__itemscontainer container-fluid">';
+  $output .= '    <ul class="event__items wrap owl-carousel owl-theme" id="eventsCarousel">';
+
+  foreach ( $ids as $id ) {
+    $shortcode = sprintf( '[event id="%s"]', $id );
+    $output .= do_shortcode( $shortcode );
+  }
+
+  $output .= '    </ul>';
+  $output .= '  </div>';
+  $output .= '</div>';
+
+  return $output;
+}
+add_shortcode('events', 'omed_events_shortcode' );
+
+function omed_parallax_window_shortcode( $atts, $content = null ) {
+
+  $a = shortcode_atts(
+    array(
+      'header' => '',
+      'blurb' => '',
+      'action-text' => '',
+      'action-link' => '',
+      'image-id' => '',
+    ),
+    $atts 
+  );
+
+  if ( ! $a['image-id'] ) return;
+
+  $image = wp_get_attachment_url($a['image-id']);
+
+  if ( ! $image ) return;
+
+  $output  = '<div class="window__container pageblock parallax-window relative container-fluid" data-parallax="scroll" data-image-src="' . $image . '">';
+  $output .= '  <div class="window">';
+  $output .= '    <div class="window__body wrap">';
+  $output .= '      <h2>' . $a['header'] . '</h2>';
+  $output .= '      <p>' . $a['blurb'] . ' <a href="' . $a['action-link'] . '" class="window__cta">' . $a['action-text'] . ' »</a></p>';
+  $output .= '    </div>';
+  $output .= '  </div>';
+  $output .= '</div>';
+
+  return $output;
+}
+
+add_shortcode( 'big-window', 'omed_parallax_window_shortcode' );
+
+function omed_highlightable_shortcode( $atts, $content = null ) {
+
+  $a = shortcode_atts(
+    array(
+      'id' => ''
+    ), $atts
+  );
+
+  if ( ! $a['id'] ) return;
+
+  $fields = get_fields( $a['id'] );
+
+  if ( ! $fields ) return;
+
+  $button_text = $fields['omed_highlightable_button_text'] ? $fields['omed_highlightable_button_text'] : 'Learn more';
+
+  $output  = '<section class="highlightable container-fluid pageblock">';
+  $output .= '  <div class="highlightable__block wrap">';
+  $output .= '    <div class="highlightable__body">';
+  $output .= '      <div class="highlightable__imagecontainer">';
+  $output .= '        <img class="highlightable__image" src="' . $fields['omed_highlightable_image']['url'] . '" alt="' . $fields['omed_highlightable_image']['alt'] . '">';
+  $output .= '      </div>';
+  $output .= '      <div class="highlightable__text">';
+  $output .= '        <h5 class="highlightable__header">' . $fields['omed_highlightable_header'] . '</h5>';
+  $output .= '        <h4 class="highlightable__blurb">' . $fields['omed_highlightable_blurb'] . '</h4>';
+  $output .= '        <p><a href="' . $fields['omed_highlightable_link'] . '" class="highlightable__button btn btn--sm btn--reverse">' . $button_text . '</a></p>';
+  $output .= '      </div>';
+  $output .= '    </div>';
+  $output .= '  </div>';
+  $output .= '</section>';
+
+  return $output;
+}
+add_shortcode( 'highlightable', 'omed_highlightable_shortcode' );

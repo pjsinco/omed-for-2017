@@ -13,6 +13,10 @@
     margin-top: 1rem;
   }
 
+  #{$audiencepage} & {
+    margin-bottom: 0;
+  }
+
   .error404 & {
     display: block;
     /*margin-top: 2rem;*/

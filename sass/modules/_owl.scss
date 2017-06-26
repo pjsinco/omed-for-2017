@@ -1,0 +1,117 @@
+/* 
+ * Owl Carousel overrides
+ *
+ */
+
+%owl-nav-base {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  background-color: transparent !important;
+
+  & > i {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  opacity: .2;
+
+  #fsCarousel & {
+    top: 30%;
+    transform: none;
+  }
+
+  #eventsCarousel & {
+    opacity: .4;
+
+    @include breakpoint($screen $medium-start) {
+      opacity: .6;
+    }
+  }
+}
+
+.owl-prev {
+  @extend %owl-nav-base;
+  float: left;
+  left: -1rem;
+
+  @include breakpoint($screen $medium-start) {
+    left: -2.25rem;
+  }
+
+  @include breakpoint($screen $contentwidth + 2rem) {
+    left: -1.5rem;
+  }
+
+  @include breakpoint($screen $xlarge-start) {
+    left: -2.25rem;
+  }
+}
+
+.owl-next {
+  @extend %owl-nav-base;
+  float: right;
+  right: -1rem;
+
+  @include breakpoint($screen $medium-start) {
+    right: -2.25rem;
+  }
+
+  @include breakpoint($screen $contentwidth + 2rem) {
+    right: -1.5rem;
+  }
+
+  @include breakpoint($screen $xlarge-start) {
+    right: -2.25rem;
+  }
+}
+
+.owl-theme .owl-nav .disabled {
+  opacity: 1 !important;
+}
+
+.owl-carousel .owl-stage-outer {
+  /*overflow: visible;*/
+}
+
+.owl-dot {
+  
+  
+  #fsCarousel & span,
+  #eventsCarousel & span {
+    @extend %background-color-for-audience;
+  }
+
+  #fsCarousel &:not(.active) span,
+  #eventsCarousel &:not(.active) span {
+    opacity: .3;
+  }
+
+  /*#eventsCarousel &.active span {*/
+    /*@extend %background-color-for-audience;*/
+  /*}*/
+
+}
+
+.owl-dots {
+
+  #fsCarousel & {
+    transform: translateY(-5rem);
+  }
+}
+
+.owl-nav [class*='owl-'] {
+  #fsCarousel &,
+  #eventsCarousel & {
+    margin: 0;
+    padding: 0;
+  }
+}
+
