@@ -736,6 +736,29 @@ function omed_add_google_tag_manager_code() {
 }
 add_action( 'wp_head', 'omed_add_google_tag_manager_code', 11 );
 
+function omed_add_app_icons() {
+  $theme_path = get_template_directory_uri();
+?>
+
+  <link rel="apple-touch-icon" href="<?php echo $theme_path; ?>/public/images/touch-icon-iphone.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="<?php echo $theme_path; ?>/public/images/touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $theme_path; ?>/public/images/touch-icon-iphone-retina.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="<?php echo $theme_path; ?>/public/images/touch-icon-ipad-retina.png">
+  <link rel="icon" sizes="192x192" href="<?php echo $theme_path; ?>/public/images/icon-hires.png">
+  <link rel="icon" sizes="128x128" href="<?php echo $theme_path; ?>/public/images/icon-normal.png">
+
+<?php
+}
+add_action( 'wp_head' , 'omed_add_app_icons' );
+
+function omed_add_favicon() {
+?>
+  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/public/images/favicon.ico" sizes="32x32">
+<?php
+}
+add_action( 'wp_head' , 'omed_add_favicon' );
+
+
 function omed_add_google_tag_manager_body_code() {
   if ( is_dev_env() ) {
     return;
