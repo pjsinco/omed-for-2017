@@ -188,8 +188,12 @@ function omed_events_shortcode( $atts, $content = null ) {
 
   $output  = '<div class="events__container">';
   $output .= '  <div class="events__body wrap container-fluid">';
-  $output .= '    <h3>🎉 Cras mattis consectetur purus sit amet fermentum</h3>';
-  $output .= '    <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id elit non mi porta.</h5>';
+  if ( ! empty( $a['header'] ) ) {
+    $output .= '    <h3>' . $a['header'] . '</h3>';
+  }
+  if ( ! empty( $a['blurb'] ) ) {
+    $output .= '    <h5>' . $a['blurb'] . '</h5>';
+  }
   $output .= '  </div>';
   $output .= '  <div class="event__itemscontainer container-fluid">';
   $output .= '    <ul class="event__items wrap owl-carousel owl-theme" id="eventsCarousel">';
