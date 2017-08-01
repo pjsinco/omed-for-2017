@@ -62,7 +62,7 @@ class Omed2016_Featured_Sessions_Block extends WP_Widget {
     <?php
       if ( $fields['session_more_info_type'] == 'link' ):
     ?>        
-         <a href="<?php echo get_field( 'session_more_info_link', $session->ID ); ?>" class="btn btn--audience btn--sm" <?php echo ( get_field( 'session_open_link_in_new_window', $session->ID ) ? 'target="_blank"' : '' ); ?>>Learn More</a>
+         <a href="<?php echo get_field( 'session_more_info_link', $session->ID ); ?>" class="btn btn--audience btn--sm button-link" <?php echo ( get_field( 'session_open_link_in_new_window', $session->ID ) ? 'target="_blank"' : '' ); ?>>Learn More</a>
     <?php
       else:
         $modal = get_fields( $fields['session_modal']->ID );
