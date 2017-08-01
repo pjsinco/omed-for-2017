@@ -155,7 +155,7 @@ function omed_event_shortcode( $atts, $content = null ) {
   $output .= '    <h4>' . $event_fields['omed_event_title'] . '</h4>';
   $output .= '    <p>' . $event_fields['omed_event_blurb'] . '</p>';
   $output .= '    <p>';
-  $output .= '      <button class="btn btn--audience button-modal" ';
+  $output .= '      <button class="btn btn--audience button-modal button-event" ';
 
   $data_attrs = omed_modal_button_attributes( $modal );
   $output .= $data_attrs . '>';
