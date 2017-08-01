@@ -41,4 +41,12 @@
       margin-bottom: 12rem;
     }
   }
+
+  &--xxl {
+    @extend %pageblock-base;
+
+    @include breakpoint($screen $large-start) {
+      margin-bottom: 14rem;
+    }
+  }
 }
