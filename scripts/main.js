@@ -47,7 +47,7 @@ jQuery(document).ready(($) => {
    */
   vex.defaultOptions.className = 'vex-theme-omed';
 
-  $('.modal-button').on('click', (evt) => {
+  $('.button-modal').on('click', (evt) => {
 
     evt.preventDefault();
 
