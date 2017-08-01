@@ -60,16 +60,19 @@ class Omed2016_Featured_Sessions_Block extends WP_Widget {
          <h3 class="fs__header"><?php echo $fields['session_title'] ?></h3>
          <div class="fs__header--minor"><?php echo $fields['session_date_and_time']; ?></div>
     <?php
+      $button_classes = array('btn', 'btn--audience', 'btn--sm', 'button-event');
       if ( $fields['session_more_info_type'] == 'link' ):
+         $button_classes[] = 'button-link';
     ?>        
-         <a href="<?php echo get_field( 'session_more_info_link', $session->ID ); ?>" class="btn btn--audience btn--sm button-link" <?php echo ( get_field( 'session_open_link_in_new_window', $session->ID ) ? 'target="_blank"' : '' ); ?>>Learn More</a>
+         <a href="<?php echo get_field( 'session_more_info_link', $session->ID ); ?>" class="<?php echo implode(' ', $button_classes); ?>" <?php echo ( get_field( 'session_open_link_in_new_window', $session->ID ) ? 'target="_blank"' : '' ); ?>>Learn More</a>
     <?php
       else:
+        $button_classes[] = 'button-modal';
         $modal = get_fields( $fields['session_modal']->ID );
         if ( ! $modal ) return;
         $data_attrs = omed_modal_button_attributes( $modal );
         
-        echo '<button class="btn btn--audience btn--sm button-modal" ' . $data_attrs . '>';
+        echo '<button class="' . implode(' ', $button_classes) . '" ' . $data_attrs . '>';
         echo 'Learn more</button>';
     ?>
     <?php
