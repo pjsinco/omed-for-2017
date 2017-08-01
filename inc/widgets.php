@@ -60,7 +60,7 @@ class Omed2016_Featured_Sessions_Block extends WP_Widget {
          <h3 class="fs__header"><?php echo $fields['session_title'] ?></h3>
          <div class="fs__header--minor"><?php echo $fields['session_date_and_time']; ?></div>
     <?php
-      $button_classes = array('btn', 'btn--audience', 'btn--sm');
+      $button_classes = array('btn', 'btn--audience', 'btn--sm', 'button-session');
       if ( $fields['session_more_info_type'] == 'link' ):
          $button_classes[] = 'button-link';
     ?>        
