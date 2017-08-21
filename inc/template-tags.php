@@ -120,11 +120,12 @@ function omed_modal_button_attributes( $modal ) {
 
   foreach ( $modal as $key => $value ) {
 
+
     if ( empty( $value ) ) continue;
 
     $output .= sprintf( 'data-%s="%s "', 
                         str_replace( '_', '-', $key ),
-                        $value );
+                        str_replace( array('"', '“', '”'), '&quot;', $value ) ); 
   }
 
   return $output;
