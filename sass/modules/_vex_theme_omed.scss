@@ -90,6 +90,11 @@
     }
 
     & .omed-modal {
+      & li {
+        list-style: disc inside;
+        margin-bottom: 0;
+      }
+
       .omed-modal__deets {
         margin-bottom: 1rem;
       }

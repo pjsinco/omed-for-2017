@@ -5163,6 +5163,9 @@ nav.secondary-nav {
     line-height: 1.2; }
   .vex.vex-theme-omed .vex-content h5 span {
     font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .vex.vex-theme-omed .vex-content .omed-modal li {
+    list-style: disc inside;
+    margin-bottom: 0; }
   .vex.vex-theme-omed .vex-content .omed-modal .omed-modal__deets {
     margin-bottom: 1rem; }
 .vex.vex-theme-omed .vex-close {
