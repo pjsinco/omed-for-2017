@@ -1679,6 +1679,27 @@ body.vex-open {
 .page-students .event__item:after, .page-students .fs__item:after, .page-students .fs__kicker {
   border-color: #3d5ba9; }
 
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5rem; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5rem; }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+img.alignleft,
+img.alignright {
+  float: none;
+  margin: 0; }
+
 @-webkit-keyframes fadeInFromRight {
   from {
     opacity: 0;
@@ -5312,3 +5333,19 @@ nav.secondary-nav {
     color: #fff; }
   .window__container {
     overflow: hidden; }
+
+.wp-caption,
+.gallery-caption {
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: #666; }
+
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+.wp-caption .wp-caption-text {
+  margin: 0.8075rem 0; }
