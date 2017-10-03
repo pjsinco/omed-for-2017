@@ -1,0 +1,14 @@
+.tag {
+  display: inline-block;
+  height: 2em;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  background-color: $primarycolor;
+  border-radius: $border-radius-small;
+  color: $white;
+  font-size: 0.75rem;
+  line-height: 2;
+  letter-spacing: .25px;
+  white-space: nowrap;
+  vertical-align: middle;
+}

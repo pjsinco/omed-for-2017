@@ -342,6 +342,8 @@ add_filter( 'body_class', 'omed_add_page_slug_to_body_class' );
  * @see http://www.wpbeginner.com/wp-themes/
  *      how-to-add-menu-descriptions-in-your-wordpress-themes/
  *
+ * @see for $tag_meta, see our plugin, 
+ *      https://github.com/pjsinco/elit-menu-item-custom-fields
  */
 class Menu_With_Description extends Walker_Nav_Menu {
 
@@ -352,6 +354,8 @@ class Menu_With_Description extends Walker_Nav_Menu {
 		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 		
 		$class_names = $value = '';
+
+    $tag_meta = get_post_meta( $item->ID, 'menu-item-tag' );
 
 		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 
@@ -368,7 +372,11 @@ class Menu_With_Description extends Walker_Nav_Menu {
 		$item_output = $args->before;
 		$item_output .= '<a'. $attributes .'><h5>';
 		$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-    $item_output .= ' <span>&raquo;</span></a></h5>';
+    $item_output .= ' <span class="arrow">&raquo;</span>';
+    if ( ! empty( $tag_meta ) ) {
+      $item_output .= sprintf( '<span class="tag">%s</span>', $tag_meta[0] );
+    }
+    $item_output .= '</a></h5>';
 		$item_output .= $args->after;
 		$item_output .= '<p>' . $item->description . '</p>';
 
@@ -377,7 +385,6 @@ class Menu_With_Description extends Walker_Nav_Menu {
 }
 
 class Omed_Major_Nav_Walker_Class extends Walker_Nav_Menu {
-
   function start_lvl( &$output, $depth = 0, $args = array() ) {
     $indent = str_repeat( "\t", $depth );
     $output .= "\n$indent<ul class=\"level-2 menu__list--major active\">\n";
