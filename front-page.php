@@ -19,10 +19,10 @@
 ?>
 
 
-<section class="intro wrap pageblock--xxl">
+<section class="intro wrap pageblock">
   <div class="intro__block">
     <div class="intro__focus">
-      <svg class="icon icon-omed-logo-full" preserveAspectRatio="xMidYMid meet" width="372" height="152">
+      <svg class="icon icon-omed-logo-full" preserveAspectRatio="xMidYMid meet" width="504" height="100">
         <use xlink:href="#omed2018LogoTagline" />
       </svg>
       <i class="icon icon-arrow1"></i>
@@ -41,12 +41,12 @@
       ?>
         
   </div> <!-- .intro__block -->
-  <svg class="icon icon-arrow1" preserveAspectRatio="xMidYMid meet">
-    <use xlink:href="#arrow1" />
-  </svg>
-  <div class="intro__button">
-    <a class="btn btn--primary btn--lg btn--wide" href="/registration-housing">Register Now</a>
-  </div>
+<!--   <svg class="icon icon-arrow1" preserveAspectRatio="xMidYMid meet"> -->
+<!--     <use xlink:href="#arrow1" /> -->
+<!--   </svg> -->
+<!--   <div class="intro__button"> -->
+<!--     <a class="btn btn--primary btn--lg btn--wide" href="/registration-housing">Register Now</a> -->
+<!--   </div> -->
 </section>
 
 <!-- <section class="fragment__container--right"> -->

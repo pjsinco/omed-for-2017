@@ -3270,8 +3270,8 @@ table th[class*="col-"] {
       bottom: 0;
       width: 120vw;
       z-index: 2;
-      background-image: -webkit-linear-gradient(left, #3ddc97 0%, #2731aa 12%, #3ddc97 24%, #2731aa 36%, #3ddc97 48%, #2731aa 60%, #3ddc97 72%, #2731aa 84%, #3ddc97 100%);
-      background-image: linear-gradient(to right, #3ddc97 0%, #2731aa 12%, #3ddc97 24%, #2731aa 36%, #3ddc97 48%, #2731aa 60%, #3ddc97 72%, #2731aa 84%, #3ddc97 100%);
+      background-image: -webkit-linear-gradient(left, #22d87a 0%, #2731aa 12%, #22d87a 24%, #2731aa 36%, #22d87a 48%, #2731aa 60%, #22d87a 72%, #2731aa 84%, #22d87a 100%);
+      background-image: linear-gradient(to right, #22d87a 0%, #2731aa 12%, #22d87a 24%, #2731aa 36%, #22d87a 48%, #2731aa 60%, #22d87a 72%, #2731aa 84%, #22d87a 100%);
       -webkit-transform-origin: 0 0;
               transform-origin: 0 0;
       -webkit-animation: slide 26s infinite linear backwards;
@@ -3667,8 +3667,8 @@ table th[class*="col-"] {
   right: -5%;
   bottom: 76px;
   z-index: 2;
-  background-image: -webkit-linear-gradient(left, #3ddc97 0%, #2731aa 12%, #3ddc97 24%, #2731aa 36%, #3ddc97 48%, #2731aa 60%, #3ddc97 72%, #2731aa 84%, #3ddc97 100%);
-  background-image: linear-gradient(to right, #3ddc97 0%, #2731aa 12%, #3ddc97 24%, #2731aa 36%, #3ddc97 48%, #2731aa 60%, #3ddc97 72%, #2731aa 84%, #3ddc97 100%);
+  background-image: -webkit-linear-gradient(left, #22d87a 0%, #2731aa 12%, #22d87a 24%, #2731aa 36%, #22d87a 48%, #2731aa 60%, #22d87a 72%, #2731aa 84%, #22d87a 100%);
+  background-image: linear-gradient(to right, #22d87a 0%, #2731aa 12%, #22d87a 24%, #2731aa 36%, #22d87a 48%, #2731aa 60%, #22d87a 72%, #2731aa 84%, #22d87a 100%);
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
   -webkit-animation: slide 8s infinite linear backwards;
@@ -3817,10 +3817,10 @@ table th[class*="col-"] {
     border-top: 4px solid; }
     .highlightable:before, .page-physicians .highlightable:before {
       /*border-color: $residentscolor*/
-      border-color: #3ddc97; }
+      border-color: #22d87a; }
     .page-students .highlightable:before, .page-residents .highlightable:before {
       /*border-color: $primarycolor;*/
-      border-color: #3ddc97; }
+      border-color: #22d87a; }
     @media screen and (min-width: 41.5rem) {
       .highlightable:before {
         top: -3rem;
@@ -3942,27 +3942,28 @@ table th[class*="col-"] {
       border-radius: 3px; } }
 
 .highlightable__button {
-  color: #fff; }
+  color: #fff;
+  font-family: "gotham-bold", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .highlightable__button.btn, .page-physicians .highlightable__button.btn {
+    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #22d87a;
+    background-color: #22d87a;
     /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px $accentcolor;*/
-    /*background-color: $accentcolor;*/
-    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #515aca;
-    background-color: #515aca; }
+    /*background-color: $accentcolor;*/ }
   .page-residents .highlightable__button.btn, .page-students .highlightable__button.btn {
     /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px $primarycolor;*/
     /*background-color: $primarycolor;*/
-    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #515aca;
-    background-color: #515aca; }
+    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #22d87a;
+    background-color: #22d87a; }
   .highlightable__button:hover, .page-physicians .highlightable__button:hover {
-    /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($accentcolor, 5%);*/
-    /*background-color: darken($accentcolor, 5%);*/
-    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #3d47c4;
-    background-color: #3d47c4; }
+    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #1fc26e;
+    background-color: #1fc26e;
+    /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($primarycolorlighter, 5%);*/
+    /*background-color: darken($primarycolorlighter, 5%);*/ }
   .page-residents .highlightable__button:hover, .page-students .highlightable__button:hover {
-    /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($primarycolor, 5%);*/
-    /*background-color: darken($primarycolor, 5%);*/
-    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #3d47c4;
-    background-color: #3d47c4; }
+    box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px #1fc26e;
+    background-color: #1fc26e;
+    /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($primarycolorlighter, 5%);*/
+    /*background-color: darken($primarycolorlighter, 5%);*/ }
 
 .navigation a .icon-aoa-logo, .logo a .icon-omed-logo-plain {
   -webkit-transition: -webkit-transform .3s;

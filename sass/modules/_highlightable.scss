@@ -189,23 +189,24 @@ $hflip2: $large-minor-start;
 .highlightable__button {
 
   color: $white;
+  font-family: $font-bold;
 
   &.btn {
 
     &,
     #{$physicianspage} & {
+      box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px $accentcolor;
+      background-color: $accentcolor;
       /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px $accentcolor;*/
       /*background-color: $accentcolor;*/
-      box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px $primarycolorlighter;
-      background-color: $primarycolorlighter;
     }
 
     #{$residentspage} &,
     #{$studentspage} & {
       /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px $primarycolor;*/
       /*background-color: $primarycolor;*/
-      box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px $primarycolorlighter;
-      background-color: $primarycolorlighter;
+      box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px $accentcolor;
+      background-color: $accentcolor;
     }
   }
 
@@ -213,18 +214,18 @@ $hflip2: $large-minor-start;
 
     &,
     #{$physicianspage} & {
-      /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($accentcolor, 5%);*/
-      /*background-color: darken($accentcolor, 5%);*/
-      box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($primarycolorlighter, 5%);
-      background-color: darken($primarycolorlighter, 5%);
+      box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($accentcolor, 5%);
+      background-color: darken($accentcolor, 5%);
+      /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($primarycolorlighter, 5%);*/
+      /*background-color: darken($primarycolorlighter, 5%);*/
     }
 
     #{$residentspage} &,
     #{$studentspage} & {
-      /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($primarycolor, 5%);*/
-      /*background-color: darken($primarycolor, 5%);*/
-      box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($primarycolorlighter, 5%);
-      background-color: darken($primarycolorlighter, 5%);
+      box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($accentcolor, 5%);
+      background-color: darken($accentcolor, 5%);
+      /*box-shadow: 2px 2px 6px -1px rgba(0, 0, 0, 0.58), inset 0 0 0 1px darken($primarycolorlighter, 5%);*/
+      /*background-color: darken($primarycolorlighter, 5%);*/
     }
   }
 }
