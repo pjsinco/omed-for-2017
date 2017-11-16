@@ -75,7 +75,9 @@ $gradientslideduration: 18s;
 
     &:before {
       @extend %splash-before-base;
-      background-image: url(public/images/splash-festival-1.jpg);
+      /*background-image: url(public/images/splash-festival-1.jpg);*/
+      /*background-image: url(public/images/splash-san-diego-1.jpg);*/
+      background-image: url(public/images/splash-students-2.jpg);
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;

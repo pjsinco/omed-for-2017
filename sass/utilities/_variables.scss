@@ -11,9 +11,9 @@ $aoablue: #1c446c;
  * 2018 Colors
  */
 $egyptianblue: #2731aa;
-$turquose: #44cfcb;
+$turquoise: #44cfcb;
 $carolinablue: #4ea5d9;
-$mangotango: #ff8c42;
+$tartorange: #FB4D3D;
 $eucalyptis: #3ddc97;
 $crayolablue: #256eff;
 
@@ -28,6 +28,7 @@ $prettydark: #666;
 $brandlightgray: #9e9f9e;
 
 $primarycolor: $egyptianblue;
+$primarycolorlighter: #515aca;
 /*$primarycolor: $red;*/
 /*$secondarycolor: $blue;*/
 $secondarycolor: $crayolablue;
@@ -42,11 +43,11 @@ $physicianscolor: $egyptianblue;
 $physicianspage: '.page-physicians';
 
 /*$residentscolor: $purple;*/
-$residentscolor: $eucalyptis;
+$residentscolor: $egyptianblue;
 $residentspage: '.page-residents';
 
 /*$studentscolor: $blue;*/
-$studentscolor: $mangotango;
+$studentscolor: $egyptianblue;
 $studentspage: '.page-students';
 
 $audiencepage: '.page-template-page-audience';
@@ -102,13 +103,13 @@ $btn-default-color: $font-color;
 $btn-default-bg: transparent;
 $btn-default-border: $gray;
 
-$btn-primary-color: $red;
+$btn-primary-color: $primarycolor;
 $btn-reverse-color: $white;
 
 $btn-primary-bg: transparent;
 /*$btn-reverse-bg: transparent;*/
 
-$btn-primary-border: $red;
+$btn-primary-border: $primarycolor;
 $btn-reverse-border: $white;
 
 /* Breakpoints */

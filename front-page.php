@@ -23,7 +23,7 @@
   <div class="intro__block">
     <div class="intro__focus">
       <svg class="icon icon-omed-logo-full" preserveAspectRatio="xMidYMid meet" width="372" height="152">
-        <use xlink:href="#omedLogoFull" />
+        <use xlink:href="#omed2018LogoTagline" />
       </svg>
       <i class="icon icon-arrow1"></i>
     </div>

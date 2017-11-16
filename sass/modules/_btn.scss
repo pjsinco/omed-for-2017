@@ -33,6 +33,7 @@
     }
 
     .page-residents & {
+      /*@include button-variant($residentscolor, $btn-primary-bg, $residentscolor);*/
       @include button-variant($residentscolor, $btn-primary-bg, $residentscolor);
     }
 
@@ -75,10 +76,10 @@
   }
 
   &--solid {
-    @include button-variant($btn-reverse-color, $red, $red);
+    @include button-variant($btn-reverse-color, $primarycolor, $primarycolor);
     &:hover {
-      box-shadow: inset 0 0 0 1px $red;
-      color: $red;
+      box-shadow: inset 0 0 0 1px $primarycolor;
+      color: $primarycolor;
       background-color: $white; 
     }
   }
