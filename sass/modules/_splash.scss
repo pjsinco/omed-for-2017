@@ -1,4 +1,5 @@
 $splash-line-height-small: 1.5;
+$gradientslideduration: 18s;
 
 %splash-base {
   position: relative;
@@ -204,15 +205,15 @@ $splash-line-height-small: 1.5;
   right: 0;
   background-image: linear-gradient(to right, 
                                     $primarycolor 0%, 
-                                    $accentcolor 12%, 
+                                    $secondarycolor 12%, 
                                     $primarycolor 24%, 
-                                    $accentcolor 36%, 
+                                    $secondarycolor 36%, 
                                     $primarycolor 48%, 
-                                    $accentcolor 60%, 
+                                    $secondarycolor 60%, 
                                     $primarycolor 72%, 
-                                    $accentcolor 84%, 
+                                    $secondarycolor 84%, 
                                     $primarycolor 100%);
-  animation: slide 8s infinite linear forwards;
+  animation: slide $gradientslideduration infinite linear forwards;
 }
 
 .splash__border--bottom {
@@ -222,17 +223,18 @@ $splash-line-height-small: 1.5;
   bottom: 0;
   z-index: 2;
   background-image: linear-gradient(to right, 
-                                    $accentcolor 0%, 
+                                    $secondarycolor 0%, 
                                     $primarycolor 12%, 
-                                    $accentcolor 24%, 
+                                    $secondarycolor 24%, 
                                     $primarycolor 36%, 
-                                    $accentcolor 48%, 
+                                    $secondarycolor 48%, 
                                     $primarycolor 60%, 
-                                    $accentcolor 72%, 
+                                    $secondarycolor 72%, 
                                     $primarycolor 84%, 
-                                    $accentcolor 100%);
+                                    $secondarycolor 100%);
   transform-origin: 0 0;
-  animation: rotate-up .8s cubic-bezier(0,.5,0,1) forwards, slide 8s infinite linear forwards;
+  animation: rotate-up .8s cubic-bezier(0,.5,0,1) forwards, 
+             slide $gradientslideduration infinite linear forwards;
 }
 
 

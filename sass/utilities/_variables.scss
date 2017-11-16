@@ -7,6 +7,16 @@ $blue: #3d5ba9;
 $gray: #717271;
 $aoablue: #1c446c;
 
+/*
+ * 2018 Colors
+ */
+$egyptianblue: #2731aa;
+$turquose: #44cfcb;
+$carolinablue: #4ea5d9;
+$mangotango: #ff8c42;
+$eucalyptis: #3ddc97;
+$crayolablue: #256eff;
+
 $extralightgray: #f5f5f5;
 $lightgray: #f1f1f1;
 $mediumgray: #b3b3b3;
@@ -17,19 +27,26 @@ $verydark: #444;
 $prettydark: #666;
 $brandlightgray: #9e9f9e;
 
-$primarycolor: $red;
-$secondarycolor: $blue;
-$accentcolor: $purple;
-$linkcolor: $red;
+$primarycolor: $egyptianblue;
+/*$primarycolor: $red;*/
+/*$secondarycolor: $blue;*/
+$secondarycolor: $crayolablue;
+/*$accentcolor: $purple;*/
+$accentcolor: $eucalyptis;
+/*$linkcolor: $red;*/
+$linkcolor: $egyptianblue;
 
 /* Audiences */
-$physicianscolor: $red;
+/*$physicianscolor: $red;*/
+$physicianscolor: $egyptianblue;
 $physicianspage: '.page-physicians';
 
-$residentscolor: $purple;
+/*$residentscolor: $purple;*/
+$residentscolor: $eucalyptis;
 $residentspage: '.page-residents';
 
-$studentscolor: $blue;
+/*$studentscolor: $blue;*/
+$studentscolor: $mangotango;
 $studentspage: '.page-students';
 
 $audiencepage: '.page-template-page-audience';

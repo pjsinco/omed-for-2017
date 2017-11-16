@@ -31,31 +31,6 @@
     > div {
       transform-origin: 50% 50%;
       transform: translateY(0%) rotate($standalonerotation);
-
-      @include breakpoint($screen $xlarge-minor-start) {
-        /*transform: translateY(1%) rotate($rotation);*/
-      }
-
-      @include breakpoint($screen 75rem) {
-        /*transform: translateY(1%) rotate($rotation);*/
-      }
-
-      @include breakpoint($screen 77rem) {
-        /*transform: translateY(4%) rotate($rotation);*/
-      }
-
-      @include breakpoint($screen 80rem) {
-        /*transform: translateY(10%) rotate($rotation);*/
-      }
-
-      @include breakpoint($screen $contentwidth + 2rem) {
-        /*transform: translateY(calc(2vw - 15%)) rotate($standalonerotation);*/
-      }
-
-      @include breakpoint($screen 1800px) {
-        /*transform: translateY(calc(2vw - 12%)) rotate($standalonerotation);*/
-      }
-      
     }
 
     &:after {
