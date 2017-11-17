@@ -2333,7 +2333,8 @@ li {
 
 a {
   text-decoration: none;
-  color: #2731aa; }
+  color: #2731aa;
+  font-family: "gotham-medium", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   a:visited {
     text-decoration: none; }
   a:hover {
