@@ -22,7 +22,7 @@
 <section class="intro wrap pageblock">
   <div class="intro__block">
     <div class="intro__focus">
-      <svg class="icon icon-omed-logo-full" preserveAspectRatio="xMidYMid meet" width="504" height="100">
+      <svg class="icon icon-omed-logo-full" preserveAspectRatio="xMidYMid meet" width="504" height="190">
         <use xlink:href="#omed2018LogoTagline" />
       </svg>
       <i class="icon icon-arrow1"></i>
