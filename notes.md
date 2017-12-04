@@ -22,6 +22,9 @@
 
 * [Robert Mayer - Dribbble](https://dribbble.com/mrmayer)
 
+* [Oscar | A new kind of individual health insurance company](https://www.hioscar.com/ny)
+    * Countdown clock
+
 # FX
 * [Simple Image Lazy Load and Fade](https://davidwalsh.name/lazyload-image-fade)
 
