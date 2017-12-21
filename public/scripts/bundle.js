@@ -47,15 +47,22 @@ jQuery(document).ready(function ($) {
 
     var date = formatDate(dataset.omedModalDate);
 
-    if (!date) return;
+    //    if (! date) return;
 
     vex.dialog.buttons.YES.text = 'Done';
+
+    // Date is optional
+    var timeString = '';
+
+    if (dataset.omedModalTime) {
+      timeString = "\n        <h5>\n          <span>When: </span> \n          " + (date || '') + (dataset.omedModalTime ? ', ' + dataset.omedModalTime : '') + "\n        </h5>";
+    }
 
     vex.dialog.alert({
       //appendLocation: '.event__items',
       showCloseButton: true,
       appendLocation: '.site-content',
-      unsafeMessage: "<div class=\"omed-modal\">\n                        <h3>" + dataset.omedModalHeader + "</h3>\n                        <div class=\"omed-modal__deets\">\n                          <h5><span>When: </span> " + (date || '') + (dataset.omedModalTime ? ', ' + dataset.omedModalTime : '') + "</h5>\n                          " + (dataset.omedModalLocation ? '<h5><span>Where: </span>' + dataset.omedModalLocation + '</h5>' : '') + "\n                        </div>\n                        " + (dataset.omedModalBlurb || '') + "\n                        " + (dataset.omedModalLink ? '<p><a href=' + dataset.omedModalLink + ' class="btn btn--audience" target="_blank">More details</a></p>' : '') + "\n                      </div>"
+      unsafeMessage: "<div class=\"omed-modal\">\n                        <h3>" + dataset.omedModalHeader + "</h3>\n                        <div class=\"omed-modal__deets\">\n                          " + timeString + "\n                          " + (dataset.omedModalLocation ? '<h5><span>Where: </span>' + dataset.omedModalLocation + '</h5>' : '') + "\n                        </div>\n                        " + (dataset.omedModalBlurb || '') + "\n                        " + (dataset.omedModalLink ? '<p><a href=' + dataset.omedModalLink + ' class="btn btn--audience" target="_blank">More details</a></p>' : '') + "\n                      </div>"
     });
 
     // Scroll to top of modal

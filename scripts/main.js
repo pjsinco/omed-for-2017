@@ -55,9 +55,20 @@ jQuery(document).ready(($) => {
     
     const date = formatDate(dataset.omedModalDate);
 
-    if (! date) return;
+//    if (! date) return;
     
     vex.dialog.buttons.YES.text = 'Done';
+
+    // Date is optional
+    let timeString = ''
+
+    if (dataset.omedModalTime) {
+     timeString = `
+        <h5>
+          <span>When: </span> 
+          ${date || ''}${ dataset.omedModalTime ? ', ' + dataset.omedModalTime : ''}
+        </h5>`
+    }
 
     vex.dialog.alert({
       //appendLocation: '.event__items',
@@ -66,7 +77,7 @@ jQuery(document).ready(($) => {
       unsafeMessage: `<div class="omed-modal">
                         <h3>${dataset.omedModalHeader}</h3>
                         <div class="omed-modal__deets">
-                          <h5><span>When: </span> ${date || ''}${ dataset.omedModalTime ? ', ' + dataset.omedModalTime : ''}</h5>
+                          ${timeString}
                           ${dataset.omedModalLocation ? '<h5><span>Where: </span>' + dataset.omedModalLocation + '</h5>': ''}
                         </div>
                         ${dataset.omedModalBlurb || ''}
