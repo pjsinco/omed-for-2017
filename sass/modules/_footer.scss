@@ -72,6 +72,7 @@ $footerflip: $large-start;
   flex-direction: column;
   padding: 1rem 0 0;
   text-align: center;
+  justify-content: center;
 
   & p {
     font-size: .875rem;
@@ -80,7 +81,6 @@ $footerflip: $large-start;
   @include breakpoint($screen $medium-start) {
 
     flex-direction: row;
-    justify-content: space-between;
     padding: 2rem 0;
     text-align: left;
   }
@@ -88,6 +88,7 @@ $footerflip: $large-start;
   @include breakpoint($screen $footerflip) {
     padding: 2rem 0 2rem 2rem;
     flex-basis: 50%;
+    justify-content: flex-start;
   }
 
   &:first-child {
@@ -127,9 +128,9 @@ $footerflip: $large-start;
 
   &:not(:last-child),
   &--highlight {
-    margin-right: 1rem;
-    
-    @include breakpoint($screen $footerflip) {
+    margin-right: 0;
+
+    @include breakpoint($screen $medium-start) {
       margin-right: 2rem;
     }
   }

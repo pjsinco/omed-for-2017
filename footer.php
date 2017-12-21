@@ -26,23 +26,28 @@
       
       <div class="footer__col">
         <?php
-          $args = array(
-            'menu' => 'footer-left',
-            'theme_location' => 'footer-left',
-            'container_class' => 'footer__col-item--highlight',
-          );
+          if ( has_nav_menu( 'footer-left' ) ) {
+            $args = array(
+              'menu' => 'footer-left',
+              'theme_location' => 'footer-left',
+              'container_class' => 'footer__col-item--highlight',
+            );
         
-          wp_nav_menu( $args );
+            wp_nav_menu( $args );
+          }
         ?>
 
         <?php
-          $args = array(
-            'menu' => 'footer-center',
-            'theme_location' => 'footer-center',
-            'container_class' => 'footer__col-item',
-          );
+          if ( has_nav_menu( 'footer-center' ) ) {
+
+            $args = array(
+              'menu' => 'footer-center',
+              'theme_location' => 'footer-center',
+              'container_class' => 'footer__col-item',
+            );
         
-          wp_nav_menu( $args );
+            wp_nav_menu( $args );
+          }
         ?>
 
         <?php

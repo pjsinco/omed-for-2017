@@ -3484,7 +3484,11 @@ table th[class*="col-"] {
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 1rem 0 0;
-  text-align: center; }
+  text-align: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
   .footer__col p, .footer__col li, .footer__col .chart__subhead {
     font-size: .875rem; }
   @media screen and (min-width: 30rem) {
@@ -3494,10 +3498,6 @@ table th[class*="col-"] {
       -webkit-flex-direction: row;
           -ms-flex-direction: row;
               flex-direction: row;
-      -webkit-box-pack: justify;
-      -webkit-justify-content: space-between;
-          -ms-flex-pack: justify;
-              justify-content: space-between;
       padding: 2rem 0;
       text-align: left; } }
   @media screen and (min-width: 48rem) {
@@ -3505,7 +3505,11 @@ table th[class*="col-"] {
       padding: 2rem 0 2rem 2rem;
       -webkit-flex-basis: 50%;
           -ms-flex-preferred-size: 50%;
-              flex-basis: 50%; } }
+              flex-basis: 50%;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; } }
   .footer__col:first-child {
     position: relative;
     text-align: center;
@@ -3537,8 +3541,8 @@ table th[class*="col-"] {
           background-color: #d0d0d0; } }
 
 .footer__col-item:not(:last-child), .footer__col-item--highlight {
-  margin-right: 1rem; }
-  @media screen and (min-width: 48rem) {
+  margin-right: 0; }
+  @media screen and (min-width: 30rem) {
     .footer__col-item:not(:last-child), .footer__col-item--highlight {
       margin-right: 2rem; } }
 .footer__col-item a {
