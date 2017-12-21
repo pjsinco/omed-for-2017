@@ -234,7 +234,11 @@ function omed_parallax_window_shortcode( $atts, $content = null ) {
   $output .= '  <div class="window">';
   $output .= '    <div class="window__body wrap">';
   $output .= '      <h2>' . $a['header'] . '</h2>';
-  $output .= '      <p>' . $a['blurb'] . ' <a href="' . $a['action-link'] . '" class="window__cta">' . $a['action-text'] . ' »</a></p>';
+  $output .= '      <p>' . $a['blurb']; 
+  if ( ! empty( $a['action-link'] ) && ! ( empty( $a['action-text'] ) ) ) {
+    $output .= ' <a href="' . $a['action-link'] . '" class="window__cta">' . $a['action-text'] . ' »</a>';
+  }
+  $ouput  .= '      </p>';
   $output .= '    </div>';
   $output .= '  </div>';
   $output .= '</div>';
