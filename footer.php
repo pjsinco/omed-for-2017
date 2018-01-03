@@ -21,7 +21,7 @@
             <use xlink:href="<?php echo get_template_directory_uri(); ?>/public/defs.svg?version=<?php echo filemtime(get_template_directory() . '/public/defs.svg'); ?>#aoa-with-tagline" />
           </svg>
         </a>
-        <p>Serving as the professional family for more than 129,000 osteopathic physicians (DOs) and osteopathic medical students, the American Osteopathic Association (AOA) promotes public health and encourages scientific research.</p>
+        <p>Serving as the professional family for more than 137,000 osteopathic physicians (DOs) and osteopathic medical students, the American Osteopathic Association (AOA) promotes public health and encourages scientific research.</p>
       </div> <!-- .footer__col -->
       
       <div class="footer__col">
